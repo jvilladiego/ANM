@@ -1,0 +1,18 @@
+# BPM/SOA/ADF generados
+**/SOA/SCA-INF/classes/
+**/classes/
+**/build/
+**/deploy/
+**/dist/
+**/target/
+
+# Java compilado
+*.class
+
+# Temporales
+*.log
+*.tmp
+*.bak
+*.orig
+.DS_Store
+Thumbs.db

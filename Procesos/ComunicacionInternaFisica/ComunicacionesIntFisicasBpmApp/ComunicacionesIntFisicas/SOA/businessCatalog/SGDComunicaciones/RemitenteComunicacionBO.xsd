@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/RemitenteComunicacionBO" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/RemitenteComunicacionBO" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="RemitenteComunicacionBOType">
+      <xs:sequence>
+         <xs:element name="idUsuario" nillable="true" type="xs:string"/>
+         <xs:element name="idDependencia" nillable="true" type="xs:int"/>
+         <xs:element name="dependencia" nillable="true" type="xs:string"/>
+         <xs:element name="idEnlaceDependencia" nillable="true" type="xs:string"/>
+         <xs:element name="idJefeDependencia" nillable="true" type="xs:string"/>
+         <xs:element name="email" nillable="true" type="xs:string"/>
+         <xs:element name="nombre" nillable="true" type="xs:string"/>
+         <xs:element name="rol" nillable="true" type="xs:string"/>
+         <xs:element name="idRol" nillable="true" type="xs:int"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="RemitenteComunicacionBO" type="RemitenteComunicacionBOType"/>
+</xs:schema>

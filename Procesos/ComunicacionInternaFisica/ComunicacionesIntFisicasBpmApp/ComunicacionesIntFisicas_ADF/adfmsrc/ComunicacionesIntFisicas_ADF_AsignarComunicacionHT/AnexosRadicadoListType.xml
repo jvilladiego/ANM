@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="AnexosRadicadoListType"
+          Package="ComunicacionesIntFisicas_ADF_AsignarComunicacionHT"
+          BeanClass="ComunicacionesIntFisicas_ADF_AsignarComunicacionHT.AnexosRadicadoListType" isJavaBased="false">
+  <AccessorAttribute id="anexosRadicadoList" IsCollection="true"
+                     BeanClass="ComunicacionesIntFisicas_ADF_AsignarComunicacionHT.AnexosRadicadoType"
+                     CollectionBeanClass="ComunicacionesIntFisicas_ADF_AsignarComunicacionHT.AnexosRadicadoType_anexosRadicadoList_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="2147483640"/>
+      <Property Name="LABEL" Value="Anexos Radicado List"/>
+      <Property Name="nillable" Value="true"/>
+      <Property Name="originalName" Value="anexosRadicadoList"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicadoList"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

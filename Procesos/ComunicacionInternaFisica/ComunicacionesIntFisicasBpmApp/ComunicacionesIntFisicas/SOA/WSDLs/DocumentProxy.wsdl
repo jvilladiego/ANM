@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions
+     name="Document"
+     targetNamespace="http://service.sgd.anm.gov.co"
+     xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:WL5G3N1="http://transfer.sgd.anm.gov.co"
+     xmlns:WL5G3N2="http://response.sgd.anm.gov.co"
+     xmlns:WL5G3N3="http://service.sgd.anm.gov.co"
+     xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <WL5G3N0:types>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://service.sgd.anm.gov.co" schemaLocation="../Schemas/Document_schema1.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://transfer.sgd.anm.gov.co" schemaLocation="../Schemas/Document_schema2.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://response.sgd.anm.gov.co" schemaLocation="../Schemas/Document_schema3.xsd"/>
+        </xsd:schema>
+    </WL5G3N0:types>
+    <WL5G3N0:message name="checkinPlantilla">
+        <WL5G3N0:part name="checkinPlantilla" element="WL5G3N1:CheckinPlantilla"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="checkinPlantillaResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="WSException">
+        <WL5G3N0:part name="fault" element="WL5G3N3:WSException"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarContenidoExpedienteMinero">
+        <WL5G3N0:part name="navegacionCarpeta" element="WL5G3N1:NavegacionCarpeta"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarContenidoExpedienteMineroResponse">
+        <WL5G3N0:part name="browseResponse" element="WL5G3N2:BrowseResponse"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarDocumentoExpedienteMinero">
+        <WL5G3N0:part name="descargaDocumento" element="WL5G3N1:DescargaDocumento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarDocumentoExpedienteMineroResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoATaxonomia">
+        <WL5G3N0:part name="checkinTaxonomia" element="WL5G3N1:CheckinTaxonomia"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoATaxonomiaResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAComunicacion">
+        <WL5G3N0:part name="cargueComunicacion" element="WL5G3N1:CargueComunicacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAComunicacionResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="verDetalleDocumento">
+        <WL5G3N0:part name="solicitudDetalle" element="WL5G3N1:SolicitudDetalle"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="verDetalleDocumentoResponse">
+        <WL5G3N0:part name="detalleDocumento" element="WL5G3N2:DetalleDocumento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAExpedienteMinero">
+        <WL5G3N0:part name="cargueDocumento" element="WL5G3N1:CargueDocumento"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAExpedienteMineroResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAPQRS">
+        <WL5G3N0:part name="carguePQRS" element="WL5G3N1:CarguePQRS"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAPQRSResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="tipificarAnexosComunicacion">
+        <WL5G3N0:part name="tipificacionAnexos" element="WL5G3N1:TipificacionAnexos"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="tipificarAnexosComunicacionResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="checkinGestionDocumental">
+        <WL5G3N0:part name="checkinGestionDocumental" element="WL5G3N1:CheckinGestionDocumental"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="checkinGestionDocumentalResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAExpMinero">
+        <WL5G3N0:part name="checkinDocument" element="WL5G3N1:CheckinDocument"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="cargarDocumentoAExpMineroResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:portType name="Document">
+        <WL5G3N0:operation name="checkinPlantilla">
+            <WL5G3N0:input message="WL5G3N3:checkinPlantilla"/>
+            <WL5G3N0:output message="WL5G3N3:checkinPlantillaResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarContenidoExpedienteMinero">
+            <WL5G3N0:input message="WL5G3N3:consultarContenidoExpedienteMinero"/>
+            <WL5G3N0:output message="WL5G3N3:consultarContenidoExpedienteMineroResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarDocumentoExpedienteMinero">
+            <WL5G3N0:input message="WL5G3N3:consultarDocumentoExpedienteMinero"/>
+            <WL5G3N0:output message="WL5G3N3:consultarDocumentoExpedienteMineroResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoATaxonomia">
+            <WL5G3N0:input message="WL5G3N3:cargarDocumentoATaxonomia"/>
+            <WL5G3N0:output message="WL5G3N3:cargarDocumentoATaxonomiaResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAComunicacion">
+            <WL5G3N0:input message="WL5G3N3:cargarDocumentoAComunicacion"/>
+            <WL5G3N0:output message="WL5G3N3:cargarDocumentoAComunicacionResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="verDetalleDocumento">
+            <WL5G3N0:input message="WL5G3N3:verDetalleDocumento"/>
+            <WL5G3N0:output message="WL5G3N3:verDetalleDocumentoResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAExpedienteMinero">
+            <WL5G3N0:input message="WL5G3N3:cargarDocumentoAExpedienteMinero"/>
+            <WL5G3N0:output message="WL5G3N3:cargarDocumentoAExpedienteMineroResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAPQRS">
+            <WL5G3N0:input message="WL5G3N3:cargarDocumentoAPQRS"/>
+            <WL5G3N0:output message="WL5G3N3:cargarDocumentoAPQRSResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="tipificarAnexosComunicacion">
+            <WL5G3N0:input message="WL5G3N3:tipificarAnexosComunicacion"/>
+            <WL5G3N0:output message="WL5G3N3:tipificarAnexosComunicacionResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="checkinGestionDocumental">
+            <WL5G3N0:input message="WL5G3N3:checkinGestionDocumental"/>
+            <WL5G3N0:output message="WL5G3N3:checkinGestionDocumentalResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAExpMinero">
+            <WL5G3N0:input message="WL5G3N3:cargarDocumentoAExpMinero"/>
+            <WL5G3N0:output message="WL5G3N3:cargarDocumentoAExpMineroResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+    </WL5G3N0:portType>
+    <WL5G3N0:binding name="DocumentPortBinding" type="WL5G3N3:Document">
+        <WL5G3N4:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <WL5G3N0:operation name="checkinPlantilla">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarContenidoExpedienteMinero">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarDocumentoExpedienteMinero">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoATaxonomia">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAComunicacion">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="verDetalleDocumento">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAExpedienteMinero">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAPQRS">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="tipificarAnexosComunicacion">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="checkinGestionDocumental">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="cargarDocumentoAExpMinero">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+    </WL5G3N0:binding>
+    <WL5G3N0:service name="DocumentPortBindingQSService">
+        <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+        <WL5G3N0:port name="DocumentPortBindingQSPort" binding="WL5G3N3:DocumentPortBinding">
+            <WL5G3N4:address location="http://osb.anm.local:80/SGD2.3/ProxyServices/DocumentProxy"/>
+        </WL5G3N0:port>
+    </WL5G3N0:service>
+</WL5G3N0:definitions>

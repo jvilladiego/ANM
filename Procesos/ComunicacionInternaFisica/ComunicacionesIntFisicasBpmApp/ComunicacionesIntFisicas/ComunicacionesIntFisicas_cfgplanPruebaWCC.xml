@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAConfigPlan xmlns:jca="http://platform.integration.oracle/blocks/adapter/fw/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:edl="http://schemas.oracle.com/events/edl" xmlns="http://schemas.oracle.com/soa/configplan">
+   <composite name="BpmProject">
+      <!--Add search and replace rules for the import section of a composite
+	Example:
+	<searchReplace>
+		<search>http://my-dev-server</search>
+		<replace>http://my-test-server</replace>
+	<searchReplace>
+	<searchReplace>
+		<search>8888</search>
+		<replace>8889</replace>
+	<searchReplace>-->
+      <import>
+         <searchReplace>
+            <search/>
+            <replace/>
+         </searchReplace>
+      </import>
+      <service name="Process.service">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.endpoint(Process.service/ProcessPort)</replace>
+            </attribute>
+         </binding>
+      </service>
+      <property name="productVersion">
+         <replace>12.2.1.1.0.160608</replace>
+      </property>
+      <property name="compositeID">
+         <replace>eb57b17a-6e63-4914-8c73-6572d4a186d0</replace>
+      </property>
+      <!--Add search and replace rules for the component properties
+	For components and service/reference bindings, you can add policy references.
+	Example:
+	<component name="*">
+		<wsp:PolicyReference orawsp:category="management" orawsp:status="enabled" URI="oracle/log_policy"/>
+	</component>-->
+      <component name="Process">
+         <property name="bpm.generated.service.reference">
+            <replace>Process.service</replace>
+         </property>
+         <property name="bpel.config.oneWayDeliveryPolicy">
+            <replace>sync</replace>
+         </property>
+         <property name="bpel.config.transaction">
+            <replace>required</replace>
+         </property>
+      </component>
+      <reference name="DocumentReference">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://service.sgd.anm.gov.co#wsdl.endpoint(DocumentPortBindingQSService/DocumentPortBindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://osb.anm.local/sbresource?PROXY/SGD/ProxyServices/DocumentProxy</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="WriteFile">
+         <binding type="jca"/>
+      </reference>
+      <reference name="ComunicacionesReference">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://service.sgd.anm.gov.co#wsdl.endpoint(ComunicacionesPortBindingQSService/ComunicacionesPortBindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://osb.anm.local/sbresource?PROXY/SGD/ProxyServices/ComunicacionesProxy</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+   </composite>
+   <!--To configure monitor.config: 
+	<property name="enabled"><replace>true</replace></property>
+	<property name="dataObjectsFolder"><searchReplace><search>mydev</search><replace>myproduction</replace></searchReplace></property>
+	
+	sample properties to configure for file/ftp adapter: 
+	<jca:property name="PhysicalDirectory"><replace>c:\temp</replace></jca:property>
+	<jca:property name="DeleteFile"><replace>true</replace></jca:property>
+	<jca:property name="PollingFrequency"><replace>3</replace></jca:property>
+	
+	To add search and replace rules for wsdls, xsd and jca files
+	Example:
+	<searchReplace>
+		<search>http://my-dev-server</search>
+		<replace>http://my-test-server</replace>
+	<searchReplace>
+	<searchReplace>
+		<search>8888</search>
+		<replace>8889</replace>
+	<searchReplace>
+	-->
+   <wsdlAndSchema name="Adapters/Logger_file.jca|Adapters/WriteFile_file.jca|businessCatalog/SGDComunicaciones/AnexoBO.xsd|businessCatalog/SGDComunicaciones/AnexoComunicacionRequestBO.xsd|businessCatalog/SGDComunicaciones/AnexosRadicado.xsd|businessCatalog/SGDComunicaciones/AnexosRadicadoList.xsd|businessCatalog/SGDComunicaciones/AsignacionComunicacionBO.xsd|businessCatalog/SGDComunicaciones/ComunicacionBO.xsd|businessCatalog/SGDComunicaciones/ComunicacionesBusinessException.xsd|businessCatalog/SGDComunicaciones/ComunicacionesBusinessExceptionBO.xsd|businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd|businessCatalog/SGDComunicaciones/ContentFolderBO.xsd|businessCatalog/SGDComunicaciones/DependenciaBO.xsd|businessCatalog/SGDComunicaciones/DocPrincipalBO.xsd|businessCatalog/SGDComunicaciones/ExcepcionBO.xsd|businessCatalog/SGDComunicaciones/InteresadoExternoBO.xsd|businessCatalog/SGDComunicaciones/InteresadoInterno.xsd|businessCatalog/SGDComunicaciones/ListaUsuarios.xsd|businessCatalog/SGDComunicaciones/LogMessage.xsd|businessCatalog/SGDComunicaciones/MetadatosBO.xsd|businessCatalog/SGDComunicaciones/RemitenteComunicacionBO.xsd|businessCatalog/SGDComunicaciones/ResultadoCheckinBO.xsd|businessCatalog/SGDComunicaciones/ResultadoConsultaBO.xsd|businessCatalog/SGDComunicaciones/ResultadoRadicacion.xsd|businessCatalog/SGDComunicaciones/ResultadoRevisionBO.xsd|businessCatalog/SGDComunicaciones/RolBO.xsd|businessCatalog/SGDComunicaciones/TaxonomiaBO.xsd|businessCatalog/SGDComunicaciones/TipoEnvio.xsd|businessCatalog/SGDComunicaciones/TipoSimpleBO.xsd|businessCatalog/SGDComunicaciones/UsuarioBO.xsd|businessCatalog/SGDComunicaciones/WCCException.xsd|Schemas/ActualizarComunicacionHTPayload.xsd|Schemas/ActualizarComunicacionHTWorkflowTask.xsd|Schemas/AnexoBO.xsd|Schemas/AprobarComunicacionHTPayload.xsd|Schemas/AprobarComunicacionHTWorkflowTask.xsd|Schemas/AsignacionComunicacionBO.xsd|Schemas/AsignarComunicacionHTPayload.xsd|Schemas/AsignarComunicacionHTWorkflowTask.xsd|Schemas/ComunicacionBO.xsd|Schemas/ComunicacionesBusinessException.xsd|Schemas/ComunicacionesBusinessExceptionBO.xsd|Schemas/Comunicaciones_schema1.xsd|Schemas/Comunicaciones_schema2.xsd|Schemas/Comunicaciones_schema3.xsd|Schemas/ComunicacionSalidaBO.xsd|Schemas/ConfirmarComunicacionHTPayload.xsd|Schemas/ConfirmarComunicacionHTWorkflowTask.xsd|Schemas/ContentFolderBO.xsd|Schemas/CrearComunicacionHTPayload.xsd|Schemas/CrearComunicacionHTWorkflowTask.xsd|Schemas/CrearComunicacionRespuestaHTPayload.xsd|Schemas/CrearComunicacionRespuestaHTWorkflowTask.xsd|Schemas/CrearRespuestaComunicacionHTPayload.xsd|Schemas/CrearRespuestaComunicacionHTWorkflowTask.xsd|Schemas/DecisionServicePrimitiveTypes.xsd|Schemas/DependenciaBO.xsd|Schemas/DescargarComunicacionHTPayload.xsd|Schemas/DescargarComunicacionHTWorkflowTask.xsd|Schemas/Document_schema1.xsd|Schemas/Document_schema2.xsd|Schemas/Document_schema3.xsd|Schemas/FolderGUIdRule_FolderGUIDServiceMessageTypes.xsd|Schemas/FolderGUIdRule_FolderGUIDServiceTypes.xsd|Schemas/FYIComunicacionHTPayload.xsd|Schemas/FYIComunicacionHTWorkflowTask.xsd|Schemas/GestionarComunicacionHTPayload.xsd|Schemas/GestionarComunicacionHTWorkflowTask.xsd|Schemas/InteresadoExternoBO.xsd|Schemas/InteresadoInterno.xsd|Schemas/ListaUsuarios.xsd|Schemas/LogMessage.xsd|Schemas/ManejarExcepcionHTPayload.xsd|Schemas/ManejarExcepcionHTWorkflowTask.xsd|Schemas/MetadatosBO.xsd|Schemas/RemitenteComunicacionBO.xsd|Schemas/ResultadoCheckinBO.xsd|Schemas/ResultadoConsultaBO.xsd|Schemas/ResultadoRadicacion.xsd|Schemas/ResultadoRevisionBO.xsd|Schemas/RolBO.xsd|Schemas/TaskStateMachine.xsd|Schemas/TaxonomiaBO.xsd|Schemas/TipoEnvio.xsd|Schemas/TipoSimpleBO.xsd|Schemas/UsuarioBO.xsd|Schemas/WCCException.xsd|WSDLs/ComunicacionesInternasFisicas.wsdl|WSDLs/ComunicacionesProxy.wsdl|WSDLs/DocumentProxy.wsdl|WSDLs/FolderGUIdRule_FolderGUIDService.wsdl|WSDLs/Logger.wsdl|WSDLs/Process.wsdl|WSDLs/WriteFile.wsdl">
+      <searchReplace>
+         <search>http://osb.anm.local:80/SGD/ProxyServices/ComunicacionesProxy</search>
+         <replace>http://osb.anm.local:80:80/SGD_2.3/ProxyServices/ComunicacionesProxy</replace>
+      </searchReplace>
+      <searchReplace>
+         <search>http://osb.anm.local:80/SGD/ProxyServices/DocumentProxy</search>
+         <replace>http://osb.anm.local:80:80/SGD_2.3/ProxyServices/DocumentProxy</replace>
+      </searchReplace>
+    <searchReplace>
+         <search>http://osb.anm.local:80/SGD/ProxyServices/ExpedienteMineroProxy</search>
+         <replace>http://osb.anm.local:80:80/SGD_2.3/ProxyServices/ExpedienteMineroProxy</replace>
+      </searchReplace>
+   </wsdlAndSchema>
+</SOAConfigPlan>

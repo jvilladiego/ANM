@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntFisicaPrj" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntFisicaPrj" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica">
+   <vprop:property name="numeroRadicado" type="xsd:string"/>
+   <vprop:propertyAlias messageType="tns2:inicioSalidaFisica" propertyName="tns:numeroRadicado" part="parameters">
+      <vprop:query xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida">
+            /tns2:inicioSalidaFisica/numeroRadicadoRelacionado
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns3:recibirRespuestaCom" propertyName="tns:numeroRadicado" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntFisicaPrj" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:recibirRespuestaCom/ns1:ComunicacionSalidaBO/ns1:nroRadicado
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns3:recibirRespuestaALaComunicacion" propertyName="tns:numeroRadicado" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntFisicaPrj" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:recibirRespuestaALaComunicacion/ns1:ComunicacionSalidaBO/ns1:nroRadicado
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns3:comunicacionCreada" propertyName="tns:numeroRadicado" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntFisicaPrj" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaFisica" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:comunicacionCreada/ns1:ComunicacionSalidaBO/ns1:nroRadicado
+        </vprop:query>
+   </vprop:propertyAlias>
+</wsdl:definitions>

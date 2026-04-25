@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="comunicacionesintfisicas_adf" ClientType="Generic">
+  <pageMap>
+    <page path="/CrearComunicacion.jspx" usageId="comunicacionesintfisicas_adf_CrearComunicacionPageDef"/>
+    <page path="/ActualizarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_ActualizarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/AprobarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_AprobarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/CrearComunicacionRespuestaHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_CrearComunicacionRespuestaHT_TaskDetailsPageDef"/>
+    <page path="/AsignarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_AsignarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/FYIComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_FYIComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/DescargarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_DescargarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/ConfirmarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_ConfirmarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/GestionarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesintfisicas_adf_GestionarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/ManejarExcepcion.jspx" usageId="comunicacionesintfisicas_adf_ManejarExcepcionPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="comunicacionesintfisicas_adf_CrearComunicacionPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.CrearComunicacionPageDef"/>
+    <page id="comunicacionesintfisicas_adf_ActualizarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.ActualizarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_AprobarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.AprobarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_CrearComunicacionRespuestaHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.CrearComunicacionRespuestaHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_AsignarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.AsignarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_FYIComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.FYIComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_DescargarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.DescargarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_ConfirmarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.ConfirmarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_GestionarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.GestionarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesintfisicas_adf_ManejarExcepcionPageDef"
+          path="comunicacionesintfisicas_adf.pageDefs.ManejarExcepcionPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ComunicacionesIntFisicas_ADF_ManejarExcepcionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_ManejarExcepcionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_GestionarComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_GestionarComunicacionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_ConfirmarComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_ConfirmarComunicacionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_DescargarComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_DescargarComunicacionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_FYIComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_FYIComunicacionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_AsignarComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_AsignarComunicacionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_CrearComunicacionRespuestaHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_CrearComunicacionRespuestaHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_AprobarComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_AprobarComunicacionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_ActualizarComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_ActualizarComunicacionHT"/>
+    <dc id="ComunicacionesIntFisicas_ADF_CrearComunicacionHT"
+        path="comunicacionesintfisicas_adf.ComunicacionesIntFisicas_ADF_CrearComunicacionHT"/>
+  </dataControlUsages>
+</Application>

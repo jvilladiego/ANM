@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="ComunicacionBO.xsd"/>
+   <complexType name="ConfirmarComunicacionHTPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionBO"/>
+         <element name="nombreEstado" type="xsd:string"/>
+         <element name="idEstado" type="xsd:string"/>
+         <element name="nombreDocPpal" type="xsd:string"/>
+         <element name="urlDocWCC" type="xsd:string"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="vencimiento" type="xsd:dateTime"/>
+         <element name="auxDigitalizacion" type="xsd:string"/>
+      </sequence>
+   </complexType>
+</schema>

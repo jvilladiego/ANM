@@ -1,0 +1,103 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:reference[@name='ComSalFisicaWS']</loc>
+      <line>128</line>
+      <col>95</col>
+      <file>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\composite.xml</name>
+      <fix/>
+      <msg>Fallo al buscar el enlace "ComSalFisicaWS":"{http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida}ComunicacionesSalidaPort" en el gestor de WSDL</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_CrearComunicacion.task</file>
+      <name>HumanTasks/HT_CrearComunicacion.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_GestionarObservacion.task</file>
+      <name>HumanTasks/HT_GestionarObservacion.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_AprobarCierreCom.task</file>
+      <name>HumanTasks/HT_AprobarCierreCom.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_GestionComunicacion.task</file>
+      <name>HumanTasks/HT_GestionComunicacion.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_NotificarEnlace.task</file>
+      <name>HumanTasks/HT_NotificarEnlace.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ManejarExcepcionHT.task</file>
+      <name>HumanTasks/ManejarExcepcionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_AsignarUsuario.task</file>
+      <name>HumanTasks/HT_AsignarUsuario.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_AsignarUsuarioGestionComp.task</file>
+      <name>HumanTasks/HT_AsignarUsuarioGestionComp.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\processes\NotificacionVencimiento.bpmn</file>
+      <name>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\processes\NotificacionVencimiento.bpmn</name>
+      <fix/>
+      <msg>Al menos una de las expresiones A, Cc o Cco del destinatario de correo es obligatoria en Notificar vencimiento</msg>
+   </Fault>
+</Faults>

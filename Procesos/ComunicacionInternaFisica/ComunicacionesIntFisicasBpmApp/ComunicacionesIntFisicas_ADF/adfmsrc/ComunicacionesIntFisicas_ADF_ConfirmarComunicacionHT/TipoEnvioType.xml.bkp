@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="TipoEnvioType"
+          Package="ComunicacionesIntFisicas_ADF_ConfirmarComunicacionHT"
+          BeanClass="ComunicacionesIntFisicas_ADF_ConfirmarComunicacionHT.TipoEnvioType" isJavaBased="false">
+  <Attribute Name="idEnvio" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio"/>
+        <Property Name="nextSibling" Value="nombreEnvio"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Id Envio"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="idEnvio"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="nombreEnvio" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio"/>
+        <Property Name="nextSibling" Value="fecEnvio"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Nombre Envio"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="nombreEnvio"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="fecEnvio" Type="java.sql.Timestamp">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio"/>
+        <Property Name="nextSibling" Value="nroGuia"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Fec Envio"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="fecEnvio"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio"/>
+        <Property Name="type" Value="dateTime"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="nroGuia" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Nro Guia"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="nroGuia"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+</JavaBean>

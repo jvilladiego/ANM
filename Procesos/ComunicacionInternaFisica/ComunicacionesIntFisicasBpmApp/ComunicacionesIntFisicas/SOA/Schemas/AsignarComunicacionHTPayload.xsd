@@ -1,0 +1,18 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicadoList">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="ComunicacionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicadoList" schemaLocation="../businessCatalog/SGDComunicaciones/AnexosRadicadoList.xsd"/>
+   <complexType name="AsignarComunicacionHTPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionBO"/>
+         <element name="jefeDepDestino" type="xsd:string"/>
+         <element name="urlDocWCC" type="xsd:string"/>
+         <element name="nombreDocPpal" type="xsd:string"/>
+         <element ref="ns1:AnexosRadicadoList"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="vencimiento" type="xsd:dateTime"/>
+         <element name="urlDocumRelacionadoBO" type="xsd:string"/>
+      </sequence>
+   </complexType>
+</schema>

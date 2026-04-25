@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:tns6="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/">
+   <wsdl:types>
+      <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process">
+         <xsd:import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../Schemas/ComunicacionBO.xsd"/>
+         <xsd:element name="responderComunicaciónInternaFisica">
+            <xsd:complexType>
+               <xsd:sequence>
+                  <xsd:element ref="tns6:ComunicacionBO"/>
+                  <xsd:element name="usuarioComunicacion" type="xsd:string"/>
+               </xsd:sequence>
+            </xsd:complexType>
+         </xsd:element>
+      </xsd:schema>
+   </wsdl:types>
+   <wsdl:message name="responderComunicaciónInternaFisica">
+      <wsdl:part name="parameters" element="tns:responderComunicaciónInternaFisica"/>
+   </wsdl:message>
+   <wsdl:portType name="ComunicacionesInternasFisicasPortType">
+      <wsdl:operation name="responderComunicaciónInternaFisica">
+         <wsdl:input message="tns:responderComunicaciónInternaFisica"/>
+      </wsdl:operation>
+   </wsdl:portType>
+   <plnk:partnerLinkType name="ComunicacionesInternasFisicasPortTypePartnerLinkType">
+      <plnk:role name="ComunicacionesInternasFisicasPortTypeProvider">
+         <plnk:portType name="tns:ComunicacionesInternasFisicasPortType"/>
+      </plnk:role>
+   </plnk:partnerLinkType>
+</wsdl:definitions>

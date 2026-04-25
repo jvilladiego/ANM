@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns0:organization xmlns:ns0="http://xmlns.oracle.com/bpm/organization" xmlns:ns2="http://xmlns.oracle.com/bpm/lpg/peopleQuery" xmlns:ns1="http://xmlns.oracle.com/bpm/identity" xmlns:ns3="http://xmlns.oracle.com/bpel/workflow/taskQuery" xmlns:ns4="http://xmlns.oracle.com/bpel/workflow/task">
+   <ns0:updateExistingObjects>false</ns0:updateExistingObjects>
+   <ns0:organizationalUnits/>
+   <ns0:applicationRoles>
+      <ns0:applicationRole id="ComunicacionesIntFisicas.ProcessOwner" isProcessRole="true">
+         <ns1:name>ComunicacionesIntFisicas.Process Owner</ns1:name>
+         <ns0:processRole id="ProcessOwner" name="Process Owner"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="ComunicacionesIntFisicas.ProcessReviewer" isProcessRole="true">
+         <ns1:name>ComunicacionesIntFisicas.Process Reviewer</ns1:name>
+         <ns0:processRole id="ProcessReviewer" name="Process Reviewer"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="ComunicacionesIntFisicas.UsuarioANM" isProcessRole="true">
+         <ns1:name>ComunicacionesIntFisicas.Usuario ANM</ns1:name>
+         <ns0:member type="APPROLE">
+            <ns0:applicationContext>OracleBPMProcessRolesApp</ns0:applicationContext>
+            <ns0:name>UsuarioANM</ns0:name>
+         </ns0:member>
+         <ns0:processRole id="UsuarioANM" name="Usuario ANM"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="ComunicacionesIntFisicas.JefeDependencia" isProcessRole="true">
+         <ns1:name>ComunicacionesIntFisicas.Jefe Dependencia</ns1:name>
+         <ns0:processRole id="JefeDependencia" name="Jefe Dependencia"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="ComunicacionesIntFisicas.EnlaceDependencia" isProcessRole="true">
+         <ns1:name>ComunicacionesIntFisicas.Enlace Dependencia</ns1:name>
+         <ns0:processRole id="EnlaceDependencia" name="Enlace Dependencia"/>
+      </ns0:applicationRole>
+      <ns0:applicationRole id="ComunicacionesIntFisicas.AuxiliarDigitalizacion" isProcessRole="true">
+         <ns1:name>ComunicacionesIntFisicas.Auxiliar Digitalizacion</ns1:name>
+         <ns0:processRole id="AuxiliarDigitalizacion" name="Auxiliar Digitalizacion"/>
+      </ns0:applicationRole>
+   </ns0:applicationRoles>
+   <ns0:applicationRoleOrgUnitCalendarAssociations/>
+   <ns0:participantPropertiesList>
+      <ns0:participantProperties>
+         <ns0:participantProperty name="ESCALATIONPATH" ns0:propertyType="FREEFORM_STRING" localizedName="ESCALATIONPATH">
+            <ns0:value xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string">APPROLE:ComunicacionesIntFisicas.UsuarioANM</ns0:value>
+            <ns0:createdDate>2017-02-17T17:13:15.159-05:00</ns0:createdDate>
+            <ns0:lastUpdatedDate>2017-02-17T17:13:15.159-05:00</ns0:lastUpdatedDate>
+            <ns0:isMultiValued>false</ns0:isMultiValued>
+            <ns0:localizedValue xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="xsd:string">APPROLE:ComunicacionesIntFisicas.UsuarioANM</ns0:localizedValue>
+         </ns0:participantProperty>
+         <ns0:participant type="APPROLE">
+            <ns0:name>ComunicacionesIntFisicas.Usuario ANM</ns0:name>
+         </ns0:participant>
+      </ns0:participantProperties>
+   </ns0:participantPropertiesList>
+   <ns0:holidayRules/>
+   <ns0:calendarRules/>
+   <ns0:businessParameters/>
+</ns0:organization>

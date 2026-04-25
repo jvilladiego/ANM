@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.20.47" id="DataControls"
+                    Package="comunicacionesentfisicaadf">
+  <!--AdapterDataControl id="ComunicacionesEntFisicaADF_HT_Crear_Comunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_Crear_Comunicacion"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_Crear_Comunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/D:/AM2016/Oracle/ANM/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_Crear_ComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_Crear_Comunicacion.task"
+                      InitiationTask="true" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl-->
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_AsignarUsuario"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_AsignarUsuario"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuario"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_AsignarUsuarioWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_AsignarUsuario.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_GestionComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_GestionComunicacion"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_GestionComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANMOracle/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_GestionComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_GestionComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_AprobarCierreCom"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_AprobarCierreCom"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_AprobarCierreCom"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_AprobarCierreComWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_AprobarCierreCom.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_GestionarObservacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_GestionarObservacion"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_GestionarObservacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_GestionarObservacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_GestionarObservacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_CrearComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_CrearComunicacion"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_CrearComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_CrearComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_CrearComunicacion.task"
+                      InitiationTask="true" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_NotificarEnlace"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_NotificarEnlace"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_NotificarEnlace"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_NotificarEnlaceWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_NotificarEnlace.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_AsignarUsuarioGestionCompWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_AsignarUsuarioGestionComp.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_ManejarExcepcionHT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_ManejarExcepcionHT"
+                      BeanClass="ComunicacionesEntFisicaADF_ManejarExcepcionHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/ManejarExcepcionHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/ManejarExcepcionHT.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

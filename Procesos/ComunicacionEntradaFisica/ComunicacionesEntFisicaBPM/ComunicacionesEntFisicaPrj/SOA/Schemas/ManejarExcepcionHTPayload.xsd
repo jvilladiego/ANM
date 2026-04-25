@@ -1,0 +1,9 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ExcepcionManejadaBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ExcepcionManejadaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ExcepcionManejadaBO.xsd"/>
+   <complexType name="ManejarExcepcionHTPayloadType">
+      <sequence>
+         <element ref="ns0:ExcepcionManejadaBO"/>
+      </sequence>
+   </complexType>
+</schema>

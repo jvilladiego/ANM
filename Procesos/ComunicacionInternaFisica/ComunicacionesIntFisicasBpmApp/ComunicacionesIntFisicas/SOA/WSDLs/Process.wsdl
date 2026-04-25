@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/Process"  xmlns:tns6="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" >
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process">
+            <xsd:import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionBO.xsd"/>
+            <xsd:element name="responderComunicacionIntFisica">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element ref="tns6:ComunicacionBO"/>
+                        <xsd:element name="urlDocumRelacionado" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="responderComunicacionIntFisica">
+        <wsdl:part name="parameters" element="tns:responderComunicacionIntFisica"/>
+    </wsdl:message>
+    <wsdl:portType name="ProcessPortType">
+        <wsdl:operation name="responderComunicacionIntFisica">
+            <wsdl:input message="tns:responderComunicacionIntFisica"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <plnk:partnerLinkType name="ProcessPortTypePartnerLinkType">
+        <plnk:role name="ProcessPortTypeProvider">
+            <plnk:portType name="tns:ProcessPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+</wsdl:definitions>

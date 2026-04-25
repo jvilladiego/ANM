@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/WCCException" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/WCCException" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="WCCExceptionType">
+      <xs:sequence>
+         <xs:element name="errorInfo" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="WCCException" type="WCCExceptionType"/>
+</xs:schema>

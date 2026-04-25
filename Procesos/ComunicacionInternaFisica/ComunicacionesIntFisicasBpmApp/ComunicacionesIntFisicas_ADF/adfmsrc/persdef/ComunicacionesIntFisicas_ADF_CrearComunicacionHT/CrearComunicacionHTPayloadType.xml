@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="CrearComunicacionHTPayloadType"
+  Version="12.2.1.16.48"
+  StaticDef="ComunicacionesIntFisicas_ADF_CrearComunicacionHT.CrearComunicacionHTPayloadType">
+  <DesignTime>
+    <Attr Name="_DCName"
+      Value="comunicacionesintfisicas_adf.DataControls.ComunicacionesIntFisicas_ADF_CrearComunicacionHT"/>
+    <Attr Name="_SDName" Value="ComunicacionesIntFisicas_ADF_CrearComunicacionHT.CrearComunicacionHTPayloadType"/>
+  </DesignTime>
+</PDefViewObject>

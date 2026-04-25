@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoNoDigBO" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoNoDigBO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="AnexoNoDigBOType">
+      <xs:sequence>
+         <xs:element name="descripcion" nillable="true" type="xs:string"/>
+         <xs:element name="cantidad" nillable="true" type="xs:int"/>
+         <xs:element name="nroRadicado" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="AnexoNoDigBO" type="AnexoNoDigBOType"/>
+</xs:schema>

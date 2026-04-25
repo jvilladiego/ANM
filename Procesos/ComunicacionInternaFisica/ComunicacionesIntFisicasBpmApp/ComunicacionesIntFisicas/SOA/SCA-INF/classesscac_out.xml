@@ -1,0 +1,43 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:reference[@name='ComunicacionesReference']</loc>
+      <line>171</line>
+      <col>95</col>
+      <file>C:\Jobs\BPM\ANM\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicas\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicas\SOA\composite.xml</name>
+      <fix/>
+      <msg>Fallo al buscar el enlace "ComunicacionesReference":"{http://service.sgd.anm.gov.co}ComunicacionesPortBindingQSPort" en el gestor de WSDL</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:reference[@name='DocumentReference']</loc>
+      <line>160</line>
+      <col>83</col>
+      <file>C:\Jobs\BPM\ANM\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicas\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicasBpmApp\ComunicacionesIntFisicas\SOA\composite.xml</name>
+      <fix/>
+      <msg>Fallo al buscar el enlace "DocumentReference":"{http://service.sgd.anm.gov.co}DocumentPortBindingQSPort" en el gestor de WSDL</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ManejarExcepcionHT.task</file>
+      <name>HumanTasks/ManejarExcepcionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/GestionarComunicacionHT.task</file>
+      <name>HumanTasks/GestionarComunicacionHT.task</name>
+      <fix/>
+      <msg>Task owner not specified</msg>
+   </Fault>
+</Faults>

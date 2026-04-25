@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/LogMessage" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/LogMessage" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="LogMessageType">
+      <xs:sequence>
+         <xs:element name="codigo" nillable="true" type="xs:string"/>
+         <xs:element name="mensaje" nillable="true" type="xs:string"/>
+         <xs:element name="fecha" nillable="true" type="xs:dateTime"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="LogMessage" type="LogMessageType"/>
+</xs:schema>

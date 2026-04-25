@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" xmlns:ns4="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosList" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" schemaLocation="../businessCatalog/SGDComunicaciones/InteresadoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" schemaLocation="../businessCatalog/SGDComunicaciones/AnexoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosList" schemaLocation="../businessCatalog/SGDComunicaciones/AnexosList.xsd"/>
+   <complexType name="HT_AsignarUsuarioPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionSalidaBO"/>
+         <element ref="ns1:UsuarioBO"/>
+         <element name="requiereRespuestaDO" type="xsd:string"/>
+         <element ref="ns2:InteresadoBO"/>
+         <element name="esPqrsDO" type="xsd:string"/>
+         <element name="tipoPqrsDO" type="xsd:string"/>
+         <element name="tiempoRespuestaDO" type="xsd:integer"/>
+         <element name="tipoAsignacionDO" type="xsd:string"/>
+         <element ref="ns3:AnexoBO"/>
+         <element ref="ns4:AnexosList"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="vencimiento" type="xsd:dateTime"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+      </sequence>
+   </complexType>
+</schema>

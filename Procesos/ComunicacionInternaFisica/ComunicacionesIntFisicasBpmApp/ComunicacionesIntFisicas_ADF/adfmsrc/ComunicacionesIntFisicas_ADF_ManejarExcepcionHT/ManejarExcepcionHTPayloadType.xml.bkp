@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.16.48" id="ManejarExcepcionHTPayloadType"
+          Package="ComunicacionesIntFisicas_ADF_ManejarExcepcionHT"
+          BeanClass="ComunicacionesIntFisicas_ADF_ManejarExcepcionHT.ManejarExcepcionHTPayloadType" isJavaBased="false">
+  <AccessorAttribute id="ExcepcionBO" IsCollection="true"
+                     BeanClass="ComunicacionesIntFisicas_ADF_ManejarExcepcionHT.ExcepcionBOType"
+                     CollectionBeanClass="ComunicacionesIntFisicas_ADF_ManejarExcepcionHT.ExcepcionBOType_ExcepcionBO_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Excepcion BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ExcepcionBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ExcepcionBO"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="TipoEnvioType">
+      <xs:sequence>
+         <xs:element name="idEnvio" nillable="true" type="xs:string"/>
+         <xs:element name="nombreEnvio" nillable="true" type="xs:string"/>
+         <xs:element name="fecEnvio" nillable="true" type="xs:dateTime"/>
+         <xs:element name="nroGuia" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="TipoEnvio" type="TipoEnvioType"/>
+</xs:schema>

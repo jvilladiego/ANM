@@ -1,0 +1,78 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" 
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:af="http://xmlns.oracle.com/adf/faces/rich" xmlns:h="http://java.sun.com/jsf/html">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view>
+    <!--  inlineStyle="height:3cm; width:12cm;" -->
+        <af:document title="ANM Sticker" id="d1" >
+        
+            <af:clientListener method="onPageLoad" type="load"/>
+              <f:facet name="metaContainer">
+                <af:resource type="javascript">
+                  function onPageLoad(evt) {
+                    window.print();
+                  }
+                </af:resource>
+              </f:facet>
+  
+            <af:form id="f1" >
+            <af:panelGroupLayout layout="vertical" id="pgl1" >
+                 <af:panelGroupLayout layout="horizontal" id="pgl6" inlineStyle="margin-top: -5px;">
+                    
+                     <af:image source="/resources/logo_small.png"  id="i1" shortDesc="Rad.No.#{barcodeBean.nroRadicado}"/>
+                     <af:spacer width="5" id="s1"/>
+                     <af:panelGroupLayout layout="vertical" id="pgl5">
+                        <af:panelGroupLayout layout="horizontal" id="pgl3">
+                            <af:image source="#{barcodeBean.imagePath}"  id="i2" inlineStyle="margin-top: 0px;"
+                                    shortDesc="Rad.No.#{barcodeBean.nroRadicado}"/>
+                        </af:panelGroupLayout>
+                         <af:panelGroupLayout layout="horizontal" id="pgl4" inlineStyle="margin-top: 0px;">
+                            <af:outputLabel for="it1" value="Radicado" id="ol1" />
+                            <af:outputText id="it1" value="#{barcodeBean.nroRadicado}" inlineStyle="font-size: 16px;"/>
+                            <af:spacer width="15" id="s2"/>
+                            <af:outputLabel for="it2" value="Fecha" id="ol8"/>
+                            <af:outputText id="it2" value="#{barcodeBean.fechaActual}" inlineStyle="font-size: 16px;">
+                                    <f:convertDateTime pattern="MM/dd/yyyy hh:mm a" />
+                                </af:outputText>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="horizontal" id="pgl2" inlineStyle="margin-top:-15px; height:17px;">
+                             <af:outputLabel for="it5" value="Folios" id="ol9" inlineStyle="font-size:12px;"/>
+                             <af:outputText id="it5" value="#{barcodeBean.folios}" 
+                                           inlineStyle="font-size:12px;"/>
+                             <af:spacer width="15" id="s3"/>
+                            <af:outputLabel for="it4" value="Anexos" id="ol4" inlineStyle="font-size:12px;"/>
+                            <af:outputText id="it4" value="#{barcodeBean.anexos}" 
+                                          inlineStyle="font-size:12px;"/>
+                            <af:spacer width="15" id="s4"/>
+                            <af:outputLabel for="it_placa" value="Expediente Minero" id="ol5" inlineStyle="font-size:12px;"/>
+                            <af:outputText id="it_placa" value="#{barcodeBean.placa}" 
+                                          inlineStyle="font-size:12px;"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="horizontal" id="pgl8" inlineStyle="margin-top: -15px;">
+                                <af:outputLabel for="it6" value="Asunto" id="ol6" inlineStyle="font-size:12px;"/>
+                                <af:outputText id="it6" value="#{barcodeBean.asunto}" 
+                                          inlineStyle="font-size:12px;"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="horizontal" id="pgl9" inlineStyle="margin-top: -15px;">
+                            <af:outputLabel for="it6" value="Destino" id="ol7" inlineStyle="font-size:12px;"/>
+                            <af:outputText  id="it_destino" value="#{barcodeBean.destino}" 
+                                inlineStyle="margin-top:-15px; font-size:12px;"/>
+                        </af:panelGroupLayout>
+                        <af:panelGroupLayout layout="horizontal" id="pgl7" rendered="true" 
+                                        inlineStyle="margin-top: -15px;">
+                             <af:outputLabel for="itCant" value="Cantidad" id="ol3" inlineStyle="font-size:12px;"/>
+                             <af:outputText id="itCant" value="#{barcodeBean.lstAnexo[0].cantidad}" 
+                                           inlineStyle="font-size:12px;"/>
+                            <af:spacer width="15" id="s5"/>
+                            <af:outputLabel for="itDesc" value="Desc." id="ol2" inlineStyle="font-size:12px;"/>
+                            <af:outputText id="itDesc" value="#{barcodeBean.lstAnexo[0].descripcion}" 
+                                          inlineStyle="font-size:12px;"/>
+                        </af:panelGroupLayout>                        
+                     </af:panelGroupLayout>
+                </af:panelGroupLayout>
+            </af:panelGroupLayout>                               
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

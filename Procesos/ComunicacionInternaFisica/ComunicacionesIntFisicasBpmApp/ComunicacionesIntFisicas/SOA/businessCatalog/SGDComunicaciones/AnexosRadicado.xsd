@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?bpmo version="12.1.3" build="00.00" fullName="SGDComunicaciones.AnexosRadicado" modifiers="[public]"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicado" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicado"  xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/" >
+    <xs:complexType name="AnexosRadicadoType">
+        <xs:sequence>
+            <xs:element name="nombre" nillable="true" type="xs:string"/>
+            <xs:element name="url" nillable="true" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="AnexosRadicado" type="AnexosRadicadoType"/>
+</xs:schema>

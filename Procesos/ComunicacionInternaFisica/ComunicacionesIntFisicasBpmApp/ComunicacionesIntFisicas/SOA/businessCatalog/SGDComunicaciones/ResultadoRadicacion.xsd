@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRadicacion" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRadicacion" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="ResultadoRadicacionType">
+      <xs:sequence>
+         <xs:element name="codigo" nillable="true" type="xs:string"/>
+         <xs:element name="mensaje" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ResultadoRadicacion" type="ResultadoRadicacionType"/>
+</xs:schema>

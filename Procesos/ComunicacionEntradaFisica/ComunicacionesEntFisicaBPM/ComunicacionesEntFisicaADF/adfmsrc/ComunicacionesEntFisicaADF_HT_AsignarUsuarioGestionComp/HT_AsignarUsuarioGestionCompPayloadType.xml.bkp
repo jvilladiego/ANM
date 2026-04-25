@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47"
+          id="HT_AsignarUsuarioGestionCompPayloadType" Package="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp"
+          BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.HT_AsignarUsuarioGestionCompPayloadType"
+          isJavaBased="false">
+  <Attribute Name="usuarioJefeGestionCompDO" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="nextSibling" Value="usuarioGestionCompDO"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Usuario Jefe Gestion Comp DO"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="usuarioJefeGestionCompDO"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="usuarioGestionCompDO" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosList"/>
+        <Property Name="nextSibling" Value="AnexosList"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Usuario Gestion Comp DO"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="usuarioGestionCompDO"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="esPqrsBO" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="nextSibling" Value="tipoPqrsBO"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Es Pqrs BO"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="esPqrsBO"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="tipoPqrsBO" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Tipo Pqrs BO"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="tipoPqrsBO"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="tiempoRespuestaBO" Type="java.math.BigInteger">
+    <Properties>
+      <CustomProperties>
+        <Property Name="originalName" Value="tiempoRespuestaBO"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="nextSibling" Value="vencimiento"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="LABEL" Value="Tiempo Respuesta BO"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="type" Value="java.lang.BigInteger"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="vencimiento" Type="java.sql.Timestamp">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Vencimiento"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="vencimiento"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="dateTime"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="ComunicacionSalidaBO" IsCollection="true"
+                     BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.ComunicacionSalidaBOType"
+                     CollectionBeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.ComunicacionSalidaBOType_ComunicacionSalidaBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO"/>
+      <Property Name="nextSibling" Value="UsuarioBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Comunicacion Salida BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ComunicacionSalidaBO"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="UsuarioBO" IsCollection="true"
+                     BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.UsuarioBOType"
+                     CollectionBeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.UsuarioBOType_UsuarioBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+      <Property Name="nextSibling" Value="usuarioJefeGestionCompDO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Usuario BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="UsuarioBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="AnexosList" IsCollection="true"
+                     BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.AnexosListType"
+                     CollectionBeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.AnexosListType_AnexosList_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+      <Property Name="nextSibling" Value="esPqrsBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Anexos List"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="AnexosList"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosList"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="InteresadoBO" IsCollection="true"
+                     BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.InteresadoBOType"
+                     CollectionBeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp.InteresadoBOType_InteresadoBO_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Interesado BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="InteresadoBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

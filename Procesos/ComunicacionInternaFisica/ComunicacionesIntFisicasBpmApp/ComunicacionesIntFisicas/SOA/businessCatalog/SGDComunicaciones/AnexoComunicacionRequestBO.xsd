@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?bpmo version="12.1.3" build="00.00" fullName="SGDComunicaciones.AnexoComunicacionRequestBO" modifiers="[public]"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoComunicacionRequestBO" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoComunicacionRequestBO"  xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/" >
+    <xs:complexType name="AnexoComunicacionRequestBOType">
+        <xs:sequence>
+            <xs:element name="idAnexo" nillable="true" type="xs:int"/>
+            <xs:element name="cantidad" nillable="true" type="xs:decimal"/>
+            <xs:element name="descripcion" nillable="true" type="xs:string"/>
+            <xs:element name="nroRadicado" nillable="true" type="xs:string"/>
+            <xs:element name="enlaceContent" nillable="true" type="xs:string"/>
+            <xs:element name="rutaLocalCargue" nillable="true" type="xs:string"/>
+            <xs:element name="idComunicacion" nillable="true" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="AnexoComunicacionRequestBO" type="AnexoComunicacionRequestBOType"/>
+</xs:schema>

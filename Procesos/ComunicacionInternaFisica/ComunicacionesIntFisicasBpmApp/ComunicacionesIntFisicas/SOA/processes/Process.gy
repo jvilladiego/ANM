@@ -1,0 +1,132 @@
+//Content Format Version: 1.0
+
+//########################################################################################
+//####                                                                                ####
+//####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####
+//#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####
+//####                                                                                ####
+//########################################################################################
+package oracle.scripting.bpmn.process;
+
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoComunicacionRequest;
+import oracle.scripting.catalog.sgdComunicaciones.AnexoBO;
+import java.math.BigDecimal;
+import oracle.scripting.xml.co.gov.anm.sgd.transfer.elem.ActualizacionProceso;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexosRadicadoResponse;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoRadicado;
+
+
+public class Process{
+
+public void methodACT19173359794298()
+{
+	AnexoComunicacionRequest anexoService
+	AnexoRadicado anexoWcc
+	boolean resultadoAdd
+	boolean resultadoDocPrincipal
+	Iterator it
+	
+	if (comunicacion == null) {
+	    throw new Exception("comunicacion es null en script Anexos")
+	}
+	
+	actualizacionProcesoDO = new ActualizacionProceso()
+	actualizacionProcesoDO.anexosList.clear()
+	
+	// Documento principal
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest()
+	docPrincipal.setCantidad(BigDecimal.ONE)
+	docPrincipal.setDescripcion("Documento principal")
+	docPrincipal.setRutaLocalCargue("")
+	docPrincipal.setEnlaceContent(urlDocWCC)
+	docPrincipal.setNroRadicado(comunicacion.getNroRadicado())
+	
+	resultadoDocPrincipal = actualizacionProcesoDO.anexosList.add(docPrincipal)
+	System.out.println("END: Create Anexo script groovy | Resultado Add Doc Principal: " + resultadoDocPrincipal)
+	
+	// Anexos consultados en WCC
+	if (anexosRadicadoResponse != null && anexosRadicadoResponse.anexosList != null) {
+	    it = anexosRadicadoResponse.anexosList.iterator()
+	
+	    while (it.hasNext()) {
+	        anexoWcc = (AnexoRadicado) it.next()
+	
+	        if (anexoWcc == null) {
+	            continue
+	        }
+	
+	        // Evita duplicar el documento principal si tambien viene en la consulta
+	        if (anexoWcc.url != null && urlDocWCC != null && anexoWcc.url.equals(urlDocWCC)) {
+	            continue
+	        }
+	
+	        anexoService = new AnexoComunicacionRequest()
+	        anexoService.setCantidad(BigDecimal.ONE)
+	        anexoService.setDescripcion("Anexo")
+	        anexoService.setNroRadicado(comunicacion.getNroRadicado())
+	
+	        if (anexoWcc.url != null) {
+	            anexoService.setEnlaceContent(anexoWcc.url)
+	        }
+	
+	        resultadoAdd = actualizacionProcesoDO.anexosList.add(anexoService)
+	        System.out.println("END: Create Anexo script groovy | Resultado Add: " + resultadoAdd)
+	    }
+	} else {
+	    System.out.println("No existen anexos en anexosRadicadoResponse")
+	}
+}
+
+
+public void methodACT24947569709142()
+{
+	System.out.println("INICIO Ajustar_campo");
+	
+	
+	if(comunicacion.asunto != null)
+	  comunicacion.asunto = comunicacion.asunto.take(500);
+	if(comunicacion.nroPlaca != null)
+	  comunicacion.nroPlaca = comunicacion.nroPlaca.take(100);
+	if(comunicacion.referencia != null)
+	  comunicacion.referencia = comunicacion.referencia.take(200);
+	if(comunicacion.nroRadicadoRelacionado != null)
+	  comunicacion.nroRadicadoRelacionado = comunicacion.nroRadicadoRelacionado.take(100);
+	//Se recorren los comentarios y se trunca el campo comentario
+	/*if(localExecutionData.userComment != null && localExecutionData.userComment.size()>0){
+	  Iterator it = localExecutionData.userComment.iterator();
+	  while(it.hasNext()){
+	    Object object =  it.next();    
+	  }
+	}*/
+	System.out.println("FIN Ajustar_campo");
+	
+	
+}
+
+
+public void methodACT47495168167156()
+{
+	
+	
+	    int totalAnexos = 0
+	    if (localExecutionData != null && localExecutionData.attachment != null) {
+	        totalAnexos = localExecutionData.attachment.size()
+	        
+	        
+	    if (anexosRadicadoResponse.anexosList == null) {
+	        anexosRadicadoResponse.anexosList = []
+	    }
+	       System.out.println("INICIO AsignarUrlWCCDocPrincipal - totalAnexos: " + totalAnexos)
+	
+	      // Posiciones 1..N para anexos
+	      for (int i = 1; i <= totalAnexos; i++) {
+	          AnexoRadicado anexo = new AnexoRadicado()
+	          anexo.setNombre("")
+	          anexo.setUrl("")
+	          anexosRadicadoResponse.anexosList.add(anexo)
+	      }
+	    }
+}
+
+
+}

@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DocPrincipalBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../Schemas/ComunicacionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DocPrincipalBO" schemaLocation="../businessCatalog/SGDComunicaciones/DocPrincipalBO.xsd"/>
+   <complexType name="ActualizarComunicacionHTPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionBO"/>
+         <element name="urlExpMineroWSDL" type="xsd:string"/>
+         <element name="inicializador" type="xsd:string"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="vencimiento" type="xsd:dateTime"/>
+         <element name="urlDocumRelacionadoBO" type="xsd:string"/>
+         <element ref="ns1:DocPrincipalBO"/>
+      </sequence>
+   </complexType>
+</schema>

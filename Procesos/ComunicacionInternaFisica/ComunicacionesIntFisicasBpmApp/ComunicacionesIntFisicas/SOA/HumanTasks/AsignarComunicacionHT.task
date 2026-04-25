@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<taskDefinition targetNamespace="http://xmlns.oracle.com/ComunicacionesIntFisicasBpmApp/ComunicacionesIntFisicas/AsignarComunicacionHT" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:task="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpel/workflow/taskDefinition" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath" xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions"
+                xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath" xmlns:evidence="http://xmlns.oracle.com/bpel/workflow/TaskEvidenceService"
+                xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicadoList" xmlns:ns4="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" xmlns:ns5="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" xmlns:socket="http://www.oracle.com/XSL/Transform/java/oracle.tip.adapter.socket.ProtocolTranslator" xmlns:ns6="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DependenciaBO" xmlns:ns7="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AsignacionComunicacionBO" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:oraxsl="http://www.oracle.com/XSL/Transform/java" xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:ns9="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoInterno" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoSimpleBO" xmlns:mhdr="http://www.oracle.com/XSL/Transform/java/oracle.tip.mediator.service.common.functions.MediatorExtnFunction" xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:ns8="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ContentFolderBO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:med="http://schemas.oracle.com/mediator/xpath" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:ns10="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ns12="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoEnvio" xmlns:ns11="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicado"
+                xmlns:ns13="http://xmlns.oracle.com/bpel/workflow/common">
+   <name>AsignarComunicacionHT</name>
+   <id>${domain_id}_${process_id}_${process_revision}_AsignarComunicacionHT</id>
+   <title type="XPATH"><value>string('Asignar Comunicación')</value></title>
+   <priority>3</priority>
+   <hideCreator>false</hideCreator>
+   <process processId="" processVersion=""/>
+   <routingSlip xmlns="http://xmlns.oracle.com/bpel/workflow/routingSlip" routingType="TEMPLATE">
+      <globalConfiguration>
+         <applicationContext>OracleBPMProcessRolesApp</applicationContext>
+         <taskOwner type="STATIC" identityType="application_role">ComunicacionesIntFisicas.ProcessOwner</taskOwner>
+         <sharePayloadConfiguration>
+            <type>USE_SYSTEM_WIDE_GLOBAL_CONFIGURATION</type>
+         </sharePayloadConfiguration>
+         <errorOnEmptyAssignee>false</errorOnEmptyAssignee>
+         <excludeSaturdayAndSunday>false</excludeSaturdayAndSunday>
+      </globalConfiguration>
+      <participants isAdhocRoutingSupported="false">
+         <stage name="Stage1" disabled="false">
+            <participant disabled="false" name="default.DefaultPerformer">
+               <resource type="XPATH" identityType="user">/task:task/task:payload/task:jefeDepDestino</resource>
+               <dynamicAssignment identityTypeToSelect="user">
+                  <assignmentPattern patternName="LEAST_BUSY" isGlobalPattern="false"/>
+               </dynamicAssignment>
+            </participant>
+         </stage>
+      </participants>
+      <onErrorParticipant>
+         <resource type="STATIC" identityType="user">weblogic</resource>
+      </onErrorParticipant>
+      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false"
+                    oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="false">
+         <action name="ASSIGN" recipient="ASSIGNEES">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="COMPLETE" recipient="CREATOR">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="ERROR" recipient="OWNER">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <groupNotificationConfiguration>SEND_INDIVIDUAL_NOTIFICATION</groupNotificationConfiguration>
+         <commentScope>TASK</commentScope>
+      </notification>
+   </routingSlip>
+   <workflowConfiguration features="ucm,RSCUSTOMIZATION" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosRadicadoList">
+      <outcomes default="OK">
+         <outcome>OK</outcome>
+      </outcomes>
+      <payload externalSchema="false" xmlSchemaDefinition="../Schemas/AsignarComunicacionHTPayload.xsd"
+               typedTaskSchemaLocation="../Schemas/AsignarComunicacionHTWorkflowTask.xsd">
+         <messageAttribute name="ComunicacionBO" attributeType="ELEMENT" type="ns0:ComunicacionBO" updatable="true"
+                           external="false"/>
+         <messageAttribute name="jefeDepDestino" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="urlDocWCC" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="nombreDocPpal" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="AnexosRadicadoList" attributeType="ELEMENT" type="ns3:AnexosRadicadoList"
+                           updatable="true" external="false"/>
+         <messageAttribute name="asunto" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="radicado" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="vencimiento" attributeType="SIMPLE_TYPE" type="xsd:dateTime" updatable="true"
+                           external="false"/>
+         <messageAttribute name="urlDocumRelacionadoBO" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+      </payload>
+      <flexfieldMappings>
+         <flexfieldMapping>
+            <xpathExpression>/task:task/task:payload/task:asunto</xpathExpression>
+            <attributeLabel>
+               <labelName>asunto</labelName>
+               <flexfield>ProtectedTextAttribute11</flexfield>
+               <description>Auto-generated for BPM Process</description>
+            </attributeLabel>
+            <description>Asunto</description>
+         </flexfieldMapping>
+         <flexfieldMapping>
+            <xpathExpression>/task:task/task:payload/ns3:ComunicacionBO/ns3:fecRadicacion</xpathExpression>
+            <attributeLabel>
+               <labelName>fechaRadicacion</labelName>
+               <flexfield>ProtectedDateAttribute2</flexfield>
+               <description>Auto-generated for BPM Process</description>
+            </attributeLabel>
+            <description>Fec.Radicacion</description>
+         </flexfieldMapping>
+         <flexfieldMapping>
+            <xpathExpression>/task:task/task:payload/task:vencimiento</xpathExpression>
+            <attributeLabel>
+               <labelName>fechaVencimiento</labelName>
+               <flexfield>ProtectedDateAttribute1</flexfield>
+               <description>Auto-generated for BPM Process</description>
+            </attributeLabel>
+            <description>Fec.vencimiento</description>
+         </flexfieldMapping>
+         <flexfieldMapping>
+            <xpathExpression>/task:task/task:payload/task:radicado</xpathExpression>
+            <attributeLabel>
+               <labelName>numeroRadicado</labelName>
+               <flexfield>ProtectedTextAttribute12</flexfield>
+               <description>Auto-generated for BPM Process</description>
+            </attributeLabel>
+            <description>Num.radicado</description>
+         </flexfieldMapping>
+      </flexfieldMappings>
+      <bpelEventListener>false</bpelEventListener>
+      <bpelNoCallbacks>false</bpelNoCallbacks>
+      <showCompleteGraphicalHistory>true</showCompleteGraphicalHistory>
+      <reevalTranslatablesOnUpdate>false</reevalTranslatablesOnUpdate>
+      <preActionMandatoryUserSteps/>
+      <allowInitiatorEditParticipants>false</allowInitiatorEditParticipants>
+      <allowParticipantsEditParticipants>false</allowParticipantsEditParticipants>
+      <globalCreationTask>false</globalCreationTask>
+      <enableAutoClaim>true</enableAutoClaim>
+      <workflowConditions/>
+      <taskSequenceTypes>FUTURE</taskSequenceTypes>
+      <taskSequenceTypes>AGGREGATE</taskSequenceTypes>
+   </workflowConfiguration>
+</taskDefinition>

@@ -1,0 +1,148 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="ComunicacionesInternasFisicas">
+      <topicDocumentations>
+         <topicDocumentation name="ComunicacionesInternasFisicas"/>
+         <topicDocumentation name="ACT18188226062780">
+            <labels>
+               <label locale="en">Crear Comunicación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT18188226062621">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT18188226062741">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18188665607960">
+            <labels>
+               <label locale="en">Inicializar Instancia</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18188719333878">
+            <labels>
+               <label locale="en">Consultar Usuario</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW1818895316152">
+            <labels>
+               <label locale="en">Requiere Revisión?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18188960221467">
+            <labels>
+               <label locale="en">Consultar Jefe Dep. Destino</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW18189035601148">
+            <labels>
+               <label locale="en">Revisor es Inicializador?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18189044877814">
+            <labels>
+               <label locale="en">Generar Número de Radicado</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW18189116320739">
+            <labels>
+               <label locale="en">Responder Comunicación?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT1818918369253">
+            <labels>
+               <label locale="en">Responder Comunicación Interna Física</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18189194166717">
+            <labels>
+               <label locale="en">Consultar Usuario Respuesta</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18189257781858">
+            <labels>
+               <label locale="en">Crear Respuesta Comunicación Interna Física</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf18188226062765"/>
+         <topicDocumentation name="sf18188226062878"/>
+         <topicDocumentation name="sf18188669856179"/>
+         <topicDocumentation name="sf18188723471172"/>
+         <topicDocumentation name="sf18188954174749">
+            <labels>
+               <label locale="en">NO</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf18188975802612">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf18189037599052"/>
+         <topicDocumentation name="sf18189051444576">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf18189117512310">
+            <labels>
+               <label locale="en">NO</label>
+            </labels>
+            <descriptions>
+               <description locale="en"/>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf1818922922768"/>
+         <topicDocumentation name="sf18189263768426"/>
+         <topicDocumentation name="sf18189274086888"/>
+         <topicDocumentation name="sf18189304209253"/>
+         <topicDocumentation name="sf18189304868875"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>
