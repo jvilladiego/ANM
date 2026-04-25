@@ -1,0 +1,6 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+  <system systemId="http://10.0.100.251:8103/idcws/GenericSoapPort?WSDL#%7Burn%3AGenericSoap%7DGenericSoapService"
+          uri="../genericsoap/GenericSoapService.wsdl"/>
+  <system systemId="http://esmeraldarmnpru.anm.local:9090/ServiciosIntegracionSGD/services/IntegracionSGDCMC?wsdl#%7Bhttp%3A%2F%2Fserviciosintegracion.cmc.anm.gov%7DIntegracionSGDCMCService"
+          uri="../gov/anm/cmc/serviciosintegracion/IntegracionSGDCMCService.wsdl"/>
+</catalog>

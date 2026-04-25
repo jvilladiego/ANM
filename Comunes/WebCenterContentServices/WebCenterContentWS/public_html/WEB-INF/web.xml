@@ -1,0 +1,52 @@
+<?xml version = '1.0' encoding = 'windows-1252'?>
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
+         version="3.0">
+    <context-param>
+        <description>Ruta del archivo de propiedades</description>
+        <param-name>PROP_PATH</param-name>
+        <param-value>/u01/oracle/config/BPM/domains/ANM_BPM_DOMAIN/servers/AdminServer/upload/WCCWebServices/wccws2.3.properties</param-value>
+    </context-param>
+    <context-param>
+        <description>Ruta del archivo de errores</description>
+        <param-name>ERROR_PATH</param-name>
+        <param-value>/u01/oracle/config/BPM/domains/ANM_BPM_DOMAIN/servers/AdminServer/upload/WCCWebServices/wcc_errors2.3.properties</param-value> 
+    </context-param>
+    <context-param>
+        <description>Ruta de las propiedades de log4j</description>
+        <param-name>LOG4J_PATH</param-name>
+        <param-value>/u01/oracle/config/BPM/domains/ANM_BPM_DOMAIN/servers/AdminServer/upload/WCCWebServices/log4j2.3.properties</param-value>
+    </context-param>
+    <listener>
+        <description>Listener que se encarga de cargar la metadata dados los parametros</description>
+        <display-name>Listener Load Metadata</display-name>
+        <listener-class>co.gov.anm.sgd.integration.listener.WCCContextListener</listener-class>
+    </listener>
+    <servlet>
+        <servlet-name>ExpedienteMineroPort</servlet-name>
+        <servlet-class>co.gov.anm.sgd.service.ExpedienteMinero</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ExpedienteMineroPort</servlet-name>
+        <url-pattern>/ExpedienteMineroPort</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>ComunicacionesPort</servlet-name>
+        <servlet-class>co.gov.anm.sgd.service.Comunicaciones</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
+        <servlet-name>DocumentPort</servlet-name>
+        <servlet-class>co.gov.anm.sgd.service.Document</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>ComunicacionesPort</servlet-name>
+        <url-pattern>/ComunicacionesPort</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DocumentPort</servlet-name>
+        <url-pattern>/DocumentPort</url-pattern>
+    </servlet-mapping>
+</web-app>

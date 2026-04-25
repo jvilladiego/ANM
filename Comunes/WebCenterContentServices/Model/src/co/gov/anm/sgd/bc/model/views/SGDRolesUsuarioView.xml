@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="SGDRolesUsuarioView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  BindingStyle="OracleName"
+  CustomQuery="true"
+  RowClass="co.gov.anm.sgd.bc.model.views.SGDRolesUsuarioViewRowImpl"
+  ComponentClass="co.gov.anm.sgd.bc.model.views.SGDRolesUsuarioViewImpl"
+  PageIterMode="Full">
+  <DesignTime>
+    <Attr Name="_codeGenFlag2" Value="Access|Coll|Prog|VarAccess"/>
+    <Attr Name="_isExpertMode" Value="true"/>
+    <Attr Name="_isCodegen" Value="true"/>
+  </DesignTime>
+  <Properties>
+    <SchemaBasedProperties>
+      <LABEL
+        ResId="co.gov.anm.sgd.bc.model.views.SGDRolesUsuarioView_LABEL"/>
+    </SchemaBasedProperties>
+  </Properties>
+  <SQLQuery><![CDATA[SELECT U.ID_USUARIO, U.NOMBRE_USUARIO, U.CODIGO_DEPENDENCIA, U.EMAIL, ROL.ID_ROL, ROL.NOMBRE_ROL  
+FROM SGD_USUARIO "U", SGD_USUARIO_ROL "UR", SGD_ROL "ROL"  
+WHERE UR.ID_ROL = ROL.ID_ROL  
+AND UR.ID_USUARIO = U.ID_USUARIO]]></SQLQuery>
+  <ViewAttribute
+    Name="IdUsuario"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="ID_USUARIO"
+    Expression="ID_USUARIO"
+    SQLType="VARCHAR"/>
+  <ViewAttribute
+    Name="NombreUsuario"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NOMBRE_USUARIO"
+    Expression="NOMBRE_USUARIO"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="CodigoDependencia"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="CODIGO_DEPENDENCIA"
+    Expression="CODIGO_DEPENDENCIA"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="Email"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="EMAIL"
+    Expression="EMAIL"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ViewAttribute
+    Name="IdRol"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="10"
+    Scale="0"
+    Type="oracle.jbo.domain.Number"
+    ColumnType="NUMBER"
+    AliasName="ID_ROL"
+    Expression="ID_ROL"
+    SQLType="NUMERIC"/>
+  <ViewAttribute
+    Name="NombreRol"
+    IsUpdateable="false"
+    IsPersistent="false"
+    PrecisionRule="true"
+    Precision="100"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    AliasName="NOMBRE_ROL"
+    Expression="NOMBRE_ROL"
+    SQLType="VARCHAR">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="100"/>
+    </DesignTime>
+  </ViewAttribute>
+  <ResourceBundle>
+    <PropertiesBundle
+      PropertiesFile="ModelBundle"/>
+  </ResourceBundle>
+</ViewObject>

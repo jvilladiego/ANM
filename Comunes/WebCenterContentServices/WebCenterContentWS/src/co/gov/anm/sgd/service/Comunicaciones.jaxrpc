@@ -1,0 +1,446 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebService xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webservice">
+   <list n="CHILD_NODES">
+      <url path="Comunicaciones.java"/>
+      <url path="../../../../../../public_html/WEB-INF/wsdl/Comunicaciones.wsdl"/>
+      <url path="../../../../../../public_html/WEB-INF/wsdl/Comunicaciones_schema1.xsd"/>
+      <url path="../../../../../../public_html/WEB-INF/wsdl/Comunicaciones_schema2.xsd"/>
+      <url path="../../../../../../public_html/WEB-INF/wsdl/Comunicaciones_schema3.xsd"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MIME"/>
+      <list n="BD_">
+         <hash>
+            <value n="BD_DEFAULT_DOCUMENT_WRAPPED" v="false"/>
+            <value n="BOUND_PORT_TYPE" v="{http://service.sgd.anm.gov.co}Comunicaciones"/>
+            <value n="DEFAULT_NAME" v="true"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+            <value n="NAME" v="{USE_OWNER_TNS}Comunicaciones"/>
+            <list n="OP_BINDINGS">
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="noRadicado"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="NoRadicado"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.RadicadoResponse.generarNumeroRadicado.co.gov.anm.sgd.transfer.SolicitudRadicado"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="respuestaCreacion"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="RespuestaCreacion"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.crearComunicacion.co.gov.anm.sgd.transfer.ComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="respuestaRegistro"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="RespuestaRegistro"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.registrarComunicacion.co.gov.anm.sgd.transfer.ProcesoComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="respuestaActualizacionProc"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="RespuestaActualizacionProc"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.actualizarProcesoComunicacion.co.gov.anm.sgd.transfer.ProcesoComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="respuestaActualizacion"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="RespuestaActualizacion"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.actualizarComunicacion.co.gov.anm.sgd.transfer.ComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="comunicacionResponse"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="ComunicacionResponse"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.transfer.ProcesoComunicacionResponse.consultarComunicacion.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="usuarioComunicacion"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="UsuarioComunicacion"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.UsuarioComunicacion.consultarUsuario.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="usuariosRol"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="UsuariosRol"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.UsuarioResponse.buscarUsuariosPorDependenciaRol.co.gov.anm.sgd.transfer.DependenciaRol"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="anexosRadicadoResponse"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="AnexosRadicadoResponse"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.AnexosRadicadoResponse.consultarAnexosRadicado.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="generacionODTResponse"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="GeneracionODTResponse"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.transfer.RespuestaGeneradorDTO.generarBarCode.co.gov.anm.sgd.transfer.GeneracionODTRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="BD_RESPONSE_PART" v="fechaVencimientoResponse"/>
+                  <value n="BD_SOAP_ACTION" v=""/>
+                  <value n="BD_WSDL_RETURN_NAME" v="FechaVencimientoResponse"/>
+                  <value n="BD_WSDL_RETURN_TNS" v="http://response.sgd.anm.gov.co"/>
+                  <value n="BOUND_OPERATION" v="co.gov.anm.sgd.response.FechaVencimientoResponse.calcularFechaVencimiento.co.gov.anm.sgd.transfer.FechaVencimientoRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+         </hash>
+      </list>
+      <value n="GENERATE_TOP_DOWN" v="FALSE"/>
+      <value n="GENERATION_OPTION" v="ANNOTATIONS_WSDL"/>
+      <value n="GUID" v="26d522af-019d-1000-800d-c0a8010aa8d2"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaWebService"/>
+      <list n="PO_">
+         <hash>
+            <value n="DEFAULT_NAME" v="true"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+            <value n="NAME" v="ComunicacionesPort"/>
+            <value n="PORT_BINDING_NAME" v="{USE_OWNER_TNS}Comunicaciones"/>
+            <list n="PORT_OPS">
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.RadicadoResponse.generarNumeroRadicado.co.gov.anm.sgd.transfer.SolicitudRadicado"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.crearComunicacion.co.gov.anm.sgd.transfer.ComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.registrarComunicacion.co.gov.anm.sgd.transfer.ProcesoComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.actualizarProcesoComunicacion.co.gov.anm.sgd.transfer.ProcesoComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.WCCResponse.actualizarComunicacion.co.gov.anm.sgd.transfer.ComunicacionRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.transfer.ProcesoComunicacionResponse.consultarComunicacion.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.UsuarioComunicacion.consultarUsuario.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.UsuarioResponse.buscarUsuariosPorDependenciaRol.co.gov.anm.sgd.transfer.DependenciaRol"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.AnexosRadicadoResponse.consultarAnexosRadicado.java.lang.String"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.transfer.RespuestaGeneradorDTO.generarBarCode.co.gov.anm.sgd.transfer.GeneracionODTRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="EXPOSED_BD_OPERATION" v="co.gov.anm.sgd.response.FechaVencimientoResponse.calcularFechaVencimiento.co.gov.anm.sgd.transfer.FechaVencimientoRequest"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <url n="URL" protocol="http" host="localhost" port="7101" path="/WebCenterContentServices-WebCenterContentWS-context-root/Comunicaciones"/>
+         </hash>
+      </list>
+      <hash n="PROPERTY_GROUPS"/>
+      <list n="PT_">
+         <hash>
+            <value n="DEFAULT_NAME" v="false"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+            <value n="NAME" v="{http://service.sgd.anm.gov.co}Comunicaciones"/>
+            <list n="OP_">
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="generarNumeroRadicado"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="solicitud"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="SolicitudRadicado"/>
+                        <value n="PA_WSDL_PART_NAME" v="solicitudRadicado"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.SolicitudRadicado"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.RadicadoResponse"/>
+                  <value n="OP_NAME" v="generarNumeroRadicado"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="crearComunicacion"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="comunicacion"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="CreacionComunicacion"/>
+                        <value n="PA_WSDL_PART_NAME" v="creacionComunicacion"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.ComunicacionRequest"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.WCCResponse"/>
+                  <value n="OP_NAME" v="crearComunicacion"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="registrarComunicacion"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="request"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="RegistroComunicacion"/>
+                        <value n="PA_WSDL_PART_NAME" v="RegistroComunicacion"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.ProcesoComunicacionRequest"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.WCCResponse"/>
+                  <value n="OP_NAME" v="registrarComunicacion"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="actualizarProcesoComunicacion"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="comunicacion"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="ActualizacionProceso"/>
+                        <value n="PA_WSDL_PART_NAME" v="actualizacionProceso"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.ProcesoComunicacionRequest"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.WCCResponse"/>
+                  <value n="OP_NAME" v="actualizarProcesoComunicacion"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="actualizarComunicacion"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="comunicacion"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="ActualizacionComunicacion"/>
+                        <value n="PA_WSDL_PART_NAME" v="actualizacionComunicacion"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.ComunicacionRequest"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.WCCResponse"/>
+                  <value n="OP_NAME" v="actualizarComunicacion"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="consultarComunicacion"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="nroRadicado"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="NroRadicadoComunicacion"/>
+                        <value n="PA_WSDL_PART_NAME" v="nroRadicadoComunicacion"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="java.lang.String"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.transfer.ProcesoComunicacionResponse"/>
+                  <value n="OP_NAME" v="consultarComunicacion"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="consultarUsuario"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="idUsuario"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="IdUsuario"/>
+                        <value n="PA_WSDL_PART_NAME" v="idUsuario"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="java.lang.String"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.UsuarioComunicacion"/>
+                  <value n="OP_NAME" v="consultarUsuario"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="buscarUsuariosPorDependenciaRol"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="dependenciaRol"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="dependenciaRol"/>
+                        <value n="PA_WSDL_PART_NAME" v="DependenciaRol"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.DependenciaRol"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.UsuarioResponse"/>
+                  <value n="OP_NAME" v="buscarUsuariosPorDependenciaRol"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="consultarAnexosRadicado"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="nroRadicado"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="NroRadicadoAnexo"/>
+                        <value n="PA_WSDL_PART_NAME" v="nroRadicadoAnexo"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="java.lang.String"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.AnexosRadicadoResponse"/>
+                  <value n="OP_NAME" v="consultarAnexosRadicado"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="generarBarCode"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="request"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="GeneracionODTRequest"/>
+                        <value n="PA_WSDL_PART_NAME" v="generacionODTRequest"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.GeneracionODTRequest"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.transfer.RespuestaGeneradorDTO"/>
+                  <value n="OP_NAME" v="generarBarCode"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+               <hash>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaOperation"/>
+                  <list n="OP_JAVA_EXCEPTIONS">
+                     <string v="java.lang.Exception"/>
+                  </list>
+                  <value n="OP_JAVA_NAME" v="calcularFechaVencimiento"/>
+                  <list n="OP_JAVA_PARAMETERS">
+                     <hash>
+                        <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaParameter"/>
+                        <value n="NAME" v="request"/>
+                        <value n="PA_MODE" v="0"/>
+                        <value n="PA_WSDL_NAME" v="FechaVencimientoRequest"/>
+                        <value n="PA_WSDL_PART_NAME" v="fechaVencimientoRequest"/>
+                        <value n="TARGET_NAMESPACE" v="http://transfer.sgd.anm.gov.co"/>
+                        <value n="TYPE" v="co.gov.anm.sgd.transfer.FechaVencimientoRequest"/>
+                     </hash>
+                  </list>
+                  <value n="OP_JAVA_RETURN_TYPE" v="co.gov.anm.sgd.response.FechaVencimientoResponse"/>
+                  <value n="OP_NAME" v="calcularFechaVencimiento"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </list>
+            <hash n="PROPERTY_GROUPS"/>
+            <value n="PT_CLASS" v="co.gov.anm.sgd.service.Comunicaciones"/>
+         </hash>
+      </list>
+      <url n="TARGET_PROJECT" path="../../../../../../WebCenterContentWS.jpr"/>
+      <value n="WS_ORIG_GEN_DIRECTION" v="BOTTOM_UP"/>
+      <url n="WS_REFERENCE_WSDL" path="../../../../../../public_html/WEB-INF/wsdl/Comunicaciones.wsdl"/>
+      <value n="WS_TARGET_NAMESPACE" v="http://service.sgd.anm.gov.co"/>
+      <value n="WS_URI" v="Comunicaciones"/>
+      <url n="WS_WSDL_FILE" path="../../../../../../public_html/WEB-INF/wsdl/Comunicaciones.wsdl"/>
+      <value n="WS_WSDL_LOC_ON_SEI" v="false"/>
+      <value n="WS_WSDL_LOC_VALUE" v="WEB-INF/wsdl/Comunicaciones.wsdl"/>
+   </hash>
+</jdevws:WebService>

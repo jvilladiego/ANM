@@ -1,0 +1,142 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<jdevws:WebServiceProxy xmlns:jdevws="http://xmlns.oracle.com/jdeveloper/10130/webserviceproxy">
+   <list n="CHILD_NODES">
+      <url path="GenericSoapService.xml"/>
+      <url path="GenericSoapService.wsdl"/>
+      <url path="GenericSoapPortClient.java"/>
+      <url path="../com/oracle/ucm/OptionList.java"/>
+      <url path="GenericSoapService.java"/>
+      <url path="../com/oracle/ucm/Field.java"/>
+      <url path="GenericSoapPortType.java"/>
+      <url path="../com/oracle/ucm/package-info.java"/>
+      <url path="../com/oracle/ucm/Service.java"/>
+      <url path="../com/oracle/ucm/Container.java"/>
+      <url path="../com/oracle/ucm/Generic.java"/>
+      <url path="../com/oracle/ucm/ResultSet.java"/>
+      <url path="../com/oracle/ucm/Row.java"/>
+      <url path="../com/oracle/ucm/File.java"/>
+      <url path="../com/oracle/ucm/ObjectFactory.java"/>
+   </list>
+   <hash n="DATA_MODEL">
+      <value n="ATTACHMENT_ENCODING" v="MIME"/>
+      <value n="FIXED_WSDL" v="false"/>
+      <list n="LOCAL_FILES"/>
+      <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy"/>
+      <url n="ORACLE_WEBSERVICES_XML" path="GenericSoapService.xml"/>
+      <hash n="PROPERTY_GROUPS">
+         <hash n="HANDLER_CHAIN_GROUP">
+            <value n="HCG_FILE_PATH" v="GenericSoapServiceProxy-HandlerChain.xml"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.HandlerChainGroup"/>
+         </hash>
+         <hash n="WSDL_TO_JAVA_PROPERTIES">
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+         </hash>
+      </hash>
+      <value n="PROXY_ASYNC_METHODS" v="FOR_ENABLED"/>
+      <list n="PROXY_CLIENTS">
+         <url path="GenericSoapPortClient.java"/>
+      </list>
+      <list n="PROXY_HANDLERS"/>
+      <value n="PROXY_MAPPING_URL"/>
+      <url n="PROXY_ORIGINAL_WSDL_URL" protocol="http" host="10.0.100.251" port="8103" path="/idcws/GenericSoapPort" query="WSDL"/>
+      <hash n="PROXY_PORTS">
+         <hash n="GenericSoapPort">
+            <value n="ACCESSES_DOC_WRAPPPED" v="true"/>
+            <value n="ACCESSES_RPC_ENCODED" v="false"/>
+            <value n="CLASS_NAME" v="genericsoap.GenericSoapPortType"/>
+            <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyPort"/>
+            <value n="NAME" v="GenericSoapPort"/>
+            <hash n="OPERATIONS">
+               <hash n="GenericSoapOperation">
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.ProxyOperation"/>
+                  <hash n="PROPERTY_GROUPS"/>
+               </hash>
+            </hash>
+            <hash n="PROPERTY_GROUPS">
+               <hash n="WS_POLICY">
+                  <value n="addressing"/>
+                  <hash n="GLOBAL_CONFIG_PROPERTIES"/>
+                  <list n="management"/>
+                  <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.policy.PolicyClientModel"/>
+                  <value n="mtom"/>
+                  <hash n="POLICY_OVERRIDE_PROPERTIES"/>
+                  <list n="security">
+                     <string v="oracle/wss11_saml_token_with_message_protection_client_policy"/>
+                  </list>
+                  <list n="wsconfig"/>
+                  <value n="wsrm"/>
+                  <hash n="wss11_saml_token_with_message_protection_client_policy"/>
+               </hash>
+            </hash>
+            <url n="PROXY_ORIGINAL_PORT_ENDPOINT" protocol="http" host="10.0.100.251" port="8103" path="/idcws/GenericSoapPort"/>
+         </hash>
+      </hash>
+      <value n="PROXY_SERVICE_NAME" v="GenericSoapService"/>
+      <value n="PROXY_SERVICE_NAMESPACE" v="urn:GenericSoap"/>
+      <url n="PROXY_TARGET_PROJECT" path="../../WebCenterContentWS.jpr"/>
+      <list n="PROXY_WSDL_IMPORT_LIST"/>
+      <url n="PROXY_WSDL_URL" path="GenericSoapService.wsdl"/>
+      <hash n="REFERENCED_WEBSERVICE">
+         <list n="BD_">
+            <hash>
+               <value n="BOUND_PORT_TYPE" v="{urn:GenericSoap}GenericSoapPortType"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPBinding"/>
+               <value n="NAME" v="{urn:GenericSoap}GenericSoapPortTypeSoapHttp"/>
+               <list n="OP_BINDINGS">
+                  <hash>
+                     <value n="BOUND_OPERATION" v="com.oracle.ucm.Generic.GenericSoapOperation.com.oracle.ucm.Generic"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPOperationBinding"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+            </hash>
+         </list>
+         <list n="BINDING_FILES"/>
+         <value n="GUID" v="c2b1dffc-0156-1000-841a-0a006cf5c7e0"/>
+         <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.proxy.WebServiceProxy$ProxyJavaWebService"/>
+         <list n="PO_">
+            <hash>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.SOAPPort"/>
+               <value n="NAME" v="GenericSoapPort"/>
+               <value n="PORT_BINDING_NAME" v="{urn:GenericSoap}GenericSoapPortTypeSoapHttp"/>
+               <list n="PORT_OPS">
+                  <hash>
+                     <value n="EXPOSED_BD_OPERATION" v="com.oracle.ucm.Generic.genericSoapOperation.com.oracle.ucm.Generic"/>
+                     <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.PortOperation"/>
+                     <hash n="PROPERTY_GROUPS"/>
+                  </hash>
+               </list>
+               <hash n="PROPERTY_GROUPS"/>
+               <url n="URL" protocol="http" host="10.0.100.251" port="8103" path="/idcws/GenericSoapPort"/>
+            </hash>
+         </list>
+         <hash n="PROPERTY_GROUPS">
+            <hash n="WSDL_TO_JAVA_PROPERTIES">
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.WSDLToJavaProperties"/>
+            </hash>
+         </hash>
+         <list n="PT_">
+            <hash>
+               <value n="AUTO_SERVICE_INTERFACE"/>
+               <value n="DEFAULT_NAME" v="false"/>
+               <value n="MODEL_CLASS" v="oracle.jdeveloper.webservices.model.java.JavaPortType"/>
+               <value n="NAME" v="{urn:GenericSoap}GenericSoapPortType"/>
+               <hash n="PROPERTY_GROUPS"/>
+               <value n="PT_CLASS" v="genericsoap.GenericSoapPortTypeImpl"/>
+               <value n="PT_SERVICE_INTERFACE" v="genericsoap.GenericSoapPortType"/>
+               <value n="PT_TOP_DOWN_GENERATED_SEI_NAME" v="genericsoap.GenericSoapPortType"/>
+            </hash>
+         </list>
+         <url n="TARGET_PROJECT" path="../../WebCenterContentWS.jpr"/>
+         <value n="WS_ORIG_GEN_DIRECTION" v="TOP_DOWN"/>
+         <value n="WS_TARGET_NAMESPACE" v="urn:GenericSoap"/>
+         <value n="WS_URI" v="GenericSoapService"/>
+         <url n="WS_WSDL_FILE" path="GenericSoapService.wsdl"/>
+      </hash>
+      <value n="SERVICE_ASYNC" v="false"/>
+      <value n="USE_WSDL_LOCATION" v="true"/>
+   </hash>
+</jdevws:WebServiceProxy>

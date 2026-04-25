@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE AppModule SYSTEM "jbo_03_01.dtd">
+<!---->
+<AppModule
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ComunicacionesAM"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  ClearCacheOnRollback="true"
+    ComponentClass="co.gov.anm.sgd.bc.model.ComunicacionesAMImpl">
+    <DesignTime>
+        <Attr Name="_isCodegen" Value="true"/>
+    </DesignTime>
+    <ViewUsage
+      Name="ComVPSCSEQ1"
+      ViewObjectName="co.gov.anm.sgd.bc.model.views.ComVPSCSEQ"/>
+    <ViewUsage
+        Name="SGDComunicacionView1"
+        ViewObjectName="co.gov.anm.sgd.bc.model.views.SGDComunicacionView"/>
+    <ViewUsage
+        Name="SGDUsuarioRolView1"
+        ViewObjectName="co.gov.anm.sgd.bc.model.views.SGDUsuarioRolView"/>
+    <ViewUsage
+        Name="SGDUsuarioView1"
+        ViewObjectName="co.gov.anm.sgd.bc.model.views.SGDUsuarioView"/>
+    <ViewUsage
+        Name="SGDRolesUsuarioView1"
+        ViewObjectName="co.gov.anm.sgd.bc.model.views.SGDRolesUsuarioView"/>
+</AppModule>

@@ -1,0 +1,9 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:ns0="http://transfer.sgd.anm.gov.co" xmlns:ns1="http://service.sgd.anm.gov.co" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://transfer.sgd.anm.gov.co">
+  <xsd:import schemaLocation="ExpedienteMinero_schema1.xsd" namespace="http://service.sgd.anm.gov.co"/>
+  <xsd:element name="RechazoSolicitud" type="ns1:solicitud" nillable="true"/>
+  <xsd:element name="ModificacionExpediente" type="ns1:modificacionExpediente" nillable="true"/>
+  <xsd:element name="CreacionTitulo" type="ns1:solicitud" nillable="true"/>
+  <xsd:element name="NroPlacaValidacion" type="xsd:string" nillable="true"/>
+  <xsd:element name="CreacionSolicitudMinera" type="ns1:solicitud" nillable="true"/>
+</xsd:schema>

@@ -1,0 +1,280 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="http://service.sgd.anm.gov.co" name="Comunicaciones" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.sgd.anm.gov.co" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.sgd.anm.gov.co" schemaLocation="Comunicaciones_schema1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://response.sgd.anm.gov.co" schemaLocation="Comunicaciones_schema2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://transfer.sgd.anm.gov.co" schemaLocation="Comunicaciones_schema3.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="consultarUsuario">
+    <part name="idUsuario" element="ns1:IdUsuario" xmlns:ns1="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="consultarUsuarioResponse">
+    <part name="usuarioComunicacion" element="ns2:UsuarioComunicacion" xmlns:ns2="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception"/>
+  </message>
+  <message name="generarBarCode">
+    <part name="generacionODTRequest" element="ns3:GeneracionODTRequest" xmlns:ns3="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="generarBarCodeResponse">
+    <part name="generacionODTResponse" element="ns4:GeneracionODTResponse" xmlns:ns4="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="generarNumeroRadicado">
+    <part name="solicitudRadicado" element="ns5:SolicitudRadicado" xmlns:ns5="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="generarNumeroRadicadoResponse">
+    <part name="noRadicado" element="ns6:NoRadicado" xmlns:ns6="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="buscarUsuariosPorDependenciaRol">
+    <part name="DependenciaRol" element="ns7:dependenciaRol" xmlns:ns7="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="buscarUsuariosPorDependenciaRolResponse">
+    <part name="usuariosRol" element="ns8:UsuariosRol" xmlns:ns8="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="consultarAnexosRadicado">
+    <part name="nroRadicadoAnexo" element="ns9:NroRadicadoAnexo" xmlns:ns9="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="consultarAnexosRadicadoResponse">
+    <part name="anexosRadicadoResponse" element="ns10:AnexosRadicadoResponse" xmlns:ns10="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="consultarComunicacion">
+    <part name="nroRadicadoComunicacion" element="ns11:NroRadicadoComunicacion" xmlns:ns11="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="consultarComunicacionResponse">
+    <part name="comunicacionResponse" element="ns12:ComunicacionResponse" xmlns:ns12="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="actualizarProcesoComunicacion">
+    <part name="actualizacionProceso" element="ns13:ActualizacionProceso" xmlns:ns13="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="actualizarProcesoComunicacionResponse">
+    <part name="respuestaActualizacionProc" element="ns14:RespuestaActualizacionProc" xmlns:ns14="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="crearComunicacion">
+    <part name="creacionComunicacion" element="ns15:CreacionComunicacion" xmlns:ns15="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="crearComunicacionResponse">
+    <part name="respuestaCreacion" element="ns16:RespuestaCreacion" xmlns:ns16="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="actualizarComunicacion">
+    <part name="actualizacionComunicacion" element="ns17:ActualizacionComunicacion" xmlns:ns17="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="actualizarComunicacionResponse">
+    <part name="respuestaActualizacion" element="ns18:RespuestaActualizacion" xmlns:ns18="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="registrarComunicacion">
+    <part name="RegistroComunicacion" element="ns19:RegistroComunicacion" xmlns:ns19="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="registrarComunicacionResponse">
+    <part name="respuestaRegistro" element="ns20:RespuestaRegistro" xmlns:ns20="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="calcularFechaVencimiento">
+    <part name="fechaVencimientoRequest" element="ns21:FechaVencimientoRequest" xmlns:ns21="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="calcularFechaVencimientoResponse">
+    <part name="fechaVencimientoResponse" element="ns22:FechaVencimientoResponse" xmlns:ns22="http://response.sgd.anm.gov.co"/>
+  </message>
+  <portType name="Comunicaciones">
+    <operation name="consultarUsuario">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarUsuarioRequest" message="tns:consultarUsuario"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarUsuarioResponse" message="tns:consultarUsuarioResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarUsuario/Fault/Exception"/>
+    </operation>
+    <operation name="generarBarCode">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/generarBarCodeRequest" message="tns:generarBarCode"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/generarBarCodeResponse" message="tns:generarBarCodeResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/generarBarCode/Fault/Exception"/>
+    </operation>
+    <operation name="generarNumeroRadicado">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/generarNumeroRadicadoRequest" message="tns:generarNumeroRadicado"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/generarNumeroRadicadoResponse" message="tns:generarNumeroRadicadoResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/generarNumeroRadicado/Fault/Exception"/>
+    </operation>
+    <operation name="buscarUsuariosPorDependenciaRol">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/buscarUsuariosPorDependenciaRolRequest" message="tns:buscarUsuariosPorDependenciaRol"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/buscarUsuariosPorDependenciaRolResponse" message="tns:buscarUsuariosPorDependenciaRolResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/buscarUsuariosPorDependenciaRol/Fault/Exception"/>
+    </operation>
+    <operation name="consultarAnexosRadicado">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarAnexosRadicadoRequest" message="tns:consultarAnexosRadicado"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarAnexosRadicadoResponse" message="tns:consultarAnexosRadicadoResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarAnexosRadicado/Fault/Exception"/>
+    </operation>
+    <operation name="consultarComunicacion">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarComunicacionRequest" message="tns:consultarComunicacion"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarComunicacionResponse" message="tns:consultarComunicacionResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/consultarComunicacion/Fault/Exception"/>
+    </operation>
+    <operation name="actualizarProcesoComunicacion">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/actualizarProcesoComunicacionRequest" message="tns:actualizarProcesoComunicacion"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/actualizarProcesoComunicacionResponse" message="tns:actualizarProcesoComunicacionResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/actualizarProcesoComunicacion/Fault/Exception"/>
+    </operation>
+    <operation name="crearComunicacion">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/crearComunicacionRequest" message="tns:crearComunicacion"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/crearComunicacionResponse" message="tns:crearComunicacionResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/crearComunicacion/Fault/Exception"/>
+    </operation>
+    <operation name="actualizarComunicacion">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/actualizarComunicacionRequest" message="tns:actualizarComunicacion"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/actualizarComunicacionResponse" message="tns:actualizarComunicacionResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/actualizarComunicacion/Fault/Exception"/>
+    </operation>
+    <operation name="registrarComunicacion">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/registrarComunicacionRequest" message="tns:registrarComunicacion"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/registrarComunicacionResponse" message="tns:registrarComunicacionResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/registrarComunicacion/Fault/Exception"/>
+    </operation>
+    <operation name="calcularFechaVencimiento">
+      <input wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/calcularFechaVencimientoRequest" message="tns:calcularFechaVencimiento"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/calcularFechaVencimientoResponse" message="tns:calcularFechaVencimientoResponse"/>
+      <fault message="tns:Exception" name="Exception" wsam:Action="http://service.sgd.anm.gov.co/Comunicaciones/calcularFechaVencimiento/Fault/Exception"/>
+    </operation>
+  </portType>
+  <binding name="ComunicacionesPortBinding" type="tns:Comunicaciones">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="consultarUsuario">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="generarBarCode">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="generarNumeroRadicado">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="buscarUsuariosPorDependenciaRol">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="consultarAnexosRadicado">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="consultarComunicacion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="actualizarProcesoComunicacion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="crearComunicacion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="actualizarComunicacion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="registrarComunicacion">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="calcularFechaVencimiento">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="Exception">
+        <soap:fault name="Exception" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="Comunicaciones">
+    <port name="ComunicacionesPort" binding="tns:ComunicacionesPortBinding">
+      <soap:address location="http://localhost:7101/WebCenterContentServices-WebCenterContentWS-context-root/ComunicacionesPort"/>
+    </port>
+  </service>
+</definitions>

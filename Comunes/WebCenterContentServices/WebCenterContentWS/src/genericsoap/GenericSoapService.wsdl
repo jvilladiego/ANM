@@ -1,0 +1,104 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions name="GenericSoapService" targetNamespace="urn:GenericSoap" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="urn:GenericSoap" xmlns:ns0="http://www.oracle.com/UCM" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <types>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.oracle.com/UCM" version="1.0" xmlns:tns="http://www.oracle.com/UCM" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="Field">
+        <xs:complexType>
+          <xs:simpleContent>
+            <xs:extension base="xs:string">
+              <xs:attribute name="name" type="xs:anySimpleType"/>
+            </xs:extension>
+          </xs:simpleContent>
+        </xs:complexType>
+      </xs:element>
+      <xs:element name="GenericRequest" type="tns:Generic"/>
+      <xs:element name="GenericResponse" type="tns:Generic"/>
+      <xs:complexType name="Generic">
+        <xs:sequence>
+          <xs:element name="Service" type="tns:Service"/>
+        </xs:sequence>
+        <xs:attribute name="webKey" type="xs:anySimpleType"/>
+      </xs:complexType>
+      <xs:complexType name="Service">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="User" type="tns:Container"/>
+          <xs:element minOccurs="0" name="Document">
+            <xs:complexType>
+              <xs:complexContent>
+                <xs:extension base="tns:Container">
+                  <xs:sequence>
+                    <xs:element maxOccurs="unbounded" minOccurs="0" name="File" type="tns:File"/>
+                  </xs:sequence>
+                  <xs:anyAttribute namespace="##other" processContents="skip"/>
+                </xs:extension>
+              </xs:complexContent>
+            </xs:complexType>
+          </xs:element>
+        </xs:sequence>
+        <xs:attribute name="IdcService" type="xs:anySimpleType"/>
+      </xs:complexType>
+      <xs:complexType name="Container">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" minOccurs="0" ref="tns:Field"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="ResultSet" type="tns:ResultSet"/>
+          <xs:element maxOccurs="unbounded" minOccurs="0" name="OptionList" type="tns:OptionList"/>
+        </xs:sequence>
+        <xs:anyAttribute namespace="##other" processContents="skip"/>
+      </xs:complexType>
+      <xs:complexType name="ResultSet">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Row" type="tns:Row"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:anySimpleType"/>
+      </xs:complexType>
+      <xs:complexType name="Row">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" ref="tns:Field"/>
+        </xs:sequence>
+        <xs:anyAttribute namespace="##other" processContents="skip"/>
+      </xs:complexType>
+      <xs:complexType name="OptionList">
+        <xs:sequence>
+          <xs:element maxOccurs="unbounded" name="Option" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:anySimpleType"/>
+      </xs:complexType>
+      <xs:complexType name="File">
+        <xs:sequence>
+          <xs:element name="Contents" xmlns:ns1="http://www.w3.org/2005/05/xmlmime" ns1:expectedContentTypes="application/octet-stream" type="xs:base64Binary"/>
+        </xs:sequence>
+        <xs:attribute name="name" type="xs:anySimpleType"/>
+        <xs:attribute name="href" type="xs:anySimpleType"/>
+      </xs:complexType>
+    </xs:schema>
+  </types>
+  <message name="GenericSoapOperationInput">
+    <part name="GenericRequest" element="ns0:GenericRequest"/>
+  </message>
+  <message name="GenericSoapOperationOutput">
+    <part name="GenericResponse" element="ns0:GenericResponse"/>
+  </message>
+  <portType name="GenericSoapPortType">
+    <operation name="GenericSoapOperation">
+      <input message="tns:GenericSoapOperationInput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl" ns1:Action="urn:GenericSoap/GenericSoapOperation"/>
+      <output message="tns:GenericSoapOperationOutput" xmlns:ns1="http://www.w3.org/2006/05/addressing/wsdl" ns1:Action="urn:GenericSoap/GenericSoapPortType/GenericSoapOperationResponse"/>
+    </operation>
+  </portType>
+  <binding name="GenericSoapPortTypeSoapHttp" type="tns:GenericSoapPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="GenericSoapOperation">
+      <soap:operation soapAction="urn:GenericSoap/GenericSoapOperation"/>
+      <input>
+        <soap:body use="literal" parts="GenericRequest"/>
+      </input>
+      <output>
+        <soap:body use="literal" parts="GenericResponse"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="GenericSoapService">
+    <port name="GenericSoapPort" binding="tns:GenericSoapPortTypeSoapHttp">
+      <soap:address location="http://10.0.100.251:8103/idcws/GenericSoapPort"/>
+    </port>
+  </service>
+</definitions>

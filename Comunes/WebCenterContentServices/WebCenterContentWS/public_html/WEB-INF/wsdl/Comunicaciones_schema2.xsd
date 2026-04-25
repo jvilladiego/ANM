@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xsd:schema xmlns:ns0="http://response.sgd.anm.gov.co" xmlns:ns1="http://service.sgd.anm.gov.co" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://response.sgd.anm.gov.co">
+  <xsd:import schemaLocation="Comunicaciones_schema1.xsd" namespace="http://service.sgd.anm.gov.co"/>
+  <xsd:element name="RespuestaActualizacion" type="ns1:wccResponse" nillable="true"/>
+  <xsd:element name="UsuarioComunicacion" type="ns1:usuarioComunicacion" nillable="true"/>
+  <xsd:element name="ComunicacionResponse" type="ns1:procesoComunicacionResponse" nillable="true"/>
+  <xsd:element name="GeneracionODTResponse" type="ns1:respuestaGeneradorDTO" nillable="true"/>
+  <xsd:element name="RespuestaRegistro" type="ns1:wccResponse" nillable="true"/>
+  <xsd:element name="RespuestaCreacion" type="ns1:wccResponse" nillable="true"/>
+  <xsd:element name="AnexosRadicadoResponse" type="ns1:anexosRadicadoResponse" nillable="true"/>
+  <xsd:element name="NoRadicado" type="ns1:radicadoResponse" nillable="true"/>
+  <xsd:element name="UsuariosRol" type="ns1:usuarioResponse" nillable="true"/>
+  <xsd:element name="RespuestaActualizacionProc" type="ns1:wccResponse" nillable="true"/>
+  <xsd:element name="FechaVencimientoResponse" type="ns1:fechaVencimientoResponse" nillable="true"/>
+</xsd:schema>

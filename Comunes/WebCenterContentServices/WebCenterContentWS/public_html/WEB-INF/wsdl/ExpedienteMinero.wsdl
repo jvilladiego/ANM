@@ -1,0 +1,138 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<definitions targetNamespace="http://service.sgd.anm.gov.co" name="ExpedienteMinero" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:tns="http://service.sgd.anm.gov.co" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <types>
+    <xsd:schema>
+      <xsd:import namespace="http://service.sgd.anm.gov.co" schemaLocation="ExpedienteMinero_schema1.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://transfer.sgd.anm.gov.co" schemaLocation="ExpedienteMinero_schema2.xsd"/>
+    </xsd:schema>
+    <xsd:schema>
+      <xsd:import namespace="http://response.sgd.anm.gov.co" schemaLocation="ExpedienteMinero_schema3.xsd"/>
+    </xsd:schema>
+  </types>
+  <message name="modificarModalidadExpedienteMinero">
+    <part name="modificacionExpediente" element="ns1:ModificacionExpediente" xmlns:ns1="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="modificarModalidadExpedienteMineroResponse">
+    <part name="respuestaUCM" element="ns2:RespuestaUCM" xmlns:ns2="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="WSException">
+    <part name="fault" element="tns:WSException"/>
+  </message>
+  <message name="promoverExpedienteSolicitudATitulo">
+    <part name="creacionTitulo" element="ns3:CreacionTitulo" xmlns:ns3="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="promoverExpedienteSolicitudATituloResponse">
+    <part name="respuestaUCM" element="ns4:RespuestaUCM" xmlns:ns4="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="rechazarExpedienteSolicitudMinera">
+    <part name="rechazoSolicitud" element="ns5:RechazoSolicitud" xmlns:ns5="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="rechazarExpedienteSolicitudMineraResponse">
+    <part name="respuestaUCM" element="ns6:RespuestaUCM" xmlns:ns6="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="validarExpedienteMinero">
+    <part name="nroPlacaValidacion" element="ns7:NroPlacaValidacion" xmlns:ns7="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="validarExpedienteMineroResponse">
+    <part name="respuestaUCM" element="ns8:RespuestaUCM" xmlns:ns8="http://response.sgd.anm.gov.co"/>
+  </message>
+  <message name="crearExpedienteSolicitudMinera">
+    <part name="solicitudMinera" element="ns9:CreacionSolicitudMinera" xmlns:ns9="http://transfer.sgd.anm.gov.co"/>
+  </message>
+  <message name="crearExpedienteSolicitudMineraResponse">
+    <part name="respuestaUCM" element="ns10:RespuestaUCM" xmlns:ns10="http://response.sgd.anm.gov.co"/>
+  </message>
+  <portType name="ExpedienteMinero">
+    <operation name="modificarModalidadExpedienteMinero">
+      <input wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/modificarModalidadExpedienteMineroRequest" message="tns:modificarModalidadExpedienteMinero"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/modificarModalidadExpedienteMineroResponse" message="tns:modificarModalidadExpedienteMineroResponse"/>
+      <fault message="tns:WSException" name="WSException" wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/modificarModalidadExpedienteMinero/Fault/WSException"/>
+    </operation>
+    <operation name="promoverExpedienteSolicitudATitulo">
+      <input wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/promoverExpedienteSolicitudATituloRequest" message="tns:promoverExpedienteSolicitudATitulo"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/promoverExpedienteSolicitudATituloResponse" message="tns:promoverExpedienteSolicitudATituloResponse"/>
+      <fault message="tns:WSException" name="WSException" wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/promoverExpedienteSolicitudATitulo/Fault/WSException"/>
+    </operation>
+    <operation name="rechazarExpedienteSolicitudMinera">
+      <input wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/rechazarExpedienteSolicitudMineraRequest" message="tns:rechazarExpedienteSolicitudMinera"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/rechazarExpedienteSolicitudMineraResponse" message="tns:rechazarExpedienteSolicitudMineraResponse"/>
+      <fault message="tns:WSException" name="WSException" wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/rechazarExpedienteSolicitudMinera/Fault/WSException"/>
+    </operation>
+    <operation name="validarExpedienteMinero">
+      <input wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/validarExpedienteMineroRequest" message="tns:validarExpedienteMinero"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/validarExpedienteMineroResponse" message="tns:validarExpedienteMineroResponse"/>
+    </operation>
+    <operation name="crearExpedienteSolicitudMinera">
+      <input wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/crearExpedienteSolicitudMineraRequest" message="tns:crearExpedienteSolicitudMinera"/>
+      <output wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/crearExpedienteSolicitudMineraResponse" message="tns:crearExpedienteSolicitudMineraResponse"/>
+      <fault message="tns:WSException" name="WSException" wsam:Action="http://service.sgd.anm.gov.co/ExpedienteMinero/crearExpedienteSolicitudMinera/Fault/WSException"/>
+    </operation>
+  </portType>
+  <binding name="ExpedienteMineroPortBinding" type="tns:ExpedienteMinero">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document"/>
+    <operation name="modificarModalidadExpedienteMinero">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="WSException">
+        <soap:fault name="WSException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="promoverExpedienteSolicitudATitulo">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="WSException">
+        <soap:fault name="WSException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="rechazarExpedienteSolicitudMinera">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="WSException">
+        <soap:fault name="WSException" use="literal"/>
+      </fault>
+    </operation>
+    <operation name="validarExpedienteMinero">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+    <operation name="crearExpedienteSolicitudMinera">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+      <fault name="WSException">
+        <soap:fault name="WSException" use="literal"/>
+      </fault>
+    </operation>
+  </binding>
+  <service name="ExpedienteMinero">
+    <port name="ExpedienteMineroPort" binding="tns:ExpedienteMineroPortBinding">
+      <soap:address location="http://localhost:7101/WebCenterContentServices-WebCenterContentWS-context-root/ExpedienteMinero"/>
+    </port>
+  </service>
+</definitions>
