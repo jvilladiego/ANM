@@ -1,0 +1,103 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<taskDefinition targetNamespace="http://xmlns.oracle.com/ComunicacionesBpmApp/ComunicacionesBpmPrj/HT_CrearComRespuesta" xmlns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:ora="http://schemas.oracle.com/xpath/extension" xmlns:oraext="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.ExtFunc" xmlns:task="http://xmlns.oracle.com/bpel/workflow/task" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpel/workflow/taskDefinition" xmlns:bpm="http://xmlns.oracle.com/bpmn20/extensions" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" xmlns:ns5="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" xmlns:socket="http://www.oracle.com/XSL/Transform/java/oracle.tip.adapter.socket.ProtocolTranslator" xmlns:ns6="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DependenciaBO" xmlns:ns7="http://xmlns.oracle.com/bpel/workflow/common" xmlns:ns8="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AsignacionComunicacionBO" xmlns:bpws="http://schemas.xmlsoap.org/ws/2003/03/business-process/" xmlns:oraxsl="http://www.oracle.com/XSL/Transform/java" xmlns:xdk="http://schemas.oracle.com/bpel/extension/xpath/function/xdk" xmlns:ids="http://xmlns.oracle.com/bpel/services/IdentityService/xpath" xmlns:fn="http://www.w3.org/2005/xpath-functions" xmlns:evidence="http://xmlns.oracle.com/bpel/workflow/TaskEvidenceService" xmlns:ns10="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoInterno" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoSimpleBO" xmlns:mhdr="http://www.oracle.com/XSL/Transform/java/oracle.tip.mediator.service.common.functions.MediatorExtnFunction" xmlns:hwf="http://xmlns.oracle.com/bpel/workflow/xpath" xmlns:ess="http://xmlns.oracle.com/scheduler" xmlns:xref="http://www.oracle.com/XSL/Transform/java/oracle.tip.xref.xpath.XRefXPathFunctions" xmlns:ns4="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AdjuntoBO" xmlns:dvm="http://www.oracle.com/XSL/Transform/java/oracle.tip.dvm.LookupValue" xmlns:ns9="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ContentFolderBO" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:med="http://schemas.oracle.com/mediator/xpath" xmlns:bpel="http://docs.oasis-open.org/wsbpel/2.0/process/executable" xmlns:ns11="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap">
+   <name>HT_CrearComRespuesta</name>
+   <id>${domain_id}_${process_id}_${process_revision}_HT_CrearComRespuesta</id>
+   <title type="STATIC"><value>Crear Comunicacion Respuesta</value></title>
+   <priority>3</priority>
+   <hideCreator>false</hideCreator>
+   <process processId="" processVersion=""/>
+   <routingSlip xmlns="http://xmlns.oracle.com/bpel/workflow/routingSlip" routingType="TEMPLATE">
+      <globalConfiguration>
+         <applicationContext>OracleBPMProcessRolesApp</applicationContext>
+         <taskOwner type="STATIC" identityType="application_role">ComunicacionesBpmPrj.ProcessOwner</taskOwner>
+         <sharePayloadConfiguration>
+            <type>USE_SYSTEM_WIDE_GLOBAL_CONFIGURATION</type>
+         </sharePayloadConfiguration>
+         <errorOnEmptyAssignee>false</errorOnEmptyAssignee>
+         <excludeSaturdayAndSunday>false</excludeSaturdayAndSunday>
+      </globalConfiguration>
+      <participants isAdhocRoutingSupported="false">
+         <stage name="Stage1" disabled="false">
+            <participant disabled="false" name="default.DefaultPerformer">
+               <resource type="XPATH" identityType="user">/task:task/task:payload/ns2:ComunicacionBO/ns2:usuarioDestinoComunicacion/ns11:idUsuario</resource>
+               <dynamicAssignment identityTypeToSelect="user">
+                  <assignmentPattern patternName="LEAST_BUSY" isGlobalPattern="false"/>
+               </dynamicAssignment>
+            </participant>
+         </stage>
+      </participants>
+      <notification includeTaskAttachments="false" actionable="false" secureNotifications="false"
+                    oneNotificationPerUserPerAction="false" hideWorklistUrlInEmail="false">
+         <action name="ASSIGN" recipient="ASSIGNEES">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="COMPLETE" recipient="CREATOR">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <action name="ERROR" recipient="OWNER">
+            <![CDATA[concat(string('Task '), /task:task/task:title, string(' requires your attention.'))]]>
+         </action>
+         <groupNotificationConfiguration>SEND_INDIVIDUAL_NOTIFICATION</groupNotificationConfiguration>
+         <commentScope>TASK</commentScope>
+      </notification>
+   </routingSlip>
+   <workflowConfiguration features="ucm,RSCUSTOMIZATION" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AdjuntoBO" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+      <outcomes>
+         <outcome>APPROVE</outcome>
+         <outcome>REJECT</outcome>
+      </outcomes>
+      <payload externalSchema="false" xmlSchemaDefinition="../Schemas/HT_CrearComRespuestaPayload.xsd"
+               typedTaskSchemaLocation="../Schemas/HT_CrearComRespuestaWorkflowTask.xsd">
+         <messageAttribute name="ComunicacionBO" attributeType="ELEMENT" type="ns0:ComunicacionBO" updatable="true"
+                           external="false"/>
+         <messageAttribute name="AdjuntoBO" attributeType="ELEMENT" type="ns1:AdjuntoBO" updatable="true"
+                           external="false"/>
+         <messageAttribute name="usuarioRespuesta" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="asunto" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="radicado" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="vencimiento" attributeType="SIMPLE_TYPE" type="xsd:dateTime" updatable="true"
+                           external="false"/>
+         <messageAttribute name="urlExpMinWSDL" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+      </payload>
+      <bpelEventListener>false</bpelEventListener>
+      <bpelNoCallbacks>false</bpelNoCallbacks>
+      <accessRules>
+         <actionRules>
+            <systemAction>REASSIGN</systemAction>
+            <roles>
+               <role privilege="PERMIT">ADMIN</role>
+               <role privilege="PERMIT">OWNER</role>
+               <role privilege="RESTRICT">APPROVERS</role>
+               <role privilege="RESTRICT">CREATOR</role>
+               <role privilege="RESTRICT">REVIEWERS</role>
+               <role privilege="RESTRICT">ASSIGNEES</role>
+            </roles>
+         </actionRules>
+         <actionRules>
+            <systemAction>WITHDRAW</systemAction>
+            <roles>
+               <role privilege="PERMIT">ADMIN</role>
+               <role privilege="PERMIT">OWNER</role>
+               <role privilege="RESTRICT">APPROVERS</role>
+               <role privilege="RESTRICT">ASSIGNEES</role>
+               <role privilege="RESTRICT">REVIEWERS</role>
+               <role privilege="RESTRICT">CREATOR</role>
+            </roles>
+         </actionRules>
+      </accessRules>
+      <showCompleteGraphicalHistory>true</showCompleteGraphicalHistory>
+      <reevalTranslatablesOnUpdate>false</reevalTranslatablesOnUpdate>
+      <preActionMandatoryUserSteps/>
+      <allowInitiatorEditParticipants>false</allowInitiatorEditParticipants>
+      <allowParticipantsEditParticipants>false</allowParticipantsEditParticipants>
+      <globalCreationTask>false</globalCreationTask>
+      <enableAutoClaim>true</enableAutoClaim>
+      <workflowConditions/>
+      <taskSequenceTypes>FUTURE</taskSequenceTypes>
+      <taskSequenceTypes>AGGREGATE</taskSequenceTypes>
+   </workflowConfiguration>
+</taskDefinition>

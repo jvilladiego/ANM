@@ -1,0 +1,696 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<adfc-config xmlns="http://xmlns.oracle.com/adf/controller" version="1.2">
+  <view id="Empty1_jspx">
+    <page>/Empty1.jspx</page>
+  </view>
+  <control-flow-rule id="__1">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__2">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__3">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__4">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__5">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__6">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__7">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__8">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__9">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__10">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__11">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__12">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__13">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__14">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__15">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__16">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__17">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__18">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__19">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__20">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__21">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__22">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__23">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__24">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__25">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__26">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__27">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__28">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__29">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__30">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__31">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__32">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__33">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__34">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__35">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__36">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__37">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__38">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__39">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__40">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__41">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__42">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__43">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__44">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__45">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__46">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__47">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__48">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__49">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__50">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__51">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__52">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__53">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__54">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__55">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__56">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__57">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__58">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__59">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__60">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__61">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__62">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__63">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__64">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__65">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__66">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__67">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__68">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__69">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__70">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__71">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__72">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__73">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__74">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__75">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__76">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__77">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__78">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__79">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__80">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__81">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__82">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__83">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__84">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__85">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__86">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__87">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__88">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__89">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__90">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__91">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__92">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__93">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__94">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__95">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__96">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__97">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__98">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__99">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__100">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__101">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__102">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__103">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__104">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__105">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__106">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__107">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__108">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__109">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__110">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__111">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__112">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__113">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__114">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__115">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__116">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__117">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__118">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__119">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__120">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__121">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__122">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__123">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__124">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__125">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__126">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__127">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__128">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__129">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__130">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__131">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__132">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__133">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__134">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__135">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__136">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__137">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__138">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__139">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__140">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__141">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__142">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__143">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__144">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__145">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__146">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__147">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__148">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__149">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__150">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__151">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__152">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__153">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__154">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__155">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__156">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__157">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__158">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__159">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__160">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__161">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__162">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__163">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__164">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__165">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__166">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__167">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__168">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__169">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__170">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__171">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__172">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__173">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__174">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+  <control-flow-rule id="__175">
+    <from-activity-id>*</from-activity-id>
+    <control-flow-case id="__176">
+      <from-outcome>done</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__177">
+      <from-outcome>refresh</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__178">
+      <from-outcome>previous</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__179">
+      <from-outcome>next</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+    <control-flow-case id="__180">
+      <from-outcome>new</from-outcome>
+      <to-activity-id>Empty1_jspx</to-activity-id>
+    </control-flow-case>
+  </control-flow-rule>
+</adfc-config>

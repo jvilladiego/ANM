@@ -1,0 +1,140 @@
+@charset "UTF-8";
+/**ADFFaces_Skin_File / DO NOT REMOVE**/
+@namespace af "http://xmlns.oracle.com/adf/faces/rich";
+@namespace dvt "http://xmlns.oracle.com/dss/adf/faces";
+
+
+.pgBotones {
+    background-color: White;
+}
+
+.tituloBotones {
+    text-align: center;
+    white-space: normal;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    height: 3em;
+    color: black;
+}
+
+.pgrid_botones {
+    width: 100%;
+}
+
+.contenedor_botones {
+    width: 100%;
+}
+
+.pgBoton {
+    display: inline-block;
+    vertical-align: top;
+    width: 20%;
+    margin: 15px 2%;
+    box-shadow: 10px 10px 10px #b6b6b6;
+}
+
+.pageContainer {
+    width: 1000px;
+    margin: 0 auto;
+}
+
+af|link af|image {
+    width: 100%;
+}
+
+.headerTable {
+    background-color: #F5F5F5;
+    color: #454545;
+    border-bottom: 1px solid #FFF;
+    padding: 10px;
+    box-shadow: 0px 3px 3px #0000001a;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.tituloPagina {
+    font-size: 18px;
+    color: #454545;
+    font-weight: normal;
+    white-space: nowrap;
+    cursor: default;
+}
+
+.logoPagina {
+    display: block;
+    margin: 5px;
+}
+
+af|inputText::content {
+    background-color: White;
+}
+
+.contenedorFormulario af|panelHeader {
+    border: 1px solid grey;
+    margin: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px grey;
+}
+.contenedorFormulario af|showDetailHeader {
+    border: 1px solid grey;
+    margin: 25px;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px grey;
+}
+/*
+af|panelFormLayout{
+    border: 1px solid grey;
+    margin: 10px 0;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 10px 10px 10px grey;
+}
+*/
+af|panelGroupLayout.contenedorFormulario {
+    background-color: white;
+    padding: 20px;
+    box-shadow: 10px 10px 10px grey;
+    border-radius: 10px;
+}
+
+af|selectOneChoice.tipoServicioSoc {
+    font-weight: bold;
+}
+
+af|document {
+    background-color: White;
+}
+/* Estilos para lista de attachment */
+af|listView.attachmentListView {
+    margin: 5px 5px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px rgba(99, 97, 97, 0.5);
+}
+
+af|listView.attachmentListView af|commandLink, af|listView.attachmentListView af|image, af|listView.attachmentListView af|outputText, af|listView.attachmentListView af|panelLabelAndMessage {
+    display: inline-block;
+}
+
+af|listView.attachmentListView af|image {
+    margin-right: 3px;
+}
+
+.attCreateByDate {
+    white-space: nowrap;
+    color: #a9a9a9;
+    white-space: nowrap;
+    display: inline-block;
+    margin-top: 14px;
+}
+
+af|inputText.attCreateByDate::content {
+    color: #a9a9a9;
+    height: auto;
+    display: inline-block;
+}
+.contenedorFormulario af|inputText::content{
+    width: 100%;
+}

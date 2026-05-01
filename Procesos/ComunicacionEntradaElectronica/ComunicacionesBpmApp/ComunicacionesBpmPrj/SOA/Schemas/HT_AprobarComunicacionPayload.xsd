@@ -1,0 +1,20 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AdjuntoBO" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaUsuarios" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO" schemaLocation="../businessCatalog/SGDComunicaciones/ResultadoRevisionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaUsuarios" schemaLocation="../businessCatalog/SGDComunicaciones/ListaUsuarios.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AdjuntoBO" schemaLocation="../businessCatalog/SGDComunicaciones/AdjuntoBO.xsd"/>
+   <complexType name="HT_AprobarComunicacionPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionBO"/>
+         <element ref="ns1:ResultadoRevisionBO"/>
+         <element ref="ns2:ListaUsuarios"/>
+         <element name="fileTmpPath" type="xsd:string"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="vencimiento" type="xsd:dateTime"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+         <element ref="ns3:AdjuntoBO"/>
+      </sequence>
+   </complexType>
+</schema>

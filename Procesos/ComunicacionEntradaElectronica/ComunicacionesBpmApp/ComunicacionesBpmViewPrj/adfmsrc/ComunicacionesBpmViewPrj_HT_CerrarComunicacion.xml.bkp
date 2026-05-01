@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47"
+          id="ComunicacionesBpmViewPrj_HT_CerrarComunicacion" BeanClass="ComunicacionesBpmViewPrj_HT_CerrarComunicacion"
+          isJavaBased="false">
+  <MethodAccessor IsCollection="false" Type="ComunicacionesBpmViewPrj_HT_CerrarComunicacion.getTaskDetails"
+                  BeanClass="ComunicacionesBpmViewPrj_HT_CerrarComunicacion.getTaskDetails" id="getTaskDetails"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="bpmWorklistContext" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskId" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskVersion" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

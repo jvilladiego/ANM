@@ -1,0 +1,939 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.16.48" id="CrearRespuestaPageDef"
+                Package="comunicacionesbpmviewprj.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="getTaskDetails.result" DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                    RangeSize="25" BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.getTaskDetails"
+                    id="getTaskDetailsIterator"/>
+    <accessorIterator MasterBinding="getTaskDetailsIterator" Binds="task" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.task" id="taskIterator"
+                      StateValidation="false"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="systemAttributes" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.systemAttributesType"
+                      id="systemAttributesIterator"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="systemActions" RangeSize="50"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.actionType" id="systemActionsIterator"
+                      StateValidation="false"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="customActions" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.actionType" id="customActionsIterator"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="fromUser" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType" id="fromUserIterator"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="assignees" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType" id="assigneesIterator"
+                      StateValidation="false"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="payload" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.HT_CrearRespuestaPayloadType"
+                      id="payloadIterator"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="ComunicacionBO" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ComunicacionBOType"
+                      id="ComunicacionBOIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="anexos" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.AnexoBOType" id="anexosIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="consecutivoContentFolder" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ContentFolderBOType"
+                      id="consecutivoContentFolderIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="tituloContentFolder" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ContentFolderBOType"
+                      id="tituloContentFolderIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="otraSerieContentFolder" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ContentFolderBOType"
+                      id="otraSerieContentFolderIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="dependenciaRemitente" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.DependenciaBOType"
+                      id="dependenciaRemitenteIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="tramite" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.TipoSimpleBOType" id="tramiteIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="tipoDocTitulo" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.TipoSimpleBOType"
+                      id="tipoDocTituloIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="dependenciaDestino" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.DependenciaBOType"
+                      id="dependenciaDestinoIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="destinatarioInterno" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.InteresadoInternoType"
+                      id="destinatarioInternoIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="taxonomia" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.TaxonomiaBOType" id="taxonomiaIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="metadatos" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.MetadatosBOType" id="metadatosIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="asignacion" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.AsignacionComunicacionBOType"
+                      id="asignacionIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="usuarioDestinoComunicacion" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.UsuarioBOType"
+                      id="usuarioDestinoComunicacionIterator"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="AdjuntoBO" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.AdjuntoBOType" id="AdjuntoBOIterator"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="userComment" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.commentType" id="userCommentIterator"
+                      StateValidation="false"/>
+    <accessorIterator MasterBinding="userCommentIterator" Binds="updatedBy" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType" id="updatedByIterator"
+                      StateValidation="false"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="attachment" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.attachmentType" id="attachmentIterator"
+                      StateValidation="false"/>
+    <accessorIterator MasterBinding="attachmentIterator" Binds="ucmMetadataItem" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ucmMetadataItemType"
+                      id="ucmMetadataItemIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="processInfo" RangeSize="25"
+                      DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                      BeanClass="ComunicacionesBpmViewPrj_HT_CrearRespuesta.processType" id="processInfoIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="getTaskDetails" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getTaskDetails"
+                  IsViewObjectMethod="false" DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.getTaskDetails.dataControl"
+                  ReturnName="data.ComunicacionesBpmViewPrj_HT_CrearRespuesta.methodResults.getTaskDetails_getTaskDetails_dataControl_getTaskDetails_result">
+      <NamedData NDName="bpmWorklistContext" NDType="java.lang.String"/>
+      <NamedData NDName="bpmWorklistTaskId" NDType="java.lang.String"/>
+      <NamedData NDName="bpmWorklistTaskVersion" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="taskIterator" id="title">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction IterBinding="taskIterator" id="UpdateAction" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="UpdateAction" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true">
+      <NamedData NDName="action" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction IterBinding="taskIterator" id="update" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="update" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <navigationlist IterBinding="systemActionsIterator" ListOperMode="navigation" ListIter="systemActionsIterator"
+                    id="systemActions">
+      <AttrNames>
+        <Item Value="action"/>
+        <Item Value="displayName"/>
+      </AttrNames>
+    </navigationlist>
+    <attributeValues IterBinding="systemAttributesIterator" id="digitalSignatureRequired">
+      <AttrNames>
+        <Item Value="digitalSignatureRequired"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="passwordRequiredOnUpdate">
+      <AttrNames>
+        <Item Value="passwordRequiredOnUpdate"/>
+      </AttrNames>
+    </attributeValues>
+    <navigationlist IterBinding="customActionsIterator" ListOperMode="navigation" ListIter="customActionsIterator"
+                    id="customActions">
+      <AttrNames>
+        <Item Value="action"/>
+        <Item Value="displayName"/>
+      </AttrNames>
+    </navigationlist>
+    <methodAction IterBinding="taskIterator" id="Claim" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Claim" IsViewObjectMethod="false" DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="Acknowledge" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Acknowledge" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="Resume" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Resume" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="Withdraw" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Withdraw" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="APPROVE" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="APPROVE" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="REJECT" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="REJECT" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <attributeValues IterBinding="taskIterator" id="creator">
+      <AttrNames>
+        <Item Value="creator"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="ownerUser">
+      <AttrNames>
+        <Item Value="ownerUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="priority">
+      <AttrNames>
+        <Item Value="priority"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="dueDate">
+      <AttrNames>
+        <Item Value="dueDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="creatorDisplayName">
+      <AttrNames>
+        <Item Value="creatorDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="ownerUserDisplayName">
+      <AttrNames>
+        <Item Value="ownerUserDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="acquiredBy">
+      <AttrNames>
+        <Item Value="acquiredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="assignedDate">
+      <AttrNames>
+        <Item Value="assignedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="createdDate">
+      <AttrNames>
+        <Item Value="createdDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="expirationDate">
+      <AttrNames>
+        <Item Value="expirationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="outcome">
+      <AttrNames>
+        <Item Value="outcome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="state">
+      <AttrNames>
+        <Item Value="state"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="taskNumber">
+      <AttrNames>
+        <Item Value="taskNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="updatedDate">
+      <AttrNames>
+        <Item Value="updatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="actionDisplayName">
+      <AttrNames>
+        <Item Value="actionDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="activityId">
+      <AttrNames>
+        <Item Value="activityId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="acquiredByDisplayName">
+      <AttrNames>
+        <Item Value="acquiredByDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="fromUserIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="fromUserIterator" id="displayName">
+      <AttrNames>
+        <Item Value="displayName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="assigneesIterator" id="assignees">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="payloadIterator" id="usuarioRespuesta">
+      <AttrNames>
+        <Item Value="usuarioRespuesta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="urlExpMinWSDL">
+      <AttrNames>
+        <Item Value="urlExpMinWSDL"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="asunto">
+      <AttrNames>
+        <Item Value="asunto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="radicado">
+      <AttrNames>
+        <Item Value="radicado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="vencimiento">
+      <AttrNames>
+        <Item Value="vencimiento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroRadicado">
+      <AttrNames>
+        <Item Value="nroRadicado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="asunto1">
+      <AttrNames>
+        <Item Value="asunto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroFolios">
+      <AttrNames>
+        <Item Value="nroFolios"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="referencia">
+      <AttrNames>
+        <Item Value="referencia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="esTituloMinero">
+      <AttrNames>
+        <Item Value="esTituloMinero"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroPlaca">
+      <AttrNames>
+        <Item Value="nroPlaca"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroRadicadoRelacionado">
+      <AttrNames>
+        <Item Value="nroRadicadoRelacionado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="requiereRespuesta">
+      <AttrNames>
+        <Item Value="requiereRespuesta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroAnexos">
+      <AttrNames>
+        <Item Value="nroAnexos"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="fecRadicacion">
+      <AttrNames>
+        <Item Value="fecRadicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="tipoComunicacion">
+      <AttrNames>
+        <Item Value="tipoComunicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="tiempoRespuesta">
+      <AttrNames>
+        <Item Value="tiempoRespuesta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="responderComunicacion">
+      <AttrNames>
+        <Item Value="responderComunicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="usuarioRemitente">
+      <AttrNames>
+        <Item Value="usuarioRemitente"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="fecVencimiento">
+      <AttrNames>
+        <Item Value="fecVencimiento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="usuariosFYIANM">
+      <AttrNames>
+        <Item Value="usuariosFYIANM"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="urlDocPpal">
+      <AttrNames>
+        <Item Value="urlDocPpal"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="anexosIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="anexosIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="anexosIterator" id="anexos">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.AnexoBOType" Name="anexos0">
+        <AttrNames>
+          <Item Value="nombre"/>
+          <Item Value="descripcion"/>
+          <Item Value="contenido"/>
+          <Item Value="mimeType"/>
+          <Item Value="tipoAnexo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="consecutivoContentFolderIterator" id="folderGUID">
+      <AttrNames>
+        <Item Value="folderGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="consecutivoContentFolderIterator" id="parentGUID">
+      <AttrNames>
+        <Item Value="parentGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="consecutivoContentFolderIterator" id="nombre">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tituloContentFolderIterator" id="folderGUID1">
+      <AttrNames>
+        <Item Value="folderGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tituloContentFolderIterator" id="parentGUID1">
+      <AttrNames>
+        <Item Value="parentGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tituloContentFolderIterator" id="nombre1">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="otraSerieContentFolderIterator" id="folderGUID2">
+      <AttrNames>
+        <Item Value="folderGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="otraSerieContentFolderIterator" id="parentGUID2">
+      <AttrNames>
+        <Item Value="parentGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="otraSerieContentFolderIterator" id="nombre2">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaRemitenteIterator" id="id1">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaRemitenteIterator" id="codigo">
+      <AttrNames>
+        <Item Value="codigo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaRemitenteIterator" id="nombre3">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tramiteIterator" id="id2">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tramiteIterator" id="nombre4">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tipoDocTituloIterator" id="id3">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tipoDocTituloIterator" id="nombre5">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaDestinoIterator" id="id4">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaDestinoIterator" id="codigo1">
+      <AttrNames>
+        <Item Value="codigo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaDestinoIterator" id="nombre6">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="id5">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="usuario">
+      <AttrNames>
+        <Item Value="usuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="nombreAD">
+      <AttrNames>
+        <Item Value="nombreAD"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="emailAD">
+      <AttrNames>
+        <Item Value="emailAD"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="catProceso">
+      <AttrNames>
+        <Item Value="catProceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idCatProceso">
+      <AttrNames>
+        <Item Value="idCatProceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="proceso">
+      <AttrNames>
+        <Item Value="proceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idProceso">
+      <AttrNames>
+        <Item Value="idProceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="serie">
+      <AttrNames>
+        <Item Value="serie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idSerie">
+      <AttrNames>
+        <Item Value="idSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="subserie">
+      <AttrNames>
+        <Item Value="subserie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idSubSerie">
+      <AttrNames>
+        <Item Value="idSubSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="cuaderno">
+      <AttrNames>
+        <Item Value="cuaderno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idCuaderno">
+      <AttrNames>
+        <Item Value="idCuaderno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="descripcion">
+      <AttrNames>
+        <Item Value="descripcion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="nombreTramite">
+      <AttrNames>
+        <Item Value="nombreTramite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="idTpDocumento">
+      <AttrNames>
+        <Item Value="idTpDocumento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="nombreTpDocumento">
+      <AttrNames>
+        <Item Value="nombreTpDocumento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="idCuenta">
+      <AttrNames>
+        <Item Value="idCuenta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="cuenta">
+      <AttrNames>
+        <Item Value="cuenta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="idTramite">
+      <AttrNames>
+        <Item Value="idTramite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="asignacionIterator" id="id6">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="asignacionIterator" id="nombre7">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="usuarioDestinoComunicacionIterator" id="idUsuario">
+      <AttrNames>
+        <Item Value="idUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="usuarioDestinoComunicacionIterator" id="codDependencia">
+      <AttrNames>
+        <Item Value="codDependencia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="usuarioDestinoComunicacionIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="usuarioDestinoComunicacionIterator" id="nombre8">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdjuntoBOIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdjuntoBOIterator" id="content">
+      <AttrNames>
+        <Item Value="content"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdjuntoBOIterator" id="mimeType">
+      <AttrNames>
+        <Item Value="mimeType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="AdjuntoBOIterator" id="size">
+      <AttrNames>
+        <Item Value="size"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="userCommentIterator" id="userComment">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.commentType">
+        <AttrNames>
+          <Item Value="comment"/>
+          <Item Value="updatedDate"/>
+          <Item Value="displayNameLanguage"/>
+          <Item Value="action"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="isSystemComment"/>
+          <Item Value="taskId"/>
+          <Item Value="commentScope"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="updatedBy"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="userCommentIterator" id="CreateInsert1" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="userCommentIterator" id="Delete1" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="userCommentIterator" id="comment">
+      <AttrNames>
+        <Item Value="comment"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="userCommentIterator" id="commentScope">
+      <AttrNames>
+        <Item Value="commentScope"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="updatedByIterator" id="updatedBy">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="attachmentIterator" id="attachment">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.attachmentType">
+        <AttrNames>
+          <Item Value="content"/>
+          <Item Value="mimeType"/>
+          <Item Value="name"/>
+          <Item Value="updatedBy"/>
+          <Item Value="URI"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="taskId"/>
+          <Item Value="version"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="updatedDate"/>
+          <Item Value="correlationId"/>
+          <Item Value="size"/>
+          <Item Value="description"/>
+          <Item Value="storageType"/>
+          <Item Value="ucmDocType"/>
+          <Item Value="securityGroup"/>
+          <Item Value="account"/>
+          <Item Value="revision"/>
+          <Item Value="releaseDate"/>
+          <Item Value="expirationDate"/>
+          <Item Value="title"/>
+          <Item Value="attachmentScope"/>
+          <Item Value="isContentEncoded"/>
+          <Item Value="updatedByDisplayName"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="attachmentIterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="attachmentIterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="attachmentIterator" id="content1">
+      <AttrNames>
+        <Item Value="content"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="mimeType1">
+      <AttrNames>
+        <Item Value="mimeType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="name1">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="updatedBy1">
+      <AttrNames>
+        <Item Value="updatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="URI">
+      <AttrNames>
+        <Item Value="URI"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="updatedDate1">
+      <AttrNames>
+        <Item Value="updatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="description">
+      <AttrNames>
+        <Item Value="description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="ucmDocType">
+      <AttrNames>
+        <Item Value="ucmDocType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="securityGroup">
+      <AttrNames>
+        <Item Value="securityGroup"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="account">
+      <AttrNames>
+        <Item Value="account"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="revision">
+      <AttrNames>
+        <Item Value="revision"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="releaseDate">
+      <AttrNames>
+        <Item Value="releaseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="expirationDate1">
+      <AttrNames>
+        <Item Value="expirationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="attachmentScope">
+      <AttrNames>
+        <Item Value="attachmentScope"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ucmMetadataItemIterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ucmMetadataItemIterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="ucmMetadataItemIterator" id="ucmMetadataItem">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="systemAttributesIterator" id="numberOfTimesModified">
+      <AttrNames>
+        <Item Value="numberOfTimesModified"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="version">
+      <AttrNames>
+        <Item Value="version"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="userCommentIterator" id="userComment1">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.commentType">
+        <AttrNames>
+          <Item Value="comment"/>
+          <Item Value="updatedDate"/>
+          <Item Value="displayNameLanguage"/>
+          <Item Value="action"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="isSystemComment"/>
+          <Item Value="taskId"/>
+          <Item Value="commentScope"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="updatedBy"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="updatedByIterator" id="updatedBy2">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="attachmentIterator" id="attachment1">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.attachmentType">
+        <AttrNames>
+          <Item Value="content"/>
+          <Item Value="mimeType"/>
+          <Item Value="name"/>
+          <Item Value="updatedBy"/>
+          <Item Value="URI"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="taskId"/>
+          <Item Value="version"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="updatedDate"/>
+          <Item Value="correlationId"/>
+          <Item Value="size"/>
+          <Item Value="description"/>
+          <Item Value="storageType"/>
+          <Item Value="ucmDocType"/>
+          <Item Value="securityGroup"/>
+          <Item Value="account"/>
+          <Item Value="revision"/>
+          <Item Value="releaseDate"/>
+          <Item Value="expirationDate"/>
+          <Item Value="title"/>
+          <Item Value="attachmentScope"/>
+          <Item Value="isContentEncoded"/>
+          <Item Value="updatedByDisplayName"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ucmMetadataItemIterator" id="ucmMetadataItem1">
+      <nodeDefinition DefName="ComunicacionesBpmViewPrj_HT_CrearRespuesta.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="processInfoIterator" id="instanceId">
+      <AttrNames>
+        <Item Value="instanceId"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

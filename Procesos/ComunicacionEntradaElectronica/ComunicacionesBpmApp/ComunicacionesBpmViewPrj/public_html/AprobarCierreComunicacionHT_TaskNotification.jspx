@@ -1,0 +1,573 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+            xmlns:wf="http://xmlns.oracle.com/bpel/workflow/workflow-taglib.tld"
+            xmlns:wlc="http://xmlns.oracle.com/bpel/workflow/worklist">
+        <af:document title="AprobarCierreComunicacionHT_TaskNotification.jspx" id="d1">
+            <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
+            <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
+            <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
+            <af:form id="f1">
+                <af:panelGroupLayout layout="vertical" inlineStyle="padding: 5px;" id="pgl15">
+                    <af:showDetailHeader size="2" text="#{bindings.title.inputValue}"
+                                         shortDesc="#{resources.TASK_HEADER}" disclosed="true"
+                                         icon="/hw_images/singleapprover_35x35.png" id="sdh1">
+                        <af:panelFormLayout maxColumns="3" rows="4" id="pfl13">
+                            <af:panelLabelAndMessage label="#{resources.TASK_NUMBER}" id="plam3">
+                                <af:outputText value="#{bindings.taskNumber.inputValue}" id="ot20"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.STATE}" id="plam16">
+                                <af:outputText value="#{resources[bindings.state.inputValue]}" id="ot33"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.OUTCOME}"
+                                                     rendered="#{!empty bindings.actionDisplayName.inputValue}"
+                                                     id="plam51">
+                                <af:outputText value="#{bindings.actionDisplayName.inputValue}" id="ot17"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.PRIORITY}" id="plam18">
+                                <af:outputText value="#{bindings.priority.inputValue}" id="ot77"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.CREATOR}"
+                                                     rendered="#{!empty bindings.creator.inputValue}" id="plam30">
+                                <af:outputText value="#{bindings.creatorDisplayName.inputValue}" id="ot22"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.CREATE_DATE}"
+                                                     rendered="#{!empty bindings.createdDate.inputValue}" id="plam20">
+                                <af:outputText value="#{bindings.createdDate.inputValue}" id="ot36"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.UPDATE_DATE}"
+                                                     rendered="#{!empty bindings.updatedDate.inputValue}" id="plam52">
+                                <af:outputText value="#{bindings.updatedDate.inputValue}" id="ot1"/>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.EXPIRATION_DATE}"
+                                                     rendered="#{!empty bindings.expirationDate.inputValue}"
+                                                     id="plam32">
+                                <af:outputText value="#{bindings.expirationDate.inputValue}" id="ot25"/>
+                            </af:panelLabelAndMessage>
+                            <af:switcher facetName="#{bindings.taskViewContext == 'FYI'}" id="s19">
+                                <f:facet name="false">
+                                    <af:panelLabelAndMessage label="#{resources.ASSIGNEES}" id="plam61">
+                                        <af:iterator var="assignees" varStatus="varS"
+                                                     value="#{bindings.assignees2.collectionModel}" id="i1">
+                                            <af:switcher facetName="#{varS.index == 0}" id="s12">
+                                                <f:facet name="false">
+                                                    <af:outputText value=", " id="ot59"/>
+                                                </f:facet>
+                                            </af:switcher>
+                                            <af:switcher facetName="#{!empty assignees.displayName}" id="s11">
+                                                <f:facet name="true">
+                                                    <af:outputText value="#{assignees.displayName}" id="ot94"/>
+                                                </f:facet>
+                                                <f:facet name="false">
+                                                    <af:outputText value="#{assignees.id}" id="ot61"/>
+                                                </f:facet>
+                                            </af:switcher>
+                                        </af:iterator>
+                                    </af:panelLabelAndMessage>
+                                </f:facet>
+                            </af:switcher>
+                            <af:panelLabelAndMessage id="acquiredBy" label="#{resources.ACQUIRED_BY}">
+                                <af:switcher facetName="#{!empty bindings.acquiredByDisplayName.inputValue}" id="s2">
+                                    <f:facet name="true">
+                                        <af:outputText value="#{bindings.acquiredByDisplayName.inputValue}" id="ot3"/>
+                                    </f:facet>
+                                    <f:facet name="false">
+                                        <af:outputText value="#{bindings.acquiredBy.inputValue}" id="ot60"/>
+                                    </f:facet>
+                                </af:switcher>
+                            </af:panelLabelAndMessage>
+                            <af:panelLabelAndMessage label="#{resources.DUE_DATE}"
+                                                     rendered="#{!empty bindings.dueDate.inputValue}" id="plam5">
+                                <af:outputText value="#{bindings.dueDate.inputValue}" id="ot40"/>
+                            </af:panelLabelAndMessage>
+                        </af:panelFormLayout>
+                    </af:showDetailHeader>
+                    <af:spacer height="20" id="s16"/>
+                    <af:showDetailHeader size="2" id="payload" disclosed="true" text="#{resources.CONTENTS}">
+                        <af:panelGroupLayout id="plPnl76" layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                             inlineStyle="margin-left: 5px; margin-right: 2px;">
+                            <af:panelFormLayout id="pfl6">
+                                <af:panelLabelAndMessage label="#{bindings.nroRadicado.hints.label}" id="plam56">
+                                    <af:outputText value="#{bindings.nroRadicado.inputValue}" 
+                                                   shortDesc="#{bindings.nroRadicado.hints.tooltip}" id="ot69"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.asunto.hints.label}" id="plam40">
+                                    <af:outputText value="#{bindings.asunto.inputValue}"
+                                                   shortDesc="#{bindings.asunto.hints.tooltip}" id="ot91"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.nroFolios.hints.label}" id="plam37">
+                                    <af:outputText value="#{bindings.nroFolios.inputValue}"
+                                                   shortDesc="#{bindings.nroFolios.hints.tooltip}" id="ot78">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.nroFolios.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.referencia.hints.label}" id="plam60">
+                                    <af:outputText value="#{bindings.referencia.inputValue}"
+                                                   shortDesc="#{bindings.referencia.hints.tooltip}" id="ot42"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.esTituloMinero.hints.label}" id="plam41">
+                                    <af:outputText value="#{bindings.esTituloMinero.inputValue}"
+                                                   shortDesc="#{bindings.esTituloMinero.hints.tooltip}" id="ot62"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.nroPlaca.hints.label}" id="plam62">
+                                    <af:outputText value="#{bindings.nroPlaca.inputValue}"
+                                                   shortDesc="#{bindings.nroPlaca.hints.tooltip}" id="ot27"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.nroRadicadoRelacionado.hints.label}"
+                                                         id="plam64">
+                                    <af:outputText value="#{bindings.nroRadicadoRelacionado.inputValue}"
+                                                   shortDesc="#{bindings.nroRadicadoRelacionado.hints.tooltip}"
+                                                   id="ot70"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.requiereRespuesta.hints.label}" id="plam21">
+                                    <af:outputText value="#{bindings.requiereRespuesta.inputValue}"
+                                                   shortDesc="#{bindings.requiereRespuesta.hints.tooltip}" id="ot44"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.nroAnexos.hints.label}" id="plam15">
+                                    <af:outputText value="#{bindings.nroAnexos.inputValue}"
+                                                   shortDesc="#{bindings.nroAnexos.hints.tooltip}" id="ot43">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.nroAnexos.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.fecRadicacion.hints.label}" id="plam10">
+                                    <af:outputText value="#{bindings.fecRadicacion.inputValue}"
+                                                   shortDesc="#{bindings.fecRadicacion.hints.tooltip}" id="ot65">
+                                        <af:convertDateTime pattern="#{bindings.fecRadicacion.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.tipoComunicacion.hints.label}" id="plam50">
+                                    <af:outputText value="#{bindings.tipoComunicacion.inputValue}"
+                                                   shortDesc="#{bindings.tipoComunicacion.hints.tooltip}" id="ot34"/>
+                                </af:panelLabelAndMessage>
+                                <af:panelLabelAndMessage label="#{bindings.tiempoRespuesta.hints.label}" id="plam11">
+                                    <af:outputText value="#{bindings.tiempoRespuesta.inputValue}"
+                                                   shortDesc="#{bindings.tiempoRespuesta.hints.tooltip}" id="ot84">
+                                        <af:convertNumber groupingUsed="false"
+                                                          pattern="#{bindings.tiempoRespuesta.format}"/>
+                                    </af:outputText>
+                                </af:panelLabelAndMessage>
+                            </af:panelFormLayout>
+                            <af:table value="#{bindings.anexos2.collectionModel}" var="row"
+                                      rows="#{bindings.anexos2.rangeSize}"
+                                      emptyText="#{bindings.anexos2.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                      rowBandingInterval="0" fetchSize="#{bindings.anexos2.rangeSize}" id="t1">
+                                <af:column headerText="#{bindings.anexos2.hints.descripcion.label}" id="c2">
+                                    <af:outputText value="#{row.descripcion}"
+                                                   shortDesc="#{bindings.anexos2.hints.descripcion.tooltip}" id="ot13"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.anexos2.hints.nombre.label}" id="c1">
+                                    <af:outputText value="#{row.nombre}"
+                                                   shortDesc="#{bindings.anexos2.hints.nombre.tooltip}" id="ot11"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.anexos2.hints.contenido.label}" id="c3">
+                                    <af:outputText value="#{row.contenido}"
+                                                   shortDesc="#{bindings.anexos2.hints.contenido.tooltip}" id="ot19"/>
+                                </af:column>
+                                <af:column headerText="#{bindings.anexos2.hints.mimeType.label}" id="c4">
+                                    <af:outputText value="#{row.mimeType}"
+                                                   shortDesc="#{bindings.anexos2.hints.mimeType.tooltip}" id="ot90"/>
+                                </af:column>
+                            </af:table>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl12">
+
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl10">
+
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl8">
+
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl18">
+                                <af:outputText value="Comunicacion BO  -  Dependencia Remitente"
+                                               shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot93"/>
+                                <af:panelFormLayout id="pfl10">
+                                    <af:panelLabelAndMessage label="#{bindings.id1.hints.label}" id="plam9">
+                                        <af:outputText value="#{bindings.id1.inputValue}"
+                                                       shortDesc="#{bindings.id1.hints.tooltip}" id="ot31">
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.id1.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.codigo.hints.label}" id="plam4">
+                                        <af:outputText value="#{bindings.codigo.inputValue}"
+                                                       shortDesc="#{bindings.codigo.hints.tooltip}" id="ot8"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.nombre3.hints.label}" id="plam49">
+                                        <af:outputText value="#{bindings.nombre3.inputValue}"
+                                                       shortDesc="#{bindings.nombre3.hints.tooltip}" id="ot79"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl16">
+                                <af:outputText value="Comunicacion BO  -  Tramite"
+                                               shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot49"/>
+                                <af:panelFormLayout id="pfl8">
+                                    <af:panelLabelAndMessage label="#{bindings.id2.hints.label}" id="plam19">
+                                        <af:outputText value="#{bindings.id2.inputValue}"
+                                                       shortDesc="#{bindings.id2.hints.tooltip}" id="ot71">
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.id2.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.nombre4.hints.label}" id="plam42">
+                                        <af:outputText value="#{bindings.nombre4.inputValue}"
+                                                       shortDesc="#{bindings.nombre4.hints.tooltip}" id="ot14"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl4">
+                                <af:outputText value="Comunicacion BO  -  Tipo Doc Titulo"
+                                               shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot54"/>
+                                <af:panelFormLayout id="pfl1">
+                                    <af:panelLabelAndMessage label="#{bindings.id3.hints.label}" id="plam57">
+                                        <af:outputText value="#{bindings.id3.inputValue}"
+                                                       shortDesc="#{bindings.id3.hints.tooltip}" id="ot55">
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.id3.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.nombre5.hints.label}" id="plam39">
+                                        <af:outputText value="#{bindings.nombre5.inputValue}"
+                                                       shortDesc="#{bindings.nombre5.hints.tooltip}" id="ot83"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl7">
+                                <af:outputText value="Comunicacion BO  -  Dependencia Destino"
+                                               shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot45"/>
+                                <af:panelFormLayout id="pfl9">
+                                    <af:panelLabelAndMessage label="#{bindings.id4.hints.label}" id="plam7">
+                                        <af:outputText value="#{bindings.id4.inputValue}"
+                                                       shortDesc="#{bindings.id4.hints.tooltip}" id="ot16">
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.id4.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.codigo1.hints.label}" id="plam31">
+                                        <af:outputText value="#{bindings.codigo1.inputValue}"
+                                                       shortDesc="#{bindings.codigo1.hints.tooltip}" id="ot88"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.nombre6.hints.label}" id="plam25">
+                                        <af:outputText value="#{bindings.nombre6.inputValue}"
+                                                       shortDesc="#{bindings.nombre6.hints.tooltip}" id="ot15"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl14">
+                                <af:outputText value="Comunicacion BO  -  Destinatario Interno"
+                                               shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot56"/>
+                                <af:panelFormLayout id="pfl4">
+                                    <af:panelLabelAndMessage label="#{bindings.id5.hints.label}" id="plam36">
+                                        <af:outputText value="#{bindings.id5.inputValue}"
+                                                       shortDesc="#{bindings.id5.hints.tooltip}" id="ot4">
+                                            <af:convertNumber groupingUsed="false" pattern="#{bindings.id5.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.usuario.hints.label}" id="plam13">
+                                        <af:outputText value="#{bindings.usuario.inputValue}"
+                                                       shortDesc="#{bindings.usuario.hints.tooltip}" id="ot37"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.nombreAD.hints.label}" id="plam33">
+                                        <af:outputText value="#{bindings.nombreAD.inputValue}"
+                                                       shortDesc="#{bindings.nombreAD.hints.tooltip}" id="ot74"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.emailAD.hints.label}" id="plam38">
+                                        <af:outputText value="#{bindings.emailAD.inputValue}"
+                                                       shortDesc="#{bindings.emailAD.hints.tooltip}" id="ot35"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl9">
+                                <af:outputText value="Comunicacion BO  -  Taxonomia"
+                                               shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot2"/>
+                                <af:panelFormLayout id="pfl2">
+                                    <af:panelLabelAndMessage label="#{bindings.catProceso.hints.label}" id="plam27">
+                                        <af:outputText value="#{bindings.catProceso.inputValue}"
+                                                       shortDesc="#{bindings.catProceso.hints.tooltip}" id="ot75"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idCatProceso.hints.label}" id="plam45">
+                                        <af:outputText value="#{bindings.idCatProceso.inputValue}"
+                                                       shortDesc="#{bindings.idCatProceso.hints.tooltip}" id="ot26"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.proceso.hints.label}" id="plam34">
+                                        <af:outputText value="#{bindings.proceso.inputValue}"
+                                                       shortDesc="#{bindings.proceso.hints.tooltip}" id="ot57"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idProceso.hints.label}" id="plam22">
+                                        <af:outputText value="#{bindings.idProceso.inputValue}"
+                                                       shortDesc="#{bindings.idProceso.hints.tooltip}" id="ot29"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.serie.hints.label}" id="plam46">
+                                        <af:outputText value="#{bindings.serie.inputValue}"
+                                                       shortDesc="#{bindings.serie.hints.tooltip}" id="ot51"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idSerie.hints.label}" id="plam12">
+                                        <af:outputText value="#{bindings.idSerie.inputValue}"
+                                                       shortDesc="#{bindings.idSerie.hints.tooltip}" id="ot82"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.subserie.hints.label}" id="plam43">
+                                        <af:outputText value="#{bindings.subserie.inputValue}"
+                                                       shortDesc="#{bindings.subserie.hints.tooltip}" id="ot73"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idSubSerie.hints.label}" id="plam47">
+                                        <af:outputText value="#{bindings.idSubSerie.inputValue}"
+                                                       shortDesc="#{bindings.idSubSerie.hints.tooltip}" id="ot6"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.cuaderno.hints.label}" id="plam35">
+                                        <af:outputText value="#{bindings.cuaderno.inputValue}"
+                                                       shortDesc="#{bindings.cuaderno.hints.tooltip}" id="ot30"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idCuaderno.hints.label}" id="plam59">
+                                        <af:outputText value="#{bindings.idCuaderno.inputValue}"
+                                                       shortDesc="#{bindings.idCuaderno.hints.tooltip}" id="ot76"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl11">
+                                <af:outputText value="Comunicacion BO  -  Metadatos"
+                                               shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot85"/>
+                                <af:panelFormLayout id="pfl3">
+                                    <af:panelLabelAndMessage label="#{bindings.descripcion.hints.label}" id="plam44">
+                                        <af:outputText value="#{bindings.descripcion.inputValue}"
+                                                       shortDesc="#{bindings.descripcion.hints.tooltip}" id="ot86"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.nombreTramite.hints.label}" id="plam28">
+                                        <af:outputText value="#{bindings.nombreTramite.inputValue}"
+                                                       shortDesc="#{bindings.nombreTramite.hints.tooltip}" id="ot52"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idTpDocumento.hints.label}" id="plam17">
+                                        <af:outputText value="#{bindings.idTpDocumento.inputValue}"
+                                                       shortDesc="#{bindings.idTpDocumento.hints.tooltip}" id="ot24">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.idTpDocumento.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.nombreTpDocumento.hints.label}"
+                                                             id="plam2">
+                                        <af:outputText value="#{bindings.nombreTpDocumento.inputValue}"
+                                                       shortDesc="#{bindings.nombreTpDocumento.hints.tooltip}"
+                                                       id="ot39"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idCuenta.hints.label}" id="plam29">
+                                        <af:outputText value="#{bindings.idCuenta.inputValue}"
+                                                       shortDesc="#{bindings.idCuenta.hints.tooltip}" id="ot81">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.idCuenta.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.cuenta.hints.label}" id="plam63">
+                                        <af:outputText value="#{bindings.cuenta.inputValue}"
+                                                       shortDesc="#{bindings.cuenta.hints.tooltip}" id="ot48"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.idTramite.hints.label}" id="plam55">
+                                        <af:outputText value="#{bindings.idTramite.inputValue}"
+                                                       shortDesc="#{bindings.idTramite.hints.tooltip}" id="ot5">
+                                            <af:convertNumber groupingUsed="false"
+                                                              pattern="#{bindings.idTramite.format}"/>
+                                        </af:outputText>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                            <af:panelGroupLayout layout="vertical" shortDesc="#{resources.CONTENTS}"
+                                                 inlineStyle="margin-left: 5px; margin-right: 2px;" id="pgl17">
+                                <af:outputText value="Resultado Revision BO" shortDesc="#{bindings.title.hints.tooltip}"
+                                               inlineStyle="font-family:Tahoma, Verdana, Helvetica, sans-serif;font-size:11px;font-weight:bold;display:inline;margin:0px;white-space:nowrap;color:#3E403D"
+                                               id="ot10"/>
+                                <af:panelFormLayout id="pfl12">
+                                    <af:panelLabelAndMessage label="#{bindings.resultadoRevision.hints.label}"
+                                                             id="plam48">
+                                        <af:outputText value="#{bindings.resultadoRevision.inputValue}"
+                                                       shortDesc="#{bindings.resultadoRevision.hints.tooltip}"
+                                                       id="ot80"/>
+                                    </af:panelLabelAndMessage>
+                                    <af:panelLabelAndMessage label="#{bindings.comentarioRevision.hints.label}"
+                                                             id="plam54">
+                                        <af:outputText value="#{bindings.comentarioRevision.inputValue}"
+                                                       shortDesc="#{bindings.comentarioRevision.hints.tooltip}"
+                                                       id="ot12"/>
+                                    </af:panelLabelAndMessage>
+                                </af:panelFormLayout>
+                            </af:panelGroupLayout>
+                        </af:panelGroupLayout>
+                    </af:showDetailHeader>
+                    <af:spacer height="20" id="s9"/>
+                    <af:showDetailHeader size="2" id="histHd" text="#{resources.HISTORY}"
+                                         disclosureListener="#{pageFlowScope.aleComponentBean.toggle}" disclosed="true">
+                        <f:facet name="info"/>
+                        <f:facet name="legend"/>
+                        <f:facet name="menuBar"/>
+                        <f:facet name="toolbar"/>
+                        <f:facet name="context"/>
+                        <af:panelGroupLayout layout="vertical" binding="#{pageFlowScope.aleComponentBean.historyPanel}"
+                                             id="historyPanel">
+                            <wlc:taskHistory initParam="#{pageFlowScope.aleComponentBean.comp}" showTabularView="true"
+                                             showGraphicalView="true" id="taskHst"/>
+                        </af:panelGroupLayout>
+                    </af:showDetailHeader>
+                    <af:spacer height="20" id="s21"/>
+                    <af:showDetailHeader size="2" id="cmAtt" inlineStyle="margin-top:24px;" disclosed="true"
+                                         shortDesc="#{resources.COMMENTS}" text="#{resources.COMMENTS}">
+                        <af:switcher facetName="#{actionAvailable.inNotificationClient}" id="s18">
+                            <f:facet name="false">
+                                <af:table verticalGridVisible="false" horizontalGridVisible="false"
+                                          value="#{bindings.userComment2.children}" var="row"
+                                          rows="#{bindings.userComment2.rangeSize}"
+                                          first="#{bindings.userComment2.rangeStart}"
+                                          emptyText="#{bindings.userComment2.viewable ? resources.NO_ROWS_YET : resources.ACCESS_DENIED}"
+                                          selectedRowKeys="#{bindings.userComment2.collectionModel.selectedRow}"
+                                          selectionListener="#{bindings.userComment2.collectionModel.makeCurrent}"
+                                          rowSelection="none" immediate="true" contentDelivery="immediate"
+                                          inlineStyle="overflow:auto;border:0px;width:720px" columnStretching="last"
+                                          summary="resources.COMMENTS_FOR_WORKLIST_TASK" id="t2">
+                                    <af:column width="700px" noWrap="false" separateRows="true" id="c5">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl1">
+                                            <af:outputText value="#{row.updatedDate}" inlineStyle="font-weight:bold"
+                                                           truncateAt="9999" id="ot38"/>
+                                            <af:outputText value="#{row.updatedBy.displayName}" truncateAt="9999"
+                                                           inlineStyle="margin-left:12px;font-weight:bold" id="ot18"/>
+                                        </af:panelGroupLayout>
+                                        <af:outputText value="#{row.comment}" truncateAt="9999"
+                                                       inlineStyle="margin-left:12px;font-weight:normal" id="ot58"/>
+                                    </af:column>
+                                </af:table>
+                            </f:facet>
+                            <f:facet name="true">
+                                <af:switcher facetName="#{empty bindings.userComment.children}" id="s23">
+                                    <f:facet name="true">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl5">
+                                            <af:spacer width="20" id="s6"/>
+                                            <af:outputText value="#{resources.NO_ROWS_YET}" id="ot67"/>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                    <f:facet name="false">
+                                        <af:listView value="#{bindings.userComment.children}" var="row" rows="0"
+                                                     id="lv1">
+                                            <af:listItem id="li1">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl13">
+                                                    <af:spacer width="20" id="s25"/>
+                                                    <af:outputText value="#{row.updatedDate}"
+                                                                   inlineStyle="font-weight:bold" id="ot53">
+                                                        <f:convertDateTime type="#{pageFlowScope.dt}"
+                                                                           timeZone="#{pageFlowScope.tz}"
+                                                                           dateStyle="#{pageFlowScope.df}"
+                                                                           timeStyle="#{pageFlowScope.tf}"
+                                                                           pattern="#{pageFlowScope.dateTimePattern}"/>
+                                                    </af:outputText>
+                                                    <af:spacer width="12" id="s3"/>
+                                                    <af:outputText value="#{row.updatedBy.displayName}"
+                                                                   inlineStyle="font-weight:bold" id="ot28"/>
+                                                </af:panelGroupLayout>
+                                                <af:spacer width="20" id="s4"/>
+                                                <af:outputText value="#{row.comment}" id="ot7"/>
+                                                <af:spacer height="10" id="s20"/>
+                                            </af:listItem>
+                                        </af:listView>
+                                    </f:facet>
+                                </af:switcher>
+                            </f:facet>
+                        </af:switcher>
+                    </af:showDetailHeader>
+                    <af:spacer height="20" id="s15"/>
+                    <af:showDetailHeader size="2" text="#{resources.RELATED_LINKS}" disclosed="true"
+                                         contentStyle="padding: 5px;" id="sdh2">
+                        <af:switcher facetName="#{actionAvailable.inNotificationClient}" id="s8">
+                            <f:facet name="true">
+                                <af:switcher facetName="#{empty bindings.attachment.children}" id="s24">
+                                    <f:facet name="true">
+                                        <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                            <af:spacer width="20" id="s22"/>
+                                            <af:outputText value="#{resources.NO_ROWS_YET}" id="ot50"/>
+                                        </af:panelGroupLayout>
+                                    </f:facet>
+                                    <f:facet name="false">
+                                        <af:listView value="#{bindings.attachment.collectionModel}" var="row" rows="0"
+                                                     rendered="#{pageFlowScope.ADFHumanTaskBean.isAttachmentReady}"
+                                                     id="lv2">
+                                            <af:listItem id="li2">
+                                                <af:panelGroupLayout layout="horizontal" id="pgl3">
+                                                    <af:spacer width="20" id="s14"/>
+                                                    <af:outputText value="#{row.updatedDate}" id="ot66">
+                                                        <f:convertDateTime type="#{pageFlowScope.dt}"
+                                                                           timeZone="#{pageFlowScope.tz}"
+                                                                           dateStyle="#{pageFlowScope.df}"
+                                                                           timeStyle="#{pageFlowScope.tf}"
+                                                                           pattern="#{pageFlowScope.dateTimePattern}"/>
+                                                    </af:outputText>
+                                                    <af:spacer width="12" id="s5"/>
+                                                    <af:switcher facetName="#{!empty row.updatedByDisplayName}"
+                                                                 id="s10">
+                                                        <f:facet name="true">
+                                                            <af:outputText value="#{row.updatedByDisplayName}"
+                                                                           id="ot46"/>
+                                                        </f:facet>
+                                                        <f:facet name="false">
+                                                            <af:outputText value="#{row.updatedBy}" id="ot21"/>
+                                                        </f:facet>
+                                                    </af:switcher>
+                                                </af:panelGroupLayout>
+                                                <af:panelGroupLayout id="pgl6">
+                                                    <af:spacer width="20" id="s17"/>
+                                                    <af:switcher facetName="#{row.attachmentScope eq 'BPM'}" id="s7">
+                                                        <f:facet name="true">
+                                                            <af:switcher facetName="#{row.updatedBy eq pageFlowScope.ADFHumanTaskBean.user}"
+                                                                         id="s13">
+                                                                <f:facet name="false">
+                                                                    <af:link text="#{row.name}"
+                                                                             destination="#{pageFlowScope.readAttachmentBean.URL}"
+                                                                             shortDesc="#{resources.CANNOT_DEL_ATTACH}"
+                                                                             targetFrame="_blank"
+                                                                             inlineStyle="font-weight:bold; font-size:11px"
+                                                                             id="l3"/>
+                                                                </f:facet>
+                                                                <f:facet name="true">
+                                                                    <af:link text="#{row.name}"
+                                                                             destination="#{pageFlowScope.readAttachmentBean.URL}"
+                                                                             targetFrame="_blank"
+                                                                             inlineStyle="font-weight:bold; font-size:11px"
+                                                                             id="l2"/>
+                                                                </f:facet>
+                                                            </af:switcher>
+                                                        </f:facet>
+                                                        <f:facet name="false">
+                                                            <af:link text="#{row.name}"
+                                                                     destination="#{pageFlowScope.readAttachmentBean.URL}"
+                                                                     targetFrame="_blank"
+                                                                     inlineStyle="font-weight:bold; font-size:11px"
+                                                                     id="l1"/>
+                                                        </f:facet>
+                                                    </af:switcher>
+                                                    <af:spacer height="10" id="s1"/>
+                                                </af:panelGroupLayout>
+                                            </af:listItem>
+                                        </af:listView>
+                                    </f:facet>
+                                </af:switcher>
+                            </f:facet>
+                        </af:switcher>
+                    </af:showDetailHeader>
+                </af:panelGroupLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>
