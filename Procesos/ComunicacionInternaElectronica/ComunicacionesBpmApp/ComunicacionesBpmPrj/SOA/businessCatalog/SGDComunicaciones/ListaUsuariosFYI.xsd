@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaUsuariosFYI" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaUsuariosFYI" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="UsuarioBO.xsd"/>
+   <xs:complexType name="ListaUsuariosFYIType">
+      <xs:sequence>
+         <xs:element name="usuarios" nillable="true" type="ns1:UsuarioBOType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ListaUsuariosFYI" type="ListaUsuariosFYIType"/>
+</xs:schema>

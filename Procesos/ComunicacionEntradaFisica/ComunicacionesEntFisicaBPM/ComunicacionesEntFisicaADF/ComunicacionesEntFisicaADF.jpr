@@ -570,7 +570,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../../Jars/Jars/sgd.webservices.clients2.2.jar" jar-entry=""/>
+                  <url path="../../../../Comunes/Jars/sgd.webservices.clients2.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Sgd.webservices.clients2.2.jar"/>

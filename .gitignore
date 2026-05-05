@@ -5,6 +5,7 @@
 **/deploy/
 **/dist/
 **/target/
+**/.data/
 
 # Java compilado
 *.class
@@ -14,5 +15,7 @@
 *.tmp
 *.bak
 *.orig
+*.data
+*.jdb	
 .DS_Store
 Thumbs.db

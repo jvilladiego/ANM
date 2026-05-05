@@ -5,8 +5,8 @@
       <loc>/ns:composite/ns:reference[@name='ComSalFisicaWS']</loc>
       <line>128</line>
       <col>95</col>
-      <file>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\composite.xml</file>
-      <name>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\composite.xml</name>
+      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionEntradaFisica\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionEntradaFisica\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\composite.xml</name>
       <fix/>
       <msg>Fallo al buscar el enlace "ComSalFisicaWS":"{http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida}ComunicacionesSalidaPort" en el gestor de WSDL</msg>
    </Fault>
@@ -95,8 +95,8 @@
       <loc/>
       <line/>
       <col/>
-      <file>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\processes\NotificacionVencimiento.bpmn</file>
-      <name>C:\Jobs\BPM\ANM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\processes\NotificacionVencimiento.bpmn</name>
+      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionEntradaFisica\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\processes\NotificacionVencimiento.bpmn</file>
+      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionEntradaFisica\ComunicacionesEntFisicaBPM\ComunicacionesEntFisicaPrj\SOA\processes\NotificacionVencimiento.bpmn</name>
       <fix/>
       <msg>Al menos una de las expresiones A, Cc o Cco del destinatario de correo es obligatoria en Notificar vencimiento</msg>
    </Fault>

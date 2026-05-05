@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="comunicacionesbpmviewprj" ClientType="Generic">
+  <pageMap>
+    <page path="/CrearComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_CrearComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/CrearComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_CrearComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/ProcesarRecepcionComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_ProcesarRecepcionComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/ProcesarRecepcionComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_ProcesarRecepcionComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/ProcesarEnvioComunicacion_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_ProcesarEnvioComunicacion_TaskDetailsPageDef"/>
+    <page path="/ProcesarEnvioComunicacion_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_ProcesarEnvioComunicacion_TaskNotificationPageDef"/>
+    <page path="/TramitarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_TramitarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/TramitarComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_TramitarComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/CerrarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_CerrarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/CerrarComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_CerrarComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/AprobarCierreComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_AprobarCierreComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/AprobarCierreComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_AprobarCierreComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/AprobarComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_AprobarComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/ActualizarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_ActualizarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/ActualizarComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionesbpmviewprj_ActualizarComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/VisualizarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionesbpmviewprj_VisualizarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/VerComunicacion.jspx" usageId="comunicacionesbpmviewprj_VerComunicacionPageDef"/>
+    <page path="/CerrarComunicacion.jspx" usageId="comunicacionesbpmviewprj_CerrarComunicacionPageDef"/>
+    <page path="/ManejarExcepcion.jspx" usageId="comunicacionesbpmviewprj_ManejarExcepcionPageDef"/>
+    <page path="/NotificarErrorUsuario.jspx" usageId="comunicacionesbpmviewprj_NotificarErrorUsuarioPageDef"/>
+    <page path="/AprobarComunicacion.jspx" usageId="comunicacionesbpmviewprj_AprobarComunicacionPageDef"/>
+    <page path="/AprobarComunicacions_.jspx" usageId="comunicacionesbpmviewprj_AprobarComunicacions_PageDef"/>
+    <page path="/CrearRespuesta.jspx" usageId="comunicacionesbpmviewprj_CrearRespuestaPageDef"/>
+    <page path="/CrearComRespuesta.jspx" usageId="comunicacionesbpmviewprj_CrearComRespuestaPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="comunicacionesbpmviewprj_CrearComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CrearComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_CrearComunicacionRespuestaHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CrearComunicacionRespuestaHT_TaskDetailsPageDef"/>          
+    <page id="comunicacionesbpmviewprj_CrearComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CrearComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_AprobarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.AprobarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_ProcesarRecepcionComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.ProcesarRecepcionComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_ProcesarRecepcionComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.ProcesarRecepcionComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_ProcesarEnvioComunicacion_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.ProcesarEnvioComunicacion_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_ProcesarEnvioComunicacion_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.ProcesarEnvioComunicacion_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_TramitarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.TramitarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_TramitarComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.TramitarComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_CerrarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CerrarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_CerrarComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CerrarComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_AprobarCierreComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.AprobarCierreComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_AprobarCierreComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.AprobarCierreComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_AprobarComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.AprobarComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_ActualizarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.ActualizarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_ActualizarComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.ActualizarComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesbpmviewprj_VisualizarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.VisualizarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesbpmviewprj_VerComunicacionPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.VerComunicacionPageDef"/>
+    <page id="comunicacionesbpmviewprj_CerrarComunicacionPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CerrarComunicacionPageDef"/>
+    <page id="comunicacionesbpmviewprj_ManejarExcepcionPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.ManejarExcepcionPageDef"/>
+    <page id="comunicacionesbpmviewprj_NotificarErrorUsuarioPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.NotificarErrorUsuarioPageDef"/>
+    <page id="comunicacionesbpmviewprj_AprobarComunicacionPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.AprobarComunicacionPageDef"/>
+    <page id="comunicacionesbpmviewprj_AprobarComunicacions_PageDef"
+          path="comunicacionesbpmviewprj.pageDefs.AprobarComunicacions_PageDef"/>
+    <page id="comunicacionesbpmviewprj_CrearRespuestaPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CrearRespuestaPageDef"/>
+    <page id="comunicacionesbpmviewprj_CrearComRespuestaPageDef"
+          path="comunicacionesbpmviewprj.pageDefs.CrearComRespuestaPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ComunicacionesBpmViewPrj_HT_CrearComRespuesta"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_HT_CrearComRespuesta"/>
+    <dc id="ComunicacionesBpmViewPrj_HT_CrearRespuesta"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_HT_CrearRespuesta"/>
+    <dc id="ComunicacionesBpmViewPrj_HT_AprobarComunicacion"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_HT_AprobarComunicacion"/>
+    <dc id="ComunicacionesBpmViewPrj_AprobarComunicacionHT1"
+        path="co.gov.anm.ComunicacionesBpmViewPrj_AprobarComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_HT_NotificarErrorUsuario"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_HT_NotificarErrorUsuario"/>
+   <dc id="ComunicacionesBpmViewPrj_ManejarExcepcionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_ManejarExcepcionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_HT_CerrarComunicacion"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_HT_CerrarComunicacion"/>
+    <dc id="ComunicacionesBpmViewPrj_HT_VerComunicacion"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_HT_VerComunicacion"/>
+    <dc id="ComunicacionesBpmViewPrj_ProcesarRecepcionComunicacionHT1"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_ProcesarRecepcionComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_ProcesarRecepcionComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_ProcesarRecepcionComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_ProcesarEnvioComunicacion1"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_ProcesarEnvioComunicacion"/>
+    <dc id="ComunicacionesBpmViewPrj_VisualizarComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_VisualizarComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_ActualizarComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_ActualizarComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_AprobarCierreComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_AprobarCierreComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_CerrarComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_CerrarComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_TramitarComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_TramitarComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_AprobarComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_AprobarComunicacionHT"/>
+    <dc id="ComunicacionesBpmViewPrj_CrearComunicacionHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_CrearComunicacionHT"/>    
+    <dc id="ComunicacionesBpmViewPrj_CrearComunicacionRespuestaHT"
+        path="comunicacionesbpmviewprj.ComunicacionesBpmViewPrj_CrearComunicacionRespuestaHT"/>            
+    <BC4JDataControl id="ComunicacionesModuleDataControl" Package="co.gov.anm.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="ComunicacionesModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+    <BC4JDataControl id="WebcenterContentModuleDataControl" Package="co.gov.anm.model"
+                     FactoryClass="oracle.adf.model.bc4j.DataControlFactoryImpl" SupportsTransactions="true"
+                     SupportsFindMode="true" SupportsRangesize="true" SupportsResetState="true"
+                     SupportsSortCollection="true" Configuration="WebcenterContentModuleLocal" syncMode="Immediate"
+                     xmlns="http://xmlns.oracle.com/adfm/datacontrol"/>
+  </dataControlUsages>
+</Application>

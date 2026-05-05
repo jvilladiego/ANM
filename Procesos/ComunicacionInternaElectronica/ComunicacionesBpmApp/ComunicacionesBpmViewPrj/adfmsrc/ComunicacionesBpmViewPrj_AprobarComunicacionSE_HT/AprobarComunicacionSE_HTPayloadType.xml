@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="AprobarComunicacionSE_HTPayloadType"
+          Package="ComunicacionesBpmViewPrj_AprobarComunicacionSE_HT"
+          BeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionSE_HT.AprobarComunicacionSE_HTPayloadType"
+          isJavaBased="false">
+  <AccessorAttribute id="ComunicacionBO" IsCollection="true"
+                     BeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionSE_HT.ComunicacionBOType"
+                     CollectionBeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionSE_HT.ComunicacionBOType_ComunicacionBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO"/>
+      <Property Name="nextSibling" Value="ResultadoRevisionBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Comunicacion BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ComunicacionBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="ResultadoRevisionBO" IsCollection="true"
+                     BeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionSE_HT.ResultadoRevisionBOType"
+                     CollectionBeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionSE_HT.ResultadoRevisionBOType_ResultadoRevisionBO_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Resultado Revision BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ResultadoRevisionBO"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

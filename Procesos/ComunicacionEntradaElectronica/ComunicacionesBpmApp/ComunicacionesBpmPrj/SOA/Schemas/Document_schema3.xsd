@@ -1,8 +1,0 @@
-<?xml version= '1.0' encoding= 'UTF-8' ?>
-<xsd:schema targetNamespace="http://response.sgd.anm.gov.co" xmlns:ns0="http://response.sgd.anm.gov.co"
-     xmlns:ns1="http://service.sgd.anm.gov.co" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-    <xsd:import schemaLocation="Document_schema1.xsd" namespace="http://service.sgd.anm.gov.co"/>
-    <xsd:element name="DetalleDocumento" type="ns1:documentDetailResponse" nillable="true"/>
-    <xsd:element name="BrowseResponse" type="ns1:browseResponse" nillable="true"/>
-    <xsd:element name="RespuestaUCM" type="ns1:wccResponse" nillable="true"/>
-</xsd:schema>

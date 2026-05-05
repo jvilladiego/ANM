@@ -1,0 +1,298 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions
+     name="Comunicaciones"
+     targetNamespace="http://service.sgd.anm.gov.co"
+     xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:WL5G3N1="http://transfer.sgd.anm.gov.co"
+     xmlns:WL5G3N2="http://response.sgd.anm.gov.co"
+     xmlns:WL5G3N3="http://service.sgd.anm.gov.co"
+     xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <WL5G3N0:types>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://service.sgd.anm.gov.co" schemaLocation="Schemas/Comunicaciones_schema1.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://response.sgd.anm.gov.co" schemaLocation="Schemas/Comunicaciones_schema2.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://transfer.sgd.anm.gov.co" schemaLocation="Schemas/Comunicaciones_schema3.xsd"/>
+        </xsd:schema>
+    </WL5G3N0:types>
+    <WL5G3N0:message name="generarNumeroRadicado">
+        <WL5G3N0:part name="solicitudRadicado" element="WL5G3N1:SolicitudRadicado"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="generarNumeroRadicadoResponse">
+        <WL5G3N0:part name="noRadicado" element="WL5G3N2:NoRadicado"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="Exception">
+        <WL5G3N0:part name="fault" element="WL5G3N3:Exception"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="crearComunicacion">
+        <WL5G3N0:part name="creacionComunicacion" element="WL5G3N1:CreacionComunicacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="crearComunicacionResponse">
+        <WL5G3N0:part name="respuestaCreacion" element="WL5G3N2:RespuestaCreacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="registrarComunicacion">
+        <WL5G3N0:part name="RegistroComunicacion" element="WL5G3N1:RegistroComunicacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="registrarComunicacionResponse">
+        <WL5G3N0:part name="respuestaRegistro" element="WL5G3N2:RespuestaRegistro"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarAnexosRadicado">
+        <WL5G3N0:part name="nroRadicadoAnexo" element="WL5G3N1:NroRadicadoAnexo"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarAnexosRadicadoResponse">
+        <WL5G3N0:part name="anexosRadicadoResponse" element="WL5G3N2:AnexosRadicadoResponse"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="actualizarComunicacion">
+        <WL5G3N0:part name="actualizacionComunicacion" element="WL5G3N1:ActualizacionComunicacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="actualizarComunicacionResponse">
+        <WL5G3N0:part name="respuestaActualizacion" element="WL5G3N2:RespuestaActualizacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="buscarUsuariosPorDependenciaRol">
+        <WL5G3N0:part name="DependenciaRol" element="WL5G3N1:dependenciaRol"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="buscarUsuariosPorDependenciaRolResponse">
+        <WL5G3N0:part name="usuariosRol" element="WL5G3N2:UsuariosRol"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="actualizarProcesoComunicacion">
+        <WL5G3N0:part name="actualizacionProceso" element="WL5G3N1:ActualizacionProceso"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="actualizarProcesoComunicacionResponse">
+        <WL5G3N0:part name="respuestaActualizacionProc" element="WL5G3N2:RespuestaActualizacionProc"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarComunicacion">
+        <WL5G3N0:part name="nroRadicadoComunicacion" element="WL5G3N1:NroRadicadoComunicacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarComunicacionResponse">
+        <WL5G3N0:part name="comunicacionResponse" element="WL5G3N2:ComunicacionResponse"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="calcularFechaVencimiento">
+        <WL5G3N0:part name="fechaVencimientoRequest" element="WL5G3N1:FechaVencimientoRequest"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="calcularFechaVencimientoResponse">
+        <WL5G3N0:part name="fechaVencimientoResponse" element="WL5G3N2:FechaVencimientoResponse"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarUsuario">
+        <WL5G3N0:part name="idUsuario" element="WL5G3N1:IdUsuario"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="consultarUsuarioResponse">
+        <WL5G3N0:part name="usuarioComunicacion" element="WL5G3N2:UsuarioComunicacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="generarBarCode">
+        <WL5G3N0:part name="generacionODTRequest" element="WL5G3N1:GeneracionODTRequest"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="generarBarCodeResponse">
+        <WL5G3N0:part name="generacionODTResponse" element="WL5G3N2:GeneracionODTResponse"/>
+    </WL5G3N0:message>
+    <WL5G3N0:portType name="Comunicaciones">
+        <WL5G3N0:operation name="generarNumeroRadicado">
+            <WL5G3N0:input message="WL5G3N3:generarNumeroRadicado"/>
+            <WL5G3N0:output message="WL5G3N3:generarNumeroRadicadoResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="crearComunicacion">
+            <WL5G3N0:input message="WL5G3N3:crearComunicacion"/>
+            <WL5G3N0:output message="WL5G3N3:crearComunicacionResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="registrarComunicacion">
+            <WL5G3N0:input message="WL5G3N3:registrarComunicacion"/>
+            <WL5G3N0:output message="WL5G3N3:registrarComunicacionResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarAnexosRadicado">
+            <WL5G3N0:input message="WL5G3N3:consultarAnexosRadicado"/>
+            <WL5G3N0:output message="WL5G3N3:consultarAnexosRadicadoResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="actualizarComunicacion">
+            <WL5G3N0:input message="WL5G3N3:actualizarComunicacion"/>
+            <WL5G3N0:output message="WL5G3N3:actualizarComunicacionResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="buscarUsuariosPorDependenciaRol">
+            <WL5G3N0:input message="WL5G3N3:buscarUsuariosPorDependenciaRol"/>
+            <WL5G3N0:output message="WL5G3N3:buscarUsuariosPorDependenciaRolResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="actualizarProcesoComunicacion">
+            <WL5G3N0:input message="WL5G3N3:actualizarProcesoComunicacion"/>
+            <WL5G3N0:output message="WL5G3N3:actualizarProcesoComunicacionResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarComunicacion">
+            <WL5G3N0:input message="WL5G3N3:consultarComunicacion"/>
+            <WL5G3N0:output message="WL5G3N3:consultarComunicacionResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="calcularFechaVencimiento">
+            <WL5G3N0:input message="WL5G3N3:calcularFechaVencimiento"/>
+            <WL5G3N0:output message="WL5G3N3:calcularFechaVencimientoResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarUsuario">
+            <WL5G3N0:input message="WL5G3N3:consultarUsuario"/>
+            <WL5G3N0:output message="WL5G3N3:consultarUsuarioResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="generarBarCode">
+            <WL5G3N0:input message="WL5G3N3:generarBarCode"/>
+            <WL5G3N0:output message="WL5G3N3:generarBarCodeResponse"/>
+            <WL5G3N0:fault name="Exception" message="WL5G3N3:Exception"/>
+        </WL5G3N0:operation>
+    </WL5G3N0:portType>
+    <WL5G3N0:binding name="ComunicacionesPortBinding" type="WL5G3N3:Comunicaciones">
+        <WL5G3N4:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <WL5G3N0:operation name="generarNumeroRadicado">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="crearComunicacion">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="registrarComunicacion">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarAnexosRadicado">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="actualizarComunicacion">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="buscarUsuariosPorDependenciaRol">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="actualizarProcesoComunicacion">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarComunicacion">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="calcularFechaVencimiento">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="consultarUsuario">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="generarBarCode">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="Exception">
+                <WL5G3N4:fault name="Exception" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+    </WL5G3N0:binding>
+    <WL5G3N0:service name="ComunicacionesPortBindingQSService">
+        <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+        <WL5G3N0:port name="ComunicacionesPortBindingQSPort" binding="WL5G3N3:ComunicacionesPortBinding">
+            <WL5G3N4:address location="http://osb.anm.local:80/SGD2.3/ProxyServices/ComunicacionesProxy"/>
+        </WL5G3N0:port>
+    </WL5G3N0:service>
+</WL5G3N0:definitions>

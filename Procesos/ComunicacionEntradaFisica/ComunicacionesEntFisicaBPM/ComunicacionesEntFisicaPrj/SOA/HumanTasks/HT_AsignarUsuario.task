@@ -25,7 +25,6 @@
          <stage name="Stage1" disabled="false">
             <participant disabled="false" name="default.DefaultPerformer">
                <resource type="XPATH" identityType="user">/task:task/task:payload/ns4:UsuarioBO/ns4:idUsuario</resource>
-               <resource type="STATIC" identityType="user">1000</resource>
                <dynamicAssignment identityTypeToSelect="user">
                   <assignmentPattern patternName="LEAST_BUSY" isGlobalPattern="false"/>
                </dynamicAssignment>

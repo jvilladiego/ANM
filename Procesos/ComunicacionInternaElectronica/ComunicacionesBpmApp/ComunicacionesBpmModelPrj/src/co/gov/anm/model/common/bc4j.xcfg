@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="co.gov.anm.model.ComunicacionesModule" default="ComunicacionesModuleLocal">
+    <AppModuleConfig name="ComunicacionesModuleLocal" jbo.project="co.gov.anm.model.ComunicacionesBpmModelPrj"
+                     ApplicationName="co.gov.anm.model.ComunicacionesModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/ComunicacionesDS"/>
+      <Security AppModuleJndiName="co.gov.anm.model.ComunicacionesModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="ComunicacionesModuleShared" jbo.project="co.gov.anm.model.ComunicacionesBpmModelPrj"
+                     ApplicationName="co.gov.anm.model.ComunicacionesModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/ComunicacionesDS"/>
+      <Security AppModuleJndiName="co.gov.anm.model.ComunicacionesModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+  <AppModuleConfigBag ApplicationName="co.gov.anm.model.WebcenterContentModule" default="WebcenterContentModuleShared">
+    <AppModuleConfig name="WebcenterContentModuleLocal" jbo.project="co.gov.anm.model.ComunicacionesBpmModelPrj"
+                     ApplicationName="co.gov.anm.model.WebcenterContentModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/WCCConnectionDS"/>
+      <Security AppModuleJndiName="co.gov.anm.model.WebcenterContentModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="WebcenterContentModuleShared" jbo.project="co.gov.anm.model.ComunicacionesBpmModelPrj"
+                     ApplicationName="co.gov.anm.model.WebcenterContentModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="jdbc/WCCConnectionDS"/>
+      <Security AppModuleJndiName="co.gov.anm.model.WebcenterContentModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

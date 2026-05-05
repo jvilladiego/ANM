@@ -1,22 +1,22 @@
 SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
-2026-04-24 09:34:01.675/7.816 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
-2026-04-24 09:34:02.150/8.292 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
-2026-04-24 09:34:02.152/8.294 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
-2026-04-24 09:34:02.173/8.315 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
-2026-04-24 09:34:02.176/8.318 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
-2026-04-24 09:34:02.188/8.329 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
+2026-05-04 17:31:49.761/1.448 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational configuration from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence.xml"
+2026-05-04 17:31:49.850/1.536 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Loaded operational overrides from "jar:file:/C:/Oracle/Middleware/Oracle_Home/coherence/lib/coherence.jar!/tangosol-coherence-override-dev.xml"
+2026-05-04 17:31:49.851/1.537 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/tangosol-coherence-override.xml" is not specified
+2026-05-04 17:31:49.855/1.542 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-config.xml" is not specified
+2026-05-04 17:31:49.857/1.544 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "cache-factory-builder-config.xml" is not specified
+2026-05-04 17:31:49.863/1.549 Oracle Coherence 12.2.1.4.0 <Info> (thread=main, member=n/a): Optional configuration override "/custom-mbeans.xml" is not specified
 
 Oracle Coherence Version 12.2.1.4.0 Build 74888
  Grid Edition: Development mode
 Copyright (c) 2000, 2019, Oracle and/or its affiliates. All rights reserved.
 
-2026-04-24 09:34:05.008/11.150 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "ddann's cluster" has been automatically generated
-2026-04-24 09:34:06.871/13.013 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
-abr 24, 2026 9:34:08 AM oracle.soa.scac.ValidateComposite loadWSDLs
+2026-05-04 17:31:50.705/2.391 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): The cluster name has not been configured, a value of "ddann's cluster" has been automatically generated
+2026-05-04 17:31:51.400/3.085 Oracle Coherence GE 12.2.1.4.0 <Info> (thread=main, member=n/a): Created cache factory com.tangosol.net.ExtensibleConfigurableCacheFactory
+may 04, 2026 5:31:52 PM oracle.soa.scac.ValidateComposite loadWSDLs
 ADVERTENCIA: Validating WSDLs from WSDLManager....  with option UseSoaInfraMds:false
-abr 24, 2026 9:34:08 AM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
+may 04, 2026 5:31:52 PM oracle.fabric.common.wsdl.SchemaManager isIncrementalBuildSupported
 INFORMACIÓN: XMLSchema incremental build enabled.
 ADVERTENCIA: Failed to load WSDL from http://soa.anm.local:80/soa-infra/services/default/ComunicacionesSalFisicaBPM/ComunicacionesSalida.service?WSDL due to: Error al obtener el flujo de entrada XML: http://soa.anm.local:80/soa-infra/services/default/ComunicacionesSalFisicaBPM/ComunicacionesSalida.service?WSDL: Connection timed out: connectWill retry to load
 GRAVE:  failed to parse wsdl from http://soa.anm.local:80/soa-infra/services/default/ComunicacionesSalFisicaBPM/ComunicacionesSalida.service?WSDL : 
@@ -28,8 +28,8 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.transform.ToString' al cat
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.jmx.builder.JmxBeanExportFactory' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.jmx.builder.JmxBeanExportFactory'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$DefaultReferenceResolver' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$DefaultReferenceResolver'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.logging.Log4j' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.logging.Log4j'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MetaClassRegistry' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MetaClassRegistry'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.model.DefaultTableModel' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.model.DefaultTableModel'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MetaClassRegistry' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MetaClassRegistry'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.xml.streamingmarkupsupport.Builder$Built' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.xml.streamingmarkupsupport.Builder$Built'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObservableList' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObservableList'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.jmx.builder.JmxEventEmitter' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.jmx.builder.JmxEventEmitter'.
@@ -65,12 +65,12 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.GString' al catálogo 
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.xml.StreamingSAXBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.xml.StreamingSAXBuilder'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.mock.interceptor.Demand' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.mock.interceptor.Demand'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.xml.NamespaceBuilderSupport' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.xml.NamespaceBuilderSupport'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.text.Template' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.text.Template'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.beans.ListenerList' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.beans.ListenerList'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.text.Template' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.text.Template'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MissingFieldException' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MissingFieldException'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$ClassNameResolver' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$ClassNameResolver'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.IncorrectClosureArgumentsException' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.IncorrectClosureArgumentsException'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.OrderBy' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.OrderBy'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.IncorrectClosureArgumentsException' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.IncorrectClosureArgumentsException'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.OptionAccessor' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.OptionAccessor'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.SpreadListEvaluatingException' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.SpreadListEvaluatingException'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.text.TemplateEngine' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.text.TemplateEngine'.
@@ -110,8 +110,8 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.NodePrinter' al catál
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.jmx.builder.JmxBeanInfoManager' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.jmx.builder.JmxBeanInfoManager'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.time.Duration' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.time.Duration'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.time.BaseDuration$From' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.time.BaseDuration$From'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.io.PlatformLineWriter' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.io.PlatformLineWriter'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.io.FileVisitResult' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.io.FileVisitResult'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.io.PlatformLineWriter' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.io.PlatformLineWriter'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MetaClassRegistryChangeEvent' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MetaClassRegistryChangeEvent'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.CharsetToolkit' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.CharsetToolkit'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObservableList$ElementUpdatedEvent' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObservableList$ElementUpdatedEvent'.
@@ -149,8 +149,8 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.Expando' al catálogo 
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$DefaultIdentifierResolver' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$DefaultIdentifierResolver'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.xml.QName' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.xml.QName'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.SpreadMapEvaluatingException' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.SpreadMapEvaluatingException'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.inspect.TextTreeNodeMaker' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.inspect.TextTreeNodeMaker'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.ObjectRange' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.ObjectRange'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.inspect.TextTreeNodeMaker' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.inspect.TextTreeNodeMaker'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObservableMap$PropertyClearedEvent' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObservableMap$PropertyClearedEvent'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MutableMetaClass' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MutableMetaClass'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.model.ValueHolder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.model.ValueHolder'.
@@ -166,8 +166,8 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.text.GStringTemplateEngine
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.FileNameByRegexFinder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.FileNameByRegexFinder'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.GroovyClassLoader' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.GroovyClassLoader'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ScriptException' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ScriptException'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.JavadocAssertionTestBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.JavadocAssertionTestBuilder'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.json.JsonLexer' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.json.JsonLexer'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.JavadocAssertionTestBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.JavadocAssertionTestBuilder'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.beans.Bindable' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.beans.Bindable'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MetaClass' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MetaClass'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MissingClassException' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MissingClassException'.
@@ -177,20 +177,20 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.slurpersupport.Filter
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MetaClassImpl$Index' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MetaClassImpl$Index'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.time.TimeCategory' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.time.TimeCategory'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.XmlNodePrinter' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.XmlNodePrinter'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.Factory' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.Factory'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.inspect.Inspector' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.inspect.Inspector'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.Factory' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.Factory'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.GroovyMBean' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.GroovyMBean'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.GroovyScriptEngine' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.GroovyScriptEngine'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.slurpersupport.GPathResult' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.slurpersupport.GPathResult'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.jmx.builder.JmxEventEmitterMBean' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.jmx.builder.JmxEventEmitterMBean'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObservableList$MultiElementRemovedEvent' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObservableList$MultiElementRemovedEvent'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.logging.Slf4j' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.logging.Slf4j'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.json.JsonTokenType' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.json.JsonTokenType'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.Interceptor' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.Interceptor'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.json.JsonTokenType' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.json.JsonTokenType'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.AllTestSuite' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.AllTestSuite'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.Buildable' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.Buildable'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.io.LineColumnReader' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.io.LineColumnReader'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.Sequence' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.Sequence'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.io.LineColumnReader' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.io.LineColumnReader'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ResourceConnector' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ResourceConnector'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$IdentifierResolver' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$IdentifierResolver'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$ChildPropertySetter' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$ChildPropertySetter'.
@@ -240,8 +240,8 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$De
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.Range' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.Range'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.Eval' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.Eval'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.time.BaseDuration' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.time.BaseDuration'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.Proxy' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.Proxy'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.ExpandoMetaClass$ExpandoMetaProperty' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.ExpandoMetaClass$ExpandoMetaProperty'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.mock.interceptor.LooseExpectation' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.mock.interceptor.LooseExpectation'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.Category' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.Category'.
@@ -265,8 +265,8 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.NonEmptySequence' al 
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$DefaultRelationNameResolver' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$DefaultRelationNameResolver'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.MetaMethod' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.MetaMethod'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.AntBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.AntBuilder'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$ReflectionClassNameResolver' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$ReflectionClassNameResolver'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.AdaptingMetaClass' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.AdaptingMetaClass'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObjectGraphBuilder$ReflectionClassNameResolver' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObjectGraphBuilder$ReflectionClassNameResolver'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObservableList$ElementRemovedEvent' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObservableList$ElementRemovedEvent'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.model.DefaultTableColumn' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.model.DefaultTableColumn'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.PermutationGenerator' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.PermutationGenerator'.
@@ -294,8 +294,8 @@ ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.CliBuilder' al catálo
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.jmx.builder.JmxBeanFactory' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.jmx.builder.JmxBeanFactory'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.jmx.builder.JmxMetaMapBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.jmx.builder.JmxMetaMapBuilder'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.slurpersupport.ReplacementNode' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.slurpersupport.ReplacementNode'.
-ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.logging.Commons' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.logging.Commons'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.xml.DOMBuilder' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.xml.DOMBuilder'.
+ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.logging.Commons' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.logging.Commons'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.util.ObservableMap' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.util.ObservableMap'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.lang.ProxyMetaClass' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.lang.ProxyMetaClass'.
 ADVERTENCIA: No se ha podido añadir el objeto 'groovy.model.FormModel' al catálogo porque ya existe un objeto con propiedad única 'java.fullClassName' y valor 'groovy.model.FormModel'.

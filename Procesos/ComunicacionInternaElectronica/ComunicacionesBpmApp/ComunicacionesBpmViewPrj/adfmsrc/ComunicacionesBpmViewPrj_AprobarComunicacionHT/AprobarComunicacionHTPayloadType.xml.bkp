@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="AprobarComunicacionHTPayloadType"
+          Package="ComunicacionesBpmViewPrj_AprobarComunicacionHT"
+          BeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionHT.AprobarComunicacionHTPayloadType"
+          isJavaBased="false">
+  <Attribute Name="fileTmpPath" IsUpdateable="0" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaUsuarios"/>
+        <Property Name="nextSibling" Value="ListaUsuarios"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="File Tmp Path"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="fileTmpPath"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="ComunicacionBO" IsCollection="true"
+                     BeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionHT.ComunicacionBOType"
+                     CollectionBeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionHT.ComunicacionBOType_ComunicacionBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO"/>
+      <Property Name="nextSibling" Value="ResultadoRevisionBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Comunicacion BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ComunicacionBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="ResultadoRevisionBO" IsCollection="true"
+                     BeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionHT.ResultadoRevisionBOType"
+                     CollectionBeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionHT.ResultadoRevisionBOType_ResultadoRevisionBO_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Resultado Revision BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ResultadoRevisionBO"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="ListaUsuarios" IsCollection="true"
+                     BeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionHT.ListaUsuariosType"
+                     CollectionBeanClass="ComunicacionesBpmViewPrj_AprobarComunicacionHT.ListaUsuariosType_ListaUsuarios_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Lista Usuarios"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ListaUsuarios"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaUsuarios"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

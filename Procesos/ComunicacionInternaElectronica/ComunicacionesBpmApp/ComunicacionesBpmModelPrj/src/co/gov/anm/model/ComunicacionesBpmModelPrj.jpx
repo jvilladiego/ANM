@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE JboProject SYSTEM "jbo_03_01.dtd">
+<!---->
+<JboProject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="ComunicacionesBpmModelPrj"
+  Version="12.2.1.20.47"
+  SeparateXMLFiles="true"
+  PackageName="co.gov.anm.model">
+  <DesignTime>
+    <Attr Name="_DTExpressionTypeChecking" Value="true"/>
+    <Attr Name="_jbo.TypeMapEntries" Value="OracleApps"/>
+    <Attr Name="_jprName" Value="../../../../../ComunicacionesBpmModelPrj.jpr"/>
+    <Attr Name="_appModuleNames0" Value="co.gov.anm.model.ComunicacionesModule"/>
+    <Attr Name="_appModuleNames1" Value="co.gov.anm.model.WebcenterContentModule"/>
+  </DesignTime>
+  <Containee
+    Name="model"
+    PackageName="co.gov.anm.comunicaciones.model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="entity"
+    PackageName="co.gov.anm.model.entity"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_EO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="model"
+    PackageName="co.gov.anm.model"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_AM" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <Containee
+    Name="view"
+    PackageName="co.gov.anm.model.view"
+    ObjectType="JboPackage">
+    <DesignTime>
+      <Attr Name="_VO" Value="true"/>
+    </DesignTime>
+  </Containee>
+  <AppModuleUsage
+    Name="WebcenterContentModule"
+    FullName="co.gov.anm.model.WebcenterContentModule"
+    ConfigurationName="co.gov.anm.model.WebcenterContentModuleShared"
+    SharedScope="2"/>
+</JboProject>

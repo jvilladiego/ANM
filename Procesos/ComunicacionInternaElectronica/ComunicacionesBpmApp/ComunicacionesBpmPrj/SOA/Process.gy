@@ -1,0 +1,79 @@
+//Content Format Version: 1.0
+
+//########################################################################################
+//####                                                                                ####
+//####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####
+//#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####
+//####                                                                                ####
+//########################################################################################
+package oracle.scripting.bpmn.process;
+
+import oracle.scripting.catalog.sgdComunicaciones.UsuarioBO;
+import oracle.scripting.catalog.sgdComunicaciones.ListaUsuarios;
+import oracle.scripting.xml.co.gov.anm.sgd.response.elem.UsuariosRol;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.Usuario;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoComunicacionRequest;
+
+
+public class Process{
+
+public void methodACT42925875679995()
+{
+	System.out.println("Inicio - Agregar doc ppal (T1)");
+		
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = urlDocPpal;
+	docPrincipal.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(docPrincipal);
+	
+	System.out.println("Fin - Agregar doc ppal (T1)");
+}
+
+
+
+
+public static class ACT18258397782272{
+
+public void methodACT18300366351334()
+{
+	ListaUsuarios lista = new ListaUsuarios();
+	List<UsuarioBO> usuariosFYI = new ArrayList<UsuarioBO>();
+	List<Usuario> userList = new ArrayList<Usuario>();
+	UsuariosRol usuarioRol = new UsuariosRol();
+	String[] usuariosArray = null;
+	try {
+	    System.out.print("variable seteada en el jsfbean: " + this.getComunicacion().getUsuariosFYIANM());
+	
+	    usuariosArray = this.getComunicacion().getUsuariosFYIANM().split(";");
+	    
+	    System.out.print("usuarios para asignar: " + usuariosArray.length);
+	    
+	    for (String idUsuario : usuariosArray) {
+	        UsuarioBO usuario = new UsuarioBO();
+	        Usuario user = new Usuario();
+	        
+	        System.out.print("Id seteado: " + idUsuario);
+	        
+	        if (!idUsuario.trim().equals("")) {
+	            usuario.setIdUsuario(idUsuario);            
+	            usuariosFYI.add(usuario);
+	            
+	            user.setIdUsuario(idUsuario);
+	            userList.add(user);
+	        }
+	    }
+	    
+	    lista.setUsuarios(usuariosFYI);
+	    this.setUsuariosANM(lista);
+	    
+	    usuarioRol.setUsuarios(userList);
+	    this.setUsuariosComResponse(usuarioRol);
+	} catch (Exception e) {
+	    System.out.print("Script exception: " + e.getMessage());
+	}
+}
+
+
+}}
