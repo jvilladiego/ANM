@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="HT_ResolverNovedadPayloadType"
+          Package="ComunicacionesSalFisicaADF_HT_ResolverNovedad"
+          BeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.HT_ResolverNovedadPayloadType" isJavaBased="false">
+  <Attribute Name="idUsuarioDO" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaInteresadosBO"/>
+        <Property Name="nextSibling" Value="ListaInteresadosBO"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Id Usuario DO"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="idUsuarioDO"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <AccessorAttribute id="ListaInteresadosBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.ListaInteresadosBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.ListaInteresadosBOType_ListaInteresadosBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO"/>
+      <Property Name="nextSibling" Value="ComunicacionSalidaBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Lista Interesados BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ListaInteresadosBO"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaInteresadosBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="ComunicacionSalidaBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.ComunicacionSalidaBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.ComunicacionSalidaBOType_ComunicacionSalidaBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO"/>
+      <Property Name="nextSibling" Value="UsuarioBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Comunicacion Salida BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ComunicacionSalidaBO"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="UsuarioBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.UsuarioBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.UsuarioBOType_UsuarioBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO"/>
+      <Property Name="nextSibling" Value="TaxonomiaBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Usuario BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="UsuarioBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="TaxonomiaBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.TaxonomiaBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.TaxonomiaBOType_TaxonomiaBO_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Taxonomia BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="TaxonomiaBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="ComunicacionEntradaBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.ComunicacionEntradaBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad.ComunicacionEntradaBOType_ComunicacionEntradaBO_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Comunicacion Entrada BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ComunicacionEntradaBO"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="task"
+  Version="12.2.1.22.48"
+  StaticDef="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom.task">
+  <DesignTime>
+    <Attr Name="_DCName"
+      Value="comunicacionessalfisicabpm.DataControls.ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"/>
+    <Attr Name="_SDName" Value="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom.task"/>
+  </DesignTime>
+</PDefViewObject>

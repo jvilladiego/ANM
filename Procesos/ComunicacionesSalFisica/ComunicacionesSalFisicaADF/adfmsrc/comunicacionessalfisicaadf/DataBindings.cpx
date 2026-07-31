@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="comunicacionessalfisicaadf" ClientType="Generic">
+  <pageMap>
+    <page path="/CrearComunicacion.jspx" usageId="comunicacionessalfisicaadf_CrearComunicacionPageDef"/>
+    <page path="/AprobarComunicacion.jspx" usageId="comunicacionessalfisicaadf_AprobarComunicacionPageDef"/>
+    <page path="/ActualizarComunicacion.jspx" usageId="comunicacionessalfisicaadf_ActualizarComunicacionPageDef"/>
+    <page path="/ConfirmarEnvioCom.jspx" usageId="comunicacionessalfisicaadf_ConfirmarEnvioComPageDef"/>
+    <page path="/DigitalizarAcuseRecibo.jspx" usageId="comunicacionessalfisicaadf_DigitalizarAcuseReciboPageDef"/>
+    <page path="/ProcesarEnvioComunicacion.jspx" usageId="comunicacionessalfisicaadf_ProcesarEnvioComunicacionPageDef"/>
+    <page path="/ActualizarDatosDestinatario.jspx"
+          usageId="comunicacionessalfisicaadf_ActualizarDatosDestinatarioPageDef"/>
+    <page path="/CrearComunicacionMensaje.jspx" usageId="comunicacionessalfisicaadf_CrearComunicacionMensajePageDef"/>
+    <page path="/ImprimirDocum.jspx" usageId="comunicacionessalfisicaadf_ImprimirDocumPageDef"/>
+    <page path="/AprobarCierreCom.jspx" usageId="comunicacionessalfisicaadf_AprobarCierreComPageDef"/>
+    <page path="/ResolverNovedad.jspx" usageId="comunicacionessalfisicaadf_ResolverNovedadPageDef"/>
+    <page path="/NotificarEnlace.jspx" usageId="comunicacionessalfisicaadf_NotificarEnlacePageDef"/>
+    <page path="/ManejarExcepcionHT.jspx" usageId="comunicacionessalfisicaadf_ManejarExcepcionHTPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="comunicacionessalfisicaadf_CrearComunicacionPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.CrearComunicacionPageDef"/>
+    <page id="comunicacionessalfisicaadf_AprobarComunicacionPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.AprobarComunicacionPageDef"/>
+    <page id="comunicacionessalfisicaadf_ActualizarComunicacionPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.ActualizarComunicacionPageDef"/>
+    <page id="comunicacionessalfisicaadf_ConfirmarEnvioComPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.ConfirmarEnvioComPageDef"/>
+    <page id="comunicacionessalfisicaadf_DigitalizarAcuseReciboPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.DigitalizarAcuseReciboPageDef"/>
+    <page id="comunicacionessalfisicaadf_ProcesarEnvioComunicacionPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.ProcesarEnvioComunicacionPageDef"/>
+    <page id="comunicacionessalfisicaadf_ActualizarDatosDestinatarioPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.ActualizarDatosDestinatarioPageDef"/>
+    <page id="comunicacionessalfisicaadf_CrearComunicacionMensajePageDef"
+          path="comunicacionessalfisicaadf.pageDefs.CrearComunicacionMensajePageDef"/>
+    <page id="comunicacionessalfisicaadf_ImprimirDocumPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.ImprimirDocumPageDef"/>
+    <page id="comunicacionessalfisicaadf_AprobarCierreComPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.AprobarCierreComPageDef"/>
+    <page id="comunicacionessalfisicaadf_ResolverNovedadPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.ResolverNovedadPageDef"/>
+    <page id="comunicacionessalfisicaadf_NotificarEnlacePageDef"
+          path="comunicacionessalfisicaadf.pageDefs.NotificarEnlacePageDef"/>
+    <page id="comunicacionessalfisicaadf_ManejarExcepcionHTPageDef"
+          path="comunicacionessalfisicaadf.pageDefs.ManejarExcepcionHTPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom1"
+        path="comunicacionessalfisicabpm.ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_CrearComunicacion1"
+        path="comunicacionessalfisicabpm.ComunicacionesSalFisicaADF_HT_CrearComunicacion"/>
+    <dc id="ComunicacionesSalFisicaADF_ManejarExcepcionHT"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_ManejarExcepcionHT"/>
+    <dc id="ComunicacionesSalFisicaADF_NotificarEnlace_HT"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_NotificarEnlace_HT"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_ResolverNovedad"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_ResolverNovedad"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_AprobarCierreCom"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_AprobarCierreCom"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_ImprimirDocum"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_ImprimirDocum"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_CrearComunicacionMensaje"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_CrearComunicacionMensaje"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_ActualizarDatosDestinatario"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_ActualizarDatosDestinatario"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_ProcesarEnvioComunicacion"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_ProcesarEnvioComunicacion"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_DigitalizarAcuseRecibo"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_DigitalizarAcuseRecibo"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_ActualizarComunicacion"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_ActualizarComunicacion"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_AprobarComunicacion"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_AprobarComunicacion"/>
+    <dc id="ComunicacionesSalFisicaADF_HT_CrearComunicacion"
+        path="comunicacionessalfisicaadf.ComunicacionesSalFisicaADF_HT_CrearComunicacion"/>
+  </dataControlUsages>
+</Application>

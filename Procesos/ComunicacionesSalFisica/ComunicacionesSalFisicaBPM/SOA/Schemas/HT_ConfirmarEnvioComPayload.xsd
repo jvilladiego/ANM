@@ -1,0 +1,29 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaAnexosBO" xmlns:ns6="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AdjuntoBO" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" xmlns:ns5="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:ns4="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaInteresadosBO" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionEntradaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaAnexosBO" schemaLocation="../businessCatalog/SGDComunicaciones/ListaAnexosBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaInteresadosBO" schemaLocation="../businessCatalog/SGDComunicaciones/ListaInteresadosBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO" schemaLocation="../businessCatalog/SGDComunicaciones/AnexoListBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AdjuntoBO" schemaLocation="../businessCatalog/SGDComunicaciones/AdjuntoBO.xsd"/>
+   <complexType name="HT_ConfirmarEnvioComPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionSalidaBO"/>
+         <element ref="ns1:UsuarioBO"/>
+         <element name="idAuxiliarBO" type="xsd:string"/>
+         <element name="tipoEnvioBO" type="xsd:integer"/>
+         <element name="numeroGuia" type="xsd:string"/>
+         <element name="intentoReenvio" type="xsd:integer"/>
+         <element ref="ns2:ComunicacionEntradaBO"/>
+         <element ref="ns3:ListaAnexosBO"/>
+         <element ref="ns4:ListaInteresadosBO"/>
+         <element ref="ns5:AnexoListBO"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="numeroRadicado" type="xsd:string"/>
+         <element name="fechaVencimiento" type="xsd:dateTime"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+         <element ref="ns6:AdjuntoBO"/>
+      </sequence>
+   </complexType>
+</schema>

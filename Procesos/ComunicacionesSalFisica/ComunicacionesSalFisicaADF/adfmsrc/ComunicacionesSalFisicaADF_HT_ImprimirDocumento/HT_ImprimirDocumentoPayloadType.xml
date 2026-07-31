@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="HT_ImprimirDocumentoPayloadType"
+          Package="ComunicacionesSalFisicaADF_HT_ImprimirDocumento"
+          BeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento.HT_ImprimirDocumentoPayloadType"
+          isJavaBased="false">
+  <AccessorAttribute id="ComunicacionSalidaBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento.ComunicacionSalidaBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento.ComunicacionSalidaBOType_ComunicacionSalidaBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO"/>
+      <Property Name="nextSibling" Value="UsuarioBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Comunicacion Salida BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="ComunicacionSalidaBO"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="UsuarioBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento.UsuarioBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento.UsuarioBOType_UsuarioBO_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO"/>
+      <Property Name="nextSibling" Value="AnexoListBO"/>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Usuario BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="UsuarioBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO"/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="AnexoListBO" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento.AnexoListBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento.AnexoListBOType_AnexoListBO_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="1"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Anexo List BO"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="AnexoListBO"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

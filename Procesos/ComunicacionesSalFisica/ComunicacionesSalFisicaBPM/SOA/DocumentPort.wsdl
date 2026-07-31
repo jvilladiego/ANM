@@ -1,0 +1,292 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.0-wls122140-b220215.0856 svn-revision#unknown. -->
+<definitions
+     name="Document"
+     targetNamespace="http://service.sgd.anm.gov.co"
+     xmlns="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:wsp="http://www.w3.org/ns/ws-policy"
+     xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+     xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy"
+     xmlns:tns="http://service.sgd.anm.gov.co"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata"
+    >
+    <types>
+        <xsd:schema>
+            <xsd:import namespace="http://service.sgd.anm.gov.co" schemaLocation="Schemas/DocumentPort_xsd_1.xsd"/>
+        </xsd:schema>
+        <xsd:schema>
+            <xsd:import namespace="http://transfer.sgd.anm.gov.co" schemaLocation="Schemas/DocumentPort_xsd_2.xsd"/>
+        </xsd:schema>
+        <xsd:schema>
+            <xsd:import namespace="http://response.sgd.anm.gov.co" schemaLocation="Schemas/DocumentPort_xsd_3.xsd"/>
+        </xsd:schema>
+    </types>
+    <message name="checkinGestionDocumental">
+        <part name="checkinGestionDocumental" xmlns:ns1="http://transfer.sgd.anm.gov.co" element="ns1:CheckinGestionDocumental"/>
+    </message>
+    <message name="checkinGestionDocumentalResponse">
+        <part name="respuestaUCM" xmlns:ns2="http://response.sgd.anm.gov.co" element="ns2:RespuestaUCM"/>
+    </message>
+    <message name="WSException">
+        <part name="fault" element="tns:WSException"/>
+    </message>
+    <message name="verDetalleDocumento">
+        <part name="solicitudDetalle" xmlns:ns3="http://transfer.sgd.anm.gov.co" element="ns3:SolicitudDetalle"/>
+    </message>
+    <message name="verDetalleDocumentoResponse">
+        <part name="detalleDocumento" xmlns:ns4="http://response.sgd.anm.gov.co" element="ns4:DetalleDocumento"/>
+    </message>
+    <message name="cargarDocumentoAPQRS">
+        <part name="carguePQRS" xmlns:ns5="http://transfer.sgd.anm.gov.co" element="ns5:CarguePQRS"/>
+    </message>
+    <message name="cargarDocumentoAPQRSResponse">
+        <part name="respuestaUCM" xmlns:ns6="http://response.sgd.anm.gov.co" element="ns6:RespuestaUCM"/>
+    </message>
+    <message name="cargarDocumentoAComunicacion">
+        <part name="cargueComunicacion" xmlns:ns7="http://transfer.sgd.anm.gov.co" element="ns7:CargueComunicacion"/>
+    </message>
+    <message name="cargarDocumentoAComunicacionResponse">
+        <part name="respuestaUCM" xmlns:ns8="http://response.sgd.anm.gov.co" element="ns8:RespuestaUCM"/>
+    </message>
+    <message name="tipificarAnexosComunicacion">
+        <part name="tipificacionAnexos" xmlns:ns9="http://transfer.sgd.anm.gov.co" element="ns9:TipificacionAnexos"/>
+    </message>
+    <message name="tipificarAnexosComunicacionResponse">
+        <part name="respuestaUCM" xmlns:ns10="http://response.sgd.anm.gov.co" element="ns10:RespuestaUCM"/>
+    </message>
+    <message name="cargarDocumentoATaxonomia">
+        <part name="checkinTaxonomia" xmlns:ns11="http://transfer.sgd.anm.gov.co" element="ns11:CheckinTaxonomia"/>
+    </message>
+    <message name="cargarDocumentoATaxonomiaResponse">
+        <part name="respuestaUCM" xmlns:ns12="http://response.sgd.anm.gov.co" element="ns12:RespuestaUCM"/>
+    </message>
+    <message name="cargarDocumentoAExpedienteMinero">
+        <part name="cargueDocumento" xmlns:ns13="http://transfer.sgd.anm.gov.co" element="ns13:CargueDocumento"/>
+    </message>
+    <message name="cargarDocumentoAExpedienteMineroResponse">
+        <part name="respuestaUCM" xmlns:ns14="http://response.sgd.anm.gov.co" element="ns14:RespuestaUCM"/>
+    </message>
+    <message name="cargarDocumentoAExpMinero">
+        <part name="checkinDocument" xmlns:ns15="http://transfer.sgd.anm.gov.co" element="ns15:CheckinDocument"/>
+    </message>
+    <message name="cargarDocumentoAExpMineroResponse">
+        <part name="respuestaUCM" xmlns:ns16="http://response.sgd.anm.gov.co" element="ns16:RespuestaUCM"/>
+    </message>
+    <message name="consultarDocumentoExpedienteMinero">
+        <part name="descargaDocumento" xmlns:ns17="http://transfer.sgd.anm.gov.co" element="ns17:DescargaDocumento"/>
+    </message>
+    <message name="consultarDocumentoExpedienteMineroResponse">
+        <part name="respuestaUCM" xmlns:ns18="http://response.sgd.anm.gov.co" element="ns18:RespuestaUCM"/>
+    </message>
+    <message name="consultarContenidoExpedienteMinero">
+        <part name="navegacionCarpeta" xmlns:ns19="http://transfer.sgd.anm.gov.co" element="ns19:NavegacionCarpeta"/>
+    </message>
+    <message name="consultarContenidoExpedienteMineroResponse">
+        <part name="browseResponse" xmlns:ns20="http://response.sgd.anm.gov.co" element="ns20:BrowseResponse"/>
+    </message>
+    <message name="checkinPlantilla">
+        <part name="checkinPlantilla" xmlns:ns21="http://transfer.sgd.anm.gov.co" element="ns21:CheckinPlantilla"/>
+    </message>
+    <message name="checkinPlantillaResponse">
+        <part name="respuestaUCM" xmlns:ns22="http://response.sgd.anm.gov.co" element="ns22:RespuestaUCM"/>
+    </message>
+    <portType name="Document">
+        <operation name="checkinGestionDocumental">
+            <input message="tns:checkinGestionDocumental" wsam:Action="http://service.sgd.anm.gov.co/Document/checkinGestionDocumentalRequest"/>
+            <output message="tns:checkinGestionDocumentalResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/checkinGestionDocumentalResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/checkinGestionDocumental/Fault/WSException"/>
+        </operation>
+        <operation name="verDetalleDocumento">
+            <input message="tns:verDetalleDocumento" wsam:Action="http://service.sgd.anm.gov.co/Document/verDetalleDocumentoRequest"/>
+            <output message="tns:verDetalleDocumentoResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/verDetalleDocumentoResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/verDetalleDocumento/Fault/WSException"/>
+        </operation>
+        <operation name="cargarDocumentoAPQRS">
+            <input message="tns:cargarDocumentoAPQRS" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAPQRSRequest"/>
+            <output message="tns:cargarDocumentoAPQRSResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAPQRSResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAPQRS/Fault/WSException"/>
+        </operation>
+        <operation name="cargarDocumentoAComunicacion">
+            <input message="tns:cargarDocumentoAComunicacion" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAComunicacionRequest"/>
+            <output message="tns:cargarDocumentoAComunicacionResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAComunicacionResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAComunicacion/Fault/WSException"/>
+        </operation>
+        <operation name="tipificarAnexosComunicacion">
+            <input message="tns:tipificarAnexosComunicacion" wsam:Action="http://service.sgd.anm.gov.co/Document/tipificarAnexosComunicacionRequest"/>
+            <output message="tns:tipificarAnexosComunicacionResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/tipificarAnexosComunicacionResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/tipificarAnexosComunicacion/Fault/WSException"/>
+        </operation>
+        <operation name="cargarDocumentoATaxonomia">
+            <input message="tns:cargarDocumentoATaxonomia" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoATaxonomiaRequest"/>
+            <output message="tns:cargarDocumentoATaxonomiaResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoATaxonomiaResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoATaxonomia/Fault/WSException"/>
+        </operation>
+        <operation name="cargarDocumentoAExpedienteMinero">
+            <input message="tns:cargarDocumentoAExpedienteMinero" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAExpedienteMineroRequest"/>
+            <output message="tns:cargarDocumentoAExpedienteMineroResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAExpedienteMineroResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAExpedienteMinero/Fault/WSException"/>
+        </operation>
+        <operation name="cargarDocumentoAExpMinero">
+            <input message="tns:cargarDocumentoAExpMinero" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAExpMineroRequest"/>
+            <output message="tns:cargarDocumentoAExpMineroResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAExpMineroResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/cargarDocumentoAExpMinero/Fault/WSException"/>
+        </operation>
+        <operation name="consultarDocumentoExpedienteMinero">
+            <input message="tns:consultarDocumentoExpedienteMinero" wsam:Action="http://service.sgd.anm.gov.co/Document/consultarDocumentoExpedienteMineroRequest"/>
+            <output message="tns:consultarDocumentoExpedienteMineroResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/consultarDocumentoExpedienteMineroResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/consultarDocumentoExpedienteMinero/Fault/WSException"/>
+        </operation>
+        <operation name="consultarContenidoExpedienteMinero">
+            <input message="tns:consultarContenidoExpedienteMinero" wsam:Action="http://service.sgd.anm.gov.co/Document/consultarContenidoExpedienteMineroRequest"/>
+            <output message="tns:consultarContenidoExpedienteMineroResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/consultarContenidoExpedienteMineroResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/consultarContenidoExpedienteMinero/Fault/WSException"/>
+        </operation>
+        <operation name="checkinPlantilla">
+            <input message="tns:checkinPlantilla" wsam:Action="http://service.sgd.anm.gov.co/Document/checkinPlantillaRequest"/>
+            <output message="tns:checkinPlantillaResponse" wsam:Action="http://service.sgd.anm.gov.co/Document/checkinPlantillaResponse"/>
+            <fault name="WSException" message="tns:WSException" wsam:Action="http://service.sgd.anm.gov.co/Document/checkinPlantilla/Fault/WSException"/>
+        </operation>
+    </portType>
+    <binding name="DocumentPortBinding" type="tns:Document">
+        <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <operation name="checkinGestionDocumental">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="verDetalleDocumento">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="cargarDocumentoAPQRS">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="cargarDocumentoAComunicacion">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="tipificarAnexosComunicacion">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="cargarDocumentoATaxonomia">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="cargarDocumentoAExpedienteMinero">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="cargarDocumentoAExpMinero">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="consultarDocumentoExpedienteMinero">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="consultarContenidoExpedienteMinero">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+        <operation name="checkinPlantilla">
+            <soap:operation soapAction=""/>
+            <input>
+                <soap:body use="literal"/>
+            </input>
+            <output>
+                <soap:body use="literal"/>
+            </output>
+            <fault name="WSException">
+                <soap:fault name="WSException" use="literal"/>
+            </fault>
+        </operation>
+    </binding>
+ <service name="DocumentPortBindingQSService">
+    <port name="DocumentPortBindingQSPort" binding="tns:DocumentPortBinding">
+        <soap:address location="http://osb.anm.local:80/SGD2.3/ProxyServices/DocumentProxy"/>
+    </port>
+</service>
+</definitions>

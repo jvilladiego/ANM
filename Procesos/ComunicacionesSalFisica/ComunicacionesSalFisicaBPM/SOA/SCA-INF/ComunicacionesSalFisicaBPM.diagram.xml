@@ -1,0 +1,468 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+    <dgm:gService name="ComunicacionesSalida.service">
+        <dgm:body borderWidth="2" arcRad="20" X="21" Y="489" width="137" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="11" Y="482" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:outputPort name="ComunicacionesSalida.service" X="127" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida#wsdl.interface(ComunicacionesSalidaPortType)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="20" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>inicioSalidaFisica</dgm:item>
+        </dgm:operations>
+    </dgm:gService>
+    <dgm:gReference name="BPM-NotificationService">
+        <dgm:body borderWidth="2" arcRad="20" X="851" Y="697" width="136" height="168">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="841" Y="690" width="156" height="182">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="BPM-NotificationService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>sendIMNotification</dgm:item>
+            <dgm:item>sendFaxNotification</dgm:item>
+            <dgm:item>sendVoiceNotification</dgm:item>
+            <dgm:item>sendSMSNotification</dgm:item>
+            <dgm:item>sendPagerNotification</dgm:item>
+            <dgm:item>sendURINotification</dgm:item>
+            <dgm:item>sendEmailNotification</dgm:item>
+            <dgm:item>sendNotificationToUser</dgm:item>
+            <dgm:item>sendNotificationToGroup</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="FileService">
+        <dgm:body borderWidth="2" arcRad="20" X="851" Y="509" width="136" height="84">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="841" Y="502" width="156" height="98">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="FileService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/FileService#wsdl.interface(Write_ptt)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/file_adapter_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>Write</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="DocumentWS">
+        <dgm:body borderWidth="2" arcRad="20" X="851" Y="1101" width="136" height="168">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="841" Y="1094" width="156" height="182">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="DocumentWS" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.sgd.anm.gov.co#wsdl.interface(Document)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>checkinGestionDocumental</dgm:item>
+            <dgm:item>verDetalleDocumento</dgm:item>
+            <dgm:item>cargarDocumentoAPQRS</dgm:item>
+            <dgm:item>cargarDocumentoAComunicacion</dgm:item>
+            <dgm:item>tipificarAnexosComunicacion</dgm:item>
+            <dgm:item>cargarDocumentoATaxonomia</dgm:item>
+            <dgm:item>cargarDocumentoAExpedienteMinero</dgm:item>
+            <dgm:item>cargarDocumentoAExpMinero</dgm:item>
+            <dgm:item>consultarDocumentoExpedienteMinero</dgm:item>
+            <dgm:item>consultarContenidoExpedienteMinero</dgm:item>
+            <dgm:item>checkinPlantilla</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="ComunicacionesWS">
+        <dgm:body borderWidth="2" arcRad="20" X="851" Y="899" width="136" height="168">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="841" Y="892" width="156" height="182">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ComunicacionesWS" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.sgd.anm.gov.co#wsdl.interface(Comunicaciones)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>generarNumeroRadicado</dgm:item>
+            <dgm:item>crearComunicacion</dgm:item>
+            <dgm:item>registrarComunicacion</dgm:item>
+            <dgm:item>consultarAnexosRadicado</dgm:item>
+            <dgm:item>actualizarComunicacion</dgm:item>
+            <dgm:item>buscarUsuariosPorDependenciaRol</dgm:item>
+            <dgm:item>actualizarProcesoComunicacion</dgm:item>
+            <dgm:item>consultarComunicacion</dgm:item>
+            <dgm:item>calcularFechaVencimiento</dgm:item>
+            <dgm:item>consultarUsuario</dgm:item>
+            <dgm:item>generarBarCode</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gReference name="ExpedienteMineroWSDL">
+        <dgm:body borderWidth="2" arcRad="20" X="851" Y="1303" width="136" height="132">
+            <dgm:borderColor r="153" g="153" b="153"/>
+            <dgm:bgColor r="255" g="255" b="255"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="841" Y="1296" width="156" height="146">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ExpedienteMineroWSDL" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.sgd.anm.gov.co#wsdl.interface(ExpedienteMinero)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+        <dgm:operations>
+            <dgm:item>modificarModalidadExpedienteMinero</dgm:item>
+            <dgm:item>promoverExpedienteSolicitudATitulo</dgm:item>
+            <dgm:item>rechazarExpedienteSolicitudMinera</dgm:item>
+            <dgm:item>validarExpedienteMinero</dgm:item>
+            <dgm:item>crearExpedienteSolicitudMinera</dgm:item>
+        </dgm:operations>
+    </dgm:gReference>
+    <dgm:gComponent name="HT_CrearComunicacion">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="26" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="19" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_AprobarComunicacion">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="121" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="114" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_ActualizarComunicacion">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="216" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="209" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_ConfirmarEnvioCom">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="311" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="304" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_DigitalizarAcuseRecibo">
+        <dgm:body borderWidth="2" arcRad="20" X="226" Y="381" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="216" Y="374" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_ActualizarDatosDestinatario">
+        <dgm:body borderWidth="2" arcRad="20" X="226" Y="288" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="216" Y="281" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="ComunicacionesSalida">
+        <dgm:body borderWidth="2" arcRad="20" X="226" Y="474" width="130" height="511">
+            <dgm:borderColor r="69" g="113" b="140"/>
+            <dgm:lightBgColor r="166" g="208" b="230"/>
+            <dgm:darkBgColor r="99" g="162" b="201"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="216" Y="467" width="150" height="527">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="ComunicacionesSalida.service" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida#wsdl.interface(ComunicacionesSalidaPortType)"/>
+        <dgm:outputPort name="HumanTasks.HT_CrearComunicacion.reference" X="120" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="HumanTasks.HT_AprobarComunicacion.reference" X="120" Y="40" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="HumanTasks.HT_ActualizarComunicacion.reference" X="120" Y="65" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="HumanTasks.HT_ConfirmarEnvioCom.reference" X="120" Y="90" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="NotificationService.ACT17834043382047" X="120" Y="115" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:outputPort name="HumanTasks.HT_CrearComunicacionMensaje.reference" X="120" Y="140" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="Services.Externals.FileService.reference" X="120" Y="165" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/pcbpel/adapter/file/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/FileService#wsdl.interface(Write_ptt)"/>
+        <dgm:outputPort name="HumanTasks.HT_ImprimirDocum.reference" X="120" Y="190" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="HumanTasks.NotificarEnlace_HT.reference" X="120" Y="215" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="NotificationService.ACT1953577422037" X="120" Y="240" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:outputPort name="HumanTasks.ManejarExcepcionHT.reference" X="120" Y="265" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="NotificationService.ACT2057153370864" X="120" Y="290" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:outputPort name="NotificationService.ACT20608047284112" X="120" Y="315" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:outputPort name="HumanTasks.HT_NotificarError.reference" X="120" Y="340" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="Services.Externals.ComunicacionesWS.reference" X="120" Y="365" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.sgd.anm.gov.co#wsdl.interface(Comunicaciones)"/>
+        <dgm:outputPort name="Services.Externals.DocumentWS.reference" X="120" Y="390" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.sgd.anm.gov.co#wsdl.interface(Document)"/>
+        <dgm:outputPort name="Services.Externals.ExpedienteMineroWSDL.reference" X="120" Y="415" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.sgd.anm.gov.co#wsdl.interface(ExpedienteMinero)"/>
+        <dgm:outputPort name="HumanTasks.HT_FirmaDigital.reference" X="120" Y="440" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:outputPort name="NotificationService.ACT40463793900162" X="120" Y="465" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+        <dgm:nodeIcon URI="/oracle/bpm/fusion/soa/msg/images/bpmncomponent20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_CrearComunicacionMensaje">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="428" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="421" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_ImprimirDocum">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="545" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="538" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_AprobarCierreCom">
+        <dgm:body borderWidth="2" arcRad="20" X="226" Y="195" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="216" Y="188" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_ResolverNovedad">
+        <dgm:body borderWidth="2" arcRad="20" X="226" Y="102" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="216" Y="95" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="NotificarEnlace_HT">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="640" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="633" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="ManejarExcepcionHT">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="757" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="750" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_NotificarError">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="891" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="884" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gComponent name="HT_FirmaDigital">
+        <dgm:body borderWidth="2" arcRad="20" X="544" Y="1361" width="130" height="61">
+            <dgm:borderColor r="109" g="136" b="65"/>
+            <dgm:lightBgColor r="201" g="224" b="155"/>
+            <dgm:darkBgColor r="157" g="195" b="93"/>
+        </dgm:body>
+        <dgm:shadow arcRad="20" X="534" Y="1354" width="150" height="77">
+            <dgm:bgColor r="196" g="228" b="240"/>
+        </dgm:shadow>
+        <dgm:inputPort name="TaskService" X="-10" Y="15" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+        <dgm:nodeIcon URI="/oracle/tip/tools/ide/workflow/resources/images/humantask_20x20.png" X="10" Y="4" width="20" height="20"/>
+    </dgm:gComponent>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_CrearComunicacion.reference" target="HT_CrearComunicacion/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="499" X2="390" Y2="499"/>
+        <dgm:gSegment X1="390" Y1="499" X2="390" Y2="51"/>
+        <dgm:gSegment X1="390" Y1="51" X2="534" Y2="51"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_AprobarComunicacion.reference" target="HT_AprobarComunicacion/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="524" X2="405" Y2="524"/>
+        <dgm:gSegment X1="405" Y1="524" X2="405" Y2="146"/>
+        <dgm:gSegment X1="405" Y1="146" X2="534" Y2="146"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_ActualizarComunicacion.reference" target="HT_ActualizarComunicacion/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="549" X2="420" Y2="549"/>
+        <dgm:gSegment X1="420" Y1="549" X2="420" Y2="241"/>
+        <dgm:gSegment X1="420" Y1="241" X2="534" Y2="241"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_ConfirmarEnvioCom.reference" target="HT_ConfirmarEnvioCom/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="574" X2="435" Y2="574"/>
+        <dgm:gSegment X1="435" Y1="574" X2="435" Y2="336"/>
+        <dgm:gSegment X1="435" Y1="336" X2="534" Y2="336"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/NotificationService.ACT17834043382047" target="BPM-NotificationService" width="2">
+        <dgm:gSegment X1="366" Y1="599" X2="450" Y2="599"/>
+        <dgm:gSegment X1="450" Y1="599" X2="450" Y2="402"/>
+        <dgm:gSegment X1="450" Y1="402" X2="817" Y2="402"/>
+        <dgm:gSegment X1="817" Y1="402" X2="817" Y2="707"/>
+        <dgm:gSegment X1="817" Y1="707" X2="841" Y2="707"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_CrearComunicacionMensaje.reference" target="HT_CrearComunicacionMensaje/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="624" X2="465" Y2="624"/>
+        <dgm:gSegment X1="465" Y1="624" X2="465" Y2="453"/>
+        <dgm:gSegment X1="465" Y1="453" X2="534" Y2="453"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/Services.Externals.FileService.reference" target="FileService" width="2">
+        <dgm:gSegment X1="366" Y1="649" X2="480" Y2="649"/>
+        <dgm:gSegment X1="480" Y1="649" X2="480" Y2="519"/>
+        <dgm:gSegment X1="480" Y1="519" X2="841" Y2="519"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_ImprimirDocum.reference" target="HT_ImprimirDocum/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="674" X2="495" Y2="674"/>
+        <dgm:gSegment X1="495" Y1="674" X2="495" Y2="570"/>
+        <dgm:gSegment X1="495" Y1="570" X2="534" Y2="570"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.NotificarEnlace_HT.reference" target="NotificarEnlace_HT/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="699" X2="510" Y2="699"/>
+        <dgm:gSegment X1="510" Y1="699" X2="510" Y2="665"/>
+        <dgm:gSegment X1="510" Y1="665" X2="534" Y2="665"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/NotificationService.ACT1953577422037" target="BPM-NotificationService" width="2">
+        <dgm:gSegment X1="366" Y1="724" X2="390" Y2="724"/>
+        <dgm:gSegment X1="390" Y1="724" X2="390" Y2="727"/>
+        <dgm:gSegment X1="390" Y1="727" X2="757" Y2="727"/>
+        <dgm:gSegment X1="757" Y1="727" X2="757" Y2="707"/>
+        <dgm:gSegment X1="757" Y1="707" X2="841" Y2="707"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.ManejarExcepcionHT.reference" target="ManejarExcepcionHT/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="749" X2="510" Y2="749"/>
+        <dgm:gSegment X1="510" Y1="749" X2="510" Y2="782"/>
+        <dgm:gSegment X1="510" Y1="782" X2="534" Y2="782"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/NotificationService.ACT2057153370864" target="BPM-NotificationService" width="2">
+        <dgm:gSegment X1="366" Y1="774" X2="495" Y2="774"/>
+        <dgm:gSegment X1="495" Y1="774" X2="495" Y2="844"/>
+        <dgm:gSegment X1="495" Y1="844" X2="772" Y2="844"/>
+        <dgm:gSegment X1="772" Y1="844" X2="772" Y2="707"/>
+        <dgm:gSegment X1="772" Y1="707" X2="841" Y2="707"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/NotificationService.ACT20608047284112" target="BPM-NotificationService" width="2">
+        <dgm:gSegment X1="366" Y1="799" X2="480" Y2="799"/>
+        <dgm:gSegment X1="480" Y1="799" X2="480" Y2="859"/>
+        <dgm:gSegment X1="480" Y1="859" X2="787" Y2="859"/>
+        <dgm:gSegment X1="787" Y1="859" X2="787" Y2="707"/>
+        <dgm:gSegment X1="787" Y1="707" X2="841" Y2="707"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_NotificarError.reference" target="HT_NotificarError/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="824" X2="465" Y2="824"/>
+        <dgm:gSegment X1="465" Y1="824" X2="465" Y2="916"/>
+        <dgm:gSegment X1="465" Y1="916" X2="534" Y2="916"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/Services.Externals.ComunicacionesWS.reference" target="ComunicacionesWS" width="2">
+        <dgm:gSegment X1="366" Y1="849" X2="450" Y2="849"/>
+        <dgm:gSegment X1="450" Y1="849" X2="450" Y2="978"/>
+        <dgm:gSegment X1="450" Y1="978" X2="757" Y2="978"/>
+        <dgm:gSegment X1="757" Y1="978" X2="757" Y2="909"/>
+        <dgm:gSegment X1="757" Y1="909" X2="841" Y2="909"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/Services.Externals.DocumentWS.reference" target="DocumentWS" width="2">
+        <dgm:gSegment X1="366" Y1="874" X2="435" Y2="874"/>
+        <dgm:gSegment X1="435" Y1="874" X2="435" Y2="1111"/>
+        <dgm:gSegment X1="435" Y1="1111" X2="841" Y2="1111"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/Services.Externals.ExpedienteMineroWSDL.reference" target="ExpedienteMineroWSDL" width="2">
+        <dgm:gSegment X1="366" Y1="899" X2="420" Y2="899"/>
+        <dgm:gSegment X1="420" Y1="899" X2="420" Y2="1313"/>
+        <dgm:gSegment X1="420" Y1="1313" X2="841" Y2="1313"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/HumanTasks.HT_FirmaDigital.reference" target="HT_FirmaDigital/TaskService" width="2">
+        <dgm:gSegment X1="366" Y1="924" X2="405" Y2="924"/>
+        <dgm:gSegment X1="405" Y1="924" X2="405" Y2="1386"/>
+        <dgm:gSegment X1="405" Y1="1386" X2="534" Y2="1386"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida/NotificationService.ACT40463793900162" target="BPM-NotificationService" width="2">
+        <dgm:gSegment X1="366" Y1="949" X2="390" Y2="949"/>
+        <dgm:gSegment X1="390" Y1="949" X2="390" Y2="1448"/>
+        <dgm:gSegment X1="390" Y1="1448" X2="802" Y2="1448"/>
+        <dgm:gSegment X1="802" Y1="1448" X2="802" Y2="707"/>
+        <dgm:gSegment X1="802" Y1="707" X2="841" Y2="707"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+    <dgm:gWireLink source="ComunicacionesSalida.service" target="ComunicacionesSalida/ComunicacionesSalida.service" width="2">
+        <dgm:gSegment X1="168" Y1="499" X2="216" Y2="499"/>
+        <dgm:baseColor r="153" g="153" b="153"/>
+        <dgm:selectedColor r="49" g="106" b="196"/>
+    </dgm:gWireLink>
+</dgm:gDiagram>

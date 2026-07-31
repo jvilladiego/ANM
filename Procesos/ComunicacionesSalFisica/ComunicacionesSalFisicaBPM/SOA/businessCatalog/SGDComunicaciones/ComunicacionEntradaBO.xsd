@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="ComunicacionEntradaBOType">
+      <xs:sequence>
+         <xs:element name="isRespuesta" nillable="true" type="xs:boolean"/>
+         <xs:element name="urlDocPrincipalEntrada" nillable="true" type="xs:string"/>
+         <xs:element name="tiempoRespuesta" nillable="true" type="xs:int"/>
+         <xs:element name="fechaVencimiento" nillable="true" type="xs:dateTime"/>
+         <xs:element name="isPQRS" nillable="true" type="xs:boolean"/>
+         <xs:element name="tipoPQRS" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ComunicacionEntradaBO" type="ComunicacionEntradaBOType"/>
+</xs:schema>

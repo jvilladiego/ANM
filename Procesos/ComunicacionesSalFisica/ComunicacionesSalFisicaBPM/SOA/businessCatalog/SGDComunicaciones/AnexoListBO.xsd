@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="AnexoListBOType">
+      <xs:sequence>
+         <xs:element name="nombre" nillable="true" type="xs:string"/>
+         <xs:element name="url" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="AnexoListBO" type="AnexoListBOType"/>
+</xs:schema>

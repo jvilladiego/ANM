@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.16.48" id="ListaAnexosBOType"
+          Package="ComunicacionesSalFisicaADF_NotificarEnlace_HT"
+          BeanClass="ComunicacionesSalFisicaADF_NotificarEnlace_HT.ListaAnexosBOType" isJavaBased="false">
+  <AccessorAttribute id="listaAnexos" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_NotificarEnlace_HT.AnexoBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_NotificarEnlace_HT.AnexoBOType_listaAnexos_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="2147483640"/>
+      <Property Name="LABEL" Value="Lista Anexos"/>
+      <Property Name="nillable" Value="true"/>
+      <Property Name="originalName" Value="listaAnexos"/>
+      <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaAnexosBO"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

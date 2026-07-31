@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.22.48" id="DataControls"
+                    Package="comunicacionessalfisicabpm">
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/Users/admolina/Iteractiva/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ConfirmarEnvioComWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ConfirmarEnvioCom.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

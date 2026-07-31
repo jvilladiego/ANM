@@ -1,0 +1,15 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoListBO" schemaLocation="../businessCatalog/SGDComunicaciones/AnexoListBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionEntradaBO.xsd"/>
+   <complexType name="HT_FirmaDigitalPayloadType">
+      <sequence>
+         <element name="idJefeBO" type="xsd:string"/>
+         <element ref="ns0:AnexoListBO"/>
+         <element ref="ns1:ComunicacionSalidaBO"/>
+         <element ref="ns2:ComunicacionEntradaBO"/>
+         <element name="primaryFile" type="xsd:string"/>
+      </sequence>
+   </complexType>
+</schema>

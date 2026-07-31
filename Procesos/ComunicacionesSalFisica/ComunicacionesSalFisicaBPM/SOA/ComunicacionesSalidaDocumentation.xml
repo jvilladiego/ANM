@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="ComunicacionesSalida">
+      <topicDocumentations>
+         <topicDocumentation name="ComunicacionesSalida">
+            <labels>
+               <label locale="en">Comunicación Salida Fisica</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17654902949345">
+            <labels>
+               <label locale="en">Crear comunicacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17659915937618">
+            <labels>
+               <label locale="en">Aprobar comunicación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17660620102380">
+            <labels>
+               <label locale="en">Actualizar comunicación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17660828614220">
+            <labels>
+               <label locale="en">Generar numero radicado</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17660886833322">
+            <labels>
+               <label locale="en">Verificar digitalizacion de la comunicacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17660972854267">
+            <labels>
+               <label locale="en">Tipificación del documento (Checkin)</label>
+            </labels>
+            <descriptions>
+               <description locale="en">Checkin ECM</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17661759563312">
+            <labels>
+               <label locale="en">Confirmar entrega exitosa</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17833860641563">
+            <labels>
+               <label locale="en">Imprimir planilla reparto</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17834043382047">
+            <labels>
+               <label locale="en">Notificar cierre a usuario ANM</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17877444108295">
+            <labels>
+               <label locale="en">Crear comunicación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18025147212627">
+            <labels>
+               <label locale="en">Digitalizar comunicación (Capture)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18203603229920">
+            <labels>
+               <label locale="en">Registrar comunicación BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18203604988597">
+            <labels>
+               <label locale="en">Escribir documento TMP</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18203611864486">
+            <labels>
+               <label locale="en">Combinar documento</label>
+            </labels>
+            <descriptions>
+               <description locale="en">Genera documento PDF y lo carga a content</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18266111196927">
+            <labels>
+               <label locale="en">Imprimir Docum</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1836996280143">
+            <labels>
+               <label locale="en">Cargar Documento (Checkin)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18370179093894">
+            <labels>
+               <label locale="en">Actualizar estado comunicación (EN_REPARTO)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18499280643314">
+            <labels>
+               <label locale="en">Obtener jefe</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18603802555434">
+            <labels>
+               <label locale="en">Obtener usuario</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18724749245220">
+            <labels>
+               <label locale="en">Calcular usuario auxiliar Bogota</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18904147974821">
+            <labels>
+               <label locale="en">Notificar Enlace</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18905570006582">
+            <labels>
+               <label locale="en">Obtener Enlace</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18964471076096">
+            <labels>
+               <label locale="en">Inicializar</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19025874430283">
+            <labels>
+               <label locale="en">Actualizar estado ComEntrada (CERRADA)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1915417835789">
+            <labels>
+               <label locale="en">Interesados</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19154531840315">
+            <labels>
+               <label locale="en">Anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19156185560069">
+            <labels>
+               <label locale="en">Agregar anexos - interesados</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1945713846513">
+            <labels>
+               <label locale="en">Inicializar</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1953573573988">
+            <labels>
+               <label locale="en">Validar Expediente Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19535769597010">
+            <labels>
+               <label locale="en">Buscar Admin Comunicaciones</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1953577422037">
+            <labels>
+               <label locale="en">Notificar Admin Comunicaciones</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19545382766477">
+            <labels>
+               <label locale="en">Actualizar Anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19545384921113">
+            <labels>
+               <label locale="en">Actualizar Anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19545727955251">
+            <labels>
+               <label locale="en">Actualizar Anexos Acuse Recibo</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19545732853345">
+            <labels>
+               <label locale="en">Actualizar Anexos Final</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20519619763580">
+            <labels>
+               <label locale="en">Excepcion General Com.Salida Fisica</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20519659864785">
+            <labels>
+               <label locale="en">Manejar Excepcion General</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20519780653977">
+            <labels>
+               <label locale="en">Regresar</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20571526306128">
+            <labels>
+               <label locale="en">Notificar error a usuario</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT2057153370864">
+            <labels>
+               <label locale="en">Notificar excepcion a usuario</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20608047284112">
+            <labels>
+               <label locale="en">Notificar error corregido</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT20519619844728">
+            <labels>
+               <label locale="en">Inicio</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT20519619844718">
+            <labels>
+               <label locale="en">Volver</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW20519840491710">
+            <labels>
+               <label locale="en">Excepcion Controlada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf20519619844724"/>
+         <topicDocumentation name="sf20519672863289"/>
+         <topicDocumentation name="sf20519841700878"/>
+         <topicDocumentation name="sf20519847312385"/>
+         <topicDocumentation name="sf20519853722016"/>
+         <topicDocumentation name="sf20571527121585"/>
+         <topicDocumentation name="sf20571535634595"/>
+         <topicDocumentation name="sf20608048082354"/>
+         <topicDocumentation name="ACT20571076453932">
+            <labels>
+               <label locale="en">Check-in Attatchments</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20571080773650">
+            <labels>
+               <label locale="en">Write file</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20571082649882">
+            <labels>
+               <label locale="en">Check-in anexo</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT20571076600814">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT20571076600953">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="sf20571076600962"/>
+         <topicDocumentation name="sf20571081226465"/>
+         <topicDocumentation name="sf20571083038755"/>
+         <topicDocumentation name="ACT20597047824116">
+            <labels>
+               <label locale="en">Inicializar contador Digitalizacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20597057259881">
+            <labels>
+               <label locale="en">Actualizar contador</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20607476156810">
+            <labels>
+               <label locale="en">Calcular usuario auxiliar PAR</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20988659777630">
+            <labels>
+               <label locale="en">Actualizar Com.Entrada 1</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT24934451972377">
+            <labels>
+               <label locale="en">Ajuste_campos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT33559029677868">
+            <labels>
+               <label locale="en">Firma Digital</label>
+            </labels>
+            <descriptions>
+               <description locale="en">Tomar AnexoListDO para documento principal
+url con enlace a content del documento principal</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT33559668171724">
+            <labels>
+               <label locale="en">CheckIn Doc Principal firmado</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40463793900162">
+            <labels>
+               <label locale="en">Notificar No entrega</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1953626046269">
+            <labels>
+               <label locale="en">Actualizar Estado Comunicación (CERRADA)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40870405907366">
+            <labels>
+               <label locale="en">Write file acuse recibo</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT17654902949251">
+            <labels>
+               <label locale="en">Inicio usuario</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT17660961165144">
+            <labels>
+               <label locale="en">Timer 30m</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT17877442875551">
+            <labels>
+               <label locale="en">Inicio mensaje</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT17654902949276">
+            <labels>
+               <label locale="en">Fin</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="GTW17660616640825">
+            <labels>
+               <label locale="en">¿Comunicación aprobada?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW17660952618230">
+            <labels>
+               <label locale="en">¿Comunicación digitalizada?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW17661766394589">
+            <labels>
+               <label locale="en">¿Entrega exitosa?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW1953576335149">
+            <labels>
+               <label locale="en">¿Exp Minero Existe en el SGD?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW19535826663949">
+            <labels>
+               <label locale="en">¿Comunicación con Expediente Minero?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW20596985497528">
+            <labels>
+               <label locale="en">Control de ejecucion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW2060724151257">
+            <labels>
+               <label locale="en">Comunicacion con origen PAR?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW20988766009118">
+            <labels>
+               <label locale="en">Tramite inicio por mensaje?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW30147805531340">
+            <labels>
+               <label locale="en">AnnA</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW33559031243721">
+            <labels>
+               <label locale="en">Firma Digital?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW40705849494696">
+            <labels>
+               <label locale="en">Cierre entrega exitosa</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf17654902949378"/>
+         <topicDocumentation name="sf17654902949417"/>
+         <topicDocumentation name="sf17659918518952"/>
+         <topicDocumentation name="sf17660622259974"/>
+         <topicDocumentation name="sf17660629311661"/>
+         <topicDocumentation name="sf17660830226186"/>
+         <topicDocumentation name="sf17660888165992"/>
+         <topicDocumentation name="sf17660954307488"/>
+         <topicDocumentation name="sf17660963054642"/>
+         <topicDocumentation name="sf1766096345810"/>
+         <topicDocumentation name="sf17660973304076"/>
+         <topicDocumentation name="sf17661767014136"/>
+         <topicDocumentation name="sf17703971854017"/>
+         <topicDocumentation name="sf17834044776669"/>
+         <topicDocumentation name="sf17877446106298"/>
+         <topicDocumentation name="sf17877446396057"/>
+         <topicDocumentation name="sf18025135317771"/>
+         <topicDocumentation name="sf18025148670857"/>
+         <topicDocumentation name="sf18203613406310"/>
+         <topicDocumentation name="sf18203613908415"/>
+         <topicDocumentation name="sf18266112627631"/>
+         <topicDocumentation name="sf18369560137157"/>
+         <topicDocumentation name="sf18369963132244"/>
+         <topicDocumentation name="sf18370187169817"/>
+         <topicDocumentation name="sf18499287343831"/>
+         <topicDocumentation name="sf18603805059163"/>
+         <topicDocumentation name="sf18724760945513"/>
+         <topicDocumentation name="sf18904152511664"/>
+         <topicDocumentation name="sf18905578679161"/>
+         <topicDocumentation name="sf18964495826785"/>
+         <topicDocumentation name="sf19025889319193"/>
+         <topicDocumentation name="sf19154181447655"/>
+         <topicDocumentation name="sf19154532779179"/>
+         <topicDocumentation name="sf19163295822822"/>
+         <topicDocumentation name="sf19163301247428"/>
+         <topicDocumentation name="sf19163302145136"/>
+         <topicDocumentation name="sf19457139349743"/>
+         <topicDocumentation name="sf19535739344135"/>
+         <topicDocumentation name="sf19535765779043"/>
+         <topicDocumentation name="sf19535771879051"/>
+         <topicDocumentation name="sf19535776394266"/>
+         <topicDocumentation name="sf19535776865574"/>
+         <topicDocumentation name="sf19535828322844"/>
+         <topicDocumentation name="sf19535829846531"/>
+         <topicDocumentation name="sf1954538381599"/>
+         <topicDocumentation name="sf19545389394524"/>
+         <topicDocumentation name="sf19545730756125"/>
+         <topicDocumentation name="sf19545734032021"/>
+         <topicDocumentation name="sf20571076601140"/>
+         <topicDocumentation name="sf20596989321321"/>
+         <topicDocumentation name="sf20597001297798"/>
+         <topicDocumentation name="sf20597050192975"/>
+         <topicDocumentation name="sf20597062167137"/>
+         <topicDocumentation name="sf2060724395324"/>
+         <topicDocumentation name="sf20607477189669"/>
+         <topicDocumentation name="sf20607488738678"/>
+         <topicDocumentation name="sf20988662032977"/>
+         <topicDocumentation name="sf20988767123614"/>
+         <topicDocumentation name="sf20988767911818"/>
+         <topicDocumentation name="sf24934454354539"/>
+         <topicDocumentation name="sf30147827293839"/>
+         <topicDocumentation name="sf30147829568161"/>
+         <topicDocumentation name="sf33559030414396"/>
+         <topicDocumentation name="sf33559032428718"/>
+         <topicDocumentation name="sf33559667737043"/>
+         <topicDocumentation name="sf33559669717821"/>
+         <topicDocumentation name="sf4046380453426"/>
+         <topicDocumentation name="sf1953627021882"/>
+         <topicDocumentation name="sf40705850171229"/>
+         <topicDocumentation name="sf40870410611272"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

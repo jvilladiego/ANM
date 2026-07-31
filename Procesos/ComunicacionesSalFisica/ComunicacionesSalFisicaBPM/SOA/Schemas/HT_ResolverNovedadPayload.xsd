@@ -1,0 +1,22 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" xmlns:ns4="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaInteresadosBO" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaInteresadosBO" schemaLocation="../businessCatalog/SGDComunicaciones/ListaInteresadosBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" schemaLocation="ComunicacionSalidaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="UsuarioBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" schemaLocation="../businessCatalog/SGDComunicaciones/TaxonomiaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionEntradaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionEntradaBO.xsd"/>
+   <complexType name="HT_ResolverNovedadPayloadType">
+      <sequence>
+         <element name="idUsuarioDO" type="xsd:string"/>
+         <element ref="ns0:ListaInteresadosBO"/>
+         <element ref="ns1:ComunicacionSalidaBO"/>
+         <element ref="ns2:UsuarioBO"/>
+         <element ref="ns3:TaxonomiaBO"/>
+         <element ref="ns4:ComunicacionEntradaBO"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="numeroRadicado" type="xsd:string"/>
+         <element name="fechaVencimiento" type="xsd:dateTime"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+      </sequence>
+   </complexType>
+</schema>

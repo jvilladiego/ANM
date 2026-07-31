@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.20.47" id="DataControls"
+                    Package="comunicacionessalfisicaadf">
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_CrearComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_CrearComunicacion"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_CrearComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/AM2017/Iteractiva/ANM/acti-anm-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_CrearComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_CrearComunicacion.task"
+                      InitiationTask="true" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_AprobarComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_AprobarComunicacion"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_AprobarComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Trabajo/ANM/anm-impl/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_AprobarComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_AprobarComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ActualizarComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ActualizarComunicacion"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ActualizarComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Trabajo/ANM/anm-impl/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ActualizarComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ActualizarComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/Users/admolina/Iteractiva/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ConfirmarEnvioComWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ConfirmarEnvioCom.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ProcesarEnvioCom"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ProcesarEnvioCom"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ProcesarEnvioCom"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/D:/AM2016/Oracle/ANM/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ProcesarEnvioComWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ProcesarEnvioCom.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_DigitalizarAcuseRecibo"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_DigitalizarAcuseRecibo"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_DigitalizarAcuseRecibo"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Alejandria-Consulting/repos/acti-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_DigitalizarAcuseReciboWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_DigitalizarAcuseRecibo.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ProcesarEnvioComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ProcesarEnvioComunicacion"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ProcesarEnvioComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/D:/AM2016/Oracle/ANM/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ProcesarEnvioComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ProcesarEnvioComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ActualizarDatosDestinatario"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ActualizarDatosDestinatario"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ActualizarDatosDestinatario"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Trabajo/ANM/anm-impl/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ActualizarDatosDestinatarioWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ActualizarDatosDestinatario.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_CrearComunicacionMensaje"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_CrearComunicacionMensaje"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_CrearComunicacionMensaje"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/AM2017/Iteractiva/ANM/acti-anm-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_CrearComunicacionMensajeWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_CrearComunicacionMensaje.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ImprimirDocumento"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ImprimirDocumento"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocumento"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/D:/AM2016/Oracle/ANM/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ImprimirDocumentoWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ImprimirDocumento.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ImprimirDocum"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ImprimirDocum"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ImprimirDocum"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Alejandria-Consulting/repos/acti-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ImprimirDocumWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ImprimirDocum.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_AprobarCierreCom"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_AprobarCierreCom"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_AprobarCierreCom"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Trabajo/ANM/anm-impl/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_AprobarCierreComWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_AprobarCierreCom.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ResolverNovedad"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ResolverNovedad"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ResolverNovedad"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Alejandria-Consulting/repos/acti-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ResolverNovedadWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ResolverNovedad.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_NotificarEnlace_HT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_NotificarEnlace_HT"
+                      BeanClass="ComunicacionesSalFisicaADF_NotificarEnlace_HT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Alejandria-Consulting/repos/acti-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/NotificarEnlace_HTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/NotificarEnlace_HT.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_ManejarExcepcionHT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_ManejarExcepcionHT"
+                      BeanClass="ComunicacionesSalFisicaADF_ManejarExcepcionHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Trabajo/ANM/anm-impl/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/ManejarExcepcionHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/ManejarExcepcionHT.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_ManejarExcepcion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesSalFisicaADF_HT_ManejarExcepcion"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_ManejarExcepcion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/AM2017/Iteractiva/ANM/acti-anm-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_ManejarExcepcionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_ManejarExcepcion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  
+  <AdapterDataControl id="ComunicacionesSalFisicaADF_HT_NotificarError"
+                    FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                    Definition="ComunicacionesSalFisicaADF_HT_NotificarError"
+                      BeanClass="ComunicacionesSalFisicaADF_HT_NotificarError"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/AM2017/Iteractiva/ANM/acti-anm-pqrs/impl/comunicaciones/ComunicacionesSalFisica/ComunicacionesSalFisicaBPM/SOA/Schemas/HT_NotificarErrorWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesSalFisicaBPM/SOA/HumanTasks/HT_NotificarError.task">
+      </XSDDataControl>
+  </Source>
+</AdapterDataControl>
+<AdapterDataControl id="ComunicacionesSalElecViewPrj_CerrarComunicacionHT"
+                      Definition="ComunicacionesSalElecViewPrj_CerrarComunicacionHT"
+                      BeanClass="ComunicacionesSalElecViewPrj_CerrarComunicacionHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/Trabajo/ANM/anm-impl/impl/comunicaciones/ComunicacionesSalElecBpmApp/ComunicacionesSalElecBpmPrj/SOA/Schemas/CerrarComunicacionHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../../ComunicacionesSalElecBpmApp/ComunicacionesSalElecBpmPrj/SOA/HumanTasks/CerrarComunicacionHT.task"
+                    InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

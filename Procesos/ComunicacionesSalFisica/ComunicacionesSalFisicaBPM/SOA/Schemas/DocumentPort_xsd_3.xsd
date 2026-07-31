@@ -1,0 +1,9 @@
+<?xml version= '1.0' encoding= 'UTF-8' ?>
+<xsd:schema xmlns:ns0="http://response.sgd.anm.gov.co" xmlns:ns1="http://service.sgd.anm.gov.co"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://response.sgd.anm.gov.co">
+    <xsd:import schemaLocation="DocumentPort_xsd_1.xsd" namespace="http://service.sgd.anm.gov.co"/>
+    <xsd:element name="DetalleDocumento" type="ns1:documentDetailResponse" nillable="true"/>
+    <xsd:element name="BrowseResponse" type="ns1:browseResponse" nillable="true"/>
+    <xsd:element name="RespuestaUCM" type="ns1:wccResponse" nillable="true"/>
+</xsd:schema>
+<!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is JAX-WS RI 2.3.0-wls122140-b220215.0856 svn-revision#unknown. -->

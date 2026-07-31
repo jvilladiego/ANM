@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47"
+          id="ComunicacionesSalFisicaADF_NotificarEnlace_HT" BeanClass="ComunicacionesSalFisicaADF_NotificarEnlace_HT"
+          isJavaBased="false">
+  <MethodAccessor IsCollection="false" Type="ComunicacionesSalFisicaADF_NotificarEnlace_HT.getTaskDetails"
+                  BeanClass="ComunicacionesSalFisicaADF_NotificarEnlace_HT.getTaskDetails" id="getTaskDetails"
+                  ReturnNodeName="Return">
+    <ParameterInfo id="bpmWorklistContext" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskId" Type="java.lang.String" isStructured="false"/>
+    <ParameterInfo id="bpmWorklistTaskVersion" Type="java.lang.String" isStructured="false"/>
+  </MethodAccessor>
+</JavaBean>

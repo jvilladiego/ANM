@@ -1,0 +1,39 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<ns1:organization xmlns:ns1="http://xmlns.oracle.com/bpm/organization" xmlns:ns0="http://xmlns.oracle.com/bpm/lpg/peopleQuery" xmlns:ns2="http://xmlns.oracle.com/bpm/identity" xmlns:ns3="http://xmlns.oracle.com/bpel/workflow/taskQuery" xmlns:ns4="http://xmlns.oracle.com/bpel/workflow/task">
+   <ns1:updateExistingObjects>true</ns1:updateExistingObjects>
+   <ns1:organizationalUnits/>
+   <ns1:applicationRoles>
+      <ns1:applicationRole id="ComunicacionesSalFisicaBPM.ProcessOwner" isProcessRole="true">
+         <ns2:name>ComunicacionesSalFisicaBPM.Process Owner</ns2:name>
+         <ns1:processRole id="ProcessOwner" name="Process Owner"/>
+      </ns1:applicationRole>
+      <ns1:applicationRole id="ComunicacionesSalFisicaBPM.ProcessReviewer" isProcessRole="true">
+         <ns2:name>ComunicacionesSalFisicaBPM.Process Reviewer</ns2:name>
+         <ns1:processRole id="ProcessReviewer" name="Process Reviewer"/>
+      </ns1:applicationRole>
+      <ns1:applicationRole id="ComunicacionesSalFisicaBPM.UsuarioANM" isProcessRole="true">
+         <ns2:name>ComunicacionesSalFisicaBPM.Usuario ANM</ns2:name>
+         <ns1:processRole id="UsuarioANM" name="Usuario ANM"/>
+      </ns1:applicationRole>
+      <ns1:applicationRole id="ComunicacionesSalFisicaBPM.Jefeoficinaproductora" isProcessRole="true">
+         <ns2:name>ComunicacionesSalFisicaBPM.Jefe oficina productora</ns2:name>
+         <ns1:member type="USER">
+            <ns1:name>adrian.molina</ns1:name>
+         </ns1:member>
+         <ns1:processRole id="Jefeoficinaproductora" name="Jefe oficina productora"/>
+      </ns1:applicationRole>
+      <ns1:applicationRole id="ComunicacionesSalFisicaBPM.Auxiliaroperadorcorrespondencia" isProcessRole="true">
+         <ns2:name>ComunicacionesSalFisicaBPM.Auxiliar operador correspondencia</ns2:name>
+         <ns1:processRole id="Auxiliaroperadorcorrespondencia" name="Auxiliar operador correspondencia"/>
+      </ns1:applicationRole>
+      <ns1:applicationRole id="ComunicacionesSalFisicaBPM.Enlaceoperativo" isProcessRole="true">
+         <ns2:name>ComunicacionesSalFisicaBPM.Enlace operativo</ns2:name>
+         <ns1:processRole id="Enlaceoperativo" name="Enlace operativo"/>
+      </ns1:applicationRole>
+   </ns1:applicationRoles>
+   <ns1:applicationRoleOrgUnitCalendarAssociations/>
+   <ns1:participantPropertiesList/>
+   <ns1:holidayRules/>
+   <ns1:calendarRules/>
+   <ns1:businessParameters/>
+</ns1:organization>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.22.48" id="ListaInteresadosBOType"
+          Package="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom"
+          BeanClass="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom.ListaInteresadosBOType" isJavaBased="false">
+  <AccessorAttribute id="interesados" IsCollection="true"
+                     BeanClass="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom.InteresadoBOType"
+                     CollectionBeanClass="ComunicacionesSalFisicaADF_HT_ConfirmarEnvioCom.InteresadoBOType_interesados_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="2147483640"/>
+      <Property Name="LABEL" Value="Interesados"/>
+      <Property Name="nillable" Value="true"/>
+      <Property Name="originalName" Value="interesados"/>
+      <Property Name="targetNamespace"
+                Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ListaInteresadosBO"/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

@@ -1,0 +1,271 @@
+//Content Format Version: 1.0
+
+//########################################################################################
+//####                                                                                ####
+//####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####
+//#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####
+//####                                                                                ####
+//########################################################################################
+package oracle.scripting.bpmn.process;
+
+import oracle.scripting.catalog.sgdComunicaciones.InteresadoBO;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.InteresadoRequest;
+import oracle.scripting.catalog.sgdComunicaciones.ListaInteresadosBO;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.ProcesoComunicacionRequest;
+import oracle.scripting.xml.co.gov.anm.sgd.transfer.elem.ActualizacionProceso;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.ComunicacionRequest;
+import oracle.scripting.catalog.sgdComunicaciones.AnexoBO;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoComunicacionRequest;
+import java.lang.Integer;
+import java.math.BigDecimal;
+import javax.xml.stream.events.Comment;
+
+
+public class ComunicacionesSalida{
+
+public void methodACT1915417835789()
+{
+	InteresadoRequest interesadoService;
+	Iterator it = listaInteresadosDO.interesados.iterator();
+	InteresadoBO interesadoLocal;
+	boolean resultadoAdd;
+	
+	actualizacionComunicacion = new ActualizacionProceso();
+	actualizacionComunicacion.comunicacion = new ComunicacionRequest();
+	actualizacionComunicacion.interesadosList.clear();
+	actualizacionComunicacion.comunicacion.setNroRadicado(comunicacionSalidaDO.nroRadicado);
+	
+	while ( it.hasNext() ){
+	    Object object = it.next();
+	    if (object instanceof InteresadoBO){
+	        interesadoLocal = (InteresadoBO)object;
+	        System.out.println("Interesado: "+interesadoLocal.primerNombre);
+	        interesadoService = new InteresadoRequest();
+	        interesadoService.nroIdentificacion = interesadoLocal.numeroIdentificacion;
+	        interesadoService.tipoIdentificacion = interesadoLocal.tipoIdentificacion;
+	        interesadoService.direccion = interesadoLocal.direccion;
+	        interesadoService.email = interesadoLocal.email;
+	        interesadoService.telefono = interesadoLocal.telefono;
+	        interesadoService.primerNombre = interesadoLocal.primerNombre;
+	        interesadoService.segundoNombre = interesadoLocal.segundoNombre;
+	        interesadoService.primerApellido = interesadoLocal.primerApellido;
+	        interesadoService.segundoApellido = interesadoLocal.segundoApellido;
+	        interesadoService.celular = interesadoLocal.celular;
+	        interesadoService.idPais = interesadoLocal.idPais;
+	        interesadoService.idDepartamento = interesadoLocal.idDepartamento;
+	        interesadoService.idMunicipio = interesadoLocal.idMunicipio;
+	        interesadoService.ocupacion = interesadoLocal.ocupacion;
+	        resultadoAdd = actualizacionComunicacion.interesadosList.add(interesadoService);
+	        System.out.println("Resultado Add: "+resultadoAdd);
+	    }
+	}
+}
+
+
+public void methodACT19154531840315()
+{
+	AnexoComunicacionRequest anexoService;
+	AnexoBO anexoLocal;
+	boolean resultadoAdd;
+	boolean resultadoDocPrincipal;
+	
+	actualizacionComunicacion.anexosList.clear();
+	
+	//se agrega documento principal a la lista de anexos
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = anexoListDO.getUrl();
+	//docPrincipal.rutaLocalCargue = anexoListDO.getUrl();
+	docPrincipal.nroRadicado = comunicacionSalidaDO.getNroRadicado();
+	resultadoDocPrincipal = actualizacionComunicacion.anexosList.add(docPrincipal);
+	System.out.println("END : Create Anexo script grovy | Resultado Add Doc Principal: "+resultadoDocPrincipal);
+	
+	//se agregan los anexos no digitalizables a la lista de anexos
+	if (listaAnexos != null && listaAnexos.listaAnexos != null) {
+	    Iterator it = listaAnexos.listaAnexos.iterator();
+	    
+	    while ( it.hasNext() ){
+	        Object object = it.next();
+	        if (object instanceof AnexoBO) {
+	            anexoLocal = (AnexoBO)object;
+	            System.out.println("BEGIN : Create Anexo script grovy");
+	            anexoService = new AnexoComunicacionRequest();
+	            
+	            if (anexoLocal.getNombre() != null && !anexoLocal.getNombre().trim().equals("")) {
+	                anexoService.setCantidad(new BigDecimal(anexoLocal.getNombre()));    
+	            } else {
+	                anexoService.setCantidad(BigDecimal.ONE);
+	            }
+	            
+	            if (anexoLocal.descripcion != null && !anexoLocal.descripcion.trim().equals("")) {
+	                anexoService.descripcion = anexoLocal.descripcion.take(200);    
+	            } else {
+	                anexoService.setDescripcion(" ");
+	            }            
+	            
+	            anexoService.setNroRadicado(comunicacionSalidaDO.getNroRadicado());
+	            resultadoAdd = actualizacionComunicacion.anexosList.add(anexoService);
+	            System.out.println("END : Create Anexo script grovy | Resultado Add: "+resultadoAdd);   
+	        } else {
+	            System.out.println("END : El objeto no es AnexoBO");   
+	        }
+	    }   
+	}
+}
+
+
+public void methodACT19545382766477()
+{
+	AnexoComunicacionRequest anexoService;
+	AnexoBO anexoLocal;
+	boolean resultadoAdd;
+	boolean resultadoDocPrincipal;
+	
+	actualizacionComunicacion.anexosList.clear();
+	
+	//se agrega documento principal a la lista de anexos
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = anexoListDO.getUrl();
+	docPrincipal.nroRadicado = comunicacionSalidaDO.getNroRadicado();
+	resultadoDocPrincipal = actualizacionComunicacion.anexosList.add(docPrincipal);
+	System.out.println("END : Create Anexo script grovy | Resultado Add Doc Principal: "+resultadoDocPrincipal);
+	
+	//se agregan los anexos no digitalizables a la lista de anexos
+	if (listaAnexos != null && listaAnexos.listaAnexos != null) {
+	    Iterator it = listaAnexos.listaAnexos.iterator();
+	    
+	    while ( it.hasNext() ){
+	         Object object = it.next();
+	        if (object instanceof AnexoBO) {
+	            anexoLocal = (AnexoBO)object;
+	            System.out.println("BEGIN : Create Anexo script grovy");
+	            anexoService = new AnexoComunicacionRequest();
+	            
+	            if (anexoLocal.getNombre() != null && !anexoLocal.getNombre().trim().equals("")) {
+	                anexoService.setCantidad(new BigDecimal(anexoLocal.getNombre()));    
+	            } else {
+	                anexoService.setCantidad(BigDecimal.ONE);
+	            }
+	            
+	            if (anexoLocal.descripcion != null && !anexoLocal.descripcion.trim().equals("")) {
+	                anexoService.descripcion = anexoLocal.descripcion;    
+	            } else {
+	                anexoService.setDescripcion(" ");
+	            }            
+	            
+	            anexoService.setNroRadicado(comunicacionSalidaDO.getNroRadicado());
+	            resultadoAdd = actualizacionComunicacion.anexosList.add(anexoService);
+	            System.out.println("END : Create Anexo script grovy | Resultado Add: "+resultadoAdd);   
+	        } else {
+	            System.out.println("END : El objeto no es AnexoBO");   
+	        }
+	    }   
+	}
+}
+
+
+public void methodACT19545727955251()
+{
+	// Actualizar Anexos Acuse Recibo
+	AnexoComunicacionRequest anexoService;
+	AnexoBO anexoLocal;
+	boolean resultadoAdd;
+	boolean resultadoDocPrincipal;
+	boolean resultadoAcuseRecibo;
+	
+	actualizacionComunicacion.anexosList.clear();
+	
+	//se agrega documento principal a la lista de anexos
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = anexoListDO.getUrl();
+	docPrincipal.nroRadicado = comunicacionSalidaDO.getNroRadicado();
+	resultadoDocPrincipal = actualizacionComunicacion.anexosList.add(docPrincipal);
+	System.out.println("END : Create Anexo script grovy | Resultado Add Doc Principal: "+resultadoDocPrincipal);
+	
+	//se agrega documento principal a la lista de anexos
+	AnexoComunicacionRequest acuseRecibo = new AnexoComunicacionRequest();
+	acuseRecibo.cantidad = BigDecimal.ONE;
+	acuseRecibo.descripcion = "Acuse de Recibo";
+	acuseRecibo.enlaceContent = urlAcuseReciboDO;
+	acuseRecibo.nroRadicado = comunicacionSalidaDO.getNroRadicado();
+	resultadoAcuseRecibo = actualizacionComunicacion.anexosList.add(acuseRecibo);
+	System.out.println("END : Create Anexo script grovy | Resultado Add Acuse Recibo: "+resultadoAcuseRecibo);
+	
+	//se agregan los anexos no digitalizables a la lista de anexos
+	if (listaAnexos != null && listaAnexos.listaAnexos != null) {
+	    Iterator it = listaAnexos.listaAnexos.iterator();
+	    
+	    while ( it.hasNext() ){
+	         Object object = it.next();
+	        if (object instanceof AnexoBO) {
+	            anexoLocal = (AnexoBO)object;
+	            System.out.println("BEGIN : Create Anexo script grovy");
+	            anexoService = new AnexoComunicacionRequest();
+	            
+	            if (anexoLocal.getNombre() != null && !anexoLocal.getNombre().trim().equals("")) {
+	                anexoService.setCantidad(new BigDecimal(anexoLocal.getNombre()));    
+	            } else {
+	                anexoService.setCantidad(BigDecimal.ONE);
+	            }
+	            
+	            if (anexoLocal.descripcion != null && !anexoLocal.descripcion.trim().equals("")) {
+	                anexoService.descripcion = anexoLocal.descripcion;    
+	            } else {
+	                anexoService.setDescripcion(" ");
+	            }            
+	            
+	            anexoService.setNroRadicado(comunicacionSalidaDO.getNroRadicado());
+	            resultadoAdd = actualizacionComunicacion.anexosList.add(anexoService);
+	            System.out.println("END : Create Anexo script grovy | Resultado Add: "+resultadoAdd);   
+	        } else {
+	            System.out.println("END : El objeto no es AnexoBO");   
+	        }
+	    }   
+	}
+}
+
+
+public void methodACT24934451972377()
+{
+	System.out.println("INICIO Ajuste_campo");
+	InteresadoBO interesado;
+	comunicacionSalidaDO.asunto = comunicacionSalidaDO.asunto.take(500);
+	//Se recorren los destinatarios y se truncan los campos requeridos
+	/*
+	if(listaInteresadosDO != null && listaInteresadosDO.interesados != null){
+	  Iterator it = listaInteresadosDO.interesados.iterator();
+	  while(it.hasNext()){
+	    Object object =  it.next();
+	    if(object instanceof InteresadoBO){
+	      interesado = (InteresadoBO)object;
+	      interesado.numeroIdentificacion = interesado.numeroIdentificacion.take(20);
+	      interesado.primerNombre = interesado.primerNombre.take(100);
+	      interesado.segundoNombre = interesado.segundoNombre.take(100);
+	      interesado.primerApellido = interesado.primerApellido.take(100);
+	      interesado.segundoApellido = interesado.segundoApellido.take(100);
+	      interesado.email = interesado.email.take(200);
+	      interesado.direccion = interesado.direccion.take(200);
+	      interesado.telefono = interesado.telefono.take(20);
+	      interesado.celular = interesado.celular.take(20);
+	    }
+	  }
+	}
+	*/
+	//Se recorren los comentarios y se trunca el campo comentario
+	if(localExecData.userComment != null && localExecData.userComment.size()>0){
+	  Iterator it = localExecData.userComment.iterator();
+	  while(it.hasNext()){
+	    Object object =  it.next();
+	    
+	  }
+	}
+	System.out.println("FIN Ajuste_campo");
+}
+
+
+}
