@@ -1,0 +1,11 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" schemaLocation="ComunicacionSalidaBO.xsd"/>
+   <complexType name="HT_FirmaDigitalPayloadType">
+      <sequence>
+         <element name="jefeDependencia" type="xsd:string"/>
+         <element ref="ns0:ComunicacionSalidaBO"/>
+         <element name="primaryFile" type="xsd:string"/>
+      </sequence>
+   </complexType>
+</schema>

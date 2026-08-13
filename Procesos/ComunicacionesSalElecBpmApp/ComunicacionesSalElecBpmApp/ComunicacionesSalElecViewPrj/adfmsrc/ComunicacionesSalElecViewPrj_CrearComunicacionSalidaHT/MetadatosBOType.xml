@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="MetadatosBOType"
+          Package="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT"
+          BeanClass="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType" isJavaBased="false">
+  <Attribute Name="descripcion" Type="java.lang.String" PrecisionRule="false" Precision="0" Scale="0">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="nextSibling" Value="nombreTramite"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Descripcion"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="descripcion"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+      <SchemaBasedProperties>
+        <LABEL ResId="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType.descripcion_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="nombreTramite" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="nextSibling" Value="idTpDocumento"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Nombre Tramite"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="nombreTramite"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+      <SchemaBasedProperties>
+        <LABEL ResId="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType.nombreTramite_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idTpDocumento" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="nextSibling" Value="nombreTpDocumento"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Id Tp Documento"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="idTpDocumento"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+      <SchemaBasedProperties>
+        <LABEL ResId="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType.idTpDocumento_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="nombreTpDocumento" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="nextSibling" Value="idCuenta"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Nombre Tp Documento"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="nombreTpDocumento"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+      <SchemaBasedProperties>
+        <LABEL ResId="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType.nombreTpDocumento_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idCuenta" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="nextSibling" Value="cuenta"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Id Cuenta"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="idCuenta"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+      <SchemaBasedProperties>
+        <LABEL ResId="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType.idCuenta_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="cuenta" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="nextSibling" Value="idTramite"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Cuenta"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="cuenta"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+      <SchemaBasedProperties>
+        <LABEL ResId="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType.cuenta_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idTramite" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Id Tramite"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="idTramite"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+      <SchemaBasedProperties>
+        <LABEL ResId="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT.MetadatosBOType.idTramite_LABEL"/>
+      </SchemaBasedProperties>
+    </Properties>
+  </Attribute>
+  <ResourceBundle>
+    <PropertiesBundle xmlns="http://xmlns.oracle.com/adfm/resourcebundle"
+                      PropertiesFile="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrjBundle"/>
+  </ResourceBundle>
+</JavaBean>

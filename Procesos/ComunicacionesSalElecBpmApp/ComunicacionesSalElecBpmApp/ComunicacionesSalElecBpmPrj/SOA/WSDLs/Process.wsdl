@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/Process"  xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" >
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process">
+            <xsd:element name="responderComunicacionElect">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="codDependenciaUsuario" type="xsd:long"/>
+                        <xsd:element name="idRolUsuario" type="xsd:int"/>
+                        <xsd:element name="rolUsuario" type="xsd:string"/>
+                        <xsd:element name="emailUsuario" type="xsd:string"/>
+                        <xsd:element name="nombre1" type="xsd:string"/>
+                        <xsd:element name="fechaRadicacion" type="xsd:dateTime"/>
+                        <xsd:element name="nroRadicado" type="xsd:string"/>
+                        <xsd:element name="esTituloMinero" type="xsd:string"/>
+                        <xsd:element name="placa" type="xsd:string"/>
+                        <xsd:element name="referencia" type="xsd:string"/>
+                        <xsd:element name="asunto" type="xsd:string"/>
+                        <xsd:element name="nroFolios" type="xsd:int"/>
+                        <xsd:element name="nroAnexos" type="xsd:string"/>
+                        <xsd:element name="medioEnvio" type="xsd:string"/>
+                        <xsd:element name="nombreInteresado" type="xsd:string"/>
+                        <xsd:element name="tpIdentificacionInteresado" type="xsd:string"/>
+                        <xsd:element name="nroIdentificacionInteresado" type="xsd:string"/>
+                        <xsd:element name="direccionInteresado" type="xsd:string"/>
+                        <xsd:element name="telefonoInteresado" type="xsd:string"/>
+                        <xsd:element name="nroRadicadoRelacionado" type="xsd:string"/>
+                        <xsd:element name="dependenciaOrigen" type="xsd:string"/>
+                        <xsd:element name="idDependenciaOrigen" type="xsd:string"/>
+                        <xsd:element name="esTituloMineroBool" type="xsd:boolean"/>
+                        <xsd:element name="nombreDocPrincipal" type="xsd:string"/>
+                        <xsd:element name="urlDocPrincipal" type="xsd:string"/>
+                        <xsd:element name="emailInteresado" type="xsd:string"/>
+                        <xsd:element name="fecVencimiento" type="xsd:dateTime"/>
+                        <xsd:element name="tiempoRespuesta" type="xsd:int"/>
+                        <xsd:element name="nombre2" type="xsd:string"/>
+                        <xsd:element name="apellido1" type="xsd:string"/>
+                        <xsd:element name="apellido2" type="xsd:string"/>
+                        <xsd:element name="idPais" type="xsd:int"/>
+                        <xsd:element name="idDepartamento" type="xsd:int"/>
+                        <xsd:element name="idMunicipio" type="xsd:int"/>
+                        <xsd:element name="ocupacion" type="xsd:string"/>
+                        <xsd:element name="celular" type="xsd:string"/>
+                        <xsd:element name="esPqrs" type="xsd:string"/>
+                        <xsd:element name="nombreUsuario" type="xsd:string"/>
+                        <xsd:element name="urlDocPrincipalRelacionado" type="xsd:string"/>
+                        <xsd:element name="tipoPQRS" type="xsd:string"/>
+                        <xsd:element name="AppName" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="responderComunicacionElect">
+        <wsdl:part name="parameters" element="tns:responderComunicacionElect"/>
+    </wsdl:message>
+    <wsdl:portType name="ProcessPortType">
+        <wsdl:operation name="responderComunicacionElect">
+            <wsdl:input message="tns:responderComunicacionElect"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <plnk:partnerLinkType name="ProcessPortTypePartnerLinkType">
+        <plnk:role name="ProcessPortTypeProvider">
+            <plnk:portType name="tns:ProcessPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+</wsdl:definitions>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="comunicacionessalelecviewprj" ClientType="Generic">
+  <pageMap>
+    <page path="/CrearComunicacionSalidaHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_CrearComunicacionSalidaHT_TaskDetailsPageDef"/>
+    <page path="/CrearComunicacionSalidaHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_CrearComunicacionSalidaHT_TaskNotificationPageDef"/>
+    <page path="/AprobarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_AprobarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/AprobarComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_AprobarComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/RevisarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_RevisarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/RevisarComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_RevisarComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/ProcesarEnvioComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_ProcesarEnvioComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/ProcesarEnvioComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_ProcesarEnvioComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/ProcesarEntregaComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_ProcesarEntregaComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/ProcesarEntregaComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_ProcesarEntregaComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/ActualizarDatosDestinatariosHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_ActualizarDatosDestinatariosHT_TaskDetailsPageDef"/>
+    <page path="/ActualizarDatosDestinatariosHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_ActualizarDatosDestinatariosHT_TaskNotificationPageDef"/>
+    <page path="/CerrarComunicacionHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_CerrarComunicacionHT_TaskDetailsPageDef"/>
+    <page path="/CerrarComunicacionHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_CerrarComunicacionHT_TaskNotificationPageDef"/>
+    <page path="/DescargarImprimirHT_TaskDetails.jspx"
+          usageId="comunicacionessalelecviewprj_DescargarImprimirHT_TaskDetailsPageDef"/>
+    <page path="/DescargarImprimirHT_TaskNotification.jspx"
+          usageId="comunicacionessalelecviewprj_DescargarImprimirHT_TaskNotificationPageDef"/>
+    <page path="/ManejarExcepcionHT.jspx" usageId="comunicacionessalelecviewprj_ManejarExcepcionHTPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="comunicacionessalelecviewprj_CrearComunicacionSalidaHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.CrearComunicacionSalidaHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_CrearComunicacionSalidaHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.CrearComunicacionSalidaHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_AprobarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.AprobarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_AprobarComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.AprobarComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_RevisarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.RevisarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_RevisarComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.RevisarComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_ProcesarEnvioComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.ProcesarEnvioComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_ProcesarEnvioComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.ProcesarEnvioComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_ProcesarEntregaComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.ProcesarEntregaComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_ProcesarEntregaComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.ProcesarEntregaComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_ActualizarDatosDestinatariosHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.ActualizarDatosDestinatariosHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_ActualizarDatosDestinatariosHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.ActualizarDatosDestinatariosHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_CerrarComunicacionHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.CerrarComunicacionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_CerrarComunicacionHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.CerrarComunicacionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_DescargarImprimirHT_TaskDetailsPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.DescargarImprimirHT_TaskDetailsPageDef"/>
+    <page id="comunicacionessalelecviewprj_DescargarImprimirHT_TaskNotificationPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.DescargarImprimirHT_TaskNotificationPageDef"/>
+    <page id="comunicacionessalelecviewprj_ManejarExcepcionHTPageDef"
+          path="comunicacionessalelecviewprj.pageDefs.ManejarExcepcionHTPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ComunicacionesSalElecViewPrj_ManejarExcepcionHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_ManejarExcepcionHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_DescargarImprimirHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_DescargarImprimirHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_CerrarComunicacionHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_CerrarComunicacionHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_ActualizarDatosDestinatariosHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_ActualizarDatosDestinatariosHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_ProcesarEntregaComunicacionHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_ProcesarEntregaComunicacionHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_ProcesarEnvioComunicacionHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_ProcesarEnvioComunicacionHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_RevisarComunicacionHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_RevisarComunicacionHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_AprobarComunicacionHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_AprobarComunicacionHT"/>
+    <dc id="ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT"
+        path="comunicacionessalelecviewprj.ComunicacionesSalElecViewPrj_CrearComunicacionSalidaHT"/>
+  </dataControlUsages>
+</Application>

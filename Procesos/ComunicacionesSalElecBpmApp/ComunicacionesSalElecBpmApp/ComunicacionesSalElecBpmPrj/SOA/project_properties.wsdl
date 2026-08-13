@@ -1,0 +1,15 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalElecBpmPrj" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalElecBpmPrj" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail">
+   <vprop:property name="correlationId" type="xsd:string"/>
+   <vprop:property name="property1" type="xsd:string"/>
+   <vprop:propertyAlias messageType="tns2:responderComunicacionElect" propertyName="tns:correlationId" part="parameters">
+      <vprop:query xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/Process">
+            /ns:responderComunicacionElect/nroRadicadoRelacionado
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns3:recibirRespuestaComunicacionSalidaElectronica" propertyName="tns:correlationId" part="parameters">
+      <vprop:query xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail">
+            /ns:recibirRespuestaComunicacionSalidaElectronica/idCorrelation
+        </vprop:query>
+   </vprop:propertyAlias>
+</wsdl:definitions>

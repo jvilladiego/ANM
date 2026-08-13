@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE PDefViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<PDefViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="MetadatosBOType"
+  Version="12.2.1.16.48"
+  StaticDef="ComunicacionesSalElecViewPrj_AprobarComunicacionHT.MetadatosBOType">
+  <DesignTime>
+    <Attr Name="_DCName"
+      Value="comunicacionessalelecviewprj.DataControls.ComunicacionesSalElecViewPrj_AprobarComunicacionHT"/>
+    <Attr Name="_SDName" Value="ComunicacionesSalElecViewPrj_AprobarComunicacionHT.MetadatosBOType"/>
+  </DesignTime>
+</PDefViewObject>

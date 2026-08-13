@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WL5G3N0:definitions
+     name="ExpedienteMinero"
+     targetNamespace="http://service.sgd.anm.gov.co"
+     xmlns:WL5G3N0="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:WL5G3N1="http://transfer.sgd.anm.gov.co"
+     xmlns:WL5G3N2="http://response.sgd.anm.gov.co"
+     xmlns:WL5G3N3="http://service.sgd.anm.gov.co"
+     xmlns:WL5G3N4="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <WL5G3N0:types>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://service.sgd.anm.gov.co" schemaLocation="Schemas/ExpedienteMinero_schema1.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://transfer.sgd.anm.gov.co" schemaLocation="Schemas/ExpedienteMinero_schema2.xsd"/>
+        </xsd:schema>
+        <xsd:schema xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://service.sgd.anm.gov.co"
+             xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy"
+             xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            <xsd:import namespace="http://response.sgd.anm.gov.co" schemaLocation="Schemas/ExpedienteMinero_schema3.xsd"/>
+        </xsd:schema>
+    </WL5G3N0:types>
+    <WL5G3N0:message name="modificarModalidadExpedienteMinero">
+        <WL5G3N0:part name="modificacionExpediente" element="WL5G3N1:ModificacionExpediente"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="modificarModalidadExpedienteMineroResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="WSException">
+        <WL5G3N0:part name="fault" element="WL5G3N3:WSException"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="promoverExpedienteSolicitudATitulo">
+        <WL5G3N0:part name="creacionTitulo" element="WL5G3N1:CreacionTitulo"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="promoverExpedienteSolicitudATituloResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="rechazarExpedienteSolicitudMinera">
+        <WL5G3N0:part name="rechazoSolicitud" element="WL5G3N1:RechazoSolicitud"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="rechazarExpedienteSolicitudMineraResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="validarExpedienteMinero">
+        <WL5G3N0:part name="nroPlacaValidacion" element="WL5G3N1:NroPlacaValidacion"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="validarExpedienteMineroResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="crearExpedienteSolicitudMinera">
+        <WL5G3N0:part name="solicitudMinera" element="WL5G3N1:CreacionSolicitudMinera"/>
+    </WL5G3N0:message>
+    <WL5G3N0:message name="crearExpedienteSolicitudMineraResponse">
+        <WL5G3N0:part name="respuestaUCM" element="WL5G3N2:RespuestaUCM"/>
+    </WL5G3N0:message>
+    <WL5G3N0:portType name="ExpedienteMinero">
+        <WL5G3N0:operation name="modificarModalidadExpedienteMinero">
+            <WL5G3N0:input message="WL5G3N3:modificarModalidadExpedienteMinero"/>
+            <WL5G3N0:output message="WL5G3N3:modificarModalidadExpedienteMineroResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="promoverExpedienteSolicitudATitulo">
+            <WL5G3N0:input message="WL5G3N3:promoverExpedienteSolicitudATitulo"/>
+            <WL5G3N0:output message="WL5G3N3:promoverExpedienteSolicitudATituloResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="rechazarExpedienteSolicitudMinera">
+            <WL5G3N0:input message="WL5G3N3:rechazarExpedienteSolicitudMinera"/>
+            <WL5G3N0:output message="WL5G3N3:rechazarExpedienteSolicitudMineraResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="validarExpedienteMinero">
+            <WL5G3N0:input message="WL5G3N3:validarExpedienteMinero"/>
+            <WL5G3N0:output message="WL5G3N3:validarExpedienteMineroResponse"/>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="crearExpedienteSolicitudMinera">
+            <WL5G3N0:input message="WL5G3N3:crearExpedienteSolicitudMinera"/>
+            <WL5G3N0:output message="WL5G3N3:crearExpedienteSolicitudMineraResponse"/>
+            <WL5G3N0:fault name="WSException" message="WL5G3N3:WSException"/>
+        </WL5G3N0:operation>
+    </WL5G3N0:portType>
+    <WL5G3N0:binding name="ExpedienteMineroPortBinding" type="WL5G3N3:ExpedienteMinero">
+        <WL5G3N4:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+        <WL5G3N0:operation name="modificarModalidadExpedienteMinero">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="promoverExpedienteSolicitudATitulo">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="rechazarExpedienteSolicitudMinera">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="validarExpedienteMinero">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+        </WL5G3N0:operation>
+        <WL5G3N0:operation name="crearExpedienteSolicitudMinera">
+            <WL5G3N4:operation/>
+            <WL5G3N0:input>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:input>
+            <WL5G3N0:output>
+                <WL5G3N4:body use="literal"/>
+            </WL5G3N0:output>
+            <WL5G3N0:fault name="WSException">
+                <WL5G3N4:fault name="WSException" use="literal"/>
+            </WL5G3N0:fault>
+        </WL5G3N0:operation>
+    </WL5G3N0:binding>
+    <WL5G3N0:service name="ExpedienteMineroPortBindingQSService">
+        <WL5G3N0:documentation>OSB Service</WL5G3N0:documentation>
+        <WL5G3N0:port name="ExpedienteMineroPortBindingQSPort" binding="WL5G3N3:ExpedienteMineroPortBinding">
+            <WL5G3N4:address location="http://osb.anm.local/SGD2.3/ProxyServices/ExpedienteMineroProxy"/>
+        </WL5G3N0:port>
+    </WL5G3N0:service>
+</WL5G3N0:definitions>

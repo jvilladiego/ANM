@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<decisionServices xmlns="http://xmlns.oracle.com/bpel/rules" name="CalcularGUID">
+    <ruleEngineProvider provider="Oracle_11.0.0.0.0" name="OracleRulesSDK">
+        <repository type="SCA-Archive">
+            <path>ComunicacionesSalElecBpmPrj/oracle/rules/co/gov/anm/CalcularGUID.rules</path>
+        </repository>
+    </ruleEngineProvider>
+    <decisionService name="CalcularGUID_DecisionService" ruleEngineProviderReference="OracleRulesSDK" targetNamespace="http://xmlns.oracle.com/CalcularGUID/CalcularGUID_DecisionService">
+        <catalog>CalcularGUID</catalog>
+        <pattern name="CallFunctionStateless">
+            <arguments>
+                <call>co.gov.anm.CalcularGUID.DecisionService</call>
+            </arguments>
+        </pattern>
+        <pattern name="CallFunctionStateful">
+            <arguments>
+                <call>co.gov.anm.CalcularGUID.DecisionService</call>
+            </arguments>
+        </pattern>
+    </decisionService>
+    <schemaInformation>
+        <dictionary fqnPackage="co.gov.anm" fqnName="CalcularGUID" updateNumber="118">
+            <schemaBrowser>
+                <package>com.oracle.xmlns.bpm.bpmobject.sgdcomunicaciones.comunicacionsalidabo</package>
+                <namespace>http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO</namespace>
+            </schemaBrowser>
+            <schemaBrowser>
+                <package>com.oracle.xmlns.bpm.bpmobject.sgdcomunicaciones.metadatosbo</package>
+                <namespace>http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO</namespace>
+            </schemaBrowser>
+            <schemaBrowser>
+                <package>com.oracle.xmlns.bpm.bpmobject.sgdcomunicaciones.usuariobo</package>
+                <namespace>http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO</namespace>
+            </schemaBrowser>
+            <schemaBrowser>
+                <package>com.oracle.xmlns.bpm.bpmobject.sgdcomunicaciones.taxonomiabo</package>
+                <namespace>http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO</namespace>
+            </schemaBrowser>
+            <schemaImport namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" localPart="ComunicacionSalidaBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd">
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" localPart="ComunicacionSalidaBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoExternoBO" localPart="InteresadoExternoBO.xsd" schemaLocation="Schemas/InteresadoExternoBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" localPart="AnexoBO.xsd" schemaLocation="Schemas/AnexoBO.xsd"/>
+            </schemaImport>
+            <schemaImport namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" localPart="MetadatosBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/MetadatosBO.xsd">
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" localPart="MetadatosBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/MetadatosBO.xsd"/>
+            </schemaImport>
+            <schemaImport namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" localPart="UsuarioBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/UsuarioBO.xsd">
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" localPart="UsuarioBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/RolBO" localPart="RolBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/RolBO.xsd"/>
+            </schemaImport>
+            <schemaImport namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" localPart="TaxonomiaBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/TaxonomiaBO.xsd">
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" localPart="TaxonomiaBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/TaxonomiaBO.xsd"/>
+            </schemaImport>
+        </dictionary>
+    </schemaInformation>
+</decisionServices>

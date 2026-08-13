@@ -1,0 +1,504 @@
+<?xml version="1.0"?>
+<RuleDictionary id="G}-2a8d6969:158ac78ed6d:-777d" xmlns="http://xmlns.oracle.com/rules/dictionary">
+  <Name>ProcesarEnvioComunicacionHTRules</Name>
+  <Alias>ProcesarEnvioComunicacionHTRules</Alias>
+  <Version>12.1.1.0.0</Version>
+  <DataModel id="L}1">
+    <CreationUpdateNumber>2</CreationUpdateNumber>
+    <QualifierPattern>{member} of {fact}</QualifierPattern>
+    <BucketSet id="G}-795594b0:158ffcd91b7:-7be4">
+      <Name>SI_NO</Name>
+      <Alias>SI_NO</Alias>
+      <Visible>true</Visible>
+      <CreationUpdateNumber>17</CreationUpdateNumber>
+      <IDofType>J}java.lang.String</IDofType>
+      <ListContentID>B}nil</ListContentID>
+      <Type>String</Type>
+      <Form>LOV</Form>
+      <Bucket id="G}-795594b0:158ffcd91b7:-7be3">
+        <Name>otherwise</Name>
+        <Alias>otherwise</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>17</CreationUpdateNumber>
+        <Inclusive>true</Inclusive>
+        <Otherwise>true</Otherwise>
+        <Excluded>false</Excluded>
+        <Expression id="L}53">
+          <IsConstant>true</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Bucket>
+      <Bucket id="G}-795594b0:158ffcd91b7:-7bda">
+        <Name>&quot;SI&quot;</Name>
+        <Alias>&quot;SI&quot;</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>29</CreationUpdateNumber>
+        <Inclusive>false</Inclusive>
+        <Otherwise>false</Otherwise>
+        <Excluded>false</Excluded>
+        <Expression id="L}111">
+          <Value>&quot;SI&quot;</Value>
+          <ResolvedValue>&quot;SI&quot;</ResolvedValue>
+          <IsConstant>true</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Bucket>
+      <Bucket id="G}-795594b0:158ffcd91b7:-7bd9">
+        <Name>&quot;NO&quot;</Name>
+        <Alias>&quot;NO&quot;</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>31</CreationUpdateNumber>
+        <Inclusive>false</Inclusive>
+        <Otherwise>false</Otherwise>
+        <Excluded>false</Excluded>
+        <Expression id="L}116">
+          <Value>&quot;NO&quot;</Value>
+          <ResolvedValue>&quot;NO&quot;</ResolvedValue>
+          <IsConstant>true</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Bucket>
+      <CalendarForm>Date</CalendarForm>
+      <Excluded>false</Excluded>
+      <ValidationUpdateNumber>32</ValidationUpdateNumber>
+    </BucketSet>
+    <BucketSet id="G}-795594b0:158ffcd91b7:-7bde">
+      <Name>Lenghts</Name>
+      <Alias>Lenghts</Alias>
+      <Visible>true</Visible>
+      <CreationUpdateNumber>19</CreationUpdateNumber>
+      <IDofType>J}int</IDofType>
+      <ListContentID>B}nil</ListContentID>
+      <Type>int</Type>
+      <Form>Range</Form>
+      <Bucket id="G}-795594b0:158ffcd91b7:-7bdd">
+        <Name>&lt;0</Name>
+        <Alias>&lt;0</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>19</CreationUpdateNumber>
+        <Inclusive>true</Inclusive>
+        <Otherwise>true</Otherwise>
+        <Excluded>false</Excluded>
+        <Expression id="L}88">
+          <IsConstant>true</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Bucket>
+      <Bucket id="G}-795594b0:158ffcd91b7:-7bdc">
+        <Name>[0..2)</Name>
+        <Alias>Vacio</Alias>
+        <Description>Vacio</Description>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>22</CreationUpdateNumber>
+        <Inclusive>true</Inclusive>
+        <Otherwise>false</Otherwise>
+        <Excluded>false</Excluded>
+        <Expression id="L}95">
+          <Value>0</Value>
+          <ResolvedValue>0</ResolvedValue>
+          <IsConstant>true</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Bucket>
+      <Bucket id="G}-795594b0:158ffcd91b7:-7bdb">
+        <Name>&gt;=2</Name>
+        <Alias>No Vacio</Alias>
+        <Visible>true</Visible>
+        <CreationUpdateNumber>25</CreationUpdateNumber>
+        <Inclusive>true</Inclusive>
+        <Otherwise>false</Otherwise>
+        <Excluded>false</Excluded>
+        <Expression id="L}102">
+          <Value>2</Value>
+          <ResolvedValue>2</ResolvedValue>
+          <IsConstant>true</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Bucket>
+      <CalendarForm>Date</CalendarForm>
+      <Excluded>false</Excluded>
+      <ValidationUpdateNumber>61</ValidationUpdateNumber>
+    </BucketSet>
+    <SupportsXPathEnabled>false</SupportsXPathEnabled>
+    <UpdateNumber>74</UpdateNumber>
+    <ValidationUpdateNumber>66</ValidationUpdateNumber>
+    <UpdateTime>0</UpdateTime>
+  </DataModel>
+  <RuleSet id="G}-2a8d6969:158ac78ed6d:-777b">
+    <Name>ReglaAsignacion</Name>
+    <Alias>ReglaAsignacion</Alias>
+    <ValidationUpdateNumber>2</ValidationUpdateNumber>
+    <Active>true</Active>
+    <CalendarForm>DateTime</CalendarForm>
+    <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
+    <CreationUpdateNumber>2</CreationUpdateNumber>
+  </RuleSet>
+  <RuleSet id="G}-2a8d6969:158ac78ed6d:-7754">
+    <Name>ModificationRules</Name>
+    <Alias>ModificationRules</Alias>
+    <ValidationUpdateNumber>3</ValidationUpdateNumber>
+    <Active>true</Active>
+    <CalendarForm>DateTime</CalendarForm>
+    <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
+    <CreationUpdateNumber>3</CreationUpdateNumber>
+  </RuleSet>
+  <RuleSet id="G}-2a8d6969:158ac78ed6d:-7753">
+    <Name>SubstitutionRules</Name>
+    <Alias>SubstitutionRules</Alias>
+    <ValidationUpdateNumber>3</ValidationUpdateNumber>
+    <Active>true</Active>
+    <CalendarForm>DateTime</CalendarForm>
+    <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
+    <CreationUpdateNumber>3</CreationUpdateNumber>
+  </RuleSet>
+  <RuleSet id="G}-795594b0:158ffcd91b7:-7bec">
+    <Name>CalcularGUID</Name>
+    <Alias>CalcularGUID</Alias>
+    <Description>A set of rules to execute</Description>
+    <ValidationUpdateNumber>-1</ValidationUpdateNumber>
+    <Active>true</Active>
+    <CalendarForm>DateTime</CalendarForm>
+    <RuleSheet id="G}-795594b0:158ffcd91b7:-7beb">
+      <Name>DecidirGUID</Name>
+      <Alias>DecidirGUID</Alias>
+      <ValidationUpdateNumber>-1</ValidationUpdateNumber>
+      <Priority>medium</Priority>
+      <Active>true</Active>
+      <CalendarForm>DateTime</CalendarForm>
+      <TreeMode>false</TreeMode>
+      <Visible>true</Visible>
+      <SimpleTest id="L}26">
+        <FactType>ProcesarEnvioComunicacionHTPayloadType</FactType>
+        <IDofFactType>J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.ProcesarEnvioComunicacionHTPayloadType</IDofFactType>
+        <FactPath>ProcesarEnvioComunicacionHTPayloadType</FactPath>
+        <FactPathIDs>L}26</FactPathIDs>
+        <Form>FormIsA</Form>
+        <IDofOperator>B}==</IDofOperator>
+        <Connective>&amp;&amp;</Connective>
+        <Visible>false</Visible>
+        <DSLId>B}nil</DSLId>
+      </SimpleTest>
+      <ShowPatterns>false</ShowPatterns>
+      <Logical>false</Logical>
+      <Dimension id="L}17">
+        <IDofSharedBucketSet>G}-795594b0:158ffcd91b7:-7be4</IDofSharedBucketSet>
+        <DimensionNode id="L}19">
+          <BucketIDTable>G}-795594b0:158ffcd91b7:-7bda</BucketIDTable>
+          <Values>&quot;SI&quot;</Values>
+          <ParentDimensionNode>B}nil</ParentDimensionNode>
+          <ChildDimensionNodes>L}31</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}125">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>B}nil</ParentDimensionNode>
+          <ChildDimensionNodes>L}126</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}145">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>B}nil</ParentDimensionNode>
+          <ChildDimensionNodes>L}146</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}177">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>B}nil</ParentDimensionNode>
+          <ChildDimensionNodes>L}178</ChildDimensionNodes>
+        </DimensionNode>
+        <PrivateBucketSet id="G}-795594b0:158ffcd91b7:-7bea">
+          <Visible>true</Visible>
+          <CreationUpdateNumber>7</CreationUpdateNumber>
+          <IDofType>J}java.lang.String</IDofType>
+          <ListContentID>B}nil</ListContentID>
+          <Type>String</Type>
+          <Form>Default</Form>
+          <Bucket id="G}-795594b0:158ffcd91b7:-7be9">
+            <Name>otherwise</Name>
+            <Alias>otherwise</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>7</CreationUpdateNumber>
+            <Inclusive>true</Inclusive>
+            <Otherwise>true</Otherwise>
+            <Excluded>false</Excluded>
+            <Expression id="L}22">
+              <IsConstant>true</IsConstant>
+              <ParameterID>B}nil</ParameterID>
+            </Expression>
+          </Bucket>
+          <CalendarForm>Date</CalendarForm>
+          <Excluded>false</Excluded>
+          <ValidationUpdateNumber>8</ValidationUpdateNumber>
+        </PrivateBucketSet>
+        <SharedBucketSet>SI_NO</SharedBucketSet>
+        <Expression id="L}18">
+          <Value>ProcesarEnvioComunicacionHTPayloadType.comunicacionSalidaBO.esTituloMinero</Value>
+          <ResolvedValue>`L}26`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.ProcesarEnvioComunicacionHTPayloadType.{comunicacionSalidaBO}`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.ComunicacionSalidaBOType.{esTituloMinero}`</ResolvedValue>
+          <IsConstant>false</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Dimension>
+      <Dimension id="L}29">
+        <IDofSharedBucketSet>G}-795594b0:158ffcd91b7:-7bde</IDofSharedBucketSet>
+        <DimensionNode id="L}31">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>L}19</ParentDimensionNode>
+          <ChildDimensionNodes>L}41</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}126">
+          <BucketIDTable>G}-795594b0:158ffcd91b7:-7bdb</BucketIDTable>
+          <Values>&gt;=2</Values>
+          <ParentDimensionNode>L}125</ParentDimensionNode>
+          <ChildDimensionNodes>L}127</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}146">
+          <BucketIDTable>G}-795594b0:158ffcd91b7:-7bdc</BucketIDTable>
+          <Values>Vacio</Values>
+          <ParentDimensionNode>L}145</ParentDimensionNode>
+          <ChildDimensionNodes>L}147</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}178">
+          <BucketIDTable>G}-795594b0:158ffcd91b7:-7bdc</BucketIDTable>
+          <Values>Vacio</Values>
+          <ParentDimensionNode>L}177</ParentDimensionNode>
+          <ChildDimensionNodes>L}179</ChildDimensionNodes>
+        </DimensionNode>
+        <PrivateBucketSet id="G}-795594b0:158ffcd91b7:-7be8">
+          <Visible>true</Visible>
+          <CreationUpdateNumber>9</CreationUpdateNumber>
+          <IDofType>J}int</IDofType>
+          <ListContentID>B}nil</ListContentID>
+          <Type>int</Type>
+          <Form>Default</Form>
+          <Bucket id="G}-795594b0:158ffcd91b7:-7be7">
+            <Name>otherwise</Name>
+            <Alias>otherwise</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>9</CreationUpdateNumber>
+            <Inclusive>true</Inclusive>
+            <Otherwise>true</Otherwise>
+            <Excluded>false</Excluded>
+            <Expression id="L}32">
+              <IsConstant>true</IsConstant>
+              <ParameterID>B}nil</ParameterID>
+            </Expression>
+          </Bucket>
+          <CalendarForm>Date</CalendarForm>
+          <Excluded>false</Excluded>
+          <ValidationUpdateNumber>14</ValidationUpdateNumber>
+        </PrivateBucketSet>
+        <SharedBucketSet>Lenghts</SharedBucketSet>
+        <Expression id="L}30">
+          <Value>ProcesarEnvioComunicacionHTPayloadType.taxonomiaBO.idCuaderno.length</Value>
+          <ResolvedValue>`L}26`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.ProcesarEnvioComunicacionHTPayloadType.{taxonomiaBO}`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.TaxonomiaBOType.{idCuaderno}`.`J}public int java.lang.String.length()`</ResolvedValue>
+          <IsConstant>false</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Dimension>
+      <Dimension id="L}39">
+        <IDofSharedBucketSet>G}-795594b0:158ffcd91b7:-7bde</IDofSharedBucketSet>
+        <DimensionNode id="L}41">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>L}31</ParentDimensionNode>
+          <ChildDimensionNodes>L}159</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}127">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>L}126</ParentDimensionNode>
+          <ChildDimensionNodes>L}160</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}147">
+          <BucketIDTable>G}-795594b0:158ffcd91b7:-7bdb</BucketIDTable>
+          <Values>&gt;=2</Values>
+          <ParentDimensionNode>L}146</ParentDimensionNode>
+          <ChildDimensionNodes>L}161</ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}179">
+          <BucketIDTable>G}-795594b0:158ffcd91b7:-7bdc</BucketIDTable>
+          <Values>Vacio</Values>
+          <ParentDimensionNode>L}178</ParentDimensionNode>
+          <ChildDimensionNodes>L}180</ChildDimensionNodes>
+        </DimensionNode>
+        <PrivateBucketSet id="G}-795594b0:158ffcd91b7:-7be6">
+          <Visible>true</Visible>
+          <CreationUpdateNumber>12</CreationUpdateNumber>
+          <IDofType>J}int</IDofType>
+          <ListContentID>B}nil</ListContentID>
+          <Type>int</Type>
+          <Form>LOV</Form>
+          <Bucket id="G}-795594b0:158ffcd91b7:-7be5">
+            <Name>otherwise</Name>
+            <Alias>otherwise</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>12</CreationUpdateNumber>
+            <Inclusive>true</Inclusive>
+            <Otherwise>true</Otherwise>
+            <Excluded>false</Excluded>
+            <Expression id="L}42">
+              <IsConstant>true</IsConstant>
+              <ParameterID>B}nil</ParameterID>
+            </Expression>
+          </Bucket>
+          <CalendarForm>Date</CalendarForm>
+          <Excluded>false</Excluded>
+          <ValidationUpdateNumber>16</ValidationUpdateNumber>
+        </PrivateBucketSet>
+        <SharedBucketSet>Lenghts</SharedBucketSet>
+        <Expression id="L}40">
+          <Value>ProcesarEnvioComunicacionHTPayloadType.taxonomiaBO.idSubSerie.length</Value>
+          <ResolvedValue>`L}26`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.ProcesarEnvioComunicacionHTPayloadType.{taxonomiaBO}`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.TaxonomiaBOType.{idSubSerie}`.`J}public int java.lang.String.length()`</ResolvedValue>
+          <IsConstant>false</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Dimension>
+      <Dimension id="L}157">
+        <IDofSharedBucketSet>G}-795594b0:158ffcd91b7:-7bde</IDofSharedBucketSet>
+        <DimensionNode id="L}159">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>L}41</ParentDimensionNode>
+          <ChildDimensionNodes></ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}160">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>L}127</ParentDimensionNode>
+          <ChildDimensionNodes></ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}161">
+          <BucketIDTable></BucketIDTable>
+          <Values>-</Values>
+          <ParentDimensionNode>L}147</ParentDimensionNode>
+          <ChildDimensionNodes></ChildDimensionNodes>
+        </DimensionNode>
+        <DimensionNode id="L}180">
+          <BucketIDTable>G}-795594b0:158ffcd91b7:-7bdb</BucketIDTable>
+          <Values>&gt;=2</Values>
+          <ParentDimensionNode>L}179</ParentDimensionNode>
+          <ChildDimensionNodes></ChildDimensionNodes>
+        </DimensionNode>
+        <PrivateBucketSet id="G}-795594b0:158ffcd91b7:-7bd8">
+          <Visible>true</Visible>
+          <CreationUpdateNumber>47</CreationUpdateNumber>
+          <IDofType>J}int</IDofType>
+          <ListContentID>B}nil</ListContentID>
+          <Type>int</Type>
+          <Form>Default</Form>
+          <Bucket id="G}-795594b0:158ffcd91b7:-7bd7">
+            <Name>otherwise</Name>
+            <Alias>otherwise</Alias>
+            <Visible>true</Visible>
+            <CreationUpdateNumber>47</CreationUpdateNumber>
+            <Inclusive>true</Inclusive>
+            <Otherwise>true</Otherwise>
+            <Excluded>false</Excluded>
+            <Expression id="L}162">
+              <IsConstant>true</IsConstant>
+              <ParameterID>B}nil</ParameterID>
+            </Expression>
+          </Bucket>
+          <CalendarForm>Date</CalendarForm>
+          <Excluded>false</Excluded>
+          <ValidationUpdateNumber>49</ValidationUpdateNumber>
+        </PrivateBucketSet>
+        <SharedBucketSet>Lenghts</SharedBucketSet>
+        <Expression id="L}158">
+          <Value>ProcesarEnvioComunicacionHTPayloadType.taxonomiaBO.idSerie.length</Value>
+          <ResolvedValue>`L}26`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.ProcesarEnvioComunicacionHTPayloadType.{taxonomiaBO}`.`J}oracle.bpel.services.workflow.task.model.ProcesarEnvioComunicacionHTRules.TaxonomiaBOType.{idSerie}`.`J}public int java.lang.String.length()`</ResolvedValue>
+          <IsConstant>false</IsConstant>
+          <ParameterID>B}nil</ParameterID>
+        </Expression>
+      </Dimension>
+      <DTAction id="L}273">
+        <Form>Assert New</Form>
+        <DSLId>B}nil</DSLId>
+        <AlwaysSelected>true</AlwaysSelected>
+        <DTActionNode id="L}274">
+          <Selected>false</Selected>
+        </DTActionNode>
+        <DTActionNode id="L}275">
+          <Selected>false</Selected>
+        </DTActionNode>
+        <DTActionNode id="L}276">
+          <Selected>false</Selected>
+        </DTActionNode>
+        <DTActionNode id="L}277">
+          <Selected>false</Selected>
+        </DTActionNode>
+      </DTAction>
+      <DTRule id="L}20">
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
+        <CreationUpdateNumber>7</CreationUpdateNumber>
+      </DTRule>
+      <DTRule id="L}128">
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
+        <CreationUpdateNumber>35</CreationUpdateNumber>
+      </DTRule>
+      <DTRule id="L}148">
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
+        <CreationUpdateNumber>43</CreationUpdateNumber>
+      </DTRule>
+      <DTRule id="L}181">
+        <Override></Override>
+        <RunBefore></RunBefore>
+        <NoConflict></NoConflict>
+        <OverriddenBy></OverriddenBy>
+        <RunAfter></RunAfter>
+        <CreationUpdateNumber>54</CreationUpdateNumber>
+      </DTRule>
+      <AllowGaps>true</AllowGaps>
+      <ConflictPolicy>manual</ConflictPolicy>
+      <OrderRulesByBucket>false</OrderRulesByBucket>
+      <VerticalOrientation>true</VerticalOrientation>
+    </RuleSheet>
+    <VisibilityFilterEnabled>false</VisibilityFilterEnabled>
+    <CreationUpdateNumber>5</CreationUpdateNumber>
+  </RuleSet>
+  <DictionaryLink id="L}8">
+    <Name>DecisionPointDictionary</Name>
+    <Alias>DecisionPointDictionary</Alias>
+    <Package>oracle.rules.sdk2.decisionpoint.impl</Package>
+    <UpdateNumber>323</UpdateNumber>
+    <PrefixLinkedNames>true</PrefixLinkedNames>
+  </DictionaryLink>
+  <DictionaryLink id="L}9">
+    <Name>ProcesarEnvioComunicacionHTRulesBase</Name>
+    <Alias>ProcesarEnvioComunicacionHTRulesBase</Alias>
+    <UpdateNumber>9</UpdateNumber>
+    <PrefixLinkedNames>false</PrefixLinkedNames>
+  </DictionaryLink>
+  <ValidationUpdateNumber>-1</ValidationUpdateNumber>
+  <UpdateNumber>92</UpdateNumber>
+  <ResourceBundle>ProcesarEnvioComunicacionHTRulesTranslations</ResourceBundle>
+  <TestModel id="L}3">
+    <ValidationUpdateNumber>1</ValidationUpdateNumber>
+    <UpdateNumber>1</UpdateNumber>
+    <Validation>true</Validation>
+    <AutoSync>true</AutoSync>
+  </TestModel>
+  <Preferences id="G}-2a8d6969:158ac78ed6d:-777c">
+    <RulesExecutionAlgorithm>RETE</RulesExecutionAlgorithm>
+    <DisallowErrorSuppression>false</DisallowErrorSuppression>
+    <PhraseSuggestions>All</PhraseSuggestions>
+    <RestrictAutoSuggestions>true</RestrictAutoSuggestions>
+    <IncludeChainedExpressions>true</IncludeChainedExpressions>
+  </Preferences>
+  <decisionModel id="L}4">
+    <CreationUpdateNumber>2</CreationUpdateNumber>
+  </decisionModel>
+</RuleDictionary>

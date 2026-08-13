@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+  <persistence-unit name="ComunicacionesPU">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/ComunicacionesDS</jta-data-source>
+    <class>co.gov.anm.comunicaciones.model.entity.AnmPlantilla</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdAnexoComunciacion</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdComunicacion</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdDependencia</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdInteresadoInt</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdRol</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdTipoIdentificacion</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdUsuario</class>
+    <class>co.gov.anm.comunicaciones.model.entity.SgdUsuarioRol</class>
+    <class>co.gov.anm.comunicaciones.model.entity.AnmPlantilla</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource" value="jdbc/ComunicacionesDS"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="WebCenterContentPU">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/WCCConnectionDS</jta-data-source>
+    <class>co.gov.anm.comunicaciones.model.entity.EntidadProductora</class>
+    <class>co.gov.anm.comunicaciones.model.entity.TipoDocumental</class>
+    <class>co.gov.anm.comunicaciones.model.entity.TipoDocumentalTramite</class>
+    <class>co.gov.anm.comunicaciones.model.entity.TipoRecursoInformacion</class>
+    <class>co.gov.anm.comunicaciones.model.entity.Tramite</class>
+    <class>co.gov.anm.comunicaciones.model.entity.UnidadAdministrativa</class>
+    <class>co.gov.anm.comunicaciones.model.entity.Cuenta</class>
+    <class>co.gov.anm.comunicaciones.model.entity.FolderFolders</class>
+    <class>co.gov.anm.comunicaciones.model.entity.Folder</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource" value="jdbc/WCCConnectionDS"/>
+    </properties>
+  </persistence-unit>
+</persistence>

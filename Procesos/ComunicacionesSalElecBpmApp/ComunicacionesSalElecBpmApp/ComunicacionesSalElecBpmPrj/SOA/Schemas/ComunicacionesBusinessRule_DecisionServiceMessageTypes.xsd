@@ -1,0 +1,51 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://xmlns.oracle.com/ComunicacionesBusinessRule/ComunicacionesBusinessRule_DecisionService" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:tns="http://xmlns.oracle.com/ComunicacionesBusinessRule/ComunicacionesBusinessRule_DecisionService" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:bpelpm="http://xmlns.oracle.com/bpel" xmlns:rules="http://xmlns.oracle.com/bpel/rules" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" schemaLocation="../businessCatalog/SGDComunicaciones/MetadatosBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" schemaLocation="TaxonomiaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpel/rules" schemaLocation="DecisionServicePrimitiveTypes.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpel"/>
+   <include schemaLocation="ComunicacionesBusinessRule_DecisionServiceTypes.xsd"/>
+   <element name="callFunctionStateless" type="tns:callFunctionStatelessType"/>
+   <complexType name="callFunctionStatelessType">
+      <sequence>
+         <element name="configURL" type="string" minOccurs="0" maxOccurs="1"/>
+         <element name="bpelInstance" type="bpelpm:tBpelProcess" minOccurs="0" maxOccurs="1"/>
+         <element name="parameterList" minOccurs="1" maxOccurs="1" type="tns:parameterListType"/>
+      </sequence>
+      <attribute name="name" type="NCName" use="required"/>
+   </complexType>
+   <element name="callFunctionStatelessDecision" type="tns:callFunctionStatelessDecisionType"/>
+   <complexType name="callFunctionStatelessDecisionType">
+      <sequence>
+         <element name="resultList" minOccurs="1" maxOccurs="1" type="tns:resultListType"/>
+      </sequence>
+   </complexType>
+   <element name="callFunctionStateful" type="tns:callFunctionStatefulType"/>
+   <complexType name="callFunctionStatefulType">
+      <sequence>
+         <element name="configURL" type="string" minOccurs="0" maxOccurs="1"/>
+         <element name="bpelInstance" type="bpelpm:tBpelProcess" minOccurs="0" maxOccurs="1"/>
+         <element name="parameterList" minOccurs="1" maxOccurs="1" type="tns:parameterListType"/>
+      </sequence>
+      <attribute name="name" type="NCName" use="required"/>
+   </complexType>
+   <element name="callFunctionStatefulDecision" type="tns:callFunctionStatefulDecisionType"/>
+   <complexType name="callFunctionStatefulDecisionType">
+      <sequence>
+         <element name="resultList" minOccurs="1" maxOccurs="1" type="tns:resultListType"/>
+      </sequence>
+   </complexType>
+   <complexType name="parameterListType">
+      <sequence>
+         <element ref="ns1:UsuarioBO"/>
+         <element ref="ns2:TaxonomiaBO"/>
+         <element ref="ns3:MetadatosBO"/>
+      </sequence>
+   </complexType>
+   <complexType name="resultListType">
+      <sequence>
+         <element ref="rules:string"/>
+      </sequence>
+   </complexType>
+</schema>

@@ -1,0 +1,143 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Faults>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:service[@name='Process.service_2']</loc>
+      <line>13</line>
+      <col>75</col>
+      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</name>
+      <fix/>
+      <msg>El servicio "Process.service_2" no existe como origen de transmisión</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:reference[@name='GestionDocumentalProxy']</loc>
+      <line>195</line>
+      <col>52</col>
+      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</name>
+      <fix/>
+      <msg>Fallo al buscar el enlace "GestionDocumentalProxy":"{http://service.sgd.anm.gov.co}DocumentPortBindingQSPort" en el gestor de WSDL</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:reference[@name='ComunicacionesService']</loc>
+      <line>203</line>
+      <col>64</col>
+      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</name>
+      <fix/>
+      <msg>Fallo al buscar el enlace "ComunicacionesService":"{http://service.sgd.anm.gov.co}ComunicacionesPortBindingQSPort" en el gestor de WSDL</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc>/ns:composite/ns:reference[@name='ExpedienteMineroWSDL']</loc>
+      <line>212</line>
+      <col>60</col>
+      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</file>
+      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</name>
+      <fix/>
+      <msg>Fallo al buscar el enlace "ExpedienteMineroWSDL":"{http://service.sgd.anm.gov.co}ExpedienteMineroPortBindingQSPort" en el gestor de WSDL</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ProcesarEntregaComunicacionHT.task</file>
+      <name>HumanTasks/ProcesarEntregaComunicacionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/AprobarComunicacionHT.task</file>
+      <name>HumanTasks/AprobarComunicacionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ManejarExcepcionHT.task</file>
+      <name>HumanTasks/ManejarExcepcionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/CrearComunicacionSalidaHT.task</file>
+      <name>HumanTasks/CrearComunicacionSalidaHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ProcesarEnvioComunicacionHT.task</file>
+      <name>HumanTasks/ProcesarEnvioComunicacionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/ActualizarDatosDestinatariosHT.task</file>
+      <name>HumanTasks/ActualizarDatosDestinatariosHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/CerrarComunicacionHT.task</file>
+      <name>HumanTasks/CerrarComunicacionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/RevisarComunicacionHT.task</file>
+      <name>HumanTasks/RevisarComunicacionHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/DescargarImprimirHT.task</file>
+      <name>HumanTasks/DescargarImprimirHT.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+   <Fault>
+      <severity>warning</severity>
+      <loc/>
+      <line/>
+      <col/>
+      <file>HumanTasks/HT_FirmaDigital.task</file>
+      <name>HumanTasks/HT_FirmaDigital.task</name>
+      <fix/>
+      <msg>Error assignee not specified</msg>
+   </Fault>
+</Faults>

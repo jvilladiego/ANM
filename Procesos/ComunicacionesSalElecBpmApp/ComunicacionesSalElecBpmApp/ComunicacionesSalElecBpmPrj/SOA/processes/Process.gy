@@ -1,0 +1,253 @@
+//Content Format Version: 1.0
+
+//########################################################################################
+//####                                                                                ####
+//####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####
+//#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####
+//####                                                                                ####
+//########################################################################################
+package oracle.scripting.bpmn.process;
+
+import java.lang.String;
+import oracle.scripting.catalog.sgdComunicaciones.InteresadoExternoBO;
+import java.math.BigDecimal;
+import oracle.scripting.catalog.sgdComunicaciones.AnexoBO;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.InteresadoRequest;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoComunicacionRequest;
+import oracle.scripting.xml.co.gov.anm.sgd.transfer.elem.ActualizacionComunicacion;
+import oracle.scripting.xml.co.gov.anm.sgd.transfer.elem.ActualizacionProceso;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.ComunicacionRequest;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoRadicado;
+
+
+public class Process{
+
+public void methodACT18135339683648()
+{
+	this.comunicacionSalidaDO.urlDocumentoPrincipal=this.comunicacionSalidaDO.urlDocumentoPrincipal.replaceAll("amp;",'');
+	actualizacionComunicacion.anexosList.clear();
+	AnexoComunicacionRequest anexo = new AnexoComunicacionRequest();
+	
+	
+	actualizacionComunicacion.comunicacion.estadoComunicacion = "DIGITALIZADA";
+	actualizacionComunicacion.comunicacion.usuarioActualizacion = this.localExecutionData.ownerUser;
+	
+	anexo.setCantidad(BigDecimal.ONE);
+	anexo.setDescripcion("Documento Principal");
+	anexo.setEnlaceContent(this.comunicacionSalidaDO.urlDocumentoPrincipal);
+	anexo.setNroRadicado(this.comunicacionSalidaDO.nroRadicado);
+	actualizacionComunicacion.anexosList.add(anexo);
+}
+
+
+public void methodACT18274547290292()
+{
+	InteresadoRequest interesadoService;
+	InteresadoExternoBO interesadoLocal;
+	boolean resultadoAdd;
+	
+	actualizacionComunicacion = new ActualizacionProceso();
+	actualizacionComunicacion.comunicacion = new ComunicacionRequest();
+	
+	actualizacionComunicacion.comunicacion.asunto = this.comunicacionSalidaDO.asunto;
+	actualizacionComunicacion.comunicacion.esPQRS = this.comunicacionSalidaDO.esPqrs;
+	actualizacionComunicacion.comunicacion.esTitulo = this.comunicacionSalidaDO.esTituloMinero.substring(0,1);
+	actualizacionComunicacion.comunicacion.estadoComunicacion = "CREADA";
+	actualizacionComunicacion.comunicacion.fechaCreacion = localExecutionData.systemAttributes.createdDate;
+	if ( this.metadatosDO!=null && this.metadatosDO.idTpDocumento!=null ){
+	    actualizacionComunicacion.comunicacion.idTipoDocumentalTramite = Long.valueOf(this.metadatosDO.idTpDocumento);
+	}
+	
+	if (this.metadatosDO != null && this.metadatosDO.idTramite != null) {
+		actualizacionComunicacion.comunicacion.idTramite = Integer.parseInt(this.metadatosDO.idTramite); 
+	}
+	actualizacionComunicacion.comunicacion.idUnidadProductora = this.usuarioDO.codDependencia.intValue();
+	actualizacionComunicacion.comunicacion.nombreSerie = taxonomiaDO.serie;
+	actualizacionComunicacion.comunicacion.nombreSubSerie = taxonomiaDO.subserie;
+	actualizacionComunicacion.comunicacion.nombreTpDoc = metadatosDO.nombreTpDocumento;
+	actualizacionComunicacion.comunicacion.nroAnexos = 0;
+	actualizacionComunicacion.comunicacion.nroFolios = 0;
+	actualizacionComunicacion.comunicacion.nroPlaca = comunicacionSalidaDO.placa;
+	actualizacionComunicacion.comunicacion.nroRadicado = comunicacionSalidaDO.nroRadicado;
+	actualizacionComunicacion.comunicacion.nroRadicadoRelacionado = comunicacionSalidaDO.nroRadicadoRelacionado;
+	actualizacionComunicacion.comunicacion.referencia = comunicacionSalidaDO.referencia;
+	actualizacionComunicacion.comunicacion.requiereRespuesta = "N";
+	actualizacionComunicacion.comunicacion.tipoComunicacion = "Salida";
+	actualizacionComunicacion.comunicacion.tramite = metadatosDO.nombreTramite;
+	actualizacionComunicacion.comunicacion.usuarioCreacion = usuarioDO.idUsuario;
+	
+	if (comunicacionSalidaDO != null && comunicacionSalidaDO.interesadosExternos != null) {
+	    Iterator it = comunicacionSalidaDO.interesadosExternos.iterator();
+	    
+	    while ( it.hasNext() ){
+	        Object object = it.next();
+	        
+	        if (object instanceof InteresadoExternoBO) {
+	            interesadoLocal = (InteresadoExternoBO) object;
+	            System.out.println("Interesado: "+interesadoLocal.nombre1);
+	            interesadoService = new InteresadoRequest();
+	            interesadoService.nroIdentificacion = interesadoLocal.nroIdentificacion;
+	            interesadoService.tipoIdentificacion = interesadoLocal.tipoIdentificacion;
+	            interesadoService.direccion = interesadoLocal.direccionCorrespondencia;
+	            interesadoService.email = interesadoLocal.email;
+	            interesadoService.telefono = interesadoLocal.telefono;
+	            interesadoService.primerNombre = interesadoLocal.nombre1;
+	            interesadoService.segundoNombre = interesadoLocal.nombre2;
+	            interesadoService.primerApellido = interesadoLocal.apellido1;
+	            interesadoService.segundoApellido = interesadoLocal.apellido2;
+	            interesadoService.celular = interesadoLocal.celular;
+	            interesadoService.idPais = interesadoLocal.idPais;
+	            interesadoService.idDepartamento = interesadoLocal.idDepartamento;
+	            interesadoService.idMunicipio = interesadoLocal.idMunicipio;
+	            interesadoService.ocupacion = interesadoLocal.ocupacion;
+	  
+	            resultadoAdd = actualizacionComunicacion.interesadosList.add(interesadoService);
+	            System.out.println("Resultado Add: "+resultadoAdd);
+	        }        
+	    }
+	}
+}
+
+
+public void methodACT18316157681431()
+{
+	InteresadoRequest interesadoService;
+	InteresadoExternoBO interesadoLocal;
+	boolean resultadoAdd;
+	
+	actualizacionComunicacion = new ActualizacionProceso();
+	actualizacionComunicacion.comunicacion = new ComunicacionRequest();
+	
+	actualizacionComunicacion.comunicacion.estadoComunicacion = "ASIGNADA";
+	actualizacionComunicacion.comunicacion.usuarioActualizacion = usuarioDO.idUsuario;
+	actualizacionComunicacion.interesadosList.clear();
+	
+	if (comunicacionSalidaDO != null && comunicacionSalidaDO.interesadosExternos != null) {
+	    Iterator it = comunicacionSalidaDO.interesadosExternos.iterator();
+	    
+	    while ( it.hasNext() ){
+	        Object object = it.next();
+	    
+	        if (object instanceof InteresadoExternoBO) {
+	            interesadoLocal = (InteresadoExternoBO)object;
+	            System.out.println("Interesado: "+interesadoLocal.nombre1);
+	            interesadoService = new InteresadoRequest();
+	            interesadoService.nroIdentificacion = interesadoLocal.nroIdentificacion;
+	            interesadoService.tipoIdentificacion = interesadoLocal.tipoIdentificacion;
+	            interesadoService.direccion = interesadoLocal.direccionCorrespondencia;
+	            interesadoService.email = interesadoLocal.email;
+	            interesadoService.telefono = interesadoLocal.telefono;
+	            interesadoService.primerNombre = interesadoLocal.nombre1;
+	            interesadoService.segundoNombre = interesadoLocal.nombre2;
+	            interesadoService.primerApellido = interesadoLocal.apellido1;
+	            interesadoService.segundoApellido = interesadoLocal.apellido2;
+	            interesadoService.celular = interesadoLocal.celular;
+	            interesadoService.idPais = interesadoLocal.idPais;
+	            interesadoService.idDepartamento = interesadoLocal.idDepartamento;
+	            interesadoService.idMunicipio = interesadoLocal.idMunicipio;
+	            interesadoService.ocupacion = interesadoLocal.ocupacion;
+	            resultadoAdd = actualizacionComunicacion.interesadosList.add(interesadoService);
+	            System.out.println("Resultado Add: "+resultadoAdd);
+	        }   
+	    }
+	}
+}
+
+
+public void methodACT18882511696138()
+{
+	String urlDocPrincipal = comunicacionSalidaDO.urlDocumentoPrincipal;
+	String fileName = comunicacionSalidaDO.nombreDocumentoPrincipal;
+	if ( urlDocPrincipal!=null && urlDocPrincipal.length()>1 ){
+	    fileName = urlDocPrincipal.substring(urlDocPrincipal.lastIndexOf(File.separator)+1,urlDocPrincipal.length()-3);
+	    comunicacionSalidaDO.nombreDocumentoPrincipal = fileName;
+	}
+}
+
+
+public void methodACT42926057782323()
+{
+	System.out.println("INI Agregar doc principal ");
+	
+	actualizacionComunicacion.anexosList.clear();
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = comunicacionSalidaDO.urlDocumentoPrincipal;
+	docPrincipal.nroRadicado = comunicacionSalidaDO.nroRadicado;
+	actualizacionComunicacion.anexosList.add(docPrincipal);
+	
+	System.out.println("FIN Agregar doc principal ");
+}
+
+
+public void methodACT48490139331161()
+{
+	anexosRadicadoResponse.anexosList.clear()
+	
+	AnexoRadicado documentoPrincipal = new AnexoRadicado()
+	documentoPrincipal.setNombre("Documento Principal")
+	documentoPrincipal.setUrl(comunicacionSalidaDO.urlDocumentoPrincipal)
+	anexosRadicadoResponse.anexosList.add(documentoPrincipal)
+	
+	int totalAnexos = 0
+	
+	if (localExecutionData != null &&
+	    localExecutionData.attachment != null) {
+	    totalAnexos = localExecutionData.attachment.size()
+	}
+	
+	for (int i = 0; i < totalAnexos; i++) {
+	    AnexoRadicado anexo = new AnexoRadicado()
+	    anexo.setNombre("")
+	    anexo.setUrl("")
+	    anexosRadicadoResponse.anexosList.add(anexo)
+	}
+}
+
+
+public void methodACT48506122108294()
+{
+	if (anexosRadicadoResponse != null &&
+	    anexosRadicadoResponse.anexosList != null &&
+	    actualizacionComunicacion != null) {
+	
+	    // La posición 0 es el documento principal, que ya fue agregado
+	    // anteriormente por la actividad "Agregar doc principal".
+	    for (int i = 1;
+	         i < anexosRadicadoResponse.anexosList.size();
+	         i++) {
+	
+	        AnexoRadicado anexoWcc =
+	            (AnexoRadicado) anexosRadicadoResponse.anexosList.get(i)
+	
+	        if (anexoWcc == null ||
+	            anexoWcc.url == null ||
+	            anexoWcc.url.trim().isEmpty()) {
+	            continue
+	        }
+	
+	        AnexoComunicacionRequest anexo =
+	            new AnexoComunicacionRequest()
+	
+	        anexo.setCantidad(BigDecimal.ONE)
+	        anexo.setDescripcion(
+	            anexoWcc.nombre != null &&
+	            !anexoWcc.nombre.trim().isEmpty()
+	                ? anexoWcc.nombre
+	                : "Anexo"
+	        )
+	        anexo.setNroRadicado(
+	            comunicacionSalidaDO.nroRadicado
+	        )
+	        anexo.setEnlaceContent(
+	            anexoWcc.url.replaceAll("amp;", "")
+	        )
+	
+	        actualizacionComunicacion.anexosList.add(anexo)
+	    }
+	}
+}
+
+
+}
