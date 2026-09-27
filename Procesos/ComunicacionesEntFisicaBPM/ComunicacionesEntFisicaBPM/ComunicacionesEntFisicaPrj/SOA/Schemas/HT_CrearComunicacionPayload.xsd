@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns4="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" schemaLocation="../businessCatalog/SGDComunicaciones/AnexoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" schemaLocation="../businessCatalog/SGDComunicaciones/InteresadoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" schemaLocation="../businessCatalog/SGDComunicaciones/MetadatosBO.xsd"/>
+   <complexType name="HT_CrearComunicacionPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionSalidaBO"/>
+         <element ref="ns1:UsuarioBO"/>
+         <element ref="ns2:AnexoBO"/>
+         <element ref="ns3:InteresadoBO"/>
+         <element name="usuarioEnlace" type="xsd:string"/>
+         <element name="esPqrsBO" type="xsd:string"/>
+         <element name="tipoPqrsBO" type="xsd:string"/>
+         <element name="inicializador" type="xsd:string"/>
+         <element name="radicadoCMCHecho" type="xsd:string"/>
+         <element name="rutaDocCMC" type="xsd:string"/>
+         <element name="nombreDocCMC" type="xsd:string"/>
+         <element name="virtualDirectory" type="xsd:string"/>
+         <element name="urlDocCMC" type="xsd:string"/>
+         <element name="tiempoRespuestaBO" type="xsd:int"/>
+         <element name="requiereRespuestaDO" type="xsd:string"/>
+         <element name="nombreTipoPQRS" type="xsd:string"/>
+         <element name="instanceNumber" type="xsd:int"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+         <element ref="ns4:MetadatosBO"/>
+      </sequence>
+   </complexType>
+</schema>

@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" xmlns:ns4="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosList" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" schemaLocation="../businessCatalog/SGDComunicaciones/TaxonomiaBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" schemaLocation="../businessCatalog/SGDComunicaciones/InteresadoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexosList" schemaLocation="../businessCatalog/SGDComunicaciones/AnexosList.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" schemaLocation="../businessCatalog/SGDComunicaciones/MetadatosBO.xsd"/>
+   <complexType name="HT_GestionarObservacionPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionSalidaBO"/>
+         <element name="requiereRespuestaDO" type="xsd:string"/>
+         <element name="requiereGestionCompartidaDO" type="xsd:string"/>
+         <element name="usuarioJefeBO" type="xsd:string"/>
+         <element name="usuarioJefe" type="xsd:string"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="vencimiento" type="xsd:dateTime"/>
+         <element name="usuarioGestionComp" type="xsd:string"/>
+         <element ref="ns1:TaxonomiaBO"/>
+         <element ref="ns2:InteresadoBO"/>
+         <element ref="ns3:AnexosList"/>
+         <element name="esPqrsBO" type="xsd:string"/>
+         <element name="tipoPqrsBO" type="xsd:string"/>
+         <element ref="ns4:MetadatosBO"/>
+         <element name="accesoNegadoInformacion" type="xsd:string"/>
+         <element name="identificacionReservada" type="xsd:string"/>
+         <element name="trasladoOtraInstitucion" type="xsd:string"/>
+         <element name="tiempoRespuestaBO" type="xsd:integer"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+      </sequence>
+   </complexType>
+</schema>

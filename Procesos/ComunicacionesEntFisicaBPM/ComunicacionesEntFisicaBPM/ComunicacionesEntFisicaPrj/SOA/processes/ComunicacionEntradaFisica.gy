@@ -1,0 +1,56 @@
+//Content Format Version: 1.0
+
+//########################################################################################
+//####                                                                                ####
+//####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####
+//#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####
+//####                                                                                ####
+//########################################################################################
+package oracle.scripting.bpmn.process;
+
+import oracle.scripting.xml.co.gov.anm.sgd.transfer.elem.ActualizacionProceso;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.ComunicacionRequest;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoRadicado;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoComunicacionRequest;
+import java.math.BigDecimal;
+
+
+public class ComunicacionEntradaFisica{
+
+public void methodACT48851878842140()
+{
+	actualizacionProcesoDO = new ActualizacionProceso()
+	actualizacionProcesoDO.comunicacion = new ComunicacionRequest()
+	actualizacionProcesoDO.comunicacion.nroRadicado =
+	    comunicacionesDO.nroRadicado
+	
+	actualizacionProcesoDO.anexosList.clear()
+	
+	if (anexosResponseDO != null &&
+	    anexosResponseDO.anexosList != null) {
+	
+	    Iterator it = anexosResponseDO.anexosList.iterator()
+	
+	    while (it.hasNext()) {
+	        AnexoRadicado anexoWcc = (AnexoRadicado) it.next()
+	
+	        if (anexoWcc == null) {
+	            continue
+	        }
+	
+	        AnexoComunicacionRequest anexo =
+	            new AnexoComunicacionRequest()
+	
+	        anexo.cantidad = BigDecimal.ONE
+	        anexo.descripcion = anexoWcc.nombre
+	        anexo.enlaceContent = anexoWcc.url
+	        anexo.nroRadicado = comunicacionesDO.nroRadicado
+	        anexo.rutaLocalCargue = ""
+	
+	        actualizacionProcesoDO.anexosList.add(anexo)
+	    }
+	}
+}
+
+
+}

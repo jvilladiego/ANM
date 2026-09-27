@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.22.48" id="DataControls"
+                    Package="comunicacionesentfisicaprj">
+  <AdapterDataControl id="ComunicacionesEntFisicaADF_HT_GestionComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntFisicaADF_HT_GestionComunicacion"
+                      BeanClass="ComunicacionesEntFisicaADF_HT_GestionComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/Jobs/BPM/ANM/Repositorio/Procesos/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaBPM/ComunicacionesEntFisicaPrj/SOA/Schemas/HT_GestionComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntFisicaPrj/SOA/HumanTasks/HT_GestionComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

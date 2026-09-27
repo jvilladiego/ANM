@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/RolBO" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/RolBO" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="RolBOType">
+      <xs:sequence>
+         <xs:element name="id" type="xs:long"/>
+         <xs:element name="nombre" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="RolBO" type="RolBOType"/>
+</xs:schema>

@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ContentFolderBO" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ContentFolderBO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="ContentFolderBOType">
+      <xs:sequence>
+         <xs:element name="folderGUID" nillable="true" type="xs:string"/>
+         <xs:element name="parentGUID" nillable="true" type="xs:string"/>
+         <xs:element name="nombre" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ContentFolderBO" type="ContentFolderBOType"/>
+</xs:schema>

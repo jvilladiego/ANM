@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.20.47" id="InteresadoBOType"
+          Package="ComunicacionesEntFisicaADF_HT_AsignarUsuario"
+          BeanClass="ComunicacionesEntFisicaADF_HT_AsignarUsuario.InteresadoBOType" isJavaBased="false">
+  <Attribute Name="idInteresado" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="idInteresado"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="segundoNombre"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Id Interesado"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="segundoNombre" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="primerNombre"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Segundo Nombre"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="segundoNombre"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="primerNombre" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="primerApellido"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Primer Nombre"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="primerNombre"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="primerApellido" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="segundoApellido"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Primer Apellido"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="primerApellido"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="segundoApellido" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="email"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Segundo Apellido"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="segundoApellido"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="email" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="idEtnia"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Email"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="email"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idEtnia" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="idEtnia"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="idDepartamento"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Id Etnia"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idDepartamento" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="idDepartamento"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="idMunicipio"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Id Departamento"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idMunicipio" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="idMunicipio"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="ocupacion"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Id Municipio"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="ocupacion" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="idRangoEdad"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Ocupacion"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="ocupacion"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idRangoEdad" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="idRangoEdad"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="celular"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Id Rango Edad"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="celular" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="direccion"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Celular"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="celular"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="direccion" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="ciudad"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Direccion"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="direccion"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="ciudad" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="numeroIdentificacion"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Ciudad"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="ciudad"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="numeroIdentificacion" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="tipoIdentificacion"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Numero Identificacion"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="numeroIdentificacion"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="tipoIdentificacion" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="idPais"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Tipo Identificacion"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="tipoIdentificacion"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idPais" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="idPais"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="idPoblacionVulnerable"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Id Pais"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="idPoblacionVulnerable" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="idPoblacionVulnerable"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="telefono"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Id Poblacion Vulnerable"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="telefono" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="nextSiblingNamespace"
+                  Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="nextSibling" Value="tipoSolicitante"/>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Telefono"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="originalName" Value="telefono"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="tipoSolicitante" Type="java.lang.Integer">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minInclusive" Value="-2147483648"/>
+        <Property Name="originalName" Value="tipoSolicitante"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="pattern" Value="[^//.]+"/>
+        <Property Name="fractionDigits" Value="0"/>
+        <Property Name="LABEL" Value="Tipo Solicitante"/>
+        <Property Name="nillable" Value="true"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="maxInclusive" Value="2147483647"/>
+        <Property Name="type" Value="java.lang.Integer"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO"/>
+        <Property Name="minOccurs" Value="1"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+</JavaBean>

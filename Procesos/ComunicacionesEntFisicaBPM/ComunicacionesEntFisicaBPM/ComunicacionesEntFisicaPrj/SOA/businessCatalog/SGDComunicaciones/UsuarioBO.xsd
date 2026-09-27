@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/RolBO" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/RolBO" schemaLocation="RolBO.xsd"/>
+   <xs:complexType name="UsuarioBOType">
+      <xs:sequence>
+         <xs:element name="idUsuario" nillable="true" type="xs:string"/>
+         <xs:element name="codDependencia" nillable="true" type="xs:long"/>
+         <xs:element name="rol" nillable="true" type="ns1:RolBOType" minOccurs="0" maxOccurs="unbounded"/>
+         <xs:element name="email" nillable="true" type="xs:string"/>
+         <xs:element name="nombre" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="UsuarioBO" type="UsuarioBOType"/>
+</xs:schema>

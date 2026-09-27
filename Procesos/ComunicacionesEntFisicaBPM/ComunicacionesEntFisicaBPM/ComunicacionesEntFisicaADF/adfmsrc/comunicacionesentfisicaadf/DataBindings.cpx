@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="comunicacionesentfisicaadf" ClientType="Generic">
+  <pageMap>
+    <page path="/AsignarUsuario.jspx" usageId="comunicacionesentfisicaadf_AsignarUsuarioPageDef"/>
+    <page path="/GestionComunicacion.jspx" usageId="comunicacionesentfisicaadf_GestionComunicacionPageDef"/>
+    <page path="/AprobarCierreCom.jspx" usageId="comunicacionesentfisicaadf_AprobarCierreComPageDef"/>
+    <page path="/GestionarObservacion.jspx" usageId="comunicacionesentfisicaadf_GestionarObservacionPageDef"/>
+    <page path="/CrearComunicacion.jspx" usageId="comunicacionesentfisicaadf_CrearComunicacionPageDef"/>
+    <page path="/NotificarEnlace.jspx" usageId="comunicacionesentfisicaadf_NotificarEnlacePageDef"/>
+    <page path="/AsignarUsuarioGestionComp.jspx" usageId="comunicacionesentfisicaadf_AsignarUsuarioGestionCompPageDef"/>
+    <page path="/ManejarExcepcionHT_TaskDetails.jspx"
+          usageId="comunicacionesentfisicaadf_ManejarExcepcionHT_TaskDetailsPageDef"/>
+    <page path="/ManejarExcepcionHT_TaskNotification.jspx"
+          usageId="comunicacionesentfisicaadf_ManejarExcepcionHT_TaskNotificationPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="comunicacionesentfisicaadf_AsignarUsuarioPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.AsignarUsuarioPageDef"/>
+    <page id="comunicacionesentfisicaadf_GestionComunicacionPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.GestionComunicacionPageDef"/>
+    <page id="comunicacionesentfisicaadf_AprobarCierreComPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.AprobarCierreComPageDef"/>
+    <page id="comunicacionesentfisicaadf_GestionarObservacionPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.GestionarObservacionPageDef"/>
+    <page id="comunicacionesentfisicaadf_CrearComunicacionPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.CrearComunicacionPageDef"/>
+    <page id="comunicacionesentfisicaadf_NotificarEnlacePageDef"
+          path="comunicacionesentfisicaadf.pageDefs.NotificarEnlacePageDef"/>
+    <page id="comunicacionesentfisicaadf_AsignarUsuarioGestionCompPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.AsignarUsuarioGestionCompPageDef"/>
+    <page id="comunicacionesentfisicaadf_ManejarExcepcionHT_TaskDetailsPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.ManejarExcepcionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesentfisicaadf_ManejarExcepcionHT_TaskNotificationPageDef"
+          path="comunicacionesentfisicaadf.pageDefs.ManejarExcepcionHT_TaskNotificationPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ComunicacionesEntFisicaADF_ManejarExcepcionHT"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_ManejarExcepcionHT"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp1"
+        path="comunicacionesentfisicaprj.ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_AprobarCierreCom1"
+        path="comunicacionesentfisicaprj.ComunicacionesEntFisicaADF_HT_AprobarCierreCom"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_HT_AsignarUsuarioGestionComp"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_NotificarEnlace"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_HT_NotificarEnlace"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_CrearComunicacion"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_HT_CrearComunicacion"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_GestionarObservacion"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_HT_GestionarObservacion"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_AprobarCierreCom"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_HT_AprobarCierreCom"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_GestionComunicacion"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_HT_GestionComunicacion"/>
+    <dc id="ComunicacionesEntFisicaADF_HT_AsignarUsuario"
+        path="comunicacionesentfisicaadf.ComunicacionesEntFisicaADF_HT_AsignarUsuario"/>
+  </dataControlUsages>
+</Application>
