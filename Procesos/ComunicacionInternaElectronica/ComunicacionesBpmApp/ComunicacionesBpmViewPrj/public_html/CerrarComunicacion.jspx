@@ -21,7 +21,7 @@
                                              facetName="#{actionAvailable.isCustomActionButtons}">
                                     <f:facet name="true">
                                         <af:panelGroupLayout layout="horizontal" id="pgl2">
-                                            <af:button actionListener="#{invokeActionBean.setOperation}" text="Cerrar"
+                                            <af:button actionListener="#{invokeActionBean.setOperation}" text="Aceptar"
                                                        disabled="#{!bindings.APPROVE.enabled}"
                                                        action="#{invokeActionBean.invokeOperation}"
                                                        partialSubmit="false"

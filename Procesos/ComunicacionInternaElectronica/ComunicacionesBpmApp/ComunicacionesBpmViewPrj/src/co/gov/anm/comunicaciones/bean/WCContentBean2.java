@@ -20,7 +20,10 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless(name = "WCContent", mappedName = "ComunicacionesBpmApp-ComunicacionesBpmViewPrj-WCContent")
+@Stateless(
+    name = "WCContentV3_2",
+    mappedName = "ComunicacionesBpmApp-ComunicacionesBpmViewPrj-WCContentV3_2"
+)
 public class WCContentBean2 implements WCContent2, WCContentLocal2 {
     @Resource
     SessionContext sessionContext;

@@ -20,8 +20,10 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
-@Stateless(name = "ComunicacionesSessionBean",
-           mappedName = "ComunicacionesBpmApp-ComunicacionesBpmViewPrj-ComunicacionesSessionBean")
+@Stateless(
+    name = "ComunicacionesSessionBeanV3_2",
+    mappedName = "ComunicacionesBpmApp-ComunicacionesBpmViewPrj-ComunicacionesSessionBeanV3_2"
+)
 public class ComunicacionesSessionBeanBean2 implements ComunicacionesSessionBean2, ComunicacionesSessionBeanLocal2 {
     @Resource
     SessionContext sessionContext;

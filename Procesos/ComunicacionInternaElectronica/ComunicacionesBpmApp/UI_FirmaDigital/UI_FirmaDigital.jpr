@@ -309,6 +309,10 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Commons-codec-1.15.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -321,15 +325,11 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Okio-1.17.2.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="Log4j-1.2.16.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
+            <value n="id" v="Okio-1.17.2.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -344,7 +344,16 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/commons-codec-1.15.jar" jar-entry=""/>
+                  <url path="../../../../Comunes/Jars/FirmaDigitalWSClient-1.0-SNAPSHOT.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
+               <value n="id" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../libs/commons-codec-1.15.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Commons-codec-1.15.jar"/>
@@ -353,7 +362,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/gson-2.8.5.jar" jar-entry=""/>
+                  <url path="../libs/gson-2.8.5.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Gson-2.8.5.jar"/>
@@ -362,7 +371,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/okhttp-3.14.2.jar" jar-entry=""/>
+                  <url path="../libs/okhttp-3.14.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Okhttp-3.14.2.jar"/>
@@ -371,16 +380,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/okio-1.17.2.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Okio-1.17.2.jar"/>
-               <value n="id" v="Okio-1.17.2.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../../../../Comunes/Jars/log4j-1.2.16.jar" jar-entry=""/>
+                  <url path="../libs/log4j-1.2.16.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Log4j-1.2.16.jar"/>
@@ -389,11 +389,11 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../../../Comunes/Jars/FirmaDigitalWSClient-1.0-SNAPSHOT.jar" jar-entry=""/>
+                  <url path="../libs/okio-1.17.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
-               <value n="description" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
-               <value n="id" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
+               <value n="description" v="Okio-1.17.2.jar"/>
+               <value n="id" v="Okio-1.17.2.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -524,6 +524,10 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
+            <value n="id" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
             <value n="id" v="Commons-codec-1.15.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
@@ -536,15 +540,11 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Okio-1.17.2.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
             <value n="id" v="Log4j-1.2.16.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
+            <value n="id" v="Okio-1.17.2.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

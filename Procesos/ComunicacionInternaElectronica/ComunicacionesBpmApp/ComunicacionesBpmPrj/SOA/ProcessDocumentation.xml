@@ -745,6 +745,22 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="GTW48601908521675">
+            <labels>
+               <label locale="en">WCC exitosa?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT48601952404645">
+            <labels>
+               <label locale="en">End1</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="sf17099425341832"/>
          <topicDocumentation name="sf17272822169292"/>
          <topicDocumentation name="sf17273175598426"/>
@@ -855,6 +871,22 @@
          <topicDocumentation name="sf47590037879236">
             <labels>
                <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48601911563377">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48601953766080">
+            <labels>
+               <label locale="en">No</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
