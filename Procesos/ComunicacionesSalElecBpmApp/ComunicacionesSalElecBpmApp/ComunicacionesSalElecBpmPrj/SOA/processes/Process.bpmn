@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bpmn:definitions fileRevision="20120601" version="12.1.3" xmlns="http://www.omg.org/spec/DD/20100524/DI" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmnext="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns3="http://www.omg.org/spec/BPMN/20100524/DI">
+<bpmn:definitions fileRevision="20120601" version="12.1.3" xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmnext="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://www.omg.org/spec/DD/20100524/DI" xmlns:ns4="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns3="http://www.omg.org/spec/DD/20100524/DC">
     <bpmn:process processType="Public" isExecutable="true" name="Comunicaciones Salida Electrónica" id="Process">
         <bpmn:extensionElements>
             <bpmnext:OracleExtensions>
@@ -10209,7 +10209,7 @@
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:scriptTask>
-        <bpmn:serviceTask implementation="NotificationService.ACT19301456774838" operationRef="sendEmailNotification" isForCompensation="false" name="Notificar Enlace" id="ACT19301456774838" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns="">
+        <bpmn:serviceTask implementation="NotificationService.ACT19301456774838" operationRef="sendEmailNotification" isForCompensation="false" name="Notificar Enlace" id="ACT19301456774838" xmlns="">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
@@ -10837,7 +10837,7 @@ La comunicación con No. de Radicado : ', bpmn:getDataObject('comunicacionSalida
                 </bpmn:assignment>
             </bpmn:dataOutputAssociation>
         </bpmn:serviceTask>
-        <bpmn:serviceTask implementation="NotificationService.ACT19544300626257" operationRef="sendEmailNotification" isForCompensation="false" name="NotificationTask" id="ACT19544300626257" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns="">
+        <bpmn:serviceTask implementation="NotificationService.ACT19544300626257" operationRef="sendEmailNotification" isForCompensation="false" name="NotificationTask" id="ACT19544300626257" xmlns="">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
@@ -12518,7 +12518,7 @@ La comunicación con No. de Radicado : ', bpmn:getDataObject('comunicacionSalida
                 </bpmn:assignment>
             </bpmn:dataOutputAssociation>
         </bpmn:businessRuleTask>
-        <bpmn:serviceTask implementation="NotificationService.ACT42797528953082" operationRef="sendEmailNotification" isForCompensation="false" name="Notificar usuario" id="ACT42797528953082" xmlns:ns6="http://www.omg.org/spec/DD/20100524/DI" xmlns="">
+        <bpmn:serviceTask implementation="NotificationService.ACT42797528953082" operationRef="sendEmailNotification" isForCompensation="false" name="Notificar usuario" id="ACT42797528953082" xmlns="">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
@@ -12881,7 +12881,7 @@ La comunicación con No. de Radicado : ', bpmn:getDataObject('comunicacionSalida
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="1894" y="859"/>
+                        <bpmnext:Position x="1838" y="853"/>
                         <bpmnext:Size width="380" height="202"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
@@ -12962,7 +12962,6 @@ La comunicación con No. de Radicado : ', bpmn:getDataObject('comunicacionSalida
                                 </bpmnext:ServiceProperty>
                                 <bpmnext:ServiceProperty name="jca.file.FileName">
                                     <bpmnext:expression language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpel/workflow/task" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace">bpmn:getDataObject('localExecutionData')/ns:attachment[bpmn:getActivityInstanceAttribute('ACT48494833672748','loopCounter')]/ns:name
-
                                         <bpmn:extensionElements>
                                             <bpmnext:OracleExtensions>
                                                 <bpmnext:Expression mode="xpath"/>

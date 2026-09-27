@@ -3,11 +3,11 @@
                   xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar http://xmlns.oracle.com/weblogic/weblogic-ejb-jar/1.5/weblogic-ejb-jar.xsd"
                   xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar">
   <weblogic-enterprise-bean>
-    <ejb-name>ModeloComunicaciones</ejb-name>
+    <ejb-name>ModeloComunicacionesV3_1</ejb-name>
     <stateless-session-descriptor/>
   </weblogic-enterprise-bean>
   <weblogic-enterprise-bean>
-    <ejb-name>WebCenterContent</ejb-name>
+    <ejb-name>WebCenterContentV3_1</ejb-name>
     <stateless-session-descriptor/>
   </weblogic-enterprise-bean>
 </weblogic-ejb-jar>

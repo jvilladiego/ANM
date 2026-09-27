@@ -498,6 +498,14 @@
          <topicDocumentation name="sf48494839244215"/>
          <topicDocumentation name="sf48495303811342"/>
          <topicDocumentation name="sf4849556441175"/>
+         <topicDocumentation name="ACT48506122108294">
+            <labels>
+               <label locale="en">Consolidar anexos WCC</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="EVT17643686059926">
             <labels>
                <label locale="en">Inicio Manual</label>
@@ -610,14 +618,6 @@
          <topicDocumentation name="GTW33558930767176">
             <labels>
                <label locale="en">Firma manual?</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT48506122108294">
-            <labels>
-               <label locale="en">Consolidar anexos WCC</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
