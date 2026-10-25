@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<SOAConfigPlan xmlns:jca="http://platform.integration.oracle/blocks/adapter/fw/metadata" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:edl="http://schemas.oracle.com/events/edl" xmlns="http://schemas.oracle.com/soa/configplan">
+   <composite name="ComunicacionesEntBpmPrj">
+      <!--Add search and replace rules for the import section of a composite
+	Example:
+	<searchReplace>
+		<search>http://my-dev-server</search>
+		<replace>http://my-test-server</replace>
+	<searchReplace>
+	<searchReplace>
+		<search>8888</search>
+		<replace>8889</replace>
+	<searchReplace>-->
+      <import>
+         <searchReplace>
+            <search/>
+            <replace/>
+         </searchReplace>
+      </import>
+      <service name="ComunicacionEntradaEmail.service">
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.endpoint(ComunicacionEntradaEmail.service/ComunicacionEntradaEmailPort)</replace>
+            </attribute>
+         </binding>
+      </service>
+      <property name="productVersion">
+         <replace>12.2.1.1.0.160608</replace>
+      </property>
+      <property name="compositeID">
+         <replace>d6226723-4774-44c8-95e2-7f424cf5e43e</replace>
+      </property>
+      <!--Add search and replace rules for the component properties
+	For components and service/reference bindings, you can add policy references.
+	Example:
+	<component name="*">
+		<wsp:PolicyReference orawsp:category="management" orawsp:status="enabled" URI="oracle/log_policy"/>
+	</component>-->
+      <component name="ComunicacionEntradaEmail">
+         <property name="bpm.generated.service.reference">
+            <replace>ComunicacionEntradaEmail.service</replace>
+         </property>
+         <property name="bpel.config.oneWayDeliveryPolicy">
+            <replace>sync</replace>
+         </property>
+         <property name="bpel.config.transaction">
+            <replace>required</replace>
+         </property>
+      </component>
+      <reference name="BPM-NotificationService">
+         <binding type="wsif"/>
+      </reference>
+      <reference name="WriteFile">
+         <binding type="jca"/>
+      </reference>
+      <reference name="salidaFisica">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida#wsdl.endpoint(ComunicacionesSalida.service/ComunicacionesSalidaPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://soa.anm.local:80/soa-infra/services/default/ComunicacionesSalFisicaBPM/ComunicacionesSalida.service?WSDL</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="salidaElectronica">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.endpoint(Process.service/ProcessPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://soa.anm.local:80/soa-infra/services/default/ComunicacionesSalElecBpmPrj/Process.service?WSDL</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="ExpedienteMineroWSDL">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://service.sgd.anm.gov.co#wsdl.endpoint(ExpedienteMineroPortBindingQSService/ExpedienteMineroPortBindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://osb.anm.local/sbresource?PROXY/SGD/ProxyServices/ExpedienteMineroProxy</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="WSDLDocumentos">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://service.sgd.anm.gov.co#wsdl.endpoint(DocumentPortBindingQSService/DocumentPortBindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://osb.anm.local/SGD/ProxyServices/DocumentProxy?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="WSDLComunicaciones">
+         <!--Add search and replace rules for the binding properties-->
+         <binding type="ws">
+            <attribute name="port">
+               <replace>http://service.sgd.anm.gov.co#wsdl.endpoint(ComunicacionesPortBindingQSService/ComunicacionesPortBindingQSPort)</replace>
+            </attribute>
+            <attribute name="location">
+               <replace>http://osbifx.anm.local/SGD_2.2/ProxyServices/ComunicacionesProxy?wsdl</replace>
+            </attribute>
+            <property name="weblogic.wsee.wsat.transaction.flowOption">
+               <replace>WSDLDriven</replace>
+            </property>
+         </binding>
+      </reference>
+      <reference name="dbComunicaciones">
+         <property name="jca.retry.count">
+            <replace>4</replace>
+         </property>
+         <property name="jca.retry.interval">
+            <replace>1</replace>
+         </property>
+         <property name="jca.retry.backoff">
+            <replace>2</replace>
+         </property>
+         <property name="jca.retry.maxInterval">
+            <replace>120</replace>
+         </property>
+         <binding type="jca"/>
+      </reference>
+   </composite>
+   <!--To configure monitor.config: 
+	<property name="enabled"><replace>true</replace></property>
+	<property name="dataObjectsFolder"><searchReplace><search>mydev</search><replace>myproduction</replace></searchReplace></property>
+	
+	sample properties to configure for file/ftp adapter: 
+	<jca:property name="PhysicalDirectory"><replace>c:\temp</replace></jca:property>
+	<jca:property name="DeleteFile"><replace>true</replace></jca:property>
+	<jca:property name="PollingFrequency"><replace>3</replace></jca:property>
+	
+	To add search and replace rules for wsdls, xsd and jca files
+	Example:
+	<searchReplace>
+		<search>http://my-dev-server</search>
+		<replace>http://my-test-server</replace>
+	<searchReplace>
+	<searchReplace>
+		<search>8888</search>
+		<replace>8889</replace>
+	<searchReplace>
+	-->
+   <wsdlAndSchema name="Adapters/dbComunicaciones_db.jca|Adapters/WriteFile_file.jca|businessCatalog/SGDComunicaciones/AnexoBO.xsd|businessCatalog/SGDComunicaciones/ComunicacionBO.xsd|businessCatalog/SGDComunicaciones/ComunicacionesBusinessException.xsd|businessCatalog/SGDComunicaciones/ComunicacionesBusinessExceptionBO.xsd|businessCatalog/SGDComunicaciones/ComunicacionSalidaBO.xsd|businessCatalog/SGDComunicaciones/ComunicacionVencidaException.xsd|businessCatalog/SGDComunicaciones/ContentFolderBO.xsd|businessCatalog/SGDComunicaciones/DependenciaBO.xsd|businessCatalog/SGDComunicaciones/ErrorVencimientoBO.xsd|businessCatalog/SGDComunicaciones/ExcepcionBO.xsd|businessCatalog/SGDComunicaciones/InteresadoBO.xsd|businessCatalog/SGDComunicaciones/InteresadoInterno.xsd|businessCatalog/SGDComunicaciones/MetadatosBO.xsd|businessCatalog/SGDComunicaciones/ResultadoCheckinBO.xsd|businessCatalog/SGDComunicaciones/ResultadoRevisionBO.xsd|businessCatalog/SGDComunicaciones/TaxonomiaBO.xsd|businessCatalog/SGDComunicaciones/TipoSimpleBO.xsd|businessCatalog/SGDComunicaciones/UsuarioBO.xsd|businessCatalog/SGDComunicaciones/WCCException.xsd|project_properties.wsdl|Schemas/Comunicaciones_schema1.xsd|Schemas/Comunicaciones_schema2.xsd|Schemas/Comunicaciones_schema3.xsd|Schemas/CrearComunicacionEntElecHTPayload.xsd|Schemas/CrearComunicacionEntElecHTWorkflowTask.xsd|Schemas/dbComunicaciones.xsd|Schemas/dbComunicaciones_table.xsd|Schemas/DecisionServicePrimitiveTypes.xsd|Schemas/Document_schema1.xsd|Schemas/Document_schema2.xsd|Schemas/Document_schema3.xsd|Schemas/ExpedienteMinero_schema1.xsd|Schemas/ExpedienteMinero_schema2.xsd|Schemas/ExpedienteMinero_schema3.xsd|Schemas/folderGUIDRule_DecisionServiceMessageTypes.xsd|Schemas/folderGUIDRule_DecisionServiceTypes.xsd|Schemas/HT_AprobarCierreComunicacionPayload.xsd|Schemas/HT_AprobarCierreComunicacionWorkflowTask.xsd|Schemas/HT_AsignarUsuarioCompetentePayload.xsd|Schemas/HT_AsignarUsuarioCompetenteWorkflowTask.xsd|Schemas/HT_AsignarUsuarioGestionCompartidaPayload.xsd|Schemas/HT_AsignarUsuarioGestionCompartidaWorkflowTask.xsd|Schemas/HT_DefinirDependenciaPayload.xsd|Schemas/HT_DefinirDependenciaWorkflowTask.xsd|Schemas/HT_GestionarComunicacionPayload.xsd|Schemas/HT_GestionarComunicacionWorkflowTask.xsd|Schemas/HT_GestionarObservacionPayload.xsd|Schemas/HT_GestionarObservacionWorkflowTask.xsd|Schemas/ManejarExcepcionHTPayload.xsd|Schemas/ManejarExcepcionHTWorkflowTask.xsd|Schemas/NotificarErrorUsuarioHTPayload.xsd|Schemas/NotificarErrorUsuarioHTWorkflowTask.xsd|Schemas/TaskStateMachine.xsd|SGD/Proxy_Services/ComunicacionesProxy.wsdl|SGD/Proxy_Services/dbComunicaciones.wsdl|WSDLs/ComunicacionEntradaEmail.wsdl|WSDLs/ComunicacionesSalida.service.wsdl|WSDLs/DocumentProxy.wsdl|WSDLs/ExpedienteMineroProxy.wsdl|WSDLs/folderGUIDRule_DecisionService.wsdl|WSDLs/Process.service.wsdl|WSDLs/WriteFile.wsdl">
+      <searchReplace>
+         <search>http://osb.anm.local:80/SGD/ProxyServices/ComunicacionesProxy</search>
+         <replace>http://osb.anm.local:80/SGD_2.2/ProxyServices/ComunicacionesProxy</replace>
+      </searchReplace>
+      <searchReplace>
+         <search>http://osb.anm.local:80/sbresource?PROXY%2FSGD%2FProxyServices%2FComunicacionesProxy%3ASCHEMA%2FSGD%2FWSDL%2FComunicaciones_schema1</search>
+         <replace>http://osb.anm.local:80/sbresource?PROXY%2FSGD%2FProxyServices%2FComunicacionesProxy%3ASCHEMA%2FSGD_2.2%2FWSDL%2FComunicaciones_schema1</replace>
+      </searchReplace>
+      <searchReplace>
+         <search>http://osb.anm.local:80/SGD/ProxyServices/DocumentProxy</search>
+         <replace>http://osb.anm.local:80/SGD_2.2/ProxyServices/DocumentProxy</replace>
+      </searchReplace>
+    <searchReplace>
+         <search>http://osb.anm.local:80/SGD/ProxyServices/ExpedienteMineroProxy</search>
+         <replace>http://osb.anm.local:80/SGD_2.2/ProxyServices/ExpedienteMineroProxy</replace>
+    </searchReplace>
+   </wsdlAndSchema>
+</SOAConfigPlan>

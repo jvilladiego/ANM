@@ -21,6 +21,12 @@
                                              facetName="#{actionAvailable.isCustomActionButtons}">
                                     <f:facet name="true">
                                         <af:panelGroupLayout layout="horizontal" id="pgl25">
+                                            <af:button text="Anular" id="btnAnular" immediate="true"
+                                                       disabled="#{!bindings.ANULAR.enabled}"
+                                                       visible="#{RevisarComunicacionJSFBean.anulacionPermitida and wf:isCustomActionAvailable('ANULAR', 'bindings.customActions')}">
+                                                <af:showPopupBehavior popupId="popupConfirmarAnulacion"
+                                                                      triggerType="action"/>
+                                            </af:button>
                                             <af:button actionListener="#{RevisarComunicacionJSFBean.validarFormRevisarComunicacion}"
                                                        text="Enviar" disabled="#{!bindings.OK.enabled}"
                                                        action="#{invokeActionBean.invokeOperation}"
@@ -128,8 +134,22 @@
                                 <af:spacer width="15" height="15" id="s4"/>
                             </f:facet>
                             <af:showDetailHeader size="2" id="apCntHd" text="Contenido" disclosed="true">
-                                <af:panelGroupLayout layout="vertical" id="panelCenter" styleClass="AFStretchWidth">
-                                    <af:panelBox id="plantillasPnl" text="Plantillas" styleClass="AFStretchWidth">
+                                <af:panelGroupLayout layout="vertical" id="panelCenter" styleClass="AFStretchWidth"
+                                                     partialTriggers="sbcRespuestaExistente">
+                                    <af:selectBooleanCheckbox id="sbcRespuestaExistente"
+                                                              label="&#191;Existe una respuesta radicada para esta comunicaci&#243;n?"
+                                                              value="#{RevisarComunicacionJSFBean.existeRespuestaRadicada}"
+                                                              valueChangeListener="#{RevisarComunicacionJSFBean.cambiarExisteRespuestaRadicada}"
+                                                              autoSubmit="true" immediate="true"
+                                                              rendered="#{RevisarComunicacionJSFBean.contextoCrearRespuesta}"/>
+                                    <af:inputText id="itRadicadoRespuestaExistente"
+                                                  label="N&#250;mero de radicado de respuesta emitida previamente"
+                                                  value="#{bindings.nroRadicadoRespuestaExistente.inputValue}"
+                                                  required="#{RevisarComunicacionJSFBean.contextoCrearRespuesta and RevisarComunicacionJSFBean.existeRespuestaRadicada}"
+                                                  rendered="#{RevisarComunicacionJSFBean.contextoCrearRespuesta and RevisarComunicacionJSFBean.existeRespuestaRadicada}">
+                                        <f:validator binding="#{bindings.nroRadicadoRespuestaExistente.validator}"/>
+                                    </af:inputText>
+                                    <af:panelBox id="plantillasPnl" text="Plantillas" styleClass="AFStretchWidth" rendered="#{not (RevisarComunicacionJSFBean.contextoCrearRespuesta and RevisarComunicacionJSFBean.existeRespuestaRadicada)}">
                                         <af:table value="#{RevisarComunicacionJSFBean.plantillasSet}" var="row" id="t32"
                                                   styleClass="AFStretchWidth" columnStretching="multiple">
                                             <af:column headerText="Nombre" id="c5" width="50%">
@@ -209,7 +229,7 @@
                                             </af:panelFormLayout>
                                         </af:panelGroupLayout>
                                     </af:panelBox>
-                                    <af:panelBox id="pb_contenido" text="Contenido">
+                                    <af:panelBox id="pb_contenido" text="Contenido" rendered="#{not (RevisarComunicacionJSFBean.contextoCrearRespuesta and RevisarComunicacionJSFBean.existeRespuestaRadicada)}">
                                         <af:inputText value="#{bindings.asunto.inputValue}"
                                                       label="#{bindings.asunto.hints.label}" required="true"
                                                       columns="100" maximumLength="500"
@@ -266,7 +286,7 @@
                                             </af:panelGroupLayout>
                                         </af:panelGroupLayout>
                                     </af:panelBox>
-                                    <af:panelBox id="metadatosPnk" text="Gesti&#243;n Documental">
+                                    <af:panelBox id="metadatosPnk" text="Gesti&#243;n Documental" rendered="#{not (RevisarComunicacionJSFBean.contextoCrearRespuesta and RevisarComunicacionJSFBean.existeRespuestaRadicada)}">
                                         <af:panelFormLayout id="pnlFormGest1" clientComponent="true"
                                                             partialTriggers="sbc_expminero"
                                                             visible="#{!bindings.esTituloMineroBool.inputValue}">
@@ -355,7 +375,7 @@
                                             </af:selectOneChoice>
                                         </af:panelFormLayout>
                                     </af:panelBox>
-                                    <af:panelBox id="destinatarioPnl" text="Destinatarios" styleClass="AFStretchWidth">
+                                    <af:panelBox id="destinatarioPnl" text="Destinatarios" styleClass="AFStretchWidth" rendered="#{not (RevisarComunicacionJSFBean.contextoCrearRespuesta and RevisarComunicacionJSFBean.existeRespuestaRadicada)}">
                                         <af:panelCollection id="pc1" styleClass="AFStretchWidth" featuresOff="viewMenu">
                                             <f:facet name="toolbar">
                                                 <af:toolbar id="tbDestinatarios">
@@ -531,7 +551,7 @@
                                                   shortDesc="#{bindings.instanceId.hints.tooltip}" id="it2">
                                         <f:validator binding="#{bindings.instanceId.validator}"/>
                                     </af:inputText-->
-                                    <af:panelBox id="adjuntosPnl" text="Adjuntos">
+                                    <af:panelBox id="adjuntosPnl" text="Adjuntos" rendered="#{not (RevisarComunicacionJSFBean.contextoCrearRespuesta and RevisarComunicacionJSFBean.existeRespuestaRadicada)}">
                                         <af:panelGroupLayout layout="vertical" id="pgl5">
                                             <af:panelGroupLayout layout="horizontal" id="pgl21">
                                                 <af:outputLabel value="Documento Principal" for="downloadLink"
@@ -957,6 +977,22 @@
                     </af:panelHeader>
                     <f:facet name="separator"/>
                 </af:panelGroupLayout>
+                <af:popup id="popupConfirmarAnulacion" contentDelivery="lazyUncached">
+                    <af:dialog id="dlgConfirmarAnulacion" title="Anular comunicaci&#243;n" type="cancel"
+                               cancelTextAndAccessKey="Volver" closeIconVisible="true">
+                        <af:outputText id="txtConfirmarAnulacion"
+                                       value="&#191;Desea anular esta comunicaci&#243;n y cancelar su tr&#225;mite?"/>
+                        <f:facet name="buttonBar">
+                            <af:button id="btnConfirmarAnulacion" text="Confirmar anulaci&#243;n" immediate="true"
+                                       partialSubmit="false" disabled="#{!bindings.ANULAR.enabled}"
+                                       visible="#{RevisarComunicacionJSFBean.anulacionPermitida and wf:isCustomActionAvailable('ANULAR', 'bindings.customActions')}"
+                                       actionListener="#{RevisarComunicacionJSFBean.anularComunicacion}"
+                                       action="#{invokeActionBean.invokeOperation}">
+                                <f:attribute name="DC_OPERATION_BINDING" value="bindings.ANULAR"/>
+                            </af:button>
+                        </f:facet>
+                    </af:dialog>
+                </af:popup>
             </af:form>
         </af:document>
     </f:view>

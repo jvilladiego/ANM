@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions
+    
+     targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida"
+     xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida"
+     xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+     xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"
+     xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+     xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"
+     xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    >
+    <wsdl:documentation>
+        <abstractWSDL>http://soa.anm.local:80/soa-infra/services/default/ComunicacionesSalFisicaBPM!2.1/WSDLs/ComunicacionesSalida.wsdl</abstractWSDL>
+    </wsdl:documentation>
+    <plnk:partnerLinkType name="ComunicacionesSalidaPortTypePartnerLinkType">
+        <plnk:role name="ComunicacionesSalidaPortTypeProvider">
+            <plnk:portType name="tns:ComunicacionesSalidaPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida">
+            <xsd:element name="inicioSalidaFisica">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="idUsuario" type="xsd:string"/>
+                        <xsd:element name="primerNombre" type="xsd:string"/>
+                        <xsd:element name="segundoNombre" type="xsd:string"/>
+                        <xsd:element name="primerApellido" type="xsd:string"/>
+                        <xsd:element name="segundoApellido" type="xsd:string"/>
+                        <xsd:element name="email" type="xsd:string"/>
+                        <xsd:element name="idEtnia" type="xsd:int"/>
+                        <xsd:element name="idDepartamento" type="xsd:int"/>
+                        <xsd:element name="ocupacion" type="xsd:string"/>
+                        <xsd:element name="idRangoEdad" type="xsd:int"/>
+                        <xsd:element name="celular" type="xsd:string"/>
+                        <xsd:element name="direccion" type="xsd:string"/>
+                        <xsd:element name="ciudad" type="xsd:string"/>
+                        <xsd:element name="numeroIdentificacion" type="xsd:string"/>
+                        <xsd:element name="tipoIdentificacion" type="xsd:string"/>
+                        <xsd:element name="telefono" type="xsd:string"/>
+                        <xsd:element name="idMunicipio" type="xsd:int"/>
+                        <xsd:element name="idPais" type="xsd:int"/>
+                        <xsd:element name="idPoblacionVulnerable" type="xsd:int"/>
+                        <xsd:element name="asunto" type="xsd:string"/>
+                        <xsd:element name="referencia" type="xsd:string"/>
+                        <xsd:element name="placa" type="xsd:string"/>
+                        <xsd:element name="isTituloMinero" type="xsd:boolean"/>
+                        <xsd:element name="urlDocumentoPrincipal" type="xsd:string"/>
+                        <xsd:element name="numeroRadicadoRelacionado" type="xsd:string"/>
+                        <xsd:element name="fechaVencimiento" type="xsd:dateTime"/>
+                        <xsd:element name="esTituloMinero" type="xsd:string"/>
+                        <xsd:element name="esPqrs" type="xsd:string"/>
+                        <xsd:element name="tipoPqrs" type="xsd:string"/>
+                        <xsd:element name="tiempoRespuesta" type="xsd:int"/>
+                        <xsd:element name="isPQRS" type="xsd:boolean"/>
+                        <xsd:element name="appName" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="inicioSalidaFisica">
+        <wsdl:part name="parameters" element="tns:inicioSalidaFisica"/>
+    </wsdl:message>
+    <wsdl:portType name="ComunicacionesSalidaPortType">
+        <wsdl:operation name="inicioSalidaFisica">
+            <wsdl:input message="tns:inicioSalidaFisica"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <wsdl:binding name="ComunicacionesSalidaBinding" type="tns:ComunicacionesSalidaPortType">
+        <wsdlsoap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+        <wsdl:operation name="inicioSalidaFisica">
+            <wsdlsoap:operation style="document" soapAction="inicioSalidaFisica"/>
+            <wsdl:input>
+                <wsdlsoap:body use="literal"/>
+            </wsdl:input>
+        </wsdl:operation>
+    </wsdl:binding>
+    <wsdl:service name="ComunicacionesSalida.service">
+        <wsdl:port name="ComunicacionesSalidaPort" binding="tns:ComunicacionesSalidaBinding">
+            <wsdlsoap:address location="http://soa.anm.local:80/soa-infra/services/default/ComunicacionesSalFisicaBPM/ComunicacionesSalida.service"/>
+        </wsdl:port>
+    </wsdl:service>
+</wsdl:definitions>

@@ -15,6 +15,11 @@ import co.gov.anm.sgd.service.ExpedienteMinero;
 import co.gov.anm.sgd.service.WccResponse;
 import co.gov.anm.sgd.util.SGDWebServiceLocator;
 
+import javax.faces.event.AbortProcessingException;
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
+
 import java.math.BigDecimal;
 
 import java.util.ArrayList;
@@ -628,5 +633,70 @@ public class CrearComunicacionJSFBean extends CommonJSFBean {
 
     public boolean isRenderSubserie() {
         return this.subseriesSet != null && !subseries.isEmpty();
+    }
+    
+    // REQ03 - Anular comunicación
+    public void anularComunicacion(ActionEvent evt) {
+        try {
+            BindingContainer bindings = getBindingContainer();
+
+            DCIteratorBinding adjuntos =
+                (DCIteratorBinding) bindings.get("attachmentIterator");
+            OperationBinding eliminar =
+                bindings.getOperationBinding("Delete2");
+            OperationBinding guardar =
+                bindings.getOperationBinding("update");
+            OperationBinding anular =
+                bindings.getOperationBinding("ANULAR");
+
+            if (adjuntos == null || eliminar == null ||
+                guardar == null || anular == null || !anular.isOperationEnabled()) {
+                throw new IllegalStateException(
+                    "La anulación no está disponible o faltan sus bindings.");
+            }
+
+            InvokeActionBean invokeActionBean =
+                (InvokeActionBean) FacesContext.getCurrentInstance()
+                    .getApplication().getELResolver().getValue(
+                        FacesContext.getCurrentInstance().getELContext(),
+                        null, "invokeActionBean");
+
+            if (invokeActionBean == null) {
+                throw new IllegalStateException(
+                    "No fue posible preparar la operación de anulación.");
+            }
+
+            while (adjuntos.getEstimatedRowCount() > 0) {
+                long cantidadAnterior = adjuntos.getEstimatedRowCount();
+                adjuntos.setCurrentRowIndexInRange(0);
+                eliminar.execute();
+
+                if (!eliminar.getErrors().isEmpty() ||
+                    adjuntos.getEstimatedRowCount() >= cantidadAnterior) {
+                    throw new IllegalStateException(
+                        "No fue posible eliminar todos los archivos asociados.");
+                }
+            }
+
+            guardar.execute();
+
+            if (!guardar.getErrors().isEmpty()) {
+                throw new IllegalStateException(
+                    "No fue posible guardar la eliminación de los archivos.");
+            }
+
+            // La acción del botón ejecutará ANULAR después de este listener.
+            invokeActionBean.setOperation(evt);
+
+        } catch (Exception e) {
+            logger.error("Error anulando la comunicación", e);
+            FacesContext.getCurrentInstance().addMessage(
+                null,
+                new FacesMessage(
+                    FacesMessage.SEVERITY_ERROR,
+                    "No fue posible anular la comunicación.",
+                    "Revise los archivos asociados e intente nuevamente."));
+            throw new AbortProcessingException(e);
+        }
     }
 }

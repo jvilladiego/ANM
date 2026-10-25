@@ -1,0 +1,31 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+    <f:view xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+            xmlns:wf="http://xmlns.oracle.com/bpel/workflow/workflow-taglib.tld"
+            xmlns:wlc="http://xmlns.oracle.com/bpel/workflow/worklist">
+        <af:document title="NotificarErrorUsuarioHT_TaskNotification.jspx" id="d1">
+            <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
+            <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
+            <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
+            <af:form id="f1">
+                <af:panelGroupLayout layout="vertical" inlineStyle="padding: 5px;" id="pgl1">                                       
+                    <af:showDetailHeader size="2" id="payload" disclosed="true" text="#{resources.CONTENTS}">
+                        <af:panelGroupLayout id="plPnl76" layout="vertical" shortDesc="#{resources.CONTENTS}">
+                            <af:outputText value="Ocurrió un error del sistema procesando la comunicación, en este momento el administrador se encuentra en revisión del caso y al darle solución aparecerá nuevamente en su bandeja"/>
+                            <br/>
+                            <af:panelLabelAndMessage label="Radicado" id="plam8">
+                                <af:outputText value="#{bindings.nroRadicadoComunicacion.inputValue}"
+                                                           shortDesc="#{bindings.nroRadicadoComunicacion.hints.tooltip}" id="ot24"/>
+                            </af:panelLabelAndMessage>       
+                            <af:panelLabelAndMessage label="Instancia" id="plam9">
+                                <af:outputText value="#{bindings.instanceId.inputValue}" shortDesc="#{bindings.instanceId.hints.tooltip}" id="ot25"/>
+                            </af:panelLabelAndMessage>
+                        </af:panelGroupLayout>
+                    </af:showDetailHeader>
+                    <af:spacer height="20" id="s18"/>                    
+                </af:panelGroupLayout>
+            </af:form>
+        </af:document>
+    </f:view>
+</jsp:root>

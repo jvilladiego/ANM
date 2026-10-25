@@ -23,8 +23,10 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless(name = "ModeloComunicacionesV3_1",
-           mappedName = "ComunicacionesSalElecBpmAppV3_1-ComunicacionesSalElecViewPrjV3_1-ModeloComunicacionesV3_1")
+@Stateless(
+    name = "ModeloComunicacionesV4",
+    mappedName = "ComunicacionesSalElecBpmAppV4-ComunicacionesSalElecViewPrjV4-ModeloComunicacionesV4"
+)
 public class ModeloComunicacionesBean3 implements ModeloComunicaciones3, ModeloComunicacionesLocal3 {
     @Resource
     SessionContext sessionContext;

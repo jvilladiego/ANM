@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" schemaLocation="../businessCatalog/SGDComunicaciones/InteresadoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <complexType name="HT_AprobarCierreComunicacionPayloadType">
+      <sequence>
+         <element name="justificacionCierreDO" type="xsd:string"/>
+         <element name="tipoCierreDO" type="xsd:string"/>
+         <element ref="ns0:ComunicacionBO"/>
+         <element name="estadoCierreDO" type="xsd:string"/>
+         <element ref="ns1:InteresadoBO"/>
+         <element name="requiereGestionCompartidaDO" type="xsd:string"/>
+         <element name="esPQRSDO" type="xsd:string"/>
+         <element name="requiereRespuestaDO" type="xsd:string"/>
+         <element name="trasladoOtraInstitucionDO" type="xsd:string"/>
+         <element name="accesoNegadoInformacionDO" type="xsd:string"/>
+         <element name="identificacionReservadaDO" type="xsd:string"/>
+         <element name="jefeAsignadoDO" type="xsd:string"/>
+         <element ref="ns2:UsuarioBO"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+         <element name="categorizado" type="xsd:boolean"/>
+      </sequence>
+   </complexType>
+</schema>

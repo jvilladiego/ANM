@@ -506,6 +506,46 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="ACT48990237690871">
+            <labels>
+               <label locale="en">Limpiar documento principal por anulacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49008466564476">
+            <labels>
+               <label locale="en">Consultar comunicacion original</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49008584937213">
+            <labels>
+               <label locale="en">Asociar respuesta existente a original</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49008648312498">
+            <labels>
+               <label locale="en">Preparar comentario respuesta existente</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49008688783086">
+            <labels>
+               <label locale="en">Reportar error asociando respuesta existente</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="EVT17643686059926">
             <labels>
                <label locale="en">Inicio Manual</label>
@@ -530,6 +570,30 @@
          <topicDocumentation name="EVT18066665866462">
             <labels>
                <label locale="en">Inicio Respuesta</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT48990192178414">
+            <labels>
+               <label locale="en">Fin comunicacion anulada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT49005076457650">
+            <labels>
+               <label locale="en">Fin respuesta radicada existente</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT49017286696214">
+            <labels>
+               <label locale="en">Error asociando respuesta existente</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -618,6 +682,38 @@
          <topicDocumentation name="GTW33558930767176">
             <labels>
                <label locale="en">Firma manual?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW48990181837577">
+            <labels>
+               <label locale="en">¿Anular desde creacion?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW4899018908721">
+            <labels>
+               <label locale="en">¿Anular desde revision?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW49005066977370">
+            <labels>
+               <label locale="en">¿Existe respuesta radicada?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW4900867944177">
+            <labels>
+               <label locale="en">¿Asociacion original exitosa?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -728,6 +824,61 @@
          <topicDocumentation name="sf48490139826361"/>
          <topicDocumentation name="sf48495455197749"/>
          <topicDocumentation name="sf48506126070314"/>
+         <topicDocumentation name="sf48990183055689"/>
+         <topicDocumentation name="sf48990190074916"/>
+         <topicDocumentation name="sf48990193798987">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48990194049891">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48990238836986"/>
+         <topicDocumentation name="sf49005067768884">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49005078111237">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49008474438877"/>
+         <topicDocumentation name="sf49008601861875"/>
+         <topicDocumentation name="sf49008649537928"/>
+         <topicDocumentation name="sf4900868017155">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf4900869052351">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49017292004892"/>
       </topicDocumentations>
    </component>
 </processDocumentation>

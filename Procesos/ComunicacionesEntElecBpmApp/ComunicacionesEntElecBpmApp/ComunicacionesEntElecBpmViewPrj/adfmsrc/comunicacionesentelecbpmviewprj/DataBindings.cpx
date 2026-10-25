@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://xmlns.oracle.com/adfm/application" version="12.2.1.20.47" id="DataBindings"
+             SeparateXMLFiles="false" Package="comunicacionesentelecbpmviewprj" ClientType="Generic">
+  <pageMap>
+    <page path="/CrearComunicacionEntElecHT_TaskDetails.jspx"
+          usageId="comunicacionesentelecbpmviewprj_CrearComunicacionEntElecHT_TaskDetailsPageDef"/>
+    <page path="/CrearComunicacionEntElecHT_TaskNotification.jspx"
+          usageId="comunicacionesentelecbpmviewprj_CrearComunicacionEntElecHT_TaskNotificationPageDef"/>
+    <page path="/AsignarUsuarioCompetente_TaskDetails.jspx"
+          usageId="comunicacionesentelecbpmviewprj_AsignarUsuarioCompetente_TaskDetailsPageDef"/>
+    <page path="/GestionarComunicacion.jspx" usageId="comunicacionesentelecbpmviewprj_GestionarComunicacionPageDef"/>
+    <page path="/GestionarObservacion.jspx" usageId="comunicacionesentelecbpmviewprj_GestionarObservacionPageDef"/>
+    <page path="/AprobarCierreComunicacion.jspx"
+          usageId="comunicacionesentelecbpmviewprj_AprobarCierreComunicacionPageDef"/>
+    <page path="/AsignarUsuarioGestionCompartida.jspx"
+          usageId="comunicacionesentelecbpmviewprj_AsignarUsuarioGestionCompartidaPageDef"/>
+    <page path="/HT_DefinirDependencia_TaskDetails.jspx"
+          usageId="comunicacionesentelecbpmviewprj_HT_DefinirDependencia_TaskDetailsPageDef"/>
+    <page path="/ManejarExcepcionHT_TaskDetails.jspx"
+          usageId="comunicacionesentelecbpmviewprj_ManejarExcepcionHT_TaskDetailsPageDef"/>
+    <page path="/ManejarExcepcionHT_TaskNotification.jspx"
+          usageId="comunicacionesentelecbpmviewprj_ManejarExcepcionHT_TaskNotificationPageDef"/>
+    <page path="/NotificarErrorUsuarioHT_TaskDetails.jspx"
+          usageId="comunicacionesentelecbpmviewprj_NotificarErrorUsuarioHT_TaskDetailsPageDef"/>
+    <page path="/NotificarErrorUsuarioHT_TaskNotification.jspx"
+          usageId="comunicacionesentelecbpmviewprj_NotificarErrorUsuarioHT_TaskNotificationPageDef"/>
+    <page path="/HT_CategorizarComunicacion_TaskDetails.jspx"
+          usageId="comunicacionesentelecbpmviewprj_HT_CategorizarComunicacion_TaskDetailsPageDef"/>
+  </pageMap>
+  <pageDefinitionUsages>
+    <page id="comunicacionesentelecbpmviewprj_CrearComunicacionEntElecHT_TaskDetailsPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.CrearComunicacionEntElecHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_CrearComunicacionEntElecHT_TaskNotificationPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.CrearComunicacionEntElecHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_AsignarUsuarioCompetente_TaskDetailsPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.AsignarUsuarioCompetente_TaskDetailsPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_GestionarComunicacionPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.GestionarComunicacionPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_GestionarObservacionPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.GestionarObservacionPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_AprobarCierreComunicacionPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.AprobarCierreComunicacionPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_AsignarUsuarioGestionCompartidaPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.AsignarUsuarioGestionCompartidaPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_HT_DefinirDependencia_TaskDetailsPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.HT_DefinirDependencia_TaskDetailsPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_ManejarExcepcionHT_TaskDetailsPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.ManejarExcepcionHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_ManejarExcepcionHT_TaskNotificationPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.ManejarExcepcionHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_NotificarErrorUsuarioHT_TaskDetailsPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.NotificarErrorUsuarioHT_TaskDetailsPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_NotificarErrorUsuarioHT_TaskNotificationPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.NotificarErrorUsuarioHT_TaskNotificationPageDef"/>
+    <page id="comunicacionesentelecbpmviewprj_HT_CategorizarComunicacion_TaskDetailsPageDef"
+          path="comunicacionesentelecbpmviewprj.pageDefs.HT_CategorizarComunicacion_TaskDetailsPageDef"/>
+  </pageDefinitionUsages>
+  <dataControlUsages>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion1"
+        path="comunicacionesentbpmprj.ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_NotificarErrorUsuarioHT"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_NotificarErrorUsuarioHT"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_ManejarExcepcionHT"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_ManejarExcepcionHT"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_DefinirDependencia"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_HT_DefinirDependencia"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioGestionCompartida"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioGestionCompartida"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_GestionarObservacion1"
+        path="comunicacionesentbpmprj.ComunicacionesEntElecBpmViewPrj_HT_GestionarObservacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_AprobarCierreComunicacion1"
+        path="comunicacionesentbpmprj.ComunicacionesEntElecBpmViewPrj_HT_AprobarCierreComunicacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_GestionarComunicacion1"
+        path="comunicacionesentbpmprj.ComunicacionesEntElecBpmViewPrj_HT_GestionarComunicacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioCompetente1"
+        path="comunicacionesentbpmprj.ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioCompetente"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_CrearComunicacionEntElecHT1"
+        path="comunicacionesentbpmprj.ComunicacionesEntElecBpmViewPrj_CrearComunicacionEntElecHT"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_AprobarCierreComunicacion"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_HT_AprobarCierreComunicacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_GestionarObservacion"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_HT_GestionarObservacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_GestionarComunicacion"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_HT_GestionarComunicacion"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioCompetente"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioCompetente"/>
+    <dc id="ComunicacionesEntElecBpmViewPrj_CrearComunicacionEntElecHT"
+        path="comunicacionesentelecbpmviewprj.ComunicacionesEntElecBpmViewPrj_CrearComunicacionEntElecHT"/>
+  </dataControlUsages>
+</Application>

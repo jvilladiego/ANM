@@ -1,0 +1,131 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<jsp:root xmlns:jsp="http://java.sun.com/JSP/Page" version="2.1" xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+  <jsp:directive.page contentType="text/html;charset=UTF-8"/>
+  <f:view xmlns:c="http://java.sun.com/jsp/jstl/core" xmlns:trh="http://myfaces.apache.org/trinidad/html"
+          xmlns:wf="http://xmlns.oracle.com/bpel/workflow/workflow-taglib.tld"
+          xmlns:wlc="http://xmlns.oracle.com/bpel/workflow/worklist">
+    <af:document title="NotificarErrorUsuarioHT_TaskDetails.jspx" id="d1">
+      <af:resource type="javascript" source="/jsLibs/taskDetails.js"/>
+      <af:resource type="javascript" source="/jsLibs/commonBPM.js"/>
+      <af:form id="f1" usesUpload="true">
+        <af:panelGroupLayout layout="vertical" inlineStyle="padding: 5px;" id="pgl14">
+          <af:panelHeader text="#{bindings.title.inputValue}" id="ph1">
+            <f:facet name="info"/>
+            <f:facet name="legend"/>
+            <f:facet name="menuBar"/>
+            <f:facet name="toolbar">
+              <af:toolbar visible="#{actionAvailable.toolbarAvailable}" id="t2">
+                <af:switcher id="customActionButtons" facetName="#{actionAvailable.isCustomActionButtons}">
+                  <f:facet name="true">
+                    <af:panelGroupLayout layout="horizontal" id="pgl15">
+                      <af:button actionListener="#{invokeActionBean.setOperation}"
+                                 text="#{wf:getResourceValue('YES', 'bindings.customActions')}"
+                                 disabled="#{!bindings.YES.enabled}" action="#{invokeActionBean.invokeOperation}"
+                                 partialSubmit="false"
+                                 visible="#{wf:isCustomActionAvailable('YES', 'bindings.customActions')}" id="b1">
+                        <f:attribute name="DC_OPERATION_BINDING" value="bindings.YES"/>
+                      </af:button>
+                    </af:panelGroupLayout>
+                  </f:facet>
+                </af:switcher>
+                <af:button actionListener="#{invokeActionBean.setOperation}" text="#{resources.CLAIM}" id="Claim"
+                           action="#{invokeActionBean.invokeOperation}" partialSubmit="false"
+                           visible="#{actionAvailable.claimAvailable}">
+                  <f:attribute name="DC_OPERATION_BINDING" value="bindings.Claim"/>
+                </af:button>
+                <af:button id="acknowledge" actionListener="#{invokeActionBean.setOperation}"
+                           text="#{resources.ACKNOWLEDGE}" action="#{invokeActionBean.invokeOperation}"
+                           partialSubmit="false" visible="#{actionAvailable.isFyiTask}">
+                  <f:attribute name="DC_OPERATION_BINDING" value="bindings.Acknowledge"/>
+                </af:button>
+                <af:button id="resume" actionListener="#{invokeActionBean.setOperation}" text="#{resources.RESUME}"
+                           action="#{invokeActionBean.invokeOperation}" partialSubmit="false"
+                           visible="#{actionAvailable.resumeAvailable}">
+                  <f:attribute name="DC_OPERATION_BINDING" value="bindings.Resume"/>
+                </af:button>
+                <af:panelGroupLayout layout="horizontal" id="pgl16">
+                  <af:group rendered="#{!((empty actionAvailable.customActions) and (empty actionAvailable.redirectActions) and (empty actionAvailable.otherActions)) || bindings.update.enabled}"
+                            id="g2">
+                    <af:menuBar id="mb1">
+                      <af:menu id="acts" text="#{resources.TASK_ACTIONS}"
+                               visible="#{actionAvailable.actionsAvailable || bindings.update.enabled}">
+                        <af:group id="g1">
+                          <af:forEach var="childNode1" items="#{actionAvailable.customActions}">
+                            <af:commandMenuItem textAndAccessKey="#{childNode1.displayName}"
+                                                actionListener="#{invokeActionBean.setAction}"
+                                                action="#{invokeActionBean.action}" partialSubmit="false" id="cmi2">
+                              <f:attribute name="ACTION_MENU_ITEM" value="#{childNode1.action}"/>
+                            </af:commandMenuItem>
+                          </af:forEach>
+                        </af:group>
+                        <af:group id="g5">
+                          <af:forEach var="childNode2" items="#{actionAvailable.redirectActions}">
+                            <af:commandMenuItem textAndAccessKey="#{resources[childNode2]}"
+                                                actionListener="#{invokeActionBean.setAction}"
+                                                action="#{invokeActionBean.action}" partialSubmit="true" id="cmi1">
+                              <f:attribute name="ACTION_MENU_ITEM" value="#{childNode2}"/>
+                            </af:commandMenuItem>
+                          </af:forEach>
+                        </af:group>
+                        <af:group id="g6">
+                          <af:forEach var="childNode3" items="#{actionAvailable.otherActions}">
+                            <af:commandMenuItem textAndAccessKey="#{resources[childNode3]}"
+                                                actionListener="#{invokeActionBean.setAction}"
+                                                action="#{invokeActionBean.action}" partialSubmit="false" id="cmi4">
+                              <f:attribute name="ACTION_MENU_ITEM" value="#{childNode3}"/>
+                            </af:commandMenuItem>
+                          </af:forEach>
+                        </af:group>
+                        <af:group id="g4">
+                          <af:commandMenuItem id="save" textAndAccessKey="#{resources.SAVE}"
+                                              actionListener="#{invokeActionBean.setAction}"
+                                              action="#{invokeActionBean.action}" partialSubmit="false"
+                                              rendered="#{actionAvailable.updateAvailable}">
+                            <f:attribute name="ACTION_MENU_ITEM" value="bindings.update"/>
+                          </af:commandMenuItem>
+                        </af:group>
+                      </af:menu>
+                    </af:menuBar>
+                  </af:group>
+                </af:panelGroupLayout>
+                <af:spacer width="10" id="s19"/>
+                <af:link shortDesc="#{resources.PREVIOUS_TASK}"
+                         icon="#{ adfFacesContext.rightToLeft ? '/hw_images/nexttraversalarrow_ena.png'  : '/hw_images/previoustraversalarrow_ena.png'}"
+                         action="fetchPreviousTask" visible="#{pageFlowScope.enableNavigationButton != null}" id="l2"/>
+                <af:spacer width="10" id="s8"/>
+                <af:link shortDesc="#{resources.NEXT_TASK}"
+                         icon="#{ adfFacesContext.rightToLeft ? '/hw_images/previoustraversalarrow_ena.png' : '/hw_images/nexttraversalarrow_ena.png'}"
+                         action="fetchNextTask" visible="#{pageFlowScope.enableNavigationButton != null}" id="l1"/>
+                <af:spacer width="10" id="s16"/>
+                <af:link shortDesc="#{resources.SHORT_DESC_CLOSE}" icon="/hw_images/close_ena.png"
+                         action="closeTaskFlow" visible="#{pageFlowScope.enableNavigationButton != null}" id="l3"/>
+              </af:toolbar>
+            </f:facet>
+            <f:facet name="context"/>
+            <af:panelGroupLayout layout="vertical" id="pgl13">
+              <f:facet name="separator">
+                <af:spacer width="15" height="15" id="s4"/>
+              </f:facet>
+              <af:showDetailHeader size="2" id="apCntHd" text="#{resources.CONTENTS}"
+                                   disclosed="#{actionAvailable.discloseContents}">
+                <af:panelGroupLayout id="plPnl76" layout="vertical" shortDesc="#{resources.CONTENTS}">
+                    <af:outputText value="Ocurrió un error del sistema procesando la comunicación, en este momento el administrador se encuentra en revisión del caso y al darle solución aparecerá nuevamente en su bandeja"/>
+                    <br/>
+                    <af:panelLabelAndMessage label="Radicado" id="plam8">
+                        <af:outputText value="#{bindings.nroRadicadoComunicacion.inputValue}"
+                                                   shortDesc="#{bindings.nroRadicadoComunicacion.hints.tooltip}" id="ot24"/>
+                    </af:panelLabelAndMessage>  
+                    <af:panelLabelAndMessage label="Instancia" id="plam9">
+                        <af:outputText value="#{bindings.instanceId.inputValue}" shortDesc="#{bindings.instanceId.hints.tooltip}" id="ot25"/>
+                    </af:panelLabelAndMessage>
+                </af:panelGroupLayout>
+              </af:showDetailHeader>              
+                        
+            </af:panelGroupLayout>
+          </af:panelHeader>
+          <f:facet name="separator"/>
+        </af:panelGroupLayout>
+      </af:form>
+    </af:document>
+  </f:view>
+</jsp:root>

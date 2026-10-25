@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<dgm:gDiagram xmlns:dgm="http://xmlns.oracle.com/sca/soadgm">
+   <dgm:gReference name="ExpedienteMineroWSDL">
+      <dgm:body borderWidth="2" arcRad="20" X="812" Y="226" width="136" height="54">
+         <dgm:borderColor r="153" g="153" b="153"/>
+         <dgm:bgColor r="255" g="255" b="255"/>
+      </dgm:body>
+      <dgm:shadow arcRad="20" X="802" Y="219" width="156" height="68">
+         <dgm:bgColor r="196" g="228" b="240"/>
+      </dgm:shadow>
+      <dgm:inputPort name="ExpedienteMineroWSDL" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://service.sgd.anm.gov.co#wsdl.interface(ExpedienteMinero)"/>
+      <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="14" Y="4" width="20" height="20"/>
+      <dgm:operations/>
+   </dgm:gReference>
+   <dgm:gReference name="BPM-NotificationService">
+      <dgm:body borderWidth="2" arcRad="20" X="812" Y="26" width="136" height="168">
+         <dgm:borderColor r="153" g="153" b="153"/>
+         <dgm:bgColor r="255" g="255" b="255"/>
+      </dgm:body>
+      <dgm:shadow arcRad="20" X="802" Y="19" width="156" height="182">
+         <dgm:bgColor r="196" g="228" b="240"/>
+      </dgm:shadow>
+      <dgm:inputPort name="BPM-NotificationService" X="-10" Y="0" diameter="20" imageURI="oracle/tip/tools/ide/fabric/resource/image/visuals_rd1/servicereference.png" interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+      <dgm:nodeIcon URI="/oracle/tip/tools/ide/adapters/designtime/adapter/images/soap_service_20x20.png" X="27" Y="4" width="20" height="20"/>
+      <dgm:operations>
+         <dgm:item>sendIMNotification</dgm:item>
+         <dgm:item>sendFaxNotification</dgm:item>
+         <dgm:item>sendVoiceNotification</dgm:item>
+         <dgm:item>sendSMSNotification</dgm:item>
+         <dgm:item>sendPagerNotification</dgm:item>
+         <dgm:item>sendURINotification</dgm:item>
+         <dgm:item>sendEmailNotification</dgm:item>
+         <dgm:item>sendNotificationToUser</dgm:item>
+         <dgm:item>sendNotificationToGroup</dgm:item>
+      </dgm:operations>
+   </dgm:gReference>
+</dgm:gDiagram>

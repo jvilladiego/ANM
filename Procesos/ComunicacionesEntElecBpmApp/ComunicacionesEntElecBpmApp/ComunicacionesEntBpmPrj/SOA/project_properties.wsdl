@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail">
+   <vprop:property name="idCorrelation" type="xsd:string"/>
+   <vprop:propertyAlias messageType="tns2:esperarRespVencimiento" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            concat(/ns:esperarRespVencimiento/ns1:ComunicacionBO/ns1:nroRadicado, '_ASIGNAR_COM')
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns2:esperarVencimiento" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO">
+            concat(/ns:esperarVencimiento/ns1:ComunicacionBO/ns1:nroRadicado,'_GESTIONAR_COM')
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns3:responderComunicacionElect" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:responderComunicacionElect/ns:nroRadicadoRelacionado
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns2:recibirRespuestaComunicacionSalidaElectronica" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:recibirRespuestaComunicacionSalidaElectronica/idCorrelation
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns2:esperarRespuesta" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:esperarRespuesta/idCorrelacionRespuesta
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns2:inicioNotifVenc" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:inicioNotifVenc/taskIdReturn
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns2:finalizarNotifResponse" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            /ns:finalizarNotifResponse/idTaskReturn
+        </vprop:query>
+   </vprop:propertyAlias>
+   <vprop:propertyAlias messageType="tns2:inicio" propertyName="tns:idCorrelation" part="parameters">
+      <vprop:query xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:ns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesEntBpmPrj" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:tns2="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:vprop="http://docs.oasis-open.org/wsbpel/2.0/varprop" xmlns:tns3="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/">
+            concat(/ns:inicio/ns1:ComunicacionBO/ns1:nroRadicado, '_GESTIONAR_COM')
+        </vprop:query>
+   </vprop:propertyAlias>
+</wsdl:definitions>

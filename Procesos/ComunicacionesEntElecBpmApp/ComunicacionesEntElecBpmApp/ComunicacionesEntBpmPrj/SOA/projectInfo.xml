@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ns2:projectInfo projectVersion="20120601" fileVersion="20120601" xmlns="http://xmlns.oracle.com/CustomPropertiesDefinition" xmlns:ns6="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:ns5="http://www.omg.org/spec/DD/20100524/DC" xmlns:ns7="http://xmlns.oracle.com/bpm/OracleExtensions" xmlns:ns2="http://xmlns.oracle.com/ProjectInfoDefinition" xmlns:ns4="http://www.omg.org/spec/DD/20100524/DI" xmlns:ns3="http://www.omg.org/spec/BPMN/20100524/MODEL">
+    <ns2:localizedProjectNames>
+        <ns2:localizedProjectName name="ComunicacionesEntBpmPrj" locale="en_US"/>
+    </ns2:localizedProjectNames>
+    <ns2:preferences isTemplate="false">
+        <ns2:languages default="en" availables="en"/>
+        <ns2:tags>
+            <ns2:tag id="default" color="#000000" type="USER"/>
+        </ns2:tags>
+    </ns2:preferences>
+    <ns2:dataObjects>
+        <ns3:dataObject name="comunicacionDO" id="comunicacionDO">
+            <ns3:extensionElements>
+                <ns7:OracleExtensions>
+                    <ns7:DataObjectType initialize="true">
+                        <ns7:TypeRef refType="namespaced" name="ComunicacionBO" namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" elementType="ELEMENT" implementationType="businessObject"/>
+                    </ns7:DataObjectType>
+                </ns7:OracleExtensions>
+            </ns3:extensionElements>
+        </ns3:dataObject>
+        <ns3:dataObject name="funcionario" id="funcionario">
+            <ns3:extensionElements>
+                <ns7:OracleExtensions>
+                    <ns7:DataObjectType initialize="true">
+                        <ns7:TypeRef refType="namespaced" name="UsuarioBO" namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" elementType="ELEMENT" implementationType="businessObject"/>
+                    </ns7:DataObjectType>
+                </ns7:OracleExtensions>
+            </ns3:extensionElements>
+        </ns3:dataObject>
+        <ns3:dataObject name="fechaVencimiento" id="fechaVencimiento">
+            <ns3:extensionElements>
+                <ns7:OracleExtensions>
+                    <ns7:DataObjectType initialize="true">
+                        <ns7:TypeRef refType="schema" name="dateTime" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                    </ns7:DataObjectType>
+                </ns7:OracleExtensions>
+            </ns3:extensionElements>
+        </ns3:dataObject>
+        <ns3:dataObject name="isJefe" id="isJefe">
+            <ns3:extensionElements>
+                <ns7:OracleExtensions>
+                    <ns7:DataObjectType initialize="true">
+                        <ns7:TypeRef refType="schema" name="boolean" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                    </ns7:DataObjectType>
+                </ns7:OracleExtensions>
+            </ns3:extensionElements>
+        </ns3:dataObject>
+        <ns3:dataObject name="jefe" id="jefe">
+            <ns3:extensionElements>
+                <ns7:OracleExtensions>
+                    <ns7:DataObjectType initialize="true">
+                        <ns7:TypeRef refType="namespaced" name="UsuarioBO" namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" elementType="ELEMENT" implementationType="businessObject"/>
+                    </ns7:DataObjectType>
+                </ns7:OracleExtensions>
+            </ns3:extensionElements>
+        </ns3:dataObject>
+    </ns2:dataObjects>
+</ns2:projectInfo>

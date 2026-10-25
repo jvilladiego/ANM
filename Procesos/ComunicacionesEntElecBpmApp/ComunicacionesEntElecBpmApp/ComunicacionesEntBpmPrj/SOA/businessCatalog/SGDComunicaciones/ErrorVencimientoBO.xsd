@@ -1,0 +1,12 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ErrorVencimientoBO" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ErrorVencimientoBO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="ErrorVencimientoBOType">
+      <xs:sequence>
+         <xs:element name="fechaVencimiento" nillable="true" type="xs:dateTime"/>
+         <xs:element name="dias" nillable="true" type="xs:int"/>
+         <xs:element name="nroRadicado" nillable="true" type="xs:string"/>
+         <xs:element name="usuarioAsignado" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ErrorVencimientoBO" type="ErrorVencimientoBOType"/>
+</xs:schema>

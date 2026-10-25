@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.22.48" id="DataControls"
+                    Package="comunicacionesentbpmprj">
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/Users/admolina/Iteractiva/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_CategorizarComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_CategorizarComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

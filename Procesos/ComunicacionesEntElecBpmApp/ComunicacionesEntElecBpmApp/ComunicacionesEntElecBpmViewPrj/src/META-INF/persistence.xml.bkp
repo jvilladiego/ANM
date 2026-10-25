@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<persistence xmlns="http://java.sun.com/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://java.sun.com/xml/ns/persistence http://java.sun.com/xml/ns/persistence/persistence_2_0.xsd"
+             version="2.0">
+  <persistence-unit name="WebCenterContentPU">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/WCCConnectionDS</jta-data-source>
+    <class>co.gov.anm.entity.AnmTipodtalseguntramite</class>
+    <class>co.gov.anm.entity.AnmTramiteTb</class>
+    <class>co.gov.anm.entity.AnmUnidadadministrativaTb</class>    
+    <class>co.gov.anm.entity.Folderfolders</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource" value="jdbc/WCCConnectionDS"/>
+    </properties>
+  </persistence-unit>
+  <persistence-unit name="ComunicacionesEntElecBpmViewPrj">
+    <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
+    <jta-data-source>jdbc/ComunicacionesDS</jta-data-source>
+    <class>co.gov.anm.entity.AnmPlantilla</class>
+    <class>co.gov.anm.entity.SgdAnexoComunciacion</class>
+    <class>co.gov.anm.entity.SgdComunicacion</class>
+    <class>co.gov.anm.entity.SgdDepartamento</class>
+    <class>co.gov.anm.entity.SgdDependencia</class>
+    <class>co.gov.anm.entity.SgdEtnia</class>
+    <class>co.gov.anm.entity.SgdInteresado</class>
+    <class>co.gov.anm.entity.SgdInteresadoInt</class>
+    <class>co.gov.anm.entity.SgdPais</class>
+    <class>co.gov.anm.entity.SgdPoblacionVulnerable</class>
+    <class>co.gov.anm.entity.SgdRangoEdad</class>
+    <class>co.gov.anm.entity.SgdRol</class>
+    <class>co.gov.anm.entity.SgdTipoIdentificacion</class>
+    <class>co.gov.anm.entity.SgdUsuarioRol</class>
+    <class>co.gov.anm.entity.SgdUsuario</class>
+    <class>co.gov.anm.entity.SgdMunicipio</class>
+    <properties>
+      <property name="eclipselink.target-server" value="WebLogic_10"/>
+      <property name="javax.persistence.jtaDataSource" value="jdbc/ComunicacionesDS"/>
+    </properties>
+  </persistence-unit>
+</persistence>

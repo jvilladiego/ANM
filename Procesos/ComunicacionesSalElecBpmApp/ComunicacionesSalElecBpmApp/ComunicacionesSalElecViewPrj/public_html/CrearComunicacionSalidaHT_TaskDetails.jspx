@@ -21,6 +21,12 @@
                                              facetName="#{actionAvailable.isCustomActionButtons}">
                                     <f:facet name="true">
                                         <af:panelGroupLayout layout="horizontal" id="pgl5">
+                                            <af:button text="Anular" id="btnAnular" immediate="true"
+                                                       disabled="#{!bindings.ANULAR.enabled}"
+                                                       visible="#{wf:isCustomActionAvailable('ANULAR', 'bindings.customActions')}">
+                                                <af:showPopupBehavior popupId="popupConfirmarAnulacion"
+                                                                      triggerType="action"/>
+                                            </af:button>
                                             <af:button actionListener="#{invokeActionBean.setOperation}"
                                                        text="#{wf:getResourceValue('SUBMIT', 'bindings.customActions')}"
                                                        disabled="#{!bindings.SUBMIT.enabled}"
@@ -809,6 +815,22 @@
                     </af:panelHeader>
                     <f:facet name="separator"/>
                 </af:panelGroupLayout>
+                <af:popup id="popupConfirmarAnulacion" contentDelivery="lazyUncached">
+                    <af:dialog id="dlgConfirmarAnulacion" title="Anular comunicaci&#243;n" type="cancel"
+                               cancelTextAndAccessKey="Volver" closeIconVisible="true">
+                        <af:outputText id="txtConfirmarAnulacion"
+                                       value="&#191;Desea anular esta comunicaci&#243;n y cancelar su tr&#225;mite?"/>
+                        <f:facet name="buttonBar">
+                            <af:button id="btnConfirmarAnulacion" text="Confirmar anulaci&#243;n" immediate="true"
+                                       partialSubmit="false" disabled="#{!bindings.ANULAR.enabled}"
+                                       visible="#{wf:isCustomActionAvailable('ANULAR', 'bindings.customActions')}"
+                                       actionListener="#{CrearComunicacionJSFBean.anularComunicacion}"
+                                       action="#{invokeActionBean.invokeOperation}">
+                                <f:attribute name="DC_OPERATION_BINDING" value="bindings.ANULAR"/>
+                            </af:button>
+                        </f:facet>
+                    </af:dialog>
+                </af:popup>
             </af:form>
         </af:document>
     </f:view>

@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<oracle-webservice-clients xmlns:ns0="http://java.sun.com/xml/ns/javaee">
+   <webservice-client>
+      <service-qname namespaceURI="http://view.anm.gov.co/" localpart="FirmarService"/>
+      <port-info>
+         <wsdl-port namespaceURI="http://view.anm.gov.co/" localpart="FirmarPort"/>
+         <runtime/>
+         <operations>
+            <operation name="firmarPdf"/>
+         </operations>
+      </port-info>
+   </webservice-client>
+</oracle-webservice-clients>

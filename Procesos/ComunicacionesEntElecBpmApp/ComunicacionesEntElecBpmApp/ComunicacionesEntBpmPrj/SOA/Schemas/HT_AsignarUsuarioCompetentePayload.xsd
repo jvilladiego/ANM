@@ -1,0 +1,27 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" schemaLocation="../businessCatalog/SGDComunicaciones/InteresadoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <complexType name="HT_AsignarUsuarioCompetentePayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionBO"/>
+         <element ref="ns1:InteresadoBO"/>
+         <element name="comunicacionReasignadaDO" type="xsd:string"/>
+         <element ref="ns2:UsuarioBO"/>
+         <element name="esPQRSDO" type="xsd:string"/>
+         <element name="tipoPQRSDO" type="xsd:string"/>
+         <element name="isPQRS" type="xsd:boolean"/>
+         <element name="tiempoRespuesta" type="xsd:integer"/>
+         <element name="fechaVencimiento" type="xsd:dateTime"/>
+         <element name="idTipoPQRS" type="xsd:long"/>
+         <element name="jefeAsignadoDO" type="xsd:string"/>
+         <element name="urlDocumentoPrincipalDO" type="xsd:string"/>
+         <element name="urlArchivoAdjuntoDO" type="xsd:string"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+         <element name="categorizado" type="xsd:boolean"/>
+      </sequence>
+   </complexType>
+</schema>

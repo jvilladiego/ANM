@@ -249,5 +249,75 @@ public void methodACT48506122108294()
 	}
 }
 
+public void methodACT48990237690871()
+{
+    if (adjuntoDO != null) {
+        adjuntoDO.name = ""
+        adjuntoDO.content = ""
+        adjuntoDO.mimeType = ""
+        adjuntoDO.size = 0
+    }
+}
+
+public void methodACT49008648312498()
+{
+
+        if (consultaComunicacionOriginalDO == null ||
+            consultaComunicacionOriginalDO.comunicacion == null) {
+            throw new IllegalStateException(
+                "No se obtuvo la comunicacion original.")
+        }
+        
+        String usuario = usuarioDO.idUsuario == null
+            ? "" : usuarioDO.idUsuario.toString().trim()
+        
+        String radicado = nroRadicadoRespuestaExistente == null
+            ? "" : nroRadicadoRespuestaExistente.toString().trim()
+        
+        if (usuario.length() == 0 || radicado.length() == 0) {
+            throw new IllegalStateException(
+                "Falta usuario o radicado para registrar la respuesta.")
+        }
+        
+        String nuevo = "Usuario: " + usuario +
+            ", indico que se dio respuesta bajo comunicacion Nro. " +
+            radicado + "."
+        
+        if (nuevo.getBytes("UTF-8").length > 200) {
+            throw new IllegalStateException(
+                "El comentario automatico supera el limite de almacenamiento.")
+        }
+        
+        String anterior =
+            consultaComunicacionOriginalDO.comunicacion.comentarios == null
+            ? ""
+            : consultaComunicacionOriginalDO.comunicacion.comentarios.toString()
+        
+        String comentario = nuevo +
+            (anterior.length() == 0 ? "" : " " + anterior)
+        
+        while (comentario.getBytes("UTF-8").length > 200) {
+            int ultimo = comentario.offsetByCodePoints(comentario.length(), -1)
+            comentario = comentario.substring(0, ultimo)
+        }
+        
+        comentarioRespuestaExistenteDO = comentario
+
+}
+
+public void methodACT49008688783086()
+{
+ String codigo = resultadoAsociacionOriginalDO == null
+        ? "sin respuesta"
+        : String.valueOf(resultadoAsociacionOriginalDO.statusCode)
+
+    String detalle = resultadoAsociacionOriginalDO == null
+        ? ""
+        : String.valueOf(resultadoAsociacionOriginalDO.statusMessage)
+
+   mensajeErrorAsociacionDO =
+        "No fue posible asociar la respuesta existente. " +
+        "Codigo: " + codigo + ". Detalle: " + detalle
+}
 
 }

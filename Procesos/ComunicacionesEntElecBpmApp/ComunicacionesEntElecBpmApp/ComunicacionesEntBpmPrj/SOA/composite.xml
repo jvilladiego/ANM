@@ -1,0 +1,386 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<composite name="ComunicacionesEntBpmPrj" revision="3.1" label="2016-11-01_10-26-25_096" mode="active" state="on" xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/" xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
+   <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService" location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService" location="oramds:/soa/shared/workflow/NotificationService.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/WriteFile" location="WSDLs/WriteFile.wsdl" importType="wsdl"/>
+   <import namespace="" location="project_properties.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/folderGUIDRule/folderGUIDRule_DecisionService" location="WSDLs/folderGUIDRule_DecisionService.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/dbComunicaciones" location="SGD/Proxy_Services/dbComunicaciones.wsdl" importType="wsdl"/>
+   <import namespace="http://service.sgd.anm.gov.co" location="WSDLs/ExpedienteMineroProxy.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" location="WSDLs/Process.service.wsdl"
+           importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida"
+           location="WSDLs/ComunicacionesSalida.service.wsdl" importType="wsdl"/>
+   <import namespace="http://service.sgd.anm.gov.co" location="SGD/Proxy_Services/ComunicacionesProxy.wsdl"
+           importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail"
+           location="WSDLs/ComunicacionEntradaEmail.wsdl" importType="wsdl"/>
+   <import namespace="http://service.sgd.anm.gov.co"
+           location="WSDLs/DocumentProxy.wsdl" importType="wsdl"/>
+   <import namespace="http://view.anm.gov.co/" location="WSDLs/FirmarPort.wsdl"
+           importType="wsdl"/>
+   <service name="ComunicacionEntradaEmail.service_2" ui:wsdlLocation="WSDLs/ComunicacionEntradaEmail.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.interface(ComunicacionEntradaEmailPortType)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.endpoint(ComunicacionEntradaEmail.service/ComunicacionEntradaEmailPort)"/>
+   </service>
+   <service name="ComunicacionEntradaEmail.service" ui:wsdlLocation="WSDLs/ComunicacionEntradaEmail.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.interface(ComunicacionEntradaEmailPortType)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.endpoint(ComunicacionEntradaEmail.service/ComunicacionEntradaEmailPort)"/>
+   </service>
+   <property name="productVersion" type="xs:string" many="false">12.2.1.1.0.160608</property>
+   <property name="compositeID" type="xs:string" many="false">d6226723-4774-44c8-95e2-7f424cf5e43e</property>
+   <component name="ComunicacionEntradaEmail">
+      <implementation.bpmn src="processes/ComunicacionEntradaEmail.bpmn"/>
+      <componentType>
+         <service name="ComunicacionEntradaEmail.service"
+                  ui:wsdlLocation="WSDLs/ComunicacionEntradaEmail.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.interface(ComunicacionEntradaEmailPortType)"/>
+            <property name="bpm.generated.service.reference" type="xs:string" many="false">ComunicacionEntradaEmail.service</property>
+         </service>
+         <reference name="HumanTasks.CrearComunicacionEntElecHT.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="HumanTasks.HT_AsignarUsuarioCompetente.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="HumanTasks.HT_GestionarComunicacion.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="HumanTasks.HT_GestionarObservacion.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="HumanTasks.HT_AprobarCierreComunicacion.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="NotificationService.ACT18059746361879" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+         </reference>
+         <reference name="Services.Externals.WriteFile.reference" ui:wsdlLocation="WSDLs/WriteFile.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/WriteFile#wsdl.interface(Write_ptt)"/>
+         </reference>
+         <reference name="HumanTasks.HT_AsignarUsuarioGestionCompartida.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="Rules.Comunicacionesentbpmprj.FolderGUIDRule.DecisionService.reference" ui:wsdlLocation="WSDLs/folderGUIDRule_DecisionService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/folderGUIDRule/folderGUIDRule_DecisionService#wsdl.interface(IDecisionService)"/>
+         </reference>
+         <reference name="HumanTasks.HT_DefinirDependencia.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="Services.Externals.SalidaFisica.reference"
+                    ui:wsdlLocation="WSDLs/ComunicacionesSalida.service.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida#wsdl.interface(ComunicacionesSalidaPortType)"/>
+         </reference>
+         <reference name="NotificationService.ACT19482785604941" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+         </reference>
+         <reference name="NotificationService.ACT1954496146238" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+         </reference>
+         <reference name="NotificationService.ACT19701099450283" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+         </reference>
+         <reference name="HumanTasks.ManejarExcepcionHT.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="NotificationService.ACT20570999785260" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+         </reference>
+         <reference name="NotificationService.ACT2057101173248" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+         </reference>
+         <reference name="HumanTasks.NotificarErrorUsuarioHT.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="Services.Externals.SalidaElectronica.reference"
+                    ui:wsdlLocation="WSDLs/Process.service.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.interface(ProcessPortType)"/>
+         </reference>
+         <reference name="Services.Externals.DbComunicaciones.reference" ui:wsdlLocation="SGD/Proxy_Services/dbComunicaciones.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/dbComunicaciones#wsdl.interface(dbComunicaciones_ptt)"/>
+         </reference>
+         <reference name="Services.Externals.WSDLComunicaciones.reference"
+                    ui:wsdlLocation="SGD/Proxy_Services/ComunicacionesProxy.wsdl">
+            <interface.wsdl interface="http://service.sgd.anm.gov.co#wsdl.interface(Comunicaciones)"/>
+         </reference>
+         <reference name="Services.Externals.ExpedienteMineroWSDL.reference"
+                    ui:wsdlLocation="WSDLs/ExpedienteMineroProxy.wsdl">
+            <interface.wsdl interface="http://service.sgd.anm.gov.co#wsdl.interface(ExpedienteMinero)"/>
+         </reference>
+         <reference name="HumanTasks.HT_CategorizarComunicacion.reference"
+                    ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                            callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="Services.Externals.SgdFirmaWs.reference"
+                    ui:wsdlLocation="WSDLs/FirmarPort.wsdl">
+            <interface.wsdl interface="http://view.anm.gov.co/#wsdl.interface(Firmar)"/>
+         </reference>
+         <reference name="Services.Externals.WSDLDocumentos.reference"
+                    ui:wsdlLocation="WSDLs/DocumentProxy.wsdl">
+            <interface.wsdl interface="http://service.sgd.anm.gov.co#wsdl.interface(Document)"/>
+         </reference>
+      </componentType>
+      <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">sync</property>
+      <property name="bpel.config.transaction" type="xs:string" many="false">required</property>
+   </component>
+   <component name="CrearComunicacionEntElecHT">
+      <implementation.workflow src="HumanTasks/CrearComunicacionEntElecHT.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="HT_AsignarUsuarioCompetente">
+      <implementation.workflow src="HumanTasks/HT_AsignarUsuarioCompetente.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="HT_GestionarComunicacion">
+      <implementation.workflow src="HumanTasks/HT_GestionarComunicacion.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="HT_GestionarObservacion">
+      <implementation.workflow src="HumanTasks/HT_GestionarObservacion.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="HT_AprobarCierreComunicacion">
+      <implementation.workflow src="HumanTasks/HT_AprobarCierreComunicacion.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="HT_AsignarUsuarioGestionCompartida">
+      <implementation.workflow src="HumanTasks/HT_AsignarUsuarioGestionCompartida.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="folderGUIDRule">
+      <implementation.decision src="folderGUIDRule.decs"/>
+      <componentType>
+         <service name="folderGUIDRule_DecisionService" ui:wsdlLocation="WSDLs/folderGUIDRule_DecisionService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/folderGUIDRule/folderGUIDRule_DecisionService#wsdl.interface(IDecisionService)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="HT_DefinirDependencia">
+      <implementation.workflow src="HumanTasks/HT_DefinirDependencia.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="ManejarExcepcionHT">
+      <implementation.workflow src="HumanTasks/ManejarExcepcionHT.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="NotificarErrorUsuarioHT">
+      <implementation.workflow src="HumanTasks/NotificarErrorUsuarioHT.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <component name="HT_CategorizarComunicacion">
+      <implementation.workflow src="HumanTasks/HT_CategorizarComunicacion.task"/>
+      <componentType>
+         <service name="TaskService" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)"
+                            callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </service>
+      </componentType>
+   </component>
+   <reference name="BPM-NotificationService" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+      <binding.wsif port="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.endpoint(NotificationService/JavaPort)" location="oramds:/soa/shared/workflow/NotificationService.wsdl"/>
+   </reference>
+   <reference name="WriteFile" ui:wsdlLocation="WSDLs/WriteFile.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/file/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/WriteFile#wsdl.interface(Write_ptt)"/>
+      <binding.jca config="Adapters/WriteFile_file.jca"/>
+   </reference>
+   <reference name="salidaFisica"
+              ui:wsdlLocation="WSDLs/ComunicacionesSalida.service.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida#wsdl.interface(ComunicacionesSalidaPortType)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida#wsdl.endpoint(ComunicacionesSalida.service/ComunicacionesSalidaPort)"
+                  location="WSDLs/ComunicacionesSalida.service.wsdl"
+                  soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="salidaElectronica"
+              ui:wsdlLocation="WSDLs/Process.service.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.interface(ProcessPortType)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.endpoint(Process.service/ProcessPort)"
+                  location="WSDLs/Process.service.wsdl"
+                  soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="ExpedienteMineroWSDL"
+              ui:wsdlLocation="WSDLs/ExpedienteMineroProxy.wsdl">
+      <interface.wsdl interface="http://service.sgd.anm.gov.co#wsdl.interface(ExpedienteMinero)"/>
+      <binding.ws port="http://service.sgd.anm.gov.co#wsdl.endpoint(ExpedienteMineroPortBindingQSService/ExpedienteMineroPortBindingQSPort)"
+                  location="WSDLs/ExpedienteMineroProxy.wsdl"
+                  soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="WSDLDocumentos"
+              ui:wsdlLocation="WSDLs/DocumentProxy.wsdl">
+      <interface.wsdl interface="http://service.sgd.anm.gov.co#wsdl.interface(Document)"/>
+      <binding.ws port="http://service.sgd.anm.gov.co#wsdl.endpoint(DocumentPortBindingQSService/DocumentPortBindingQSPort)"
+                  location="WSDLs/DocumentProxy.wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="WSDLComunicaciones"
+              ui:wsdlLocation="SGD/Proxy_Services/ComunicacionesProxy.wsdl">
+      <interface.wsdl interface="http://service.sgd.anm.gov.co#wsdl.interface(Comunicaciones)"/>
+      <binding.ws port="http://service.sgd.anm.gov.co#wsdl.endpoint(ComunicacionesPortBindingQSService/ComunicacionesPortBindingQSPort)"
+                  location="SGD/Proxy_Services/ComunicacionesProxy.wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <reference name="dbComunicaciones" ui:wsdlLocation="SGD/Proxy_Services/dbComunicaciones.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/pcbpel/adapter/db/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/dbComunicaciones#wsdl.interface(dbComunicaciones_ptt)"/>
+      <binding.jca config="Adapters/dbComunicaciones_db.jca"/>
+      <property name="jca.retry.count" type="xs:int" many="false" override="may">4</property>
+      <property name="jca.retry.interval" type="xs:int" many="false" override="may">1</property>
+      <property name="jca.retry.backoff" type="xs:int" many="false" override="may">2</property>
+      <property name="jca.retry.maxInterval" type="xs:int" many="false" override="may">120</property>
+   </reference>
+   <reference name="SgdFirmaWs" ui:wsdlLocation="WSDLs/FirmarPort.wsdl">
+      <interface.wsdl interface="http://view.anm.gov.co/#wsdl.interface(Firmar)"/>
+      <binding.ws port="http://view.anm.gov.co/#wsdl.endpoint(FirmarService/FirmarPort)"
+                  location="WSDLs/FirmarPort.wsdl" soapVersion="1.1">
+         <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
+      </binding.ws>
+   </reference>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.CrearComunicacionEntElecHT.reference</source.uri>
+      <target.uri>CrearComunicacionEntElecHT/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.HT_AsignarUsuarioCompetente.reference</source.uri>
+      <target.uri>HT_AsignarUsuarioCompetente/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.HT_GestionarComunicacion.reference</source.uri>
+      <target.uri>HT_GestionarComunicacion/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.HT_GestionarObservacion.reference</source.uri>
+      <target.uri>HT_GestionarObservacion/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.HT_AprobarCierreComunicacion.reference</source.uri>
+      <target.uri>HT_AprobarCierreComunicacion/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/NotificationService.ACT18059746361879</source.uri>
+      <target.uri>BPM-NotificationService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.WriteFile.reference</source.uri>
+      <target.uri>WriteFile</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.HT_AsignarUsuarioGestionCompartida.reference</source.uri>
+      <target.uri>HT_AsignarUsuarioGestionCompartida/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Rules.Comunicacionesentbpmprj.FolderGUIDRule.DecisionService.reference</source.uri>
+      <target.uri>folderGUIDRule/folderGUIDRule_DecisionService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.HT_DefinirDependencia.reference</source.uri>
+      <target.uri>HT_DefinirDependencia/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.SalidaFisica.reference</source.uri>
+      <target.uri>salidaFisica</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/NotificationService.ACT19482785604941</source.uri>
+      <target.uri>BPM-NotificationService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/NotificationService.ACT1954496146238</source.uri>
+      <target.uri>BPM-NotificationService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/NotificationService.ACT19701099450283</source.uri>
+      <target.uri>BPM-NotificationService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.ManejarExcepcionHT.reference</source.uri>
+      <target.uri>ManejarExcepcionHT/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/NotificationService.ACT20570999785260</source.uri>
+      <target.uri>BPM-NotificationService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/NotificationService.ACT2057101173248</source.uri>
+      <target.uri>BPM-NotificationService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.NotificarErrorUsuarioHT.reference</source.uri>
+      <target.uri>NotificarErrorUsuarioHT/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.SalidaElectronica.reference</source.uri>
+      <target.uri>salidaElectronica</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.DbComunicaciones.reference</source.uri>
+      <target.uri>dbComunicaciones</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.WSDLComunicaciones.reference</source.uri>
+      <target.uri>WSDLComunicaciones</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.ExpedienteMineroWSDL.reference</source.uri>
+      <target.uri>ExpedienteMineroWSDL</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/HumanTasks.HT_CategorizarComunicacion.reference</source.uri>
+      <target.uri>HT_CategorizarComunicacion/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.SgdFirmaWs.reference</source.uri>
+      <target.uri>SgdFirmaWs</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail/Services.Externals.WSDLDocumentos.reference</source.uri>
+      <target.uri>WSDLDocumentos</target.uri>
+   </wire>
+   <wire>
+      <source.uri>ComunicacionEntradaEmail.service</source.uri>
+      <target.uri>ComunicacionEntradaEmail/ComunicacionEntradaEmail.service</target.uri>
+   </wire>
+</composite>

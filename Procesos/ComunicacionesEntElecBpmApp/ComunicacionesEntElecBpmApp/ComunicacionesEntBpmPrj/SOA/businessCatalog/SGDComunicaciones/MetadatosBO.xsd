@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?bpmo version="12.1.3" build="00.00" fullName="SGDComunicaciones.MetadatosBO" modifiers="[public]"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" elementFormDefault="qualified" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO"  xmlns:xs="http://www.w3.org/2001/XMLSchema"  xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/" >
+    <xs:complexType name="MetadatosBOType">
+        <xs:sequence>
+            <xs:element name="descripcion" nillable="true" type="xs:string"/>
+            <xs:element name="nombreTramite" type="xs:string"/>
+            <xs:element name="idTpDocumento" type="xs:int"/>
+            <xs:element name="nombreTpDocumento" type="xs:string"/>
+            <xs:element name="idCuenta" type="xs:int"/>
+            <xs:element name="cuenta" type="xs:string"/>
+            <xs:element name="idTramite" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+    <xs:element name="MetadatosBO" type="MetadatosBOType"/>
+</xs:schema>

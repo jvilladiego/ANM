@@ -1,0 +1,222 @@
+//Content Format Version: 1.0
+
+//########################################################################################
+//####                                                                                ####
+//####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####
+//#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####
+//####                                                                                ####
+//########################################################################################
+package oracle.scripting.bpmn.process;
+
+import java.util.ArrayList;
+import java.math.BigDecimal;
+import oracle.scripting.catalog.sgdComunicaciones.ComunicacionServiceBO;
+import oracle.scripting.catalog.sgdComunicaciones.InteresadoRequest;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.ComunicacionRequest;
+import oracle.scripting.xml.co.gov.anm.sgd.service.type.AnexoComunicacionRequest;
+
+
+public class ComunicacionEntradaEmail{
+
+public void methodACT18851409626122()
+{
+	System.out.println("NroRadicado: "+comunicacion.nroRadicado);
+	System.out.println("Attachments: "+localExecutionData.attachment.size());
+}
+
+
+public void methodACT18873339988950()
+{
+	System.out.println("Inicio Build Objeto Comunicacion");
+
+	comunicacionRequestDO.anexosList.clear();
+	comunicacionRequestDO.interesadosList.clear();
+	comunicacionRequestDO.comunicacion = new ComunicacionRequest();
+	comunicacionRequestDO.comunicacion.setNroRadicado(comunicacion.nroRadicado);
+	comunicacionRequestDO.comunicacion.setIdDependenciaDestino(100);
+	
+	InteresadoRequest interesado = new InteresadoRequest();
+	interesado.celular = interesadoBO.celular;
+	interesado.ciudad = interesadoBO.ciudad;
+	interesado.direccion = interesadoBO.direccion;
+	interesado.email = interesadoBO.email;
+	interesado.idDepartamento = interesadoBO.idDepartamento;
+	interesado.idEtnia = interesadoBO.idEtnia;
+	interesado.idMunicipio = interesadoBO.idMunicipio;
+	interesado.idPais = interesadoBO.idPais;
+	interesado.idPoblacionVulnerable = interesadoBO.idPoblacionVulnerable;
+	interesado.idRangoEdad = interesadoBO.idRangoEdad;
+	interesado.nroIdentificacion = interesadoBO.numeroIdentificacion;
+	interesado.ocupacion = interesadoBO.ocupacion;
+	interesado.primerApellido = interesadoBO.primerApellido;
+	interesado.primerNombre = interesadoBO.primerNombre;
+	interesado.segundoApellido = interesadoBO.segundoApellido;
+	interesado.segundoNombre = interesadoBO.segundoNombre;
+	interesado.telefono = interesadoBO.telefono;
+	interesado.tipoIdentificacion = interesadoBO.tipoIdentificacion;
+	
+	comunicacionRequestDO.interesadosList.clear();
+	comunicacionRequestDO.interesadosList.add(interesado);
+	if(comunicacion.nroPlaca != null  && !comunicacion.nroPlaca.isEmpty()){
+	    comunicacion.esTituloMinero=true;
+	}
+
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = urlDocumentoPrincipalDO;
+	docPrincipal.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(docPrincipal);
+	
+	System.out.println("Fin Build Objeto Comunicacion");
+}
+
+
+public void methodACT18873502343375()
+{
+	System.out.println("Agregando anexo (1)!!");
+	
+	AnexoComunicacionRequest anexo = new AnexoComunicacionRequest();
+	anexo.cantidad = BigDecimal.ONE;
+	anexo.descripcion = "Anexo";
+	anexo.enlaceContent = urlDocTmp;
+	anexo.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(anexo);
+	
+	System.out.println("Fin agregar anexo (1)!!");
+}
+
+
+public void methodACT18873514840872()
+{
+	comunicacion.anexosServicioList = new ArrayList();
+}
+
+
+public void methodACT19344902589269()
+{
+	comunicacionRequestDO.anexosList.clear();
+	comunicacionRequestDO.interesadosList.clear();
+	comunicacionRequestDO.comunicacion = new ComunicacionRequest();
+	comunicacionRequestDO.comunicacion.setNroRadicado(comunicacion.nroRadicado);
+	System.out.println("END | Build Comunicacion Request | No. Radicado : "+comunicacionRequestDO.getComunicacion().getNroRadicado());
+}
+
+
+public void methodACT3051466288093()
+{
+	String anexosMail;
+	if(comunicacionRequestDO.anexosList.size() > 0){
+	  for(int i = 0 ; i<comunicacionRequestDO.anexosList.size(); i++){
+	  anexosMail = anexosMail.concat(" " + comunicacionRequestDO.anexosList.get(i).getAt("idAnexo"));
+	  }
+	}else{
+	  anexosMail = "0";
+	}
+	if (urlArchivoAdjuntoDO != null && !"".equals(urlArchivoAdjuntoDO)){
+	  		anexosMail = "1";
+	}
+	anexosEmail = anexosMail;
+}
+
+
+public void methodACT35026802869849()
+{
+	        if (urlArchivoAdjuntoDO != null && !"".equals(urlArchivoAdjuntoDO)){
+	            AnexoComunicacionRequest docAnexo = new AnexoComunicacionRequest();
+	            docAnexo.cantidad = BigDecimal.ONE;
+	            docAnexo.descripcion = "Documento Anexo";
+	            docAnexo.enlaceContent = urlArchivoAdjuntoDO;
+	            docAnexo.nroRadicado = comunicacion.nroRadicado;
+	            comunicacionRequestDO.anexosList.add(docAnexo);
+	        }
+}
+
+
+public void methodACT40828104892636()
+{
+	System.out.println("Inicio script Limpiar lista de anexos");
+	comunicacionRequestDO.anexosList.clear();
+	System.out.println("Fin script Limpiar lista de anexos");
+}
+
+
+public void methodACT42584452601924()
+{
+	System.out.println("Inicio Agregar Doc. Principal - T1");
+	
+	comunicacionRequestDO.anexosList.clear();
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = urlDocumentoPrincipalDO;
+	docPrincipal.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(docPrincipal);
+	
+	System.out.println("Fin Agregar Doc. Principal - T1");
+}
+
+
+
+
+public static class ACT18065560518330{
+
+public void methodACT18851472112849()
+{
+	System.out.println("NroRadicado (1): "+comunicacion.nroRadicado);
+	System.out.println("Attachments (1): "+localExecutionData.attachment.size());
+}
+
+
+public void methodACT18873434085962()
+{
+	System.out.println("Agregando anexo!!");
+	AnexoComunicacionRequest anexo = new AnexoComunicacionRequest();
+	anexo.cantidad = BigDecimal.ONE;
+	anexo.descripcion = "Anexo";
+	anexo.enlaceContent = urlDocTmp;
+	anexo.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(anexo);
+	System.out.println("Fin agregar anexo!!");
+}
+
+
+public void methodACT19344991887166()
+{
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = urlDocumentoPrincipalDO;
+	docPrincipal.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(docPrincipal);
+	System.out.println("END | Agregar Documento Principal (Loop)");
+}
+
+
+public void methodACT40827855583114()
+{
+	System.out.println("Inicio script Loop Checkin Attachment.Agregar anexo Exp.Minero");
+	AnexoComunicacionRequest anexo = new AnexoComunicacionRequest();
+	anexo.cantidad = BigDecimal.ONE;
+	anexo.descripcion = "Anexo";
+	anexo.enlaceContent = urlDocTmp;
+	anexo.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(anexo);
+	System.out.println("Fin script Loop Checkin Attachment.Agregar anexo Exp.Minero");
+}
+
+
+public void methodACT40827869487783()
+{
+	System.out.println("Inicio script Loop Checkin Attachment.Agregar Doc.Ppal.Exp.Minero");
+	AnexoComunicacionRequest docPrincipal = new AnexoComunicacionRequest();
+	docPrincipal.cantidad = BigDecimal.ONE;
+	docPrincipal.descripcion = "Documento Principal";
+	docPrincipal.enlaceContent = urlDocumentoPrincipalDO;
+	docPrincipal.nroRadicado = comunicacion.nroRadicado;
+	comunicacionRequestDO.anexosList.add(docPrincipal);
+	System.out.println("Fin script Loop Checkin Attachment.Agregar Doc.Ppal.Exp.Minero");
+}
+
+
+}}

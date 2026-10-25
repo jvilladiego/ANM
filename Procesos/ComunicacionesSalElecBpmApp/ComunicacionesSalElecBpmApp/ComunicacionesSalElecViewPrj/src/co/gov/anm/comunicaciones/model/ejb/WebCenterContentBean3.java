@@ -27,8 +27,10 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless(name = "WebCenterContentV3_1",
-           mappedName = "ComunicacionesSalElecBpmAppV3_1-ComunicacionesSalElecViewPrjV3_1-WebCenterContentV3_1")
+@Stateless(
+    name = "WebCenterContentV4",
+    mappedName = "ComunicacionesSalElecBpmAppV4-ComunicacionesSalElecViewPrjV4-WebCenterContentV4"
+)
 public class WebCenterContentBean3 implements WebCenterContent3, WebCenterContentLocal3 {
     @Resource
     SessionContext sessionContext;

@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ResultadoRevisionBO" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:complexType name="ResultadoRevisionBOType">
+      <xs:sequence>
+         <xs:element name="resultadoRevision" type="xs:string"/>
+         <xs:element name="comentarioRevision" nillable="true" type="xs:string"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ResultadoRevisionBO" type="ResultadoRevisionBOType"/>
+</xs:schema>

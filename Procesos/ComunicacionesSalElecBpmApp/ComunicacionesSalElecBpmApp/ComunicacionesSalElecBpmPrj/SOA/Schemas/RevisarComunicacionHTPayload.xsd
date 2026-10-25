@@ -19,6 +19,8 @@
          <element name="asunto" type="xsd:string"/>
          <element name="radicado" type="xsd:string"/>
          <element name="fechaRadicacion" type="xsd:dateTime"/>
+         <element name="existeRespuestaRadicada" type="xsd:boolean"/>
+         <element name="nroRadicadoRespuestaExistente" type="xsd:string"/>
       </sequence>
    </complexType>
 </schema>

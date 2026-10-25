@@ -12,36 +12,6 @@
    </Fault>
    <Fault>
       <severity>warning</severity>
-      <loc>/ns:composite/ns:reference[@name='GestionDocumentalProxy']</loc>
-      <line>195</line>
-      <col>52</col>
-      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</file>
-      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</name>
-      <fix/>
-      <msg>Fallo al buscar el enlace "GestionDocumentalProxy":"{http://service.sgd.anm.gov.co}DocumentPortBindingQSPort" en el gestor de WSDL</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/ns:composite/ns:reference[@name='ComunicacionesService']</loc>
-      <line>203</line>
-      <col>64</col>
-      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</file>
-      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</name>
-      <fix/>
-      <msg>Fallo al buscar el enlace "ComunicacionesService":"{http://service.sgd.anm.gov.co}ComunicacionesPortBindingQSPort" en el gestor de WSDL</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
-      <loc>/ns:composite/ns:reference[@name='ExpedienteMineroWSDL']</loc>
-      <line>212</line>
-      <col>60</col>
-      <file>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</file>
-      <name>C:\Jobs\BPM\ANM\Repositorio\Procesos\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmApp\ComunicacionesSalElecBpmPrj\SOA\composite.xml</name>
-      <fix/>
-      <msg>Fallo al buscar el enlace "ExpedienteMineroWSDL":"{http://service.sgd.anm.gov.co}ExpedienteMineroPortBindingQSPort" en el gestor de WSDL</msg>
-   </Fault>
-   <Fault>
-      <severity>warning</severity>
       <loc/>
       <line/>
       <col/>

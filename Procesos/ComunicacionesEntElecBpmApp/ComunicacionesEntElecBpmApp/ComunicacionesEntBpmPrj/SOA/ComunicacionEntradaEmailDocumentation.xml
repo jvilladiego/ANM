@@ -1,0 +1,1189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="ComunicacionEntradaEmail">
+      <topicDocumentations>
+         <topicDocumentation name="ComunicacionEntradaEmail">
+            <labels>
+               <label locale="en">Comunicacion Entrada Email</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17642311332564">
+            <labels>
+               <label locale="en">Crear Comunicación Entrada Email</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1765957752307">
+            <labels>
+               <label locale="en">Registrar Comunicación DB</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17659589115858">
+            <labels>
+               <label locale="en">Asignar o Reasignar Usuario Competente</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1778018496038">
+            <labels>
+               <label locale="en">Gestionar Comunicación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17780494559792">
+            <labels>
+               <label locale="en">Abrobar Cierre Comunicación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17780601370750">
+            <labels>
+               <label locale="en">Gestionar Observación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17849170235873">
+            <labels>
+               <label locale="en">Generar No. Radicado</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT17955517928139">
+            <labels>
+               <label locale="en">Generar Documento Principal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18033081533930">
+            <labels>
+               <label locale="en">Buscar Jefe</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18033459291817">
+            <labels>
+               <label locale="en">Buscar Jefe</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18058638319764">
+            <labels>
+               <label locale="en">Buscar Jefe</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18059746361879">
+            <labels>
+               <label locale="en">Notificar Interesado </label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18065560518330">
+            <labels>
+               <label locale="en">Loop Checkin Attatchment</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18065567661742">
+            <labels>
+               <label locale="en">Write File</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1806556951517">
+            <labels>
+               <label locale="en">Check-in Anexo</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18851472112849">
+            <labels>
+               <label locale="en">Logger</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18873434085962">
+            <labels>
+               <label locale="en">Agregar Anexo</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18930028297737">
+            <labels>
+               <label locale="en">Checkin Doc Principal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19344991887166">
+            <labels>
+               <label locale="en">Agregar Documento Principal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40741174454456">
+            <labels>
+               <label locale="en">CheckIn doc.Ppal Exp.Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40741192107347">
+            <labels>
+               <label locale="en">CheckIn Anexo Exp.Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40827855583114">
+            <labels>
+               <label locale="en">Agregar anexo Exp.Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40827869487783">
+            <labels>
+               <label locale="en">Agregar Doc.Ppal.Exp.Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT18065560647245">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT18065560647322">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="GTW18930014392232">
+            <labels>
+               <label locale="en">Es Documento Principal?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW40741136739573">
+            <labels>
+               <label locale="en">¿Es titulo minero 3?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW40741187220936">
+            <labels>
+               <label locale="en">¿Es Titulo Minero 4?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf18065560647340"/>
+         <topicDocumentation name="sf1806556856591"/>
+         <topicDocumentation name="sf18065570488517"/>
+         <topicDocumentation name="sf18851472502020"/>
+         <topicDocumentation name="sf18873435169376"/>
+         <topicDocumentation name="sf18930015268873"/>
+         <topicDocumentation name="sf18930030601652"/>
+         <topicDocumentation name="sf19345197087911"/>
+         <topicDocumentation name="sf19345198690529"/>
+         <topicDocumentation name="sf40741146399334"/>
+         <topicDocumentation name="sf40741169122129"/>
+         <topicDocumentation name="sf40741185417282"/>
+         <topicDocumentation name="sf40741189361512"/>
+         <topicDocumentation name="sf4074119447950"/>
+         <topicDocumentation name="sf40741200930725"/>
+         <topicDocumentation name="sf40827857024481"/>
+         <topicDocumentation name="sf40827871447965"/>
+         <topicDocumentation name="ACT18065644591234">
+            <labels>
+               <label locale="en">Inicializar</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18083197976881">
+            <labels>
+               <label locale="en">Buscar Jefe</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18195610834785">
+            <labels>
+               <label locale="en">Asignar Usuario Gestion Compartida</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18275053101884">
+            <labels>
+               <label locale="en">BusinessRuleTaxonomia</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18310174592770">
+            <labels>
+               <label locale="en">Buscar Admin Contactenos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18310183044461">
+            <labels>
+               <label locale="en">Definir Dependencia</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18419860463150">
+            <labels>
+               <label locale="en">Actualizar Comunicacion BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18419886536689">
+            <labels>
+               <label locale="en">Actualizar Comunicacion BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18419903678061">
+            <labels>
+               <label locale="en">Actualizar Comunicacion DB</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18419958304492">
+            <labels>
+               <label locale="en">Inicializar</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18419967414090">
+            <labels>
+               <label locale="en">Actualizar Comunicacion BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18437769935619">
+            <labels>
+               <label locale="en">Actualizar Comunicacion BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18437836188433">
+            <labels>
+               <label locale="en">Actualizar Comunicacion BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18730881354691">
+            <labels>
+               <label locale="en">check-in Documento Principal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18730883113625">
+            <labels>
+               <label locale="en">check-in Archivo Adjunto</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18851409626122">
+            <labels>
+               <label locale="en">Logger</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18860277184331">
+            <labels>
+               <label locale="en">Actualizar Comunicacion BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18860346565649">
+            <labels>
+               <label locale="en">Actualizar Comunicación BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18873339988950">
+            <labels>
+               <label locale="en">Build Objeto Comunicacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18873502343375">
+            <labels>
+               <label locale="en">Registrar Anexo - T2</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18873514840872">
+            <labels>
+               <label locale="en">Iniciar Lista Anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1887815335201">
+            <labels>
+               <label locale="en">Actualizar Comunicacion Con Anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18881765938219">
+            <labels>
+               <label locale="en">Actualizar Estado</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT18881790705431">
+            <labels>
+               <label locale="en">Actualizar Estado</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19344902589269">
+            <labels>
+               <label locale="en">Build Comunicacion Request</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19511041752060">
+            <labels>
+               <label locale="en">Init Fecha Notificacion Vencimiento</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19520094839951">
+            <labels>
+               <label locale="en">Actualizar Fecha Notif. Vencimiento</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19544942121712">
+            <labels>
+               <label locale="en">Validar Expediente Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19544953366179">
+            <labels>
+               <label locale="en">Buscar Admin Comunicaciones</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT1954496146238">
+            <labels>
+               <label locale="en">Notificar Admin Comunicaciones</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19579004126614">
+            <labels>
+               <label locale="en">Consultar Estado Com Entrada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19579065523335">
+            <labels>
+               <label locale="en">Notificar</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT19701099450283">
+            <labels>
+               <label locale="en">Notificar Interesado Web</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20515040080992">
+            <labels>
+               <label locale="en">Excepcion General</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20515079332537">
+            <labels>
+               <label locale="en">Manejar Excepcion General</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20515101818351">
+            <labels>
+               <label locale="en">Regresar</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20570965147888">
+            <labels>
+               <label locale="en">Notificar Error a Usuario</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT20570999785260">
+            <labels>
+               <label locale="en">Notificar Excepcion a Usuario</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT2057101173248">
+            <labels>
+               <label locale="en">Notificar Error Corregido</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT20515040743479">
+            <labels>
+               <label locale="en">Inicio</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT20515040743544">
+            <labels>
+               <label locale="en">Volver</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW20515090413387">
+            <labels>
+               <label locale="en">Excepcion Controlada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf20515040743523"/>
+         <topicDocumentation name="sf20515087962128"/>
+         <topicDocumentation name="sf20515091453293"/>
+         <topicDocumentation name="sf20515115755653"/>
+         <topicDocumentation name="sf20515118564884"/>
+         <topicDocumentation name="sf20570966067266"/>
+         <topicDocumentation name="sf20571001464020"/>
+         <topicDocumentation name="sf20571012520537"/>
+         <topicDocumentation name="ACT21030939442888">
+            <labels>
+               <label locale="en">Actualizar comunicacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en">InstanceId</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT21102503177975">
+            <labels>
+               <label locale="en">Calcular tiempo respuesta</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT21108277820958">
+            <labels>
+               <label locale="en">Calcular fecha vencimiento</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT28601515708720">
+            <labels>
+               <label locale="en">Actualizar Comunicacion DB (Aproba Cierre)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT2860154048507">
+            <labels>
+               <label locale="en">Actualiza BD (Asignada)</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT3051466288093">
+            <labels>
+               <label locale="en">Preparacion Email</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT33126515618360">
+            <labels>
+               <label locale="en">Actualizar Comunicacion BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT35026802869849">
+            <labels>
+               <label locale="en">Construir Lista Anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT37371318296989">
+            <labels>
+               <label locale="en">Categorizar comunicación</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT38515801881619">
+            <labels>
+               <label locale="en">Actualizar Comunicación BD</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT38931595340623">
+            <labels>
+               <label locale="en">Firmar Documentos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40740655849269">
+            <labels>
+               <label locale="en">CheckIn Doc Ppal Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT4074102448873">
+            <labels>
+               <label locale="en">Checkin Archivo Adjunto Minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT40828104892636">
+            <labels>
+               <label locale="en">Limpiar lista de anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT42573125274545">
+            <labels>
+               <label locale="en">Generar Doc Principal</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT42584361999632">
+            <labels>
+               <label locale="en">Actualizar Comunicacion con Anexos</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT42584452601924">
+            <labels>
+               <label locale="en">Agregar Doc. Principal - T1</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT17642311332483">
+            <labels>
+               <label locale="en">Start Email</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT17659619780424">
+            <labels>
+               <label locale="en">Start Web-Form</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT17780696800622">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT18024844804662">
+            <labels>
+               <label locale="en">Crear Comunicacion Salida Electronica</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT18419398533915">
+            <labels>
+               <label locale="en">Crear Comunicaciion Salida Fisica</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT19579057914560">
+            <labels>
+               <label locale="en">Delay para preguntar Cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT40082914674176">
+            <labels>
+               <label locale="en">24 horas</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT40082911816415">
+            <labels>
+               <label locale="en">Jefe no encontrado</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW17780240252390">
+            <labels>
+               <label locale="en">¿Requiere gestión compartida?</label>
+            </labels>
+            <descriptions>
+               <description locale="en">En el flujo de pantallas se controla que la gestión compartida ocurra sólo en el caso de que se requiere una respuesta.</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW17780471092539">
+            <labels>
+               <label locale="en">¿La comunicación fué reasignada?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW17780578553715">
+            <labels>
+               <label locale="en">¿Fué aprobado el cierre?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW18730895903315">
+            <labels>
+               <label locale="en">¿incluye adjunto?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW18852213731977">
+            <labels>
+               <label locale="en">¿Requiere respuesta?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW18860305833045">
+            <labels>
+               <label locale="en">¿Requiere respuesta?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW19544937717381">
+            <labels>
+               <label locale="en">¿Comunicación con Expediente Minero?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW19544949729214">
+            <labels>
+               <label locale="en">¿Exp Minero Existe en el SGD?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW18419351039484">
+            <labels>
+               <label locale="en">¿Medio de respuesta?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW19579042273875">
+            <labels>
+               <label locale="en">¿Comunicación de Entrada Cerrada?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW19594587232727">
+            <labels>
+               <label locale="en">¿Comunicación Vencida?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW29724208103490">
+            <labels>
+               <label locale="en">ValidacionAnaMineria</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW3054422217539">
+            <labels>
+               <label locale="en">Otros?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW32269756106482">
+            <labels>
+               <label locale="en">Reasignado?</label>
+            </labels>
+            <descriptions>
+               <description locale="en">El usuario reasigna al secretario para reasignar a otra gerencia</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW38043130449863">
+            <labels>
+               <label locale="en">Placa Vacia?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW39250368567643">
+            <labels>
+               <label locale="en">status Ok?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW40740641324215">
+            <labels>
+               <label locale="en">¿Es Titulo Minero?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW40740755925167">
+            <labels>
+               <label locale="en">¿Es Titulo Minero 2?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW49085738739458">
+            <labels>
+               <label locale="en">Cierre Automatico?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW49086725510339">
+            <labels>
+               <label locale="en">¿Cierre aprobado es automatico?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49086775471597">
+            <labels>
+               <label locale="en">Preparar comunicacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49101906954635">
+            <labels>
+               <label locale="en">Generar radicado de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49111323529595">
+            <labels>
+               <label locale="en">Validar y guardar radicado de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49111369525057">
+            <labels>
+               <label locale="en">Crear comunicacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134413910683">
+            <labels>
+               <label locale="en">Validar creacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134442186629">
+            <labels>
+               <label locale="en">Asociar destinatario de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134513649892">
+            <labels>
+               <label locale="en">Validar destinatario de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134582325325">
+            <labels>
+               <label locale="en">Generar documento de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf17642311332565"/>
+         <topicDocumentation name="sf17642311332626"/>
+         <topicDocumentation name="sf17659579340926"/>
+         <topicDocumentation name="sf17780571682848"/>
+         <topicDocumentation name="sf17780580371468"/>
+         <topicDocumentation name="sf17780581512730"/>
+         <topicDocumentation name="sf1778058538847">
+            <labels>
+               <label locale="en">Sí</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf17780604604026"/>
+         <topicDocumentation name="sf17780654512510"/>
+         <topicDocumentation name="sf17849176564264"/>
+         <topicDocumentation name="sf17955519984596"/>
+         <topicDocumentation name="sf18024847836971"/>
+         <topicDocumentation name="sf1803308301924"/>
+         <topicDocumentation name="sf18033463801922"/>
+         <topicDocumentation name="sf18058647261793"/>
+         <topicDocumentation name="sf18059748316029"/>
+         <topicDocumentation name="sf18065646012823"/>
+         <topicDocumentation name="sf18083204859025"/>
+         <topicDocumentation name="sf18195616607979"/>
+         <topicDocumentation name="sf1831017739585"/>
+         <topicDocumentation name="sf18310187219267"/>
+         <topicDocumentation name="sf18419400060313"/>
+         <topicDocumentation name="sf18419888099438"/>
+         <topicDocumentation name="sf18419905021759"/>
+         <topicDocumentation name="sf18419968756765"/>
+         <topicDocumentation name="sf18437838351814"/>
+         <topicDocumentation name="sf18730894732019"/>
+         <topicDocumentation name="sf18730902794931"/>
+         <topicDocumentation name="sf18730904399491"/>
+         <topicDocumentation name="sf18852150191735"/>
+         <topicDocumentation name="sf18852244195536"/>
+         <topicDocumentation name="sf18860147977676"/>
+         <topicDocumentation name="sf18860206687050">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf18860223354315"/>
+         <topicDocumentation name="sf18860239069924"/>
+         <topicDocumentation name="sf18860278308189"/>
+         <topicDocumentation name="sf18860307453574"/>
+         <topicDocumentation name="sf18860327619041"/>
+         <topicDocumentation name="sf18860328659716"/>
+         <topicDocumentation name="sf18860347788566"/>
+         <topicDocumentation name="sf18860361440741"/>
+         <topicDocumentation name="sf18860363050049"/>
+         <topicDocumentation name="sf1886036437819"/>
+         <topicDocumentation name="sf18873341123218"/>
+         <topicDocumentation name="sf18873503081666"/>
+         <topicDocumentation name="sf18873515661483"/>
+         <topicDocumentation name="sf1887818225882"/>
+         <topicDocumentation name="sf1888176694015"/>
+         <topicDocumentation name="sf18881792538921"/>
+         <topicDocumentation name="sf19344905783925"/>
+         <topicDocumentation name="sf19511053391153"/>
+         <topicDocumentation name="sf19520096440676"/>
+         <topicDocumentation name="sf19544939710664"/>
+         <topicDocumentation name="sf19544948070213"/>
+         <topicDocumentation name="sf19544951358563"/>
+         <topicDocumentation name="sf19544959513154"/>
+         <topicDocumentation name="sf19544965386139"/>
+         <topicDocumentation name="sf19544988575692"/>
+         <topicDocumentation name="sf19544997567517"/>
+         <topicDocumentation name="sf18419356071229"/>
+         <topicDocumentation name="sf18419353806376"/>
+         <topicDocumentation name="sf19579037211310"/>
+         <topicDocumentation name="sf19579043561325"/>
+         <topicDocumentation name="sf19579047528491"/>
+         <topicDocumentation name="sf19579062900765"/>
+         <topicDocumentation name="sf19579068372268"/>
+         <topicDocumentation name="sf19594588874121"/>
+         <topicDocumentation name="sf19594602306994"/>
+         <topicDocumentation name="sf21030950688227"/>
+         <topicDocumentation name="sf21102505724137"/>
+         <topicDocumentation name="sf21102506169361"/>
+         <topicDocumentation name="sf21108281259119"/>
+         <topicDocumentation name="sf28601525459521"/>
+         <topicDocumentation name="sf28601550164688"/>
+         <topicDocumentation name="sf29724361158235"/>
+         <topicDocumentation name="sf29724384667525"/>
+         <topicDocumentation name="sf30140086957859"/>
+         <topicDocumentation name="sf19701101466571"/>
+         <topicDocumentation name="sf30514664620160"/>
+         <topicDocumentation name="sf3054422342762"/>
+         <topicDocumentation name="sf30544224887369"/>
+         <topicDocumentation name="sf32269762131348"/>
+         <topicDocumentation name="sf32269763361662"/>
+         <topicDocumentation name="sf33126518061852"/>
+         <topicDocumentation name="sf35026804256940"/>
+         <topicDocumentation name="sf37371320519385"/>
+         <topicDocumentation name="sf38043131283729"/>
+         <topicDocumentation name="sf38043136511592"/>
+         <topicDocumentation name="sf38515803021175"/>
+         <topicDocumentation name="sf38931598555621"/>
+         <topicDocumentation name="sf39250369828490">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf39250372414166">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf40082917186661"/>
+         <topicDocumentation name="sf40082917496653"/>
+         <topicDocumentation name="sf40740650264690"/>
+         <topicDocumentation name="sf40740658548710"/>
+         <topicDocumentation name="sf40740662865211"/>
+         <topicDocumentation name="sf40741025600682"/>
+         <topicDocumentation name="sf40741027888131"/>
+         <topicDocumentation name="sf40741028996012"/>
+         <topicDocumentation name="sf40828112842893"/>
+         <topicDocumentation name="sf42512243941992"/>
+         <topicDocumentation name="sf42512244324818"/>
+         <topicDocumentation name="sf42573126601127"/>
+         <topicDocumentation name="sf42584370892854"/>
+         <topicDocumentation name="sf42584454306617"/>
+         <topicDocumentation name="sf49085742698268">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49086726841252">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49086776913861">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49087156299216">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49101909025818"/>
+         <topicDocumentation name="sf49111325066180"/>
+         <topicDocumentation name="sf49111370789990"/>
+         <topicDocumentation name="sf49134416557428"/>
+         <topicDocumentation name="sf49134450535857"/>
+         <topicDocumentation name="sf49134515619193"/>
+         <topicDocumentation name="sf49134587041092"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

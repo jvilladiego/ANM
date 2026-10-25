@@ -15,6 +15,12 @@ import co.gov.anm.sgd.service.ExpedienteMinero;
 import co.gov.anm.sgd.service.WccResponse;
 import co.gov.anm.sgd.util.SGDWebServiceLocator;
 
+
+import javax.faces.event.AbortProcessingException;
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
+
 import java.math.BigDecimal;
 
 import java.util.ArrayList;
@@ -39,6 +45,12 @@ import oracle.bpel.services.workflow.worklist.adf.DocMgmtBean;
 import oracle.bpel.services.workflow.worklist.adf.InvokeActionBean;
 
 import org.apache.log4j.Logger;
+
+import co.gov.anm.sgd.service.Comunicaciones;
+import co.gov.anm.sgd.service.ProcesoComunicacionResponse;
+import co.gov.anm.sgd.service.AnexosRadicadoResponse;
+import co.gov.anm.sgd.service.AnexoRadicado;
+import javax.xml.ws.soap.SOAPFaultException;
 
 
 @ManagedBean(name = "RevisarComunicacionJSFBean")
@@ -217,6 +229,55 @@ public class RevisarComunicacionJSFBean extends CommonJSFBean {
     }
 
     public void validarFormRevisarComunicacion(ActionEvent action) {
+        
+        // REQ01: respuesta previamente radicada.
+        if (isContextoCrearRespuesta() &&
+            Boolean.TRUE.equals(getExisteRespuestaRadicada())) {
+
+            try {
+                String radicado = validarRespuestaExistenteEnSGD();
+
+                BindingContainer bindings = getBindingContainer();
+                DCIteratorBinding payload =
+                    (DCIteratorBinding) bindings.get("payloadIterator");
+
+                if (payload == null || payload.getCurrentRow() == null) {
+                    throw new IllegalStateException(
+                        "No fue posible obtener el payload de la tarea.");
+                }
+
+                payload.getCurrentRow().setAttribute(
+                    "existeRespuestaRadicada", Boolean.TRUE);
+                payload.getCurrentRow().setAttribute(
+                    "nroRadicadoRespuestaExistente", radicado);
+
+                InvokeActionBean invokeActionBean =
+                    (InvokeActionBean) FacesContext.getCurrentInstance()
+                        .getApplication().getELResolver().getValue(
+                            FacesContext.getCurrentInstance().getELContext(),
+                            null, "invokeActionBean");
+
+                if (invokeActionBean == null) {
+                    throw new IllegalStateException(
+                        "No fue posible preparar el envío de la tarea.");
+                }
+
+                invokeActionBean.setOperation(action);
+                return;
+
+            } catch (IllegalArgumentException e) {
+                mostrarMensaje(FacesMessage.SEVERITY_WARN, e.getMessage());
+                throw new AbortProcessingException(e);
+
+            } catch (Exception e) {
+                logger.error("Error validando la respuesta existente", e);
+                mostrarMensaje(
+                    FacesMessage.SEVERITY_ERROR,
+                    "No fue posible consultar o preparar la respuesta existente. "
+                    + "Intente nuevamente.");
+                throw new AbortProcessingException(e);
+            }
+        }
         logger.info("BEGIN | validarFormRevisarComunicacion()");
         try {
             //DocMgmtBean docMngr = (DocMgmtBean) super.getElObjectFromBinding("#{pageFlowScope.docMgmtBean}");
@@ -730,4 +791,189 @@ public class RevisarComunicacionJSFBean extends CommonJSFBean {
     public boolean isRenderSubserie() {
         return this.subseriesSet != null && !subseries.isEmpty();
     }
+    
+    // REQ03 - Anular comunicación
+    public void anularComunicacion(ActionEvent evt) {
+        try {
+            
+            if (!isAnulacionPermitida()) {
+                throw new IllegalStateException(
+                    "La anulación solo está disponible en Revisar Comunicación.");
+            }
+            BindingContainer bindings = getBindingContainer();
+
+            DCIteratorBinding adjuntos =
+                (DCIteratorBinding) bindings.get("attachmentIterator");
+            OperationBinding eliminar =
+                bindings.getOperationBinding("Delete2");
+            OperationBinding guardar =
+                bindings.getOperationBinding("update");
+            OperationBinding anular =
+                bindings.getOperationBinding("ANULAR");
+
+            if (adjuntos == null || eliminar == null ||
+                guardar == null || anular == null || !anular.isOperationEnabled()) {
+                throw new IllegalStateException(
+                    "La anulación no está disponible o faltan sus bindings.");
+            }
+
+            InvokeActionBean invokeActionBean =
+                (InvokeActionBean) FacesContext.getCurrentInstance()
+                    .getApplication().getELResolver().getValue(
+                        FacesContext.getCurrentInstance().getELContext(),
+                        null, "invokeActionBean");
+
+            if (invokeActionBean == null) {
+                throw new IllegalStateException(
+                    "No fue posible preparar la operación de anulación.");
+            }
+
+            while (adjuntos.getEstimatedRowCount() > 0) {
+                long cantidadAnterior = adjuntos.getEstimatedRowCount();
+                adjuntos.setCurrentRowIndexInRange(0);
+                eliminar.execute();
+
+                if (!eliminar.getErrors().isEmpty() ||
+                    adjuntos.getEstimatedRowCount() >= cantidadAnterior) {
+                    throw new IllegalStateException(
+                        "No fue posible eliminar todos los archivos asociados.");
+                }
+            }
+
+            guardar.execute();
+
+            if (!guardar.getErrors().isEmpty()) {
+                throw new IllegalStateException(
+                    "No fue posible guardar la eliminación de los archivos.");
+            }
+
+            // La acción del botón ejecutará ANULAR después de este listener.
+            invokeActionBean.setOperation(evt);
+
+        } catch (Exception e) {
+            logger.error("Error anulando la comunicación", e);
+            FacesContext.getCurrentInstance().addMessage(
+                null,
+                new FacesMessage(
+                    FacesMessage.SEVERITY_ERROR,
+                    "No fue posible anular la comunicación.",
+                    "Revise los archivos asociados e intente nuevamente."));
+            throw new AbortProcessingException(e);
+        }
+    }
+    
+    public boolean isAnulacionPermitida() {
+        Object titulo =
+            getElObjectFromBinding("#{bindings.titulo.inputValue}");
+
+        return titulo != null &&
+               "Revisar Comunicación".equals(titulo.toString().trim());
+    }
+    
+    public boolean isContextoCrearRespuesta() {
+        Object titulo =
+            getElObjectFromBinding("#{bindings.titulo.inputValue}");
+
+        return titulo != null &&
+               "Crear Respuesta a Comunicación".equals(titulo.toString().trim());
+    }
+
+    public Boolean getExisteRespuestaRadicada() {
+        return Boolean.TRUE.equals(
+            getElObjectFromBinding(
+                "#{bindings.existeRespuestaRadicada.inputValue}"));
+    }
+
+    public void setExisteRespuestaRadicada(Boolean valor) {
+        setElObjectIntoBinding(
+            "#{bindings.existeRespuestaRadicada.inputValue}",
+            Boolean.TRUE.equals(valor));
+    }
+
+    public void cambiarExisteRespuestaRadicada(ValueChangeEvent evt) {
+        setExisteRespuestaRadicada(Boolean.TRUE.equals(evt.getNewValue()));
+    }
+    
+    
+    private String obtenerRadicadoRespuestaExistenteValidado() {
+        Object valor = getElObjectFromBinding(
+            "#{bindings.nroRadicadoRespuestaExistente.inputValue}");
+
+        String radicado = valor == null ? "" : valor.toString().trim();
+
+        if (radicado.isEmpty()) {
+            throw new IllegalArgumentException(
+                "Debe ingresar el número de radicado de la respuesta existente.");
+        }
+
+        if (!radicado.matches("[0-9]+")) {
+            throw new IllegalArgumentException(
+                "El número de radicado debe contener únicamente números.");
+        }
+
+        return radicado;
+    }
+    
+    private String validarRespuestaExistenteEnSGD() throws Exception {
+        String radicado = obtenerRadicadoRespuestaExistenteValidado();
+
+        Comunicaciones port =
+            new SGDWebServiceLocator().getComunicacionesProxy();
+
+        ProcesoComunicacionResponse respuesta;
+
+        try {
+            respuesta = port.consultarComunicacion(radicado);
+        } catch (SOAPFaultException e) {
+            String detalle = e.getFault() == null
+                ? e.getMessage()
+                : e.getFault().getFaultString();
+
+            if (detalle != null &&
+                detalle.toLowerCase(java.util.Locale.ROOT)
+                       .contains("no existe comunicacion")) {
+                throw new IllegalArgumentException(
+                    "El número de radicado ingresado no existe.", e);
+            }
+
+            throw e;
+        }
+
+        if (respuesta == null || respuesta.getComunicacion() == null) {
+            throw new IllegalArgumentException(
+                "El número de radicado ingresado no existe.");
+        }
+
+        String tipo =
+            respuesta.getComunicacion().getTipoComunicacion();
+
+        if (tipo == null || !"Salida".equalsIgnoreCase(tipo.trim())) {
+            throw new IllegalArgumentException(
+                "El radicado debe corresponder a una comunicación de salida.");
+        }
+
+        AnexosRadicadoResponse anexos =
+            port.consultarAnexosRadicado(radicado);
+
+        boolean tieneDocumento = false;
+
+        if (anexos != null && anexos.getAnexosList() != null) {
+            for (AnexoRadicado anexo : anexos.getAnexosList()) {
+                if (anexo != null &&
+                    anexo.getUrl() != null &&
+                    !anexo.getUrl().trim().isEmpty()) {
+                    tieneDocumento = true;
+                    break;
+                }
+            }
+        }
+
+        if (!tieneDocumento) {
+            throw new IllegalArgumentException(
+                "El radicado no tiene un documento digitalizado con enlace.");
+        }
+
+        return radicado;
+    }
 }
+
