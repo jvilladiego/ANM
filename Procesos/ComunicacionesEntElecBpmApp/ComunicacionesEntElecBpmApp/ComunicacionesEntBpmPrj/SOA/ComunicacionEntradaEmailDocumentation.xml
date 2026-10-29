@@ -723,6 +723,102 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="ACT49086775471597">
+            <labels>
+               <label locale="en">Preparar comunicacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49101906954635">
+            <labels>
+               <label locale="en">Generar radicado de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49111323529595">
+            <labels>
+               <label locale="en">Validar y guardar radicado de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49111369525057">
+            <labels>
+               <label locale="en">Crear comunicacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134413910683">
+            <labels>
+               <label locale="en">Validar creacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134442186629">
+            <labels>
+               <label locale="en">Asociar destinatario de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134513649892">
+            <labels>
+               <label locale="en">Validar destinatario de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49134582325325">
+            <labels>
+               <label locale="en">Generar documento de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49145051396174">
+            <labels>
+               <label locale="en">Validar documento de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49145243451017">
+            <labels>
+               <label locale="en">Publicar documento de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49145374263358">
+            <labels>
+               <label locale="en">Calcular carpeta de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49145475927097">
+            <labels>
+               <label locale="en">Validar publicacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="EVT17642311332483">
             <labels>
                <label locale="en">Start Email</label>
@@ -947,65 +1043,49 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49086775471597">
+         <topicDocumentation name="GTW4914557372003">
             <labels>
-               <label locale="en">Preparar comunicacion de cierre</label>
+               <label locale="en">¿Cierre de titulo minero?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49101906954635">
+         <topicDocumentation name="ACT49145580755959">
             <labels>
-               <label locale="en">Generar radicado de cierre</label>
+               <label locale="en">Publicar cierre en expediente minero</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49111323529595">
+         <topicDocumentation name="ACT49146300706258">
             <labels>
-               <label locale="en">Validar y guardar radicado de cierre</label>
+               <label locale="en">Cerrar comunicacion de salida</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49111369525057">
+         <topicDocumentation name="ACT49146333517892">
             <labels>
-               <label locale="en">Crear comunicacion de cierre</label>
+               <label locale="en">Validar cierre de salida</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49134413910683">
+         <topicDocumentation name="ACT49146812437179">
             <labels>
-               <label locale="en">Validar creacion de cierre</label>
+               <label locale="en">Cerrar comunicacion de entrada</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49134442186629">
+         <topicDocumentation name="ACT49146830835032">
             <labels>
-               <label locale="en">Asociar destinatario de cierre</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT49134513649892">
-            <labels>
-               <label locale="en">Validar destinatario de cierre</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT49134582325325">
-            <labels>
-               <label locale="en">Generar documento de cierre</label>
+               <label locale="en">Validar cierre de entrada</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -1184,6 +1264,25 @@
          <topicDocumentation name="sf49134450535857"/>
          <topicDocumentation name="sf49134515619193"/>
          <topicDocumentation name="sf49134587041092"/>
+         <topicDocumentation name="sf4914505353565"/>
+         <topicDocumentation name="sf49145247184238"/>
+         <topicDocumentation name="sf4914538537822"/>
+         <topicDocumentation name="sf49145478291179"/>
+         <topicDocumentation name="sf49145579166568"/>
+         <topicDocumentation name="sf49145581714111">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49145606228455"/>
+         <topicDocumentation name="sf49146303893349"/>
+         <topicDocumentation name="sf49146334585630"/>
+         <topicDocumentation name="sf49146828994310"/>
+         <topicDocumentation name="sf49146833376631"/>
+         <topicDocumentation name="sf49146851149521"/>
       </topicDocumentations>
    </component>
 </processDocumentation>

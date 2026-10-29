@@ -20,8 +20,10 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless(name = "WCCSessionEJB1",
-           mappedName = "ComunicacionesEntEmailBpmApp-ComunicacionesEntElecBpmViewPrj-WCCSessionEJB")
+@Stateless(
+    name = "WCCSessionEJB_V4",
+    mappedName = "ComunicacionesEntEmailBpmApp-ComunicacionesEntElecBpmViewPrj-WCCSessionEJB_V4"
+)
 public class WCCSessionEJBBean9 implements WCCSessionEJB9, WCCSessionEJBLocal9 {
     @Resource
     SessionContext sessionContext;

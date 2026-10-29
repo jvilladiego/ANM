@@ -32,8 +32,10 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless(name = "comunicacionesEntSessionEJB",
-           mappedName = "ComunicacionesEntEmailBpmApp-ComunicacionesEntElecBpmViewPrj-comunicacionesEntSessionEJB")
+@Stateless(
+    name = "comunicacionesEntSessionEJB_V4",
+    mappedName = "ComunicacionesEntEmailBpmApp-ComunicacionesEntElecBpmViewPrj-comunicacionesEntSessionEJB_V4"
+)
 public class ComunicacionesEntSessionEJBBean9 implements ComunicacionesEntSessionEJB9, ComunicacionesEntSessionEJBLocal9 {
     @Resource
     SessionContext sessionContext;

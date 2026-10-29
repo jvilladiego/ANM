@@ -501,14 +501,15 @@
                                                 <af:selectOneRadio id="socTipoCierre" label="Tipo de cierre"
                                                                    value="#{bindings.tipoCierreDO.inputValue}"
                                                                    required="true" autoSubmit="true" layout="vertical">
-                                                    <f:selectItem itemLabel="Respuesta manual" itemValue="RESPUESTA"/>
-                                                    <f:selectItem itemLabel="Cierre autom&#225;tico"
-                                                                  itemValue="CIERRE_AUTOMATICO"/>
+                                                    <f:selectItem itemLabel="Generar Respuesta (Utilizando plantilla .odt)"
+                                                                  itemValue="RESPUESTA" id="si14"/>
+                                                    <f:selectItem itemLabel="Generar Cierre Autom&#225;tico"
+                                                                  itemValue="CIERRE_AUTOMATICO" id="si26"/>
                                                 </af:selectOneRadio>
                                                 <af:panelGroupLayout id="pglJustificacionCierre" layout="vertical"
                                                                      partialTriggers="socTipoCierre">
                                                     <af:inputText id="itJustificacionCierre"
-                                                                  label="Justificaci&#243;n de cierre autom&#225;tico"
+                                                                  label="Justificaci&#243;n de Cierre Autom&#225;tico"
                                                                   value="#{bindings.justificacionCierreDO.inputValue}"
                                                                   rendered="#{bindings.tipoCierreDO.inputValue eq 'CIERRE_AUTOMATICO'}"
                                                                   required="true" rows="5" columns="70"
@@ -519,55 +520,14 @@
                                             </af:panelFormLayout>
                                         </af:panelBox>
                                     </af:panelGroupLayout>
-                                    <af:panelBox text="Adjuntos" id="pb2">
-                                        <wlc:manageDocuments docBean="#{pageFlowScope.docMgmtBean}" id="manageDocs"
-                                                             rendered="#{!actionAvailable.inNotificationClient}"/>
-                                    </af:panelBox>
-                                    <af:panelBox text="Gesti&#243;n Compartida" id="pb5">
-                                        <af:panelGroupLayout layout="horizontal" id="pgl10">
-                                            <af:selectOneChoice label="&#191;Requiere gesti&#243;n compartida?"
-                                                                id="socReqGestion"
-                                                                value="#{bindings.requiereGestionCompartidaDO.inputValue}"
-                                                                partialTriggers="socReqResp"
-                                                                disabled="#{bindings.requiereRespuestaDO.inputValue ne 'S'}"
-                                                                required="true" autoSubmit="true">
-                                                <af:selectItem label="SI" value="S" id="si17"/>
-                                                <af:selectItem label="NO" value="N" id="si18"/>
-                                            </af:selectOneChoice>
-                                            <af:spacer width="20" height="10" id="s21"/>
-                                            <af:selectOneChoice label="Seleccione una dependencia" id="soc4"
-                                                                partialTriggers="socReqGestion"
-                                                                disabled="#{bindings.requiereGestionCompartidaDO.inputValue ne 'S' }"
-                                                                autoSubmit="true"
-                                                                showRequired="#{bindings.requiereGestionCompartidaDO.inputValue eq 'S' }"
-                                                                valueChangeListener="#{CrearComunicacionEntElecHT_jsfbean.writeDependenciaSelected}">
-                                                <f:selectItems value="#{CrearComunicacionEntElecHT_jsfbean.listaDependencias}"
-                                                               id="si6"/>
-                                            </af:selectOneChoice>
-                                            <!--<af:inputText value="#{bindings.codDepGestionCompartida.inputValue}"
-                                                          label="#{bindings.codDepGestionCompartida.hints.label}"
-                                                          required="#{bindings.codDepGestionCompartida.hints.mandatory}"
-                                                          columns="#{bindings.codDepGestionCompartida.hints.displayWidth}"
-                                                          maximumLength="#{bindings.codDepGestionCompartida.hints.precision}"
-                                                          shortDesc="#{bindings.codDepGestionCompartida.hints.tooltip}"
-                                                          id="it6">
-                                                <f:validator binding="#{bindings.codDepGestionCompartida.validator}"/>
-                                                <af:convertNumber groupingUsed="false"
-                                                                  pattern="#{bindings.codDepGestionCompartida.format}"/>
-                                            </af:inputText>-->
-                                        </af:panelGroupLayout>
-                                        <!---
-                                        <af:inputText value="#{bindings.requiereGestionCompartidaDO.inputValue}"
-                                                      label="#{bindings.requiereGestionCompartidaDO.hints.label}"
-                                                      required="#{bindings.requiereGestionCompartidaDO.hints.mandatory}"
-                                                      columns="#{bindings.requiereGestionCompartidaDO.hints.displayWidth}"
-                                                      maximumLength="#{bindings.requiereGestionCompartidaDO.hints.precision}"
-                                                      shortDesc="#{bindings.requiereGestionCompartidaDO.hints.tooltip}"
-                                                      id="it6">
-                                            <f:validator binding="#{bindings.requiereGestionCompartidaDO.validator}"/>
-                                        </af:inputText>
-                                   -->
-                                    </af:panelBox>
+                                    <af:panelGroupLayout id="pglAdjuntosREQ04" layout="vertical"
+                                                         partialTriggers="socTipoCierre socReqResp">
+                                        <af:panelBox text="Adjuntos" id="pb2"
+                                                     rendered="#{not (bindings.requiereRespuestaDO.inputValue eq 'S' and bindings.tipoCierreDO.inputValue eq 'CIERRE_AUTOMATICO')}">
+                                            <wlc:manageDocuments docBean="#{pageFlowScope.docMgmtBean}" id="manageDocs"
+                                                                 rendered="#{!actionAvailable.inNotificationClient}"/>
+                                        </af:panelBox>
+                                    </af:panelGroupLayout>
                                     <af:panelBox text="Gesti&#243;n Documental" id="pb3">
                                         <af:panelFormLayout id="pnlFormGest1" clientComponent="true"
                                                             partialTriggers="sbc_expminero"

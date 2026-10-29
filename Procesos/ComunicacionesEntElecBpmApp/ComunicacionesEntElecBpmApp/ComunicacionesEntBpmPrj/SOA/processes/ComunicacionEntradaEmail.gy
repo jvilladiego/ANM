@@ -211,6 +211,81 @@ public void methodACT49134513649892()
 }
 
 
+public void methodACT49145051396174()
+{
+	if (respuestaDocumentoCierreDO == null) {
+	    throw new IllegalStateException(
+	        "El servicio no devolvió respuesta de generación");
+	}
+	
+	if (!"SUCCESS".equals(respuestaDocumentoCierreDO.respuesta)) {
+	    throw new IllegalStateException(
+	        "Falló la generación del documento de cierre: " +
+	        respuestaDocumentoCierreDO.trazaError);
+	}
+	
+	if (respuestaDocumentoCierreDO.rutaArchivoFinal == null ||
+	    respuestaDocumentoCierreDO.rutaArchivoFinal.trim().length() == 0) {
+	    throw new IllegalStateException(
+	        "El generador no devolvió la ruta del documento de cierre");
+	}
+}
+
+
+public void methodACT49145475927097()
+{
+	if (respuestaPublicacionCierreDO == null) {
+	    throw new IllegalStateException(
+	        "El servicio no devolvió respuesta de publicación");
+	}
+	
+	if (!"0".equals(respuestaPublicacionCierreDO.statusCode)) {
+	    throw new IllegalStateException(
+	        "Falló la publicación del documento de cierre: " +
+	        respuestaPublicacionCierreDO.statusMessage);
+	}
+	
+	if (respuestaPublicacionCierreDO.statusMessage == null ||
+	    respuestaPublicacionCierreDO.statusMessage.trim().length() == 0) {
+	    throw new IllegalStateException(
+	        "La publicación no devolvió la URL del documento");
+	}
+	
+	urlDocumentoCierreDO =
+	    respuestaPublicacionCierreDO.statusMessage;
+}
+
+
+public void methodACT49146333517892()
+{
+	if (respuestaRegistroDocumentoCier == null) {
+	    throw new IllegalStateException(
+	        "El servicio no devolvió respuesta de registro y cierre de salida");
+	}
+	
+	if (!"0".equals(respuestaRegistroDocumentoCier.statusCode)) {
+	    throw new IllegalStateException(
+	        "Falló el registro del documento y cierre de salida: " +
+	        respuestaRegistroDocumentoCier.statusMessage);
+	}
+}
+
+
+public void methodACT49146830835032()
+{
+	if (respuestaCierreEntradaDO == null) {
+	    throw new IllegalStateException(
+	        "El servicio no devolvió respuesta de cierre de entrada");
+	}
+	
+	if (!"0".equals(respuestaCierreEntradaDO.statusCode)) {
+	    throw new IllegalStateException(
+	        "Falló el cierre de la comunicación de entrada: " +
+	        respuestaCierreEntradaDO.statusMessage);
+	}
+}
+
+
 
 
 public static class ACT18065560518330{

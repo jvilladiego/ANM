@@ -23,6 +23,10 @@
       <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.interface(ComunicacionEntradaEmailPortType)"/>
       <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.endpoint(ComunicacionEntradaEmail.service/ComunicacionEntradaEmailPort)"/>
    </service>
+   <service name="ComunicacionEntradaEmail.service_3" ui:wsdlLocation="WSDLs/ComunicacionEntradaEmail.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.interface(ComunicacionEntradaEmailPortType)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.endpoint(ComunicacionEntradaEmail.service/ComunicacionEntradaEmailPort)"/>
+   </service>
    <service name="ComunicacionEntradaEmail.service" ui:wsdlLocation="WSDLs/ComunicacionEntradaEmail.wsdl">
       <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.interface(ComunicacionEntradaEmailPortType)"/>
       <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail#wsdl.endpoint(ComunicacionEntradaEmail.service/ComunicacionEntradaEmailPort)"/>

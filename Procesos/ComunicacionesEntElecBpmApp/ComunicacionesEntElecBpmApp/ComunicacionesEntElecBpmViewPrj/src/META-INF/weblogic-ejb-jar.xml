@@ -3,7 +3,7 @@
                   xsi:schemaLocation="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar http://xmlns.oracle.com/weblogic/weblogic-ejb-jar/1.5/weblogic-ejb-jar.xsd"
                   xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar">
   <weblogic-enterprise-bean>
-    <ejb-name>comunicacionesEntSessionEJB</ejb-name>
+    <ejb-name>comunicacionesEntSessionEJB_V4</ejb-name>
     <stateless-session-descriptor/>
   </weblogic-enterprise-bean>
 </weblogic-ejb-jar>
