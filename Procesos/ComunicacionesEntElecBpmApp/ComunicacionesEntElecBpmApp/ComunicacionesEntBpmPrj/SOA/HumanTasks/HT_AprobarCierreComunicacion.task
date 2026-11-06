@@ -7,7 +7,21 @@
                 xmlns:ns10="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoSimpleBO" xmlns:ldap="http://schemas.oracle.com/xpath/extension/ldap" xmlns:ns11="http://service.sgd.anm.gov.co">
    <name>HT_AprobarCierreComunicacion</name>
    <id>${domain_id}_${process_id}_${process_revision}_HT_AprobarCierreComunicacion</id>
-   <title type="STATIC"><value>Aprobar Cierre Comunicación</value></title>
+   <title type="XPATH">
+    <value>concat(
+        'Aprobar Cierre ',
+        substring(
+            'Autom&#225;tico', 1,
+            string-length('Autom&#225;tico') *
+            number(/task:task/task:payload/task:tipoCierreDO = 'CIERRE_AUTOMATICO')
+        ),
+        substring(
+            'Comunicaci&#243;n', 1,
+            string-length('Comunicaci&#243;n') *
+            number(not(/task:task/task:payload/task:tipoCierreDO = 'CIERRE_AUTOMATICO'))
+        )
+    )</value>
+</title>
    <priority>3</priority>
    <hideCreator>false</hideCreator>
    <process processId="" processVersion=""/>
@@ -24,7 +38,7 @@
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1" disabled="false">
             <participant disabled="false" name="default.DefaultPerformer">
-               <resource type="XPATH" identityType="user">/task:task/task:payload/ns10:UsuarioBO/ns10:idUsuario</resource>
+               <resource type="XPATH" identityType="user">/task:task/task:payload/ns2:UsuarioBO/ns2:idUsuario</resource>
             </participant>
          </stage>
       </participants>
@@ -116,7 +130,7 @@
             <description>Fecha vencimiento</description>
          </flexfieldMapping>
          <flexfieldMapping>
-            <xpathExpression>/task:task/task:payload/ns2:ComunicacionBO/ns2:fecRadicacion</xpathExpression>
+            <xpathExpression>/task:task/task:payload/ns0:ComunicacionBO/ns0:fecRadicacion</xpathExpression>
             <attributeLabel>
                <labelName>Fecha de Radicación</labelName>
                <flexfield>ProtectedDateAttribute2</flexfield>

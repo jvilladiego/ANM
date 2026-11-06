@@ -67,6 +67,10 @@
                            external="false"/>
          <messageAttribute name="DocPrincipalBO" attributeType="ELEMENT" type="ns2:DocPrincipalBO" updatable="true"
                            external="false"/>
+         <messageAttribute name="existeRespuestaRadicada" attributeType="SIMPLE_TYPE" type="xsd:boolean"
+                           updatable="true" external="false"/>
+         <messageAttribute name="nroRadicadoRespuestaExistente" attributeType="SIMPLE_TYPE" type="xsd:string"
+                           updatable="true" external="false"/>
       </payload>
       <flexfieldMappings>
          <flexfieldMapping>

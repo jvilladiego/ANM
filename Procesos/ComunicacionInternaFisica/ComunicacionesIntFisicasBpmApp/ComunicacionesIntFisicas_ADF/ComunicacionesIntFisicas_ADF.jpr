@@ -136,6 +136,7 @@
          <string v=".jpx"/>
          <string v=".rpx"/>
          <string v=".bcs"/>
+         <string v=".json"/>
       </list>
       <list n="excludedUrls">
          <string v="fXSLNonDeployedFiles"/>
@@ -425,15 +426,15 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Sgd.webservices.clients2.2.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Commons-io-1.4.jar"/>
+            <value n="id" v="Sgd.webservices.clients.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
             <value n="id" v="Log4j-1.2.16.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-io-1.4.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>
@@ -455,29 +456,29 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../../Jars/Jars/sgd.webservices.clients2.2.jar" jar-entry=""/>
+                  <url path="../libs/sgd.webservices.clients.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Sgd.webservices.clients2.2.jar"/>
-               <value n="id" v="Sgd.webservices.clients2.2.jar"/>
+               <value n="description" v="Sgd.webservices.clients.jar"/>
+               <value n="id" v="Sgd.webservices.clients.jar"/>
                <value n="locked" v="true"/>
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../../Jars/Jars/commons-io-1.4.jar" jar-entry=""/>
-               </list>
-               <value n="deployedByDefault" v="true"/>
-               <value n="description" v="Commons-io-1.4.jar"/>
-               <value n="id" v="Commons-io-1.4.jar"/>
-               <value n="locked" v="true"/>
-            </hash>
-            <hash>
-               <list n="classPath">
-                  <url path="../../../Jars/Jars/log4j-1.2.16.jar" jar-entry=""/>
+                  <url path="../libs/log4j-1.2.16.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Log4j-1.2.16.jar"/>
                <value n="id" v="Log4j-1.2.16.jar"/>
+               <value n="locked" v="true"/>
+            </hash>
+            <hash>
+               <list n="classPath">
+                  <url path="../../../../Comunes/Jars/commons-io-1.4.jar" jar-entry=""/>
+               </list>
+               <value n="deployedByDefault" v="true"/>
+               <value n="description" v="Commons-io-1.4.jar"/>
+               <value n="id" v="Commons-io-1.4.jar"/>
                <value n="locked" v="true"/>
             </hash>
          </list>
@@ -636,15 +637,15 @@
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
-            <value n="id" v="Sgd.webservices.clients2.2.jar"/>
-            <value n="isJDK" v="false"/>
-         </hash>
-         <hash>
-            <value n="id" v="Commons-io-1.4.jar"/>
+            <value n="id" v="Sgd.webservices.clients.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
          <hash>
             <value n="id" v="Log4j-1.2.16.jar"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="Commons-io-1.4.jar"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

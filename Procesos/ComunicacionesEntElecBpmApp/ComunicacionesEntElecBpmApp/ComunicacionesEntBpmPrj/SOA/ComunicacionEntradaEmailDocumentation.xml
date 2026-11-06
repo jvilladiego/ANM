@@ -819,6 +819,38 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="ACT49146300706258">
+            <labels>
+               <label locale="en">Cerrar comunicacion de salida</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49146333517892">
+            <labels>
+               <label locale="en">Validar cierre de salida</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49146812437179">
+            <labels>
+               <label locale="en">Cerrar comunicacion de entrada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49146830835032">
+            <labels>
+               <label locale="en">Validar cierre de entrada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="EVT17642311332483">
             <labels>
                <label locale="en">Start Email</label>
@@ -1043,49 +1075,17 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="GTW4914557372003">
+         <topicDocumentation name="GTW4924076421978">
             <labels>
-               <label locale="en">¿Cierre de titulo minero?</label>
+               <label locale="en"> ¿Es titulo minero?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49145580755959">
+         <topicDocumentation name="ACT49240826143949">
             <labels>
                <label locale="en">Publicar cierre en expediente minero</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT49146300706258">
-            <labels>
-               <label locale="en">Cerrar comunicacion de salida</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT49146333517892">
-            <labels>
-               <label locale="en">Validar cierre de salida</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT49146812437179">
-            <labels>
-               <label locale="en">Cerrar comunicacion de entrada</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="ACT49146830835032">
-            <labels>
-               <label locale="en">Validar cierre de entrada</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -1264,25 +1264,32 @@
          <topicDocumentation name="sf49134450535857"/>
          <topicDocumentation name="sf49134515619193"/>
          <topicDocumentation name="sf49134587041092"/>
-         <topicDocumentation name="sf4914505353565"/>
-         <topicDocumentation name="sf49145247184238"/>
-         <topicDocumentation name="sf4914538537822"/>
          <topicDocumentation name="sf49145478291179"/>
-         <topicDocumentation name="sf49145579166568"/>
-         <topicDocumentation name="sf49145581714111">
-            <labels>
-               <label locale="en">Si</label>
-            </labels>
-            <descriptions>
-               <description locale="en"></description>
-            </descriptions>
-         </topicDocumentation>
-         <topicDocumentation name="sf49145606228455"/>
          <topicDocumentation name="sf49146303893349"/>
          <topicDocumentation name="sf49146334585630"/>
          <topicDocumentation name="sf49146828994310"/>
          <topicDocumentation name="sf49146833376631"/>
          <topicDocumentation name="sf49146851149521"/>
+         <topicDocumentation name="sf4924076178325"/>
+         <topicDocumentation name="sf49240765923458"/>
+         <topicDocumentation name="sf49240770166835">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49240772481538">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf4924077345331"/>
+         <topicDocumentation name="sf49240832695313"/>
       </topicDocumentations>
    </component>
 </processDocumentation>

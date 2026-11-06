@@ -129,4 +129,18 @@ public void methodACT47495168167156()
 }
 
 
+public void methodACT48964639754182()
+{
+	// Limpia el documento principal en el objeto de datos del proceso.
+	// No elimina el historial ni los documentos del repositorio de adjuntos.
+	if (docPrincipal != null) {
+	    docPrincipal.content = ""
+	    docPrincipal.name = ""
+	    docPrincipal.mimetype = ""
+	    docPrincipal.size = 0
+	    docPrincipal.linkDocPrincipal = ""
+	}
+}
+
+
 }

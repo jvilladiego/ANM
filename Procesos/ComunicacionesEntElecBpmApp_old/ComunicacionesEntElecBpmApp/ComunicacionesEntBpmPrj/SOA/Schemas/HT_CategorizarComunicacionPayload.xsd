@@ -1,0 +1,56 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns3="http://service.sgd.anm.gov.co" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" schemaLocation="../businessCatalog/SGDComunicaciones/InteresadoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <import namespace="http://service.sgd.anm.gov.co" schemaLocation="../Schemas/Comunicaciones_schema1.xsd"/>
+   <complexType name="HT_CategorizarComunicacionPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionBO"/>
+         <element name="requiereRespuestaDO" type="xsd:string"/>
+         <element name="requiereGestionCompartidaDO" type="xsd:string"/>
+         <element name="tipoPQRSDO" type="xsd:string"/>
+         <element name="tiempoRespuestaDO" type="xsd:int"/>
+         <element name="fechaRespuestaDO" type="xsd:dateTime"/>
+         <element name="estadoComunicacionDO" type="xsd:string"/>
+         <element name="dependenciaGestionCompDO" type="xsd:string"/>
+         <element name="contenidoComunicacionDO" type="xsd:string"/>
+         <element name="medioRespuestaDO" type="xsd:string"/>
+         <element name="trasladoOtraInstitucionDO" type="xsd:string"/>
+         <element name="accesoNegadoInformacionDO" type="xsd:string"/>
+         <element name="identificacionReservadaDO" type="xsd:string"/>
+         <element ref="ns1:InteresadoBO"/>
+         <element name="nombreOtraInstitucionDO" type="xsd:string"/>
+         <element name="nombrePaisDO" type="xsd:string"/>
+         <element name="nombreCiudadDO" type="xsd:string"/>
+         <element name="nombreDepartamentoDO" type="xsd:string"/>
+         <element name="fechaVencimientoDO" type="xsd:dateTime"/>
+         <element name="jefeAsignadoDO" type="xsd:string"/>
+         <element name="comunicacionReasignadaDO" type="xsd:string"/>
+         <element ref="ns2:UsuarioBO"/>
+         <element name="esPQRSDO" type="xsd:string"/>
+         <element name="isPQRSDO" type="xsd:boolean"/>
+         <element name="codDepGestionCompartidaDO" type="xsd:long"/>
+         <element name="idCorrelationDO" type="xsd:string"/>
+         <element name="idTipoPQRSDO" type="xsd:long"/>
+         <element name="okCheckin" type="xsd:boolean"/>
+         <element name="folderGUIDDO" type="xsd:string"/>
+         <element name="textoWebformPQRSDO" type="xsd:string"/>
+         <element name="urlDocumentoPrincipalDO" type="xsd:string"/>
+         <element name="idTipoIdentificacionDO" type="xsd:int"/>
+         <element name="contenidoDO" type="xsd:string"/>
+         <element name="urlArchivoAdjuntoDO" type="xsd:string"/>
+         <element name="urlArchivoAdjuntoDO0" type="xsd:string"/>
+         <element name="fechaNotificacionVencimiento" type="xsd:dateTime"/>
+         <element name="urlDocTmp" type="xsd:string"/>
+         <element name="comunicacionRequestDO" type="ns3:procesoComunicacionRequest"/>
+         <element name="idCorrelVencimiento" type="xsd:string"/>
+         <element name="statusCodeValidarExpMineroDO" type="xsd:string"/>
+         <element name="resultadoManejoExc" type="xsd:string"/>
+         <element name="appNameDO" type="xsd:string"/>
+         <element name="dependenciaAsignadaDO" type="xsd:int"/>
+         <element name="anexosEmail" type="xsd:string"/>
+         <element name="taskNumber" type="xsd:integer"/>
+      </sequence>
+   </complexType>
+</schema>

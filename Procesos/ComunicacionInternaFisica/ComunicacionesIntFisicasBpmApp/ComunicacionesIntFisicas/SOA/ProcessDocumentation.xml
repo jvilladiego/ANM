@@ -503,6 +503,46 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="ACT48722801731826">
+            <labels>
+               <label locale="en">Consultar respuesta radicada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT48895306274875">
+            <labels>
+               <label locale="en">Consultar comunicación original</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT48895363364288">
+            <labels>
+               <label locale="en">Actualizar original para aprobacion de cierre</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT4889547729501">
+            <labels>
+               <label locale="en">Preparar error actualizando comunicacion original</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT48919302801412">
+            <labels>
+               <label locale="en">NotificationTask</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="EVT18248747364458">
             <labels>
                <label locale="en">Comienzo Automático</label>
@@ -562,6 +602,22 @@
          <topicDocumentation name="EVT20580505583148">
             <labels>
                <label locale="en">Esperar 1 Dia</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT4872309383966">
+            <labels>
+               <label locale="en">Error asociando respuesta existente</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT48894828325650">
+            <labels>
+               <label locale="en">Fin respuesta radicada existente</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -671,6 +727,70 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="GTW48428959854447">
+            <labels>
+               <label locale="en">Re Asignar?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW48453605464133">
+            <labels>
+               <label locale="en">Retornar?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW4872275858514">
+            <labels>
+               <label locale="en">¿Existe respuesta radicada?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW48895413989727">
+            <labels>
+               <label locale="en">¿Actualización original exitosa?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW4896414656994">
+            <labels>
+               <label locale="en">¿Anular desde creacion?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT48964160496893">
+            <labels>
+               <label locale="en">Fin comunicacion anulada</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW48964178470422">
+            <labels>
+               <label locale="en">¿Anular desde actualizacion?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT48964639754182">
+            <labels>
+               <label locale="en">Limpiar datos documentales por anulacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="sf18248952750018"/>
          <topicDocumentation name="sf18249072449434"/>
          <topicDocumentation name="sf18249072966228"/>
@@ -712,7 +832,6 @@
          <topicDocumentation name="sf18335141046286"/>
          <topicDocumentation name="sf18335405589065"/>
          <topicDocumentation name="sf18335492687941"/>
-         <topicDocumentation name="sf18335494409056"/>
          <topicDocumentation name="sf18335494609061"/>
          <topicDocumentation name="sf18507587582632"/>
          <topicDocumentation name="sf18507719347962"/>
@@ -756,6 +875,102 @@
          <topicDocumentation name="sf4745293240323"/>
          <topicDocumentation name="sf47476223935366"/>
          <topicDocumentation name="sf47495169559185"/>
+         <topicDocumentation name="sf48428961638573"/>
+         <topicDocumentation name="sf48428963818673">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48453606458011">
+            <labels>
+               <label locale="en">NO</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48453613670666">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48486164363080"/>
+         <topicDocumentation name="sf48722760035258">
+            <labels>
+               <label locale="en">NO</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48722773542863">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48722847898962"/>
+         <topicDocumentation name="sf48895311613096"/>
+         <topicDocumentation name="sf48895366341720"/>
+         <topicDocumentation name="sf48895416154952">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48895451895279">
+            <labels>
+               <label locale="en">NO</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf4889550154296"/>
+         <topicDocumentation name="sf48919339787882"/>
+         <topicDocumentation name="sf48964148756530">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48964162249714">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48964180235538">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48964183274162">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf48964641284947"/>
       </topicDocumentations>
    </component>
 </processDocumentation>

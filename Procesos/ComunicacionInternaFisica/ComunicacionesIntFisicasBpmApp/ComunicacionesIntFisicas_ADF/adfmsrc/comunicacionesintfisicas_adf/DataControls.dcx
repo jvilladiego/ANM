@@ -75,7 +75,7 @@
                       xmlns="http://xmlns.oracle.com/adfm/datacontrol">
     <Source>
       <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
-                      SchemaLocation="file:/C:/AM2016/Oracle/ANM/ComunicacionesIntFisicasBpmApp/ComunicacionesIntFisicas/SOA/Schemas/AsignarComunicacionHTWorkflowTask.xsd"
+                      SchemaLocation="file:/C:/Jobs/BPM/ANM/Repositorio/Procesos/ComunicacionInternaFisica/ComunicacionesIntFisicasBpmApp/ComunicacionesIntFisicas/SOA/Schemas/AsignarComunicacionHTWorkflowTask.xsd"
                       RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
                       taskLoc="../ComunicacionesIntFisicas/SOA/HumanTasks/AsignarComunicacionHT.task"
                       InitiationTask="false" DocumentStoreConfiguration="false"/>

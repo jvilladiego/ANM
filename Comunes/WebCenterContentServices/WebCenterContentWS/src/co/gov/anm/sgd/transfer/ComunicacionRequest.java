@@ -45,6 +45,7 @@ public class ComunicacionRequest {
     private Long idSubcategoria;
     private String medioRespuesta;
     private String appName;
+    private String tipoCierre;
 
     public void setTipoComunicacion(String tipoComunicacion) {
         this.tipoComunicacion = tipoComunicacion;
@@ -372,6 +373,13 @@ public class ComunicacionRequest {
 
     public String getAppName() {
         return appName;
+    }
+    public String getTipoCierre() {
+        return tipoCierre;
+    }
+
+    public void setTipoCierre(String tipoCierre) {
+        this.tipoCierre = tipoCierre;
     }
 
 }

@@ -756,7 +756,44 @@ public class Document {
         metadataList.put(folderGUID, checkin.getFolderGUID());   
         metadataList.put(tipoRecursoInformacion, "2");
                 
-        wccResponse = documentMngr.checkinNew(metadataList, null);    
+        File file = new File(checkin.getPrimaryFile());
+
+        logger.debug("Archivo primario: " + file.getAbsolutePath());
+        logger.debug("Existe: " + file.exists());
+        logger.debug("Es archivo: " + file.isFile());
+        logger.debug("Se puede leer: " + file.canRead());
+        logger.debug("Tamanio: " + file.length());
+
+        if (!file.exists() || !file.isFile() || !file.canRead() || file.length() <= 0) {
+            logger.error("No se puede cargar el archivo primario: " +
+                         checkin.getPrimaryFile());
+
+            return new WCCResponse(Constants.ERWCC22);
+        }
+
+        String contentType = Files.probeContentType(Paths.get(file.getPath()));
+
+        if (contentType == null || contentType.trim().equals("")) {
+            contentType = "application/pdf";
+        }
+
+        FileTransfer fileTransfer = new FileTransfer();
+        fileTransfer.setContentType(contentType);
+        fileTransfer.setFile(file);
+        fileTransfer.setFilename(file.getName());
+        fileTransfer.setSize(file.length());
+        fileTransfer.setCredenciales(credenciales);
+
+        wccResponse = documentMngr.checkinNew(metadataList, fileTransfer);
+
+        if (!OK.equals(wccResponse.getStatusCode())) {
+            logger.error("Error cargando documento en WCC: " +
+                         wccResponse.getStatusCode() + " - " +
+                         wccResponse.getStatusMessage());
+
+            wccResponse.cleanMetaData();
+            return wccResponse;
+        }  
         
         /******************************************
          * Fecha: 07Marzo2024

@@ -722,6 +722,18 @@ public class ComunicacionesMngr {
             logger.debug("comunicaciones consultadas: " + comunicacionConsultaList.size());
             comunicacion = comunicacionConsultaList.get(0);
         }
+        
+        if (request.getTipoCierre() != null) {
+            String tipoCierre = request.getTipoCierre().trim();
+
+            if (!"Respuesta".equals(tipoCierre) &&
+                !"Cierre Autom\u00e1tico".equals(tipoCierre)) {
+                throw new Exception(
+                    "Tipo de cierre invalido: " + tipoCierre);
+            }
+
+            comunicacion.setTipoCierre(tipoCierre);
+        }
 
         if (request.getAccesoNegado() != null) {
             comunicacion.setAccesoNegado(request.getAccesoNegado());

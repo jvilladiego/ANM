@@ -19,7 +19,10 @@ import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
-@Stateless(name = "WCContentComIntElc", mappedName = "ComunicacionesIntFisicasBpmApp-ComunicacionesIntFisicas_ADF-WCContentComIntElc")
+@Stateless(
+    name = "WCContentComIntFisR4",
+    mappedName = "ComunicacionesIntFisicasBpmApp-ComunicacionesIntFisicas_ADF-WCContentComIntFisR4"
+)
 public class WCContentBean implements WCContent, WCContentLocal {
     @Resource
     SessionContext sessionContext;

@@ -1,11 +1,17 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<composite name="BpmProject" revision="3.2" label="2017-01-10_15-21-26_547" mode="active" state="on" xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/" xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
+<composite name="BpmProject" revision="4.3.1" label="2017-01-10_15-21-26_547" mode="active" state="on" xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/" xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
    <import namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/Process" location="WSDLs/Process.wsdl" importType="wsdl"/>
    <import namespace="http://xmlns.oracle.com/pcbpel/adapter/file/ComunicacionesIntFisicasBpmApp/ComunicacionesIntFisicas/WriteFile" location="WSDLs/WriteFile.wsdl" importType="wsdl"/>
    <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService" location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl" importType="wsdl"/>
    <import namespace="http://xmlns.oracle.com/FolderGUIdRule/FolderGUIdRule_FolderGUIDService" location="WSDLs/FolderGUIdRule_FolderGUIDService.wsdl" importType="wsdl"/>
    <import namespace="http://service.sgd.anm.gov.co" location="WSDLs/DocumentProxy.wsdl" importType="wsdl"/>
    <import namespace="http://service.sgd.anm.gov.co" location="WSDLs/ComunicacionesProxy.wsdl" importType="wsdl"/>
+   <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService"
+           location="oramds:/soa/shared/workflow/NotificationService.wsdl" importType="wsdl"/>
+   <service name="Process.service_2" ui:wsdlLocation="WSDLs/Process.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.interface(ProcessPortType)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.endpoint(Process.service/ProcessPort)"/>
+   </service>
    <service name="Process.service" ui:wsdlLocation="WSDLs/Process.wsdl">
       <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.interface(ProcessPortType)"/>
       <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.endpoint(Process.service/ProcessPort)"/>
@@ -64,6 +70,10 @@
          </reference>
          <reference name="HumanTasks.ManejarExcepcionHT.reference" ui:wsdlLocation="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl">
             <interface.wsdl interface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskService)" callbackInterface="http://xmlns.oracle.com/bpel/workflow/taskService#wsdl.interface(TaskServiceCallback)"/>
+         </reference>
+         <reference name="NotificationService.ACT48919302801412"
+                    ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+            <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
          </reference>
       </componentType>
       <property name="bpel.config.oneWayDeliveryPolicy" type="xs:string" many="false">sync</property>
@@ -176,6 +186,11 @@
          <property name="weblogic.wsee.wsat.transaction.flowOption" type="xs:string" many="false">WSDLDriven</property>
       </binding.ws>
    </reference>
+   <reference name="BPM-NotificationService" ui:wsdlLocation="oramds:/soa/shared/workflow/NotificationService.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.interface(NotificationService)"/>
+      <binding.wsif port="http://xmlns.oracle.com/ias/pcbpel/NotificationService#wsdl.endpoint(NotificationService/JavaPort)"
+                    location="oramds:/soa/shared/workflow/NotificationService.wsdl"/>
+   </reference>
    <wire>
       <source.uri>Process/HumanTasks.CrearComunicacionHT.reference</source.uri>
       <target.uri>CrearComunicacionHT/TaskService</target.uri>
@@ -235,6 +250,10 @@
    <wire>
       <source.uri>Process/HumanTasks.ManejarExcepcionHT.reference</source.uri>
       <target.uri>ManejarExcepcionHT/TaskService</target.uri>
+   </wire>
+   <wire>
+      <source.uri>Process/NotificationService.ACT48919302801412</source.uri>
+      <target.uri>BPM-NotificationService</target.uri>
    </wire>
    <wire>
       <source.uri>Process.service</source.uri>

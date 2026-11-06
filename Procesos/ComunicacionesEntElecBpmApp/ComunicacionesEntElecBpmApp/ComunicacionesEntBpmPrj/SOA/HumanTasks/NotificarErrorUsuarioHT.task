@@ -21,7 +21,7 @@
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1" disabled="false">
             <fyi disabled="false" name="default.DefaultPerformer">
-               <resource type="XPATH" identityType="user">/task:task/task:payload/ns1:ExcepcionBO/ns1:usuarioNotificacion</resource>
+              <resource type="XPATH" identityType="user">/task:task/task:payload/ns0:ExcepcionBO/ns0:usuarioNotificacion</resource>
             </fyi>
          </stage>
       </participants>
@@ -54,7 +54,7 @@
       </payload>
       <flexfieldMappings>
          <flexfieldMapping>
-            <xpathExpression>/task:task/task:payload/ns1:ExcepcionBO/ns1:nroRadicadoComunicacion</xpathExpression>
+           <xpathExpression>/task:task/task:payload/ns0:ExcepcionBO/ns0:nroRadicadoComunicacion</xpathExpression>
             <attributeLabel>
                <labelName>numeroRadicado</labelName>
                <flexfield>ProtectedTextAttribute12</flexfield>

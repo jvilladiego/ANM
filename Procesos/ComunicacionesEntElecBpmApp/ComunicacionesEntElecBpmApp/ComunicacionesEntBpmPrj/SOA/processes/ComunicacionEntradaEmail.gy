@@ -229,30 +229,37 @@ public void methodACT49145051396174()
 	    throw new IllegalStateException(
 	        "El generador no devolvió la ruta del documento de cierre");
 	}
+	
 }
 
 
 public void methodACT49145475927097()
 {
-	if (respuestaPublicacionCierreDO == null) {
-	    throw new IllegalStateException(
-	        "El servicio no devolvió respuesta de publicación");
-	}
-	
-	if (!"0".equals(respuestaPublicacionCierreDO.statusCode)) {
-	    throw new IllegalStateException(
-	        "Falló la publicación del documento de cierre: " +
-	        respuestaPublicacionCierreDO.statusMessage);
-	}
-	
-	if (respuestaPublicacionCierreDO.statusMessage == null ||
-	    respuestaPublicacionCierreDO.statusMessage.trim().length() == 0) {
-	    throw new IllegalStateException(
-	        "La publicación no devolvió la URL del documento");
-	}
-	
-	urlDocumentoCierreDO =
-	    respuestaPublicacionCierreDO.statusMessage;
+	    urlDocumentoCierreDO = null;
+	    if (respuestaPublicacionCierreDO == null) {
+	        throw new IllegalStateException("El servicio no devolvió respuesta de publicación");
+	    }
+	    if (!"0".equals(respuestaPublicacionCierreDO.statusCode)) {
+	        throw new IllegalStateException("Falló la publicación del documento de cierre: " +
+	            respuestaPublicacionCierreDO.statusMessage);
+	    }
+	    if (respuestaPublicacionCierreDO.statusMessage == null ||
+	        respuestaPublicacionCierreDO.statusMessage.trim().length() == 0) {
+	        throw new IllegalStateException("La publicación no devolvió la URL del documento");
+	    }
+	    String url = respuestaPublicacionCierreDO.statusMessage.trim();
+	    java.net.URI uri;
+	    try {
+	        uri = new java.net.URI(url);
+	    } catch (java.net.URISyntaxException e) {
+	        throw new IllegalStateException("La publicación devolvió una URL inválida", e);
+	    }
+	    if (!uri.isAbsolute() || uri.getHost() == null ||
+	        !("http".equalsIgnoreCase(uri.getScheme()) ||
+	          "https".equalsIgnoreCase(uri.getScheme()))) {
+	        throw new IllegalStateException("La publicación no devolvió una URL HTTP/HTTPS válida");
+	    }
+	    urlDocumentoCierreDO = url;
 }
 
 

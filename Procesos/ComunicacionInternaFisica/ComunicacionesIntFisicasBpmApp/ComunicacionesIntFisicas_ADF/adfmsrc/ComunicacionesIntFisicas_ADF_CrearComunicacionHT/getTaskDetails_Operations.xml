@@ -19,4 +19,5 @@
   <MethodAccessor id="Withdraw"/>
   <MethodAccessor id="Release"/>
   <MethodAccessor id="SUBMIT"/>
+  <MethodAccessor id="ANULAR"/>
 </JavaBean>

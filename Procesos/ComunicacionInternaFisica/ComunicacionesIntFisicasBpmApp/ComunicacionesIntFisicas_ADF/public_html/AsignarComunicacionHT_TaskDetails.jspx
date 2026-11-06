@@ -243,8 +243,10 @@
                                             </af:panelLabelAndMessage>
                                             <af:panelLabelAndMessage label="N&#250;mero radicado relacionado" id="plam7"
                                                                      rendered="#{bindings.nroRadicadoRelacionado.inputValue != null}">
-                                                 <af:link text="#{bindings.nroRadicadoRelacionado.inputValue}" targetFrame="_blank"
-                                                         destination="#{bindings.urlDocumRelacionadoBO.inputValue}" id="l4"/>
+                                                <af:link text="#{bindings.nroRadicadoRelacionado.inputValue}"
+                                                         targetFrame="_blank"
+                                                         destination="#{bindings.urlDocumRelacionadoBO.inputValue}"
+                                                         id="l4"/>
                                             </af:panelLabelAndMessage>
                                             <af:panelLabelAndMessage label="Dependencia Remitente" id="plam21">
                                                 <af:outputText value="#{bindings.nombreDepRemitente.inputValue}"
@@ -252,21 +254,43 @@
                                                                id="ot42"/>
                                             </af:panelLabelAndMessage>
                                             <af:panelLabelAndMessage label="Fecha de Env&#237;o" id="plam5"
-                                                            rendered="#{bindings.fecEnvio.inputValue != null}">
+                                                                     rendered="#{bindings.fecEnvio.inputValue != null}">
                                                 <af:outputText value="#{bindings.fecEnvio.inputValue}"
                                                                shortDesc="#{bindings.fecEnvio.hints.tooltip}" id="ot17">
                                                     <af:convertDateTime pattern="dd-MMM-yyyy hh:mm:ss a"/>
                                                 </af:outputText>
                                             </af:panelLabelAndMessage>
-                                            <af:selectOneChoice value="#{bindings.idUsuario.inputValue}"
+                                           
+                                            <af:selectOneRadio value="#{TramitarComunicacionJSFBean.tipoAsignacionDO}"
+                                                               valueChangeListener="#{TramitarComunicacionJSFBean.cambiarAsignacion}"
+                                                               label="Tipo de asignaci&#243;n" layout="horizontal"
+                                                               autoSubmit="true" required="true" id="sorTipoAsignacion">
+                                                <af:selectItem label="Asignar usuario del &#225;rea" value="U"
+                                                               id="siAsignarUsuario"/>
+                                                <af:selectItem label="Remitir a otra dependencia" value="D"
+                                                               id="siAsignarDependencia"/>
+                                            </af:selectOneRadio>
+                                             <af:selectOneChoice value="#{bindings.idUsuario.inputValue}"
                                                                 label="Usuario Destino" immediate="false"
                                                                 autoSubmit="true" clientComponent="true"
                                                                 valueChangeListener="#{TramitarComunicacionJSFBean.cambiarUsuarioDestino}"
                                                                 shortDesc="#{bindings.idUsuario.hints.tooltip}"
-                                                                id="soc14">
-                                                <f:selectItem itemLabel="Seleccione" id="selUser"/>
+                                                                visible="#{TramitarComunicacionJSFBean.tipoAsignacionDO eq 'U'}"
+                                                                required="#{TramitarComunicacionJSFBean.tipoAsignacionDO eq 'U'}"
+                                                                partialTriggers="sorTipoAsignacion" id="soc14">
+                                                <f:selectItem itemLabel="Seleccione" itemValue="" id="selUser"/>
                                                 <f:selectItems value="#{TramitarComunicacionJSFBean.usuariosDependencia}"
                                                                id="si14"/>
+                                            </af:selectOneChoice>
+                                            <af:selectOneChoice label="Dependencia destino"
+                                                                value="#{TramitarComunicacionJSFBean.dependenciaSeleccionadaDO}"
+                                                                valueChangeListener="#{TramitarComunicacionJSFBean.cambiarDependencia}"
+                                                                visible="#{TramitarComunicacionJSFBean.tipoAsignacionDO eq 'D'}"
+                                                                required="#{TramitarComunicacionJSFBean.tipoAsignacionDO eq 'D'}"
+                                                                partialTriggers="sorTipoAsignacion" autoSubmit="true"
+                                                                id="socDependenciaReasignacion">
+                                                <f:selectItems value="#{TramitarComunicacionJSFBean.dependencias}"
+                                                               id="siDependenciasReasignacion"/>
                                             </af:selectOneChoice>
                                             <af:panelLabelAndMessage label="Responder Comunicaci&#243;n" id="plam2">
                                                 <af:outputText value="#{bindings.responderComunicacion.inputValue == true? 'SI' : 'NO'}"
@@ -300,20 +324,17 @@
                                     </af:panelBox>
                                 </af:panelGroupLayout>
                             </af:showDetailHeader>
-                            
                             <af:panelGroupLayout layout="vertical" id="metadatosPanel">
-                                <af:panelBox id="pb1" text="Gestión Documental"
+                                <af:panelBox id="pb1" text="Gesti&#243;n Documental"
                                              rendered="#{!bindings.esTituloMinero.inputValue}">
                                     <af:panelFormLayout id="pfl011">
                                         <af:panelLabelAndMessage label="Categor&#237;a" id="plam4">
                                             <af:outputText value="#{bindings.catProceso.inputValue}"
-                                                           shortDesc="#{bindings.catProceso.hints.tooltip}"
-                                                           id="ot80"/>
+                                                           shortDesc="#{bindings.catProceso.hints.tooltip}" id="ot80"/>
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="Proceso" id="plam29">
                                             <af:outputText value="#{bindings.proceso.inputValue}"
-                                                           shortDesc="#{bindings.proceso.hints.tooltip}"
-                                                           id="ot114"/>
+                                                           shortDesc="#{bindings.proceso.hints.tooltip}" id="ot114"/>
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="Serie" id="plam57">
                                             <af:outputText value="#{bindings.serie.inputValue}"
@@ -321,17 +342,15 @@
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="SubSerie" id="plam35">
                                             <af:outputText value="#{bindings.subserie.inputValue}"
-                                                           shortDesc="#{bindings.subserie.hints.tooltip}"
-                                                           id="ot44"/>
+                                                           shortDesc="#{bindings.subserie.hints.tooltip}" id="ot44"/>
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="Expediente" id="plam54">
                                             <af:outputText value="#{bindings.cuaderno.inputValue}"
-                                                           shortDesc="#{bindings.cuaderno.hints.tooltip}"
-                                                           id="ot24"/>
+                                                           shortDesc="#{bindings.cuaderno.hints.tooltip}" id="ot24"/>
                                         </af:panelLabelAndMessage>
                                     </af:panelFormLayout>
                                 </af:panelBox>
-                                <af:panelBox id="pb2" text="Gestión Documental"
+                                <af:panelBox id="pb2" text="Gesti&#243;n Documental"
                                              rendered="#{bindings.esTituloMinero.inputValue}">
                                     <af:panelFormLayout id="pfl2" rows="2" maxColumns="1">
                                         <af:panelLabelAndMessage label="Tr&#225;mite" id="plam23">
@@ -348,7 +367,6 @@
                                     </af:panelFormLayout>
                                 </af:panelBox>
                             </af:panelGroupLayout>
-                                
                             <af:showDetailHeader size="2" id="sdh2" disclosed="true" text="Adjuntos">
                                 <af:panelGroupLayout id="pgl5" layout="vertical"
                                                      shortDesc="Documento Principal para Descargar"
@@ -362,7 +380,7 @@
                                         </af:panelFormLayout>
                                     </af:panelBox>
                                 </af:panelGroupLayout>
-                            </af:showDetailHeader>                                                        
+                            </af:showDetailHeader>
                             <af:showDetailHeader size="2" text="#{resources.COMMENTS}"
                                                  disclosed="#{actionAvailable.discloseComments}"
                                                  contentStyle="padding: 5px;" partialTriggers="commentSubmit" id="sdh1">
@@ -582,7 +600,7 @@
                                                 <af:selectItem label="#{resources.BPM}" value="BPM" id="si4"/>
                                             </af:selectOneRadio>
                                         </af:panelFormLayout>
-                                        <af:inputText id="edAttTy" visible="false" />
+                                        <af:inputText id="edAttTy" visible="false"/>
                                         <af:panelGroupLayout layout="vertical" partialTriggers="edAttTy" id="pgl26">
                                             <af:inputText id="attName" label="#{resources.NAME}"
                                                           value="#{bindings.name.inputValue}"

@@ -30,6 +30,14 @@
                                                        id="b1">
                                                 <f:attribute name="DC_OPERATION_BINDING" value="bindings.OK"/>
                                             </af:button>
+                                            <af:button actionListener="#{invokeActionBean.setOperation}" text="Retornar"
+                                                       disabled="#{!bindings.RETORNAR.enabled}"
+                                                       action="#{invokeActionBean.invokeOperation}"
+                                                       partialSubmit="false"
+                                                       visible="#{wf:isCustomActionAvailable('RETORNAR', 'bindings.customActions')}"
+                                                       id="bRetornar">
+                                                <f:attribute name="DC_OPERATION_BINDING" value="bindings.RETORNAR"/>
+                                            </af:button>
                                         </af:panelGroupLayout>
                                     </f:facet>
                                 </af:switcher>
@@ -248,7 +256,7 @@
                                                                shortDesc="#{bindings.nroGuia.hints.tooltip}" id="ot20"/>
                                             </af:panelLabelAndMessage>
                                             <af:panelLabelAndMessage label="Fecha de Env&#237;o" id="plam5"
-                                                            rendered="#{bindings.fecEnvio.inputValue != null}">
+                                                                     rendered="#{bindings.fecEnvio.inputValue != null}">
                                                 <af:outputText value="#{bindings.fecEnvio.inputValue}"
                                                                shortDesc="#{bindings.fecEnvio.hints.tooltip}" id="ot17">
                                                     <af:convertDateTime pattern="dd-MMM-yyyy hh:mm:ss a"/>
@@ -277,9 +285,11 @@
                                                                id="ot16"/>
                                             </af:panelLabelAndMessage>
                                             <af:panelLabelAndMessage label="Nro de Radicado Relacionado" id="plam7"
-                                                    rendered="#{bindings.nroRadicadoRelacionado.inputValue != null}">
-                                                <af:link text="#{bindings.nroRadicadoRelacionado.inputValue}" targetFrame="_blank"
-                                                        destination="#{bindings.urlDocumRelacionadoBO.inputValue}" id="l4"/>
+                                                                     rendered="#{bindings.nroRadicadoRelacionado.inputValue != null}">
+                                                <af:link text="#{bindings.nroRadicadoRelacionado.inputValue}"
+                                                         targetFrame="_blank"
+                                                         destination="#{bindings.urlDocumRelacionadoBO.inputValue}"
+                                                         id="l4"/>
                                                 <!--af:outputText value="#{bindings.nroRadicadoRelacionado.inputValue}"
                                                                shortDesc="#{bindings.nroRadicadoRelacionado.hints.tooltip}"
                                                                id="ot18"/>
@@ -313,20 +323,17 @@
                                     </af:panelBox>
                                 </af:panelGroupLayout>
                             </af:showDetailHeader>
-                            
                             <af:panelGroupLayout layout="vertical" id="metadatosPanel">
-                                <af:panelBox id="pb1" text="Gestión Documental"
+                                <af:panelBox id="pb1" text="Gesti&#243;n Documental"
                                              rendered="#{!bindings.esTituloMinero.inputValue}">
-                                    <af:panelFormLayout id="pfl011" >
+                                    <af:panelFormLayout id="pfl011">
                                         <af:panelLabelAndMessage label="Categor&#237;a" id="plam4">
                                             <af:outputText value="#{bindings.catProceso.inputValue}"
-                                                           shortDesc="#{bindings.catProceso.hints.tooltip}"
-                                                           id="ot80"/>
+                                                           shortDesc="#{bindings.catProceso.hints.tooltip}" id="ot80"/>
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="Proceso" id="plam29">
                                             <af:outputText value="#{bindings.proceso.inputValue}"
-                                                           shortDesc="#{bindings.proceso.hints.tooltip}"
-                                                           id="ot114"/>
+                                                           shortDesc="#{bindings.proceso.hints.tooltip}" id="ot114"/>
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="Serie" id="plam57">
                                             <af:outputText value="#{bindings.serie.inputValue}"
@@ -334,17 +341,15 @@
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="SubSerie" id="plam35">
                                             <af:outputText value="#{bindings.subserie.inputValue}"
-                                                           shortDesc="#{bindings.subserie.hints.tooltip}"
-                                                           id="ot44"/>
+                                                           shortDesc="#{bindings.subserie.hints.tooltip}" id="ot44"/>
                                         </af:panelLabelAndMessage>
                                         <af:panelLabelAndMessage label="Expediente" id="plam54">
                                             <af:outputText value="#{bindings.cuaderno.inputValue}"
-                                                           shortDesc="#{bindings.cuaderno.hints.tooltip}"
-                                                           id="ot24"/>
+                                                           shortDesc="#{bindings.cuaderno.hints.tooltip}" id="ot24"/>
                                         </af:panelLabelAndMessage>
                                     </af:panelFormLayout>
                                 </af:panelBox>
-                                <af:panelBox id="pb2" text="Gestión Documental"
+                                <af:panelBox id="pb2" text="Gesti&#243;n Documental"
                                              rendered="#{bindings.esTituloMinero.inputValue}">
                                     <af:panelFormLayout id="pfl2" rows="2" maxColumns="1">
                                         <af:panelLabelAndMessage label="Tr&#225;mite" id="plam23">
@@ -361,7 +366,6 @@
                                     </af:panelFormLayout>
                                 </af:panelBox>
                             </af:panelGroupLayout>
-                                
                             <af:showDetailHeader size="2" id="sdh2" disclosed="true" text="Adjuntos">
                                 <af:panelGroupLayout id="pgl5" layout="vertical"
                                                      shortDesc="Documento Principal para Descargar"
@@ -595,7 +599,7 @@
                                                 <af:selectItem label="#{resources.BPM}" value="BPM" id="si4"/>
                                             </af:selectOneRadio>
                                         </af:panelFormLayout>
-                                        <af:inputText id="edAttTy" visible="false" />
+                                        <af:inputText id="edAttTy" visible="false"/>
                                         <af:panelGroupLayout layout="vertical" partialTriggers="edAttTy" id="pgl27">
                                             <af:inputText id="attName" label="#{resources.NAME}"
                                                           value="#{bindings.name.inputValue}"

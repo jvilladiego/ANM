@@ -918,5 +918,16 @@
         <Item Value="instanceId"/>
       </AttrNames>
     </attributeValues>
+<attributeValues IterBinding="payloadIterator"
+                 id="existeRespuestaRadicada">
+  <AttrNames>
+    <Item Value="existeRespuestaRadicada"/>
+  </AttrNames>
+</attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="nroRadicadoRespuestaExistente">
+      <AttrNames>
+        <Item Value="nroRadicadoRespuestaExistente"/>
+      </AttrNames>
+    </attributeValues>
   </bindings>
 </pageDefinition>

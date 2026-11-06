@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbComunicaciones" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/top/dbComunicaciones" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="SgdTipoSolicitudCollection" type="SgdTipoSolicitudCollection"/>
+   <xs:complexType name="SgdTipoSolicitudCollection">
+      <xs:sequence>
+         <xs:element name="SgdTipoSolicitud" type="SgdTipoSolicitud" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="SgdTipoSolicitud">
+      <xs:sequence>
+         <xs:element name="idTipoSolicitud" type="xs:long"/>
+         <xs:element name="tiempoRespuesta" type="xs:int" minOccurs="0" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="SgdTipoSolicitudPrimaryKey" type="SgdTipoSolicitudPrimaryKey"/>
+   <xs:complexType name="SgdTipoSolicitudPrimaryKey">
+      <xs:sequence>
+         <xs:element name="idTipoSolicitud" type="xs:long" minOccurs="1" maxOccurs="1"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>

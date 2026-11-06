@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" elementFormDefault="qualified" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionSalidaBO" xmlns:bpmo="http://xmlns.oracle.com/bpm/bpmobject/">
+   <xs:import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="ComunicacionBO.xsd"/>
+   <xs:complexType name="ComunicacionSalidaBOType">
+      <xs:complexContent>
+         <xs:extension base="ns1:ComunicacionBOType"/>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:element name="ComunicacionSalidaBO" type="ComunicacionSalidaBOType"/>
+</xs:schema>

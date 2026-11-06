@@ -3290,6 +3290,27 @@
                         </bpmnext:OracleExtensions>
                     </bpmn:extensionElements>
                 </bpmn:dataInput>
+                <bpmn:dataInput name="nombrePais" id="nombrePais">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataInput name="nombreDepartamento" id="nombreDepartamento">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataInput name="nombreCiudad" id="nombreCiudad">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
                 <bpmn:dataInput name="execData" id="execData">
                     <bpmn:extensionElements>
                         <bpmnext:OracleExtensions>
@@ -3458,6 +3479,27 @@
                         </bpmnext:OracleExtensions>
                     </bpmn:extensionElements>
                 </bpmn:dataOutput>
+                <bpmn:dataOutput name="nombrePais" id="nombrePais">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:dataOutput name="nombreDepartamento" id="nombreDepartamento">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:dataOutput name="nombreCiudad" id="nombreCiudad">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
                 <bpmn:dataOutput name="execData" id="execData">
                     <bpmn:extensionElements>
                         <bpmnext:OracleExtensions>
@@ -3497,6 +3539,9 @@
                     <bpmn:dataInputRefs>fechaRadicacion</bpmn:dataInputRefs>
                     <bpmn:dataInputRefs>asunto</bpmn:dataInputRefs>
                     <bpmn:dataInputRefs>categorizado</bpmn:dataInputRefs>
+                    <bpmn:dataInputRefs>nombrePais</bpmn:dataInputRefs>
+                    <bpmn:dataInputRefs>nombreDepartamento</bpmn:dataInputRefs>
+                    <bpmn:dataInputRefs>nombreCiudad</bpmn:dataInputRefs>
                     <bpmn:dataInputRefs>execData</bpmn:dataInputRefs>
                 </bpmn:inputSet>
                 <bpmn:outputSet id="ACT1778018496038_uniqueOutputSet">
@@ -3523,6 +3568,9 @@
                     <bpmn:dataOutputRefs>radicado</bpmn:dataOutputRefs>
                     <bpmn:dataOutputRefs>fechaRadicacion</bpmn:dataOutputRefs>
                     <bpmn:dataOutputRefs>asunto</bpmn:dataOutputRefs>
+                    <bpmn:dataOutputRefs>nombrePais</bpmn:dataOutputRefs>
+                    <bpmn:dataOutputRefs>nombreDepartamento</bpmn:dataOutputRefs>
+                    <bpmn:dataOutputRefs>nombreCiudad</bpmn:dataOutputRefs>
                     <bpmn:dataOutputRefs>execData</bpmn:dataOutputRefs>
                     <bpmn:dataOutputRefs>outcome</bpmn:dataOutputRefs>
                 </bpmn:outputSet>
@@ -16386,6 +16434,7 @@
                 <bpmn:sourceRef>requiereRespuestaDO</bpmn:sourceRef>
                 <bpmn:sourceRef>comunicacion</bpmn:sourceRef>
                 <bpmn:sourceRef>usuarioDO</bpmn:sourceRef>
+                <bpmn:sourceRef>tipoCierreDO</bpmn:sourceRef>
                 <bpmn:targetRef>actualizacionComunicacion</bpmn:targetRef>
                 <bpmn:assignment>
                     <bpmn:extensionElements>
@@ -16695,6 +16744,38 @@
                         </bpmn:extensionElements>
                     </bpmn:from>
                     <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('actualizacionComunicacion')/nroRadicado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">concat(
+  substring(
+    'Respuesta', 1,
+    string-length('Respuesta') *
+    number(bpmn:getDataObject('tipoCierreDO') = 'RESPUESTA')
+  ),
+  substring(
+    'Cierre Automático', 1,
+    string-length('Cierre Automático') *
+    number(bpmn:getDataObject('tipoCierreDO') = 'CIERRE_AUTOMATICO')
+  )
+)
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('actualizacionComunicacion')/tipoCierre
                         <bpmn:extensionElements>
                             <bpmnext:OracleExtensions>
                                 <bpmnext:Expression mode="simple"/>
@@ -24515,6 +24596,33 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                     </bpmn:to>
                 </bpmn:assignment>
             </bpmn:dataOutputAssociation>
+            <bpmn:dataOutputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions/>
+                </bpmn:extensionElements>
+                <bpmn:targetRef>comunicacionCierreBO</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:current-dateTime()
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:fecRadicacion
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataOutputAssociation>
         </bpmn:serviceTask>
         <bpmn:scriptTask isForCompensation="false" name="Validar y guardar radicado de cierre" id="ACT49111323529595">
             <bpmn:extensionElements>
@@ -24623,6 +24731,111 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                         </bpmn:extensionElements>
                     </bpmn:from>
                     <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/nroRadicado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:metadatos/ns1:idTramite
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/idTramite
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:metadatos/ns1:nombreTramite
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/tramite
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:metadatos/ns1:idTpDocumento
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/idTipoDocumentalTramite
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:metadatos/ns1:nombreTpDocumento
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/nombreTpDoc
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:nroPlaca
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/nroPlaca
                         <bpmn:extensionElements>
                             <bpmnext:OracleExtensions>
                                 <bpmnext:Expression mode="simple"/>
@@ -24938,6 +25151,36 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                         </bpmn:extensionElements>
                     </bpmn:from>
                     <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/usuarioCreacion
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">substring(
+  'NS',
+  1 + number(
+    xp20:matches(
+      string(xp20:matches(string(bpmn:getDataObject('comunicacionCierreBO')/ns:esTituloMinero), '\s*(?i:true|1)\s*')),
+      '\s*(?i:true|1)\s*'
+    )
+  ),
+  1
+)
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('creacionComunicacion')/esTitulo
                         <bpmn:extensionElements>
                             <bpmnext:OracleExtensions>
                                 <bpmnext:Expression mode="simple"/>
@@ -25628,8 +25871,12 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                 <bpmn:extensionElements>
                     <bpmnext:OracleExtensions/>
                 </bpmn:extensionElements>
-                <bpmn:sourceRef>justificacionCierreDO</bpmn:sourceRef>
                 <bpmn:sourceRef>comunicacionCierreBO</bpmn:sourceRef>
+                <bpmn:sourceRef>nombrePaisDO</bpmn:sourceRef>
+                <bpmn:sourceRef>nombreDepartamentoDO</bpmn:sourceRef>
+                <bpmn:sourceRef>nombreCiudadDO</bpmn:sourceRef>
+                <bpmn:sourceRef>comunicacion</bpmn:sourceRef>
+                <bpmn:sourceRef>justificacionCierreDO</bpmn:sourceRef>
                 <bpmn:sourceRef>destinatarioCierreBO</bpmn:sourceRef>
                 <bpmn:sourceRef>usuarioSolicitaCierreDO</bpmn:sourceRef>
                 <bpmn:sourceRef>rutaPlantillaCierreDO</bpmn:sourceRef>
@@ -25648,6 +25895,114 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                         </bpmn:extensionElements>
                     </bpmn:from>
                     <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('generacionODTRequest')/pdf
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:format-dateTime(
+  string(bpmn:getDataObject('comunicacionCierreBO')/ns:fecRadicacion),
+  '[Y0001]-[M01]-[D01] [H01]:[m01]'
+)
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('generacionODTRequest')/comunicacion/fechaRadicado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('nombrePaisDO')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('generacionODTRequest')/comunicacion/paisInteresado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('nombreDepartamentoDO')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('generacionODTRequest')/comunicacion/departamentoInteresado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('nombreCiudadDO')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('generacionODTRequest')/comunicacion/municipioInteresado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DependenciaBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacion')/ns:dependenciaDestino/ns1:nombre
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('generacionODTRequest')/comunicacion/dependenciaOrigen
                         <bpmn:extensionElements>
                             <bpmnext:OracleExtensions>
                                 <bpmnext:Expression mode="simple"/>
@@ -26030,7 +26385,7 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="3089" y="1268"/>
+                        <bpmnext:Position x="3101" y="1270"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -26116,7 +26471,6 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                     <bpmnext:OracleExtensions/>
                 </bpmn:extensionElements>
                 <bpmn:sourceRef>comunicacionCierreBO</bpmn:sourceRef>
-                <bpmn:sourceRef>respuestaDocumentoCierreDO</bpmn:sourceRef>
                 <bpmn:sourceRef>comunicacion</bpmn:sourceRef>
                 <bpmn:sourceRef>usuarioSolicitaCierreDO</bpmn:sourceRef>
                 <bpmn:sourceRef>folderGUIDCierreDO</bpmn:sourceRef>
@@ -26149,10 +26503,14 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                             <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
                         </bpmnext:OracleExtensions>
                     </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('respuestaDocumentoCierreDO')/rutaArchivoFinal
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">concat(
+  '/ftp/comunicaciones/plantillas/cierre_automatico/COM_',
+  bpmn:getDataObject('comunicacionCierreBO')/ns:nroRadicado,
+  '.pdf'
+)
                         <bpmn:extensionElements>
                             <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
+                                <bpmnext:Expression mode="xpath"/>
                             </bpmnext:OracleExtensions>
                         </bpmn:extensionElements>
                     </bpmn:from>
@@ -26432,7 +26790,7 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="3209" y="1269"/>
+                        <bpmnext:Position x="3220" y="1262"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="inputValidation"/>
@@ -26570,380 +26928,6 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:scriptTask>
-        <bpmn:serviceTask implementation="Services.Externals.WSDLDocumentos" operationRef="bpmn:cargarDocumentoAExpMinero" isForCompensation="false" name="Publicar cierre en expediente minero" id="ACT49145580755959">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="3298" y="1048"/>
-                    </bpmnext:GraphicsAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
-                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
-                        <bpmnext:BooleanFeature value="false" name="inputValidation"/>
-                        <bpmnext:BooleanFeature value="false" name="outputValidation"/>
-                        <bpmnext:StringFeature value="[]" name="TagFeature"/>
-                        <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
-                        <bpmnext:StringFeature value="" name="lane"/>
-                        <bpmnext:StringFeature value="Begin Level" name="level"/>
-                        <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
-                    </bpmnext:FeatureSet>
-                    <bpmnext:Localization>
-                        <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">Publicar cierre en expediente minero</bpmnext:LocalizedContent>
-                        </bpmnext:Label>
-                        <bpmnext:Description>
-                            <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
-                        </bpmnext:Description>
-                    </bpmnext:Localization>
-                    <bpmnext:Conversational conversation="CONVERSATION180653294239">
-                        <bpmnext:ServiceCallConversationalDefinition operation="cargarDocumentoAExpMinero"/>
-                    </bpmnext:Conversational>
-                    <bpmnext:FlowNodeProperties/>
-                    <bpmnext:LogHandlers/>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-            <bpmn:ioSpecification>
-                <bpmn:dataInput name="checkinDocument" id="checkinDocument">
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:TypeRef refType="namespaced" name="CheckinDocument" namespace="http://transfer.sgd.anm.gov.co" elementType="ELEMENT" implementationType="businessObject"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                </bpmn:dataInput>
-                <bpmn:dataOutput name="respuestaUCM" id="respuestaUCM">
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:TypeRef refType="namespaced" name="RespuestaUCM" namespace="http://response.sgd.anm.gov.co" elementType="ELEMENT" implementationType="businessObject"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                </bpmn:dataOutput>
-                <bpmn:inputSet id="ACT49145580755959_uniqueInputSet">
-                    <bpmn:dataInputRefs>checkinDocument</bpmn:dataInputRefs>
-                </bpmn:inputSet>
-                <bpmn:outputSet id="ACT49145580755959_uniqueOutputSet">
-                    <bpmn:dataOutputRefs>respuestaUCM</bpmn:dataOutputRefs>
-                </bpmn:outputSet>
-            </bpmn:ioSpecification>
-            <bpmn:dataInputAssociation>
-                <bpmn:extensionElements>
-                    <bpmnext:OracleExtensions/>
-                </bpmn:extensionElements>
-                <bpmn:sourceRef>respuestaDocumentoCierreDO</bpmn:sourceRef>
-                <bpmn:sourceRef>comunicacionCierreBO</bpmn:sourceRef>
-                <bpmn:sourceRef>folderGUIDCierreDO</bpmn:sourceRef>
-                <bpmn:sourceRef>comunicacion</bpmn:sourceRef>
-                <bpmn:sourceRef>usuarioSolicitaCierreDO</bpmn:sourceRef>
-                <bpmn:sourceRef>isPQRSDO</bpmn:sourceRef>
-                <bpmn:targetRef>checkinDocument</bpmn:targetRef>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('respuestaDocumentoCierreDO')/rutaArchivoFinal
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/primaryFile
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:nroRadicado
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/nroRadicado
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('folderGUIDCierreDO')
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/folderGUID
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">''
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/docAccount
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">string(bpmn:getDataObject('comunicacion')/ns:metadatos/ns1:idTpDocumento)
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="xpath"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/tipoDocumental
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">string(bpmn:getDataObject('comunicacion')/ns:metadatos/ns1:idTramite)
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="xpath"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/tramite
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DependenciaBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacion')/ns:dependenciaDestino/ns1:codigo
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="xpath"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/unidadAdministrativa
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('usuarioSolicitaCierreDO')
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/credenciales/usuario
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true()
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/documentoPrincipal
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true()
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/expMinero
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:nroPlaca
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/nroPlaca
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">concat(
- bpmn:getDataObject('comunicacionCierreBO')/ns:nroRadicado,
-  '_documento_cierre'
-)
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="xpath"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/docTitle
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:matches(
-  string(bpmn:getDataObject('isPQRSDO')),
-  '\s*(?i:true|1)\s*'
-)
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="xpath"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/PQRS
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-            </bpmn:dataInputAssociation>
-            <bpmn:dataOutputAssociation>
-                <bpmn:extensionElements>
-                    <bpmnext:OracleExtensions/>
-                </bpmn:extensionElements>
-                <bpmn:sourceRef>respuestaUCM</bpmn:sourceRef>
-                <bpmn:targetRef>respuestaPublicacionCierreDO</bpmn:targetRef>
-                <bpmn:assignment>
-                    <bpmn:extensionElements>
-                        <bpmnext:OracleExtensions>
-                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
-                        </bpmnext:OracleExtensions>
-                    </bpmn:extensionElements>
-                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataOutput('respuestaUCM')
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:from>
-                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('respuestaPublicacionCierreDO')
-                        <bpmn:extensionElements>
-                            <bpmnext:OracleExtensions>
-                                <bpmnext:Expression mode="simple"/>
-                            </bpmnext:OracleExtensions>
-                        </bpmn:extensionElements>
-                    </bpmn:to>
-                </bpmn:assignment>
-            </bpmn:dataOutputAssociation>
-        </bpmn:serviceTask>
         <bpmn:serviceTask implementation="Services.Externals.WSDLComunicaciones" operationRef="bpmn:actualizarProcesoComunicacion" isForCompensation="false" name="Cerrar comunicacion de salida" id="ACT49146300706258">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
@@ -27399,6 +27383,355 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
             </bpmn:extensionElements>
             <bpmn:ioSpecification/>
         </bpmn:scriptTask>
+        <bpmn:serviceTask implementation="Services.Externals.WSDLDocumentos" operationRef="bpmn:cargarDocumentoAExpMinero" isForCompensation="false" name="Publicar cierre en expediente minero" id="ACT49240826143949">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:GraphicsAttributes>
+                        <bpmnext:Position x="3383" y="1037"/>
+                    </bpmnext:GraphicsAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
+                        <bpmnext:BooleanFeature value="false" name="isDraft"/>
+                        <bpmnext:BooleanFeature value="false" name="inputValidation"/>
+                        <bpmnext:BooleanFeature value="false" name="outputValidation"/>
+                        <bpmnext:StringFeature value="[]" name="TagFeature"/>
+                        <bpmnext:StringFeature value="PROCESS_DEFAULT" name="generatesEvents"/>
+                        <bpmnext:StringFeature value="" name="lane"/>
+                        <bpmnext:StringFeature value="Begin Level" name="level"/>
+                        <bpmnext:StringFeature value="USE_PROCESS_PERMISSION" name="sealType"/>
+                    </bpmnext:FeatureSet>
+                    <bpmnext:Localization>
+                        <bpmnext:Label>
+                            <bpmnext:LocalizedContent language="en">Publicar cierre en expediente minero</bpmnext:LocalizedContent>
+                        </bpmnext:Label>
+                        <bpmnext:Description>
+                            <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
+                        </bpmnext:Description>
+                    </bpmnext:Localization>
+                    <bpmnext:Conversational conversation="CONVERSATION180653294239">
+                        <bpmnext:ServiceCallConversationalDefinition operation="cargarDocumentoAExpMinero"/>
+                    </bpmnext:Conversational>
+                    <bpmnext:FlowNodeProperties/>
+                    <bpmnext:LogHandlers/>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+            <bpmn:ioSpecification>
+                <bpmn:dataInput name="checkinDocument" id="checkinDocument">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="CheckinDocument" namespace="http://transfer.sgd.anm.gov.co" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataInput>
+                <bpmn:dataOutput name="respuestaUCM" id="respuestaUCM">
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:TypeRef refType="namespaced" name="RespuestaUCM" namespace="http://response.sgd.anm.gov.co" elementType="ELEMENT" implementationType="businessObject"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                </bpmn:dataOutput>
+                <bpmn:inputSet id="ACT49240826143949_uniqueInputSet">
+                    <bpmn:dataInputRefs>checkinDocument</bpmn:dataInputRefs>
+                </bpmn:inputSet>
+                <bpmn:outputSet id="ACT49240826143949_uniqueOutputSet">
+                    <bpmn:dataOutputRefs>respuestaUCM</bpmn:dataOutputRefs>
+                </bpmn:outputSet>
+            </bpmn:ioSpecification>
+            <bpmn:dataInputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions/>
+                </bpmn:extensionElements>
+                <bpmn:sourceRef>comunicacionCierreBO</bpmn:sourceRef>
+                <bpmn:sourceRef>isPQRSDO</bpmn:sourceRef>
+                <bpmn:sourceRef>comunicacion</bpmn:sourceRef>
+                <bpmn:sourceRef>usuarioSolicitaCierreDO</bpmn:sourceRef>
+                <bpmn:targetRef>checkinDocument</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:nroRadicado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/nroRadicado
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:matches(string(bpmn:getDataObject('isPQRSDO')), '\s*(?i:true|1)\s*')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/PQRS
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true()
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/expMinero
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacionCierreBO')/ns:nroPlaca
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/nroPlaca
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DependenciaBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacion')/ns:dependenciaDestino/ns1:codigo
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/unidadAdministrativa
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('usuarioSolicitaCierreDO')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/credenciales/usuario
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">''
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/docAccount
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">concat(
+  '/ftp/comunicaciones/plantillas/cierre_automatico/COM_',
+  bpmn:getDataObject('comunicacionCierreBO')/ns:nroRadicado,
+  '.pdf'
+)
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="xpath"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/primaryFile
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacion')/ns:metadatos/ns1:idTpDocumento
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/tipoDocumental
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('comunicacion')/ns:metadatos/ns1:idTramite
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/tramite
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">concat(bpmn:getDataObject('comunicacionCierreBO')/ns:nroRadicado, '_documento_cierre')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/docTitle
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">true()
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataInput('checkinDocument')/documentoPrincipal
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataInputAssociation>
+            <bpmn:dataOutputAssociation>
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions/>
+                </bpmn:extensionElements>
+                <bpmn:sourceRef>respuestaUCM</bpmn:sourceRef>
+                <bpmn:targetRef>respuestaPublicacionCierreDO</bpmn:targetRef>
+                <bpmn:assignment>
+                    <bpmn:extensionElements>
+                        <bpmnext:OracleExtensions>
+                            <bpmnext:DataAssignment operation="copy" ignoreMissingData="false"/>
+                        </bpmnext:OracleExtensions>
+                    </bpmn:extensionElements>
+                    <bpmn:from xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataOutput('respuestaUCM')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:from>
+                    <bpmn:to xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:bpmn="http://www.omg.org/bpmn20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">bpmn:getDataObject('respuestaPublicacionCierreDO')
+                        <bpmn:extensionElements>
+                            <bpmnext:OracleExtensions>
+                                <bpmnext:Expression mode="simple"/>
+                            </bpmnext:OracleExtensions>
+                        </bpmn:extensionElements>
+                    </bpmn:to>
+                </bpmn:assignment>
+            </bpmn:dataOutputAssociation>
+        </bpmn:serviceTask>
         <bpmn:startEvent isInterrupting="false" name="Start Email" id="EVT17642311332483">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
@@ -30786,11 +31119,11 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:exclusiveGateway>
-        <bpmn:exclusiveGateway gatewayDirection="Unspecified" name="¿Cierre de titulo minero?" id="GTW4914557372003">
+        <bpmn:exclusiveGateway gatewayDirection="Unspecified" name=" ¿Es titulo minero?" id="GTW4924076421978">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
                     <bpmnext:GraphicsAttributes>
-                        <bpmnext:Position x="3298" y="1176"/>
+                        <bpmnext:Position x="3136" y="1150"/>
                     </bpmnext:GraphicsAttributes>
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="hasCheckpoint"/>
@@ -30802,7 +31135,7 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                     </bpmnext:FeatureSet>
                     <bpmnext:Localization>
                         <bpmnext:Label>
-                            <bpmnext:LocalizedContent language="en">¿Cierre de titulo minero?</bpmnext:LocalizedContent>
+                            <bpmnext:LocalizedContent language="en"> ¿Es titulo minero?</bpmnext:LocalizedContent>
                         </bpmnext:Label>
                         <bpmnext:Description>
                             <bpmnext:LocalizedContent language="en"></bpmnext:LocalizedContent>
@@ -32585,48 +32918,6 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>
         </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT49134582325325" targetRef="ACT49145051396174" name="sf4914505353565" id="sf4914505353565">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="3016" y="1273"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="3016,1273" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT49145051396174" targetRef="ACT49145374263358" name="sf49145247184238" id="sf49145247184238">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="3169" y="1269"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="3169,1269" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT49145374263358" targetRef="GTW4914557372003" name="sf4914538537822" id="sf4914538537822">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="3221" y="1176"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="3221,1176" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
         <bpmn:sequenceFlow sourceRef="ACT49145243451017" targetRef="ACT49145475927097" name="sf49145478291179" id="sf49145478291179">
             <bpmn:extensionElements>
                 <bpmnext:OracleExtensions>
@@ -32636,57 +32927,6 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
                         <bpmnext:StringFeature value="3431,1266" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="GTW4914557372003" targetRef="ACT49145243451017" name="sf49145579166568" id="sf49145579166568">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="3349" y="1191"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="3349,1191" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="GTW4914557372003" targetRef="ACT49145580755959" name="sf49145581714111" id="sf49145581714111">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="3298" y="1112"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="3298,1112" name="curve"/>
-                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
-                        <bpmnext:StringFeature value="Si" name="userName"/>
-                        <bpmnext:IntegerFeature value="0" name="order"/>
-                    </bpmnext:FeatureSet>
-                </bpmnext:OracleExtensions>
-            </bpmn:extensionElements>
-            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:matches(string(bpmn:getDataObject('comunicacionCierreBO')/ns:esTituloMinero), '\s*(?i:true|1)\s*') = true()
-                <bpmn:extensionElements>
-                    <bpmnext:OracleExtensions>
-                        <bpmnext:Expression mode="xpath"/>
-                    </bpmnext:OracleExtensions>
-                </bpmn:extensionElements>
-            </bpmn:conditionExpression>
-        </bpmn:sequenceFlow>
-        <bpmn:sequenceFlow sourceRef="ACT49145580755959" targetRef="ACT49145475927097" name="sf49145606228455" id="sf49145606228455">
-            <bpmn:extensionElements>
-                <bpmnext:OracleExtensions>
-                    <bpmnext:SequenceFlowAttributes>
-                        <bpmnext:Positions x="3504" y="1145"/>
-                    </bpmnext:SequenceFlowAttributes>
-                    <bpmnext:FeatureSet>
-                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
-                        <bpmnext:StringFeature value="3504,1145" name="curve"/>
                         <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
@@ -32757,6 +32997,100 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                     <bpmnext:FeatureSet>
                         <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
                         <bpmnext:StringFeature value="4771,1148" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT49134582325325" targetRef="ACT49145051396174" name="sf4924076178325" id="sf4924076178325">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="3029" y="1271"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="3029,1271" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT49145051396174" targetRef="GTW4924076421978" name="sf49240765923458" id="sf49240765923458">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="3087" y="1185"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="3087,1185" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="GTW4924076421978" targetRef="ACT49145374263358" name="sf49240770166835" id="sf49240770166835">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="3217" y="1203"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="3217,1203" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <bpmnext:StringFeature value="No" name="userName"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="GTW4924076421978" targetRef="ACT49240826143949" name="sf49240772481538" id="sf49240772481538">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="3296" y="1037"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="3296,1037" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                        <bpmnext:StringFeature value="SI" name="userName"/>
+                        <bpmnext:IntegerFeature value="0" name="order"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+            <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression" language="http://www.w3.org/1999/XPath" xpathns:ns="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xpathns:bpmn="http://www.omg.org/bpmn20" xpathns:xp20="http://www.oracle.com/XSL/Transform/java/oracle.tip.pc.services.functions.Xpath20" xmlns:xpathns="http://xmlns.oracle.com/bpm/XPathNamespace" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">xp20:matches(string(bpmn:getDataObject('comunicacionCierreBO')/ns:esTituloMinero), '\s*(?i:true|1)\s*')
+                <bpmn:extensionElements>
+                    <bpmnext:OracleExtensions>
+                        <bpmnext:Expression mode="xpath"/>
+                    </bpmnext:OracleExtensions>
+                </bpmn:extensionElements>
+            </bpmn:conditionExpression>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT49145374263358" targetRef="ACT49145243451017" name="sf4924077345331" id="sf4924077345331">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="3288" y="1262"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="3288,1262" name="curve"/>
+                        <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
+                    </bpmnext:FeatureSet>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:sequenceFlow>
+        <bpmn:sequenceFlow sourceRef="ACT49240826143949" targetRef="ACT49145475927097" name="sf49240832695313" id="sf49240832695313">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:SequenceFlowAttributes>
+                        <bpmnext:Positions x="3504" y="1144"/>
+                    </bpmnext:SequenceFlowAttributes>
+                    <bpmnext:FeatureSet>
+                        <bpmnext:BooleanFeature value="false" name="collapseMessage"/>
+                        <bpmnext:StringFeature value="3504,1144" name="curve"/>
                         <bpmnext:StringFeature value="ORTHOGONAL" name="routing"/>
                     </bpmnext:FeatureSet>
                 </bpmnext:OracleExtensions>
@@ -33433,6 +33767,42 @@ ID Comunicación:', bpmn:getDataObject('localExecutionData')/ns1:processInfo/ns1
                 <bpmnext:OracleExtensions>
                     <bpmnext:DataObjectType initialize="true">
                         <bpmnext:TypeRef refType="namespaced" name="RespuestaActualizacionProc" namespace="http://response.sgd.anm.gov.co" elementType="ELEMENT" implementationType="businessObject"/>
+                    </bpmnext:DataObjectType>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:dataObject>
+        <bpmn:dataObject name="codDepGestionCompartidaTmpDO" id="codDepGestionCompartidaTmpDO">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:DataObjectType initialize="true">
+                        <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                    </bpmnext:DataObjectType>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:dataObject>
+        <bpmn:dataObject name="idTipoPQRSTmpDO" id="idTipoPQRSTmpDO">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:DataObjectType initialize="true">
+                        <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                    </bpmnext:DataObjectType>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:dataObject>
+        <bpmn:dataObject name="tiempoRespuestaTmpDO" id="tiempoRespuestaTmpDO">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:DataObjectType initialize="true">
+                        <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
+                    </bpmnext:DataObjectType>
+                </bpmnext:OracleExtensions>
+            </bpmn:extensionElements>
+        </bpmn:dataObject>
+        <bpmn:dataObject name="fechaVencimientoTmpDO" id="fechaVencimientoTmpDO">
+            <bpmn:extensionElements>
+                <bpmnext:OracleExtensions>
+                    <bpmnext:DataObjectType initialize="true">
+                        <bpmnext:TypeRef refType="schema" name="string" namespace="http://www.w3.org/2001/XMLSchema" implementationType="type"/>
                     </bpmnext:DataObjectType>
                 </bpmnext:OracleExtensions>
             </bpmn:extensionElements>

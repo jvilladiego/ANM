@@ -178,6 +178,14 @@
     <methodAction IterBinding="taskIterator" id="OK" RequiresUpdateModel="true" Action="invokeMethod" MethodName="OK"
                   IsViewObjectMethod="false" DataControl="ComunicacionesIntFisicas_ADF_GestionarComunicacionHT"
                   InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="RETORNAR"
+              RequiresUpdateModel="true"
+              Action="invokeMethod"
+              MethodName="RETORNAR"
+              IsViewObjectMethod="false"
+              DataControl="ComunicacionesIntFisicas_ADF_GestionarComunicacionHT"
+              InstanceName="bindings.taskIterator.currentRow.dataProvider"
+              IsLocalObjectReference="true"/>
     <attributeValues IterBinding="taskIterator" id="creator">
       <AttrNames>
         <Item Value="creator"/>
@@ -914,5 +922,6 @@
         <Item Value="urlDocumRelacionadoBO"/>
       </AttrNames>
     </attributeValues>
+
   </bindings>
 </pageDefinition>

@@ -22,7 +22,7 @@
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1" disabled="false">
             <participant disabled="false" name="default.DefaultPerformer">
-               <resource type="XPATH" identityType="user">/task:task/task:payload/ns3:ComunicacionBO/ns3:destinatarioInterno/ns9:usuario</resource>
+               <resource type="XPATH" identityType="user">/task:task/task:payload/ns0:ComunicacionBO/ns0:destinatarioInterno/ns9:usuario</resource>
             </participant>
          </stage>
       </participants>
@@ -51,7 +51,7 @@
       </outcomes>
       <payload externalSchema="false" xmlSchemaDefinition="../Schemas/HT_GestionarComunicacionPayload.xsd"
                typedTaskSchemaLocation="../Schemas/HT_GestionarComunicacionWorkflowTask.xsd">
-          <messageAttribute name="justificacionCierreDO" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+         <messageAttribute name="justificacionCierreDO" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
                            external="false"/>
          <messageAttribute name="tipoCierreDO" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
                            external="false"/>
@@ -99,7 +99,12 @@
                            external="false"/>
          <messageAttribute name="categorizado" attributeType="SIMPLE_TYPE" type="xsd:boolean" updatable="false"
                            external="false"/>
-       
+         <messageAttribute name="nombrePais" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="nombreDepartamento" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
+         <messageAttribute name="nombreCiudad" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
       </payload>
       <flexfieldMappings>
          <flexfieldMapping>
@@ -130,7 +135,7 @@
             <description>Fecha vencimiento</description>
          </flexfieldMapping>
          <flexfieldMapping>
-            <xpathExpression>/task:task/task:payload/ns2:ComunicacionBO/ns2:fecRadicacion</xpathExpression>
+            <xpathExpression>/task:task/task:payload/ns0:ComunicacionBO/ns0:fecRadicacion</xpathExpression>
             <attributeLabel>
                <labelName>Fecha de Radicación</labelName>
                <flexfield>ProtectedDateAttribute2</flexfield>

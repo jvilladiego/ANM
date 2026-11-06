@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="windows-1252" ?>
+<!DOCTYPE ViewObject SYSTEM "jbo_03_01.dtd">
+<!---->
+<ViewObject
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AnmtaxonomiaTmpView"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  SelectListFlags="1"
+  FromListFlags="1"
+  WhereFlags="1"
+  BindingStyle="OracleName"
+  CustomQuery="false"
+  SelectAllAttributes="false"
+  PageIterMode="Full">
+  <EntityUsage
+    Name="AnmtaxonomiaTmp"
+    Entity="co.gov.anm.model.entity.AnmtaxonomiaTmp"/>
+  <ViewAttribute
+    Name="CatProceso"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="CatProceso"
+    EntityUsage="AnmtaxonomiaTmp"
+    AliasName="CAT_PROCESO"/>
+  <ViewAttribute
+    Name="ProcAdm"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="ProcAdm"
+    EntityUsage="AnmtaxonomiaTmp"
+    AliasName="PROC_ADM"/>
+  <ViewAttribute
+    Name="Serie"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Serie"
+    EntityUsage="AnmtaxonomiaTmp"
+    AliasName="SERIE"/>
+  <ViewAttribute
+    Name="Subserie"
+    IsNotNull="true"
+    PrecisionRule="true"
+    EntityAttrName="Subserie"
+    EntityUsage="AnmtaxonomiaTmp"
+    AliasName="SUBSERIE"/>
+  <ViewAttribute
+    Name="Cuaderno"
+    PrecisionRule="true"
+    EntityAttrName="Cuaderno"
+    EntityUsage="AnmtaxonomiaTmp"
+    AliasName="CUADERNO"/>
+</ViewObject>

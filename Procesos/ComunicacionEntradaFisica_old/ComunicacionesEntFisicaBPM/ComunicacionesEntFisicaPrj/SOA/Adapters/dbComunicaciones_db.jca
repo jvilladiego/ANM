@@ -1,0 +1,10 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<adapter-config name="dbComunicaciones" adapter="db" wsdlLocation="../SGD/Proxy_Services/dbComunicaciones.wsdl" xmlns="http://platform.integration.oracle/blocks/adapter/fw/metadata">
+   <connection-factory UIConnectionName="dev-db" location="eis/DB/comunicaciones"/>
+   <endpoint-interaction portType="dbComunicaciones_ptt" operation="dbComunicaciones">
+      <interaction-spec className="oracle.tip.adapter.db.DBPureSQLInteractionSpec">
+         <property name="SqlString" value="select tiempo_respuesta from SGD_TIPO_SOLICITUD where ID_TIPO_SOLICITUD = ?"/>
+         <property name="GetActiveUnitOfWork" value="false"/>
+      </interaction-spec>
+   </endpoint-interaction>
+</adapter-config>

@@ -104,6 +104,8 @@ public class SgdComunicacion implements Serializable {
     private String requiereRespuesta;
     @Column(name = "TIPO_COMUNICACION", length = 100)
     private String tipoComunicacion;
+    @Column(name = "TIPO_CIERRE", length = 30, nullable = true)
+    private String tipoCierre;
     @Column(length = 100)
     private String tramite;
     @Column(name = "TRASLADO_OTRA_ENTIDAD", length = 2)
@@ -450,6 +452,14 @@ public class SgdComunicacion implements Serializable {
 
     public void setTipoComunicacion(String tipoComunicacion) {
         this.tipoComunicacion = tipoComunicacion;
+    }
+    
+    public String getTipoCierre() {
+        return tipoCierre;
+    }
+
+    public void setTipoCierre(String tipoCierre) {
+        this.tipoCierre = tipoCierre;
     }
 
     public String getTramite() {

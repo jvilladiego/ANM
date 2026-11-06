@@ -47,6 +47,7 @@
    <workflowConfiguration features="ucm,RSCUSTOMIZATION" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DocPrincipalBO">
       <outcomes>
          <outcome>SUBMIT</outcome>
+         <outcome>ANULAR</outcome>
       </outcomes>
       <payload externalSchema="false" xmlSchemaDefinition="../Schemas/CrearComunicacionHTPayload.xsd"
                typedTaskSchemaLocation="../Schemas/CrearComunicacionHTWorkflowTask.xsd">

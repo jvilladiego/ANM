@@ -81,4 +81,36 @@
                       InitiationTask="false" DocumentStoreConfiguration="false"/>
     </Source>
   </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesIntFisicas_ADF_GestionarComunicacionHT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesIntFisicas_ADF_GestionarComunicacionHT"
+                      BeanClass="ComunicacionesIntFisicas_ADF_GestionarComunicacionHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/Jobs/BPM/ANM/Repositorio/Procesos/ComunicacionInternaFisica/ComunicacionesIntFisicasBpmApp/ComunicacionesIntFisicas/SOA/Schemas/GestionarComunicacionHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesIntFisicas/SOA/HumanTasks/GestionarComunicacionHT.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesIntFisicas_ADF_CrearComunicacionRespuestaHT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesIntFisicas_ADF_CrearComunicacionRespuestaHT"
+                      BeanClass="ComunicacionesIntFisicas_ADF_CrearComunicacionRespuestaHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/C:/Jobs/BPM/ANM/Repositorio/Procesos/ComunicacionInternaFisica/ComunicacionesIntFisicasBpmApp/ComunicacionesIntFisicas/SOA/Schemas/CrearComunicacionRespuestaHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesIntFisicas/SOA/HumanTasks/CrearComunicacionRespuestaHT.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
 </DataControlConfigs>

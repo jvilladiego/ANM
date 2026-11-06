@@ -120,31 +120,31 @@
                         <f:facet name="context"/>
                         <af:panelStretchLayout id="rootPanel" styleClass="AFStretchWidth" startWidth="10%"
                                                endWidth="10%" dimensionsFrom="children">
-                         
                             <f:facet name="center">
                                 <af:panelGroupLayout layout="vertical" id="panelCenter" styleClass="AFStretchWidth">
-                                    
-                                    <af:panelBox text="Plantillas" id="pb2" >
-                                        <af:table var="row" rowBandingInterval="1" id="t5"
-                                                rowSelection="single" value="#{CrearComunicacionRespuestaJSFBean.lstPlantilla}">
-                                            <af:column sortable="false" headerText="Nombre plantilla" 
-                                                    id="c3" width="300" >
-                                                <af:link text="#{row.nombre}" id="l4" targetFrame="_blank" 
-                                                        destination="#{row.ruta}"/>
+                                    <af:panelBox text="Plantillas" id="pb2"
+                                                 rendered="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada ne true}"
+                                                 >
+                                        <af:table var="row" rowBandingInterval="1" id="t5" rowSelection="single"
+                                                  value="#{CrearComunicacionRespuestaJSFBean.lstPlantilla}">
+                                            <af:column sortable="false" headerText="Nombre plantilla" id="c3"
+                                                       width="300">
+                                                <af:link text="#{row.nombre}" id="l4" targetFrame="_blank"
+                                                         destination="#{row.ruta}"/>
                                             </af:column>
-                                            <af:column sortable="false" headerText="Fecha creación" id="c4">
+                                            <af:column sortable="false" headerText="Fecha creaci&#243;n" id="c4">
                                                 <af:outputText value="#{row.fechaCreacion}" id="ot24"/>
                                             </af:column>
                                         </af:table>
                                     </af:panelBox>
-                                
                                     <af:panelBox id="pBox1" text="Comunicaci&#243;n">
                                         <af:panelFormLayout id="pflInfo12" rows="3" labelWidth="30%" maxColumns="2"
                                                             styleClass="p_AFClickToEdit" fieldWidth="40%">
-                                             <af:inputText value="#{bindings.asunto.inputValue}"
-                                                          label="Asunto" styleClass="AFStretchWidth"
-                                                          maximumLength="500" required="true"
-                                                          shortDesc="#{bindings.asunto.hints.tooltip}" id="it4">
+                                            <af:inputText value="#{bindings.asunto.inputValue}" label="Asunto"
+                                                          styleClass="AFStretchWidth" maximumLength="500"
+                                                          required="true" shortDesc="#{bindings.asunto.hints.tooltip}"
+                                                          rendered="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada ne true}"
+                                                           id="it4">
                                                 <f:validator binding="#{bindings.asunto.validator}"/>
                                                 <f:validateLength maximum="500"/>
                                             </af:inputText>
@@ -157,17 +157,37 @@
                                             </af:panelLabelAndMessage>
                                             <af:inputText value="#{bindings.nombre6.inputValue}" columns="90"
                                                           label="Dependencia Destino" readOnly="true"
-                                                          required="#{bindings.nombre6.hints.mandatory}" 
+                                                          required="#{bindings.nombre6.hints.mandatory}"
                                                           maximumLength="#{bindings.nombre6.hints.precision}"
                                                           shortDesc="#{bindings.nombre6.hints.tooltip}" id="it57">
                                                 <f:validator binding="#{bindings.nombre6.validator}"/>
                                             </af:inputText>
-                                            <af:panelLabelAndMessage label="Número radicado relacionado" id="plam6"
-                                                    rendered="#{bindings.nroRadicadoRelacionado.inputValue != null}">
-                                                 <af:link text="#{bindings.nroRadicadoRelacionado.inputValue}" targetFrame="_blank"
+                                            <af:panelLabelAndMessage label="N&#250;mero radicado relacionado" id="plam6"
+                                                                     rendered="#{bindings.nroRadicadoRelacionado.inputValue != null}">
+                                                <af:link text="#{bindings.nroRadicadoRelacionado.inputValue}"
+                                                         targetFrame="_blank"
                                                          destination="#{bindings.urlDocumRelacionadoBO.inputValue}"
-                                                          id="l5"/>
+                                                         id="l5"/>
                                             </af:panelLabelAndMessage>
+                                            <af:selectBooleanCheckbox value="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada}"
+                                                                      simple="false"
+                                                                      label="&#191;Existe una respuesta radicada para esta comunicaci&#243;n?"
+                                                                      text="S&#237;" autoSubmit="true" immediate="true"
+                                                                      required="false"
+                                                                      shortDesc="Seleccione S&#237; si la respuesta ya fue radicada"
+                                                                      valueChangeListener="#{CrearComunicacionRespuestaJSFBean.cambiarExisteRespuestaRadicada}"
+                                                                      id="sor1"/>
+                                            <af:inputText value="#{CrearComunicacionRespuestaJSFBean.nroRadicadoRespuestaExistente}"
+                                                          simple="false"
+                                                          label="N&#250;mero de radicado de la respuesta emitida previamente"
+                                                          required="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada}"
+                                                          columns="30" maximumLength="100"
+                                                          shortDesc="Ingrese el n&#250;mero del radicado existente"
+                                                          rendered="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada}"
+                                                           id="itRadicadoRespuestaExistente">
+                                                <af:validateRegExp pattern="[0-9]+"
+                                                                   messageDetailNoMatch="El n&#250;mero de radicado solo debe contener d&#237;gitos."/>
+                                            </af:inputText>
                                             <af:panelLabelAndMessage label="Fecha de Vencimiento" id="plam1">
                                                 <af:outputText value="#{bindings.fecVencimiento.inputValue}"
                                                                shortDesc="#{bindings.fecVencimiento.hints.tooltip}"
@@ -176,48 +196,52 @@
                                                 </af:outputText>
                                             </af:panelLabelAndMessage>
                                             <af:inputNumberSpinbox value="#{bindings.nroFolios.inputValue}"
-                                                                   required="true"
-                                                                   label="Número de Folios"
+                                                                   required="true" label="N&#250;mero de Folios"
                                                                    columns="#{bindings.nroFolios.hints.displayWidth}"
                                                                    minimum="1" maximum="1000" stepSize="1"
                                                                    shortDesc="#{bindings.nroFolios.hints.tooltip}"
-                                                                   id="ins1"/>
+                                                                   rendered="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada ne true}"
+                                                                    id="ins1"/>
                                             <af:inputText value="#{bindings.referencia.inputValue}" simple="false"
                                                           required="#{bindings.referencia.hints.mandatory}"
                                                           label="Referencia"
                                                           columns="#{bindings.referencia.hints.displayWidth}"
                                                           maximumLength="200"
-                                                          shortDesc="#{bindings.referencia.hints.tooltip}" id="it3">
+                                                          shortDesc="#{bindings.referencia.hints.tooltip}"
+                                                          rendered="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada ne true}"
+                                                           id="it3">
                                                 <f:validateLength maximum="200"/>
                                             </af:inputText>
                                             <af:panelLabelAndMessage label="Expediente Minero Relacionado" id="plam58">
                                                 <af:outputText value="#{bindings.esTituloMinero.inputValue == true? 'SI' : 'NO'}"
-                                                           shortDesc="#{bindings.esTituloMinero.hints.tooltip}"
-                                                           id="ot55"/>
+                                                               shortDesc="#{bindings.esTituloMinero.hints.tooltip}"
+                                                               id="ot55"/>
                                             </af:panelLabelAndMessage>
                                             <af:panelLabelAndMessage label="N&#250;mero de Placa" id="plam32">
                                                 <af:outputText value="#{bindings.nroPlaca.inputValue}"
-                                                           shortDesc="#{bindings.nroPlaca.hints.tooltip}" id="ot90"/>
+                                                               shortDesc="#{bindings.nroPlaca.hints.tooltip}"
+                                                               id="ot90"/>
                                             </af:panelLabelAndMessage>
                                         </af:panelFormLayout>
                                     </af:panelBox>
-                                    <af:panelBox id="pbAdjunto" text="Adjuntos">
+                                    <af:panelBox id="pbAdjunto" text="Adjuntos"
+                                                 rendered="#{CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada ne true}"
+                                                 >
                                         <af:panelGroupLayout layout="vertical" id="pnlAdj1">
-                                            <af:panelGroupLayout layout="horizontal" id="pnlAdj2">                                    
+                                            <af:panelGroupLayout layout="horizontal" id="pnlAdj2">
                                                 <af:outputLabel value="Documento Principal" id="ppalLab" for="dwnLink"/>
-                                                <af:link id="dwnLink" text="#{bindings.name1.inputValue}" targetFrame="_blank" 
-                                                        partialTriggers="adfUpl"
-                                                        immediate="true">
+                                                <af:link id="dwnLink" text="#{bindings.name1.inputValue}"
+                                                         targetFrame="_blank" partialTriggers="adfUpl" immediate="true">
                                                     <af:fileDownloadActionListener method="#{CrearComunicacionRespuestaJSFBean.descargar}"/>
                                                 </af:link>
                                                 <af:spacer id="spAdjuntos" width="20" height="20"/>
                                                 <af:inputFile label=" " id="adfUpl" autoSubmit="true"
-                                                    binding="#{CrearComunicacionRespuestaJSFBean.ifAnexo}"
-                                                    valueChangeListener="#{CrearComunicacionRespuestaJSFBean.cambiarDocPpal}"/>
+                                                              binding="#{CrearComunicacionRespuestaJSFBean.ifAnexo}"
+                                                              valueChangeListener="#{CrearComunicacionRespuestaJSFBean.cambiarDocPpal}"/>
                                             </af:panelGroupLayout>
                                             <wlc:manageDocuments docBean="#{pageFlowScope.docMgmtBean}" id="md1"
-                                                                     rendered="#{!actionAvailable.inNotificationClient}"/>
-                                        </af:panelGroupLayout>                                        
+                                                                 rendered="#{!actionAvailable.inNotificationClient}"/>
+                                        </af:panelGroupLayout>
                                     </af:panelBox>
                                     <!--af:inputText value="#{bindings.instanceId.inputValue}"
                                                   label="#{bindings.instanceId.hints.label}"
@@ -270,29 +294,28 @@
                                             <f:validator binding="#{bindings.linkDocPrincipal.validator}"/>
                                         </af:inputText>
                                     </af:panelFormLayout-->
-                                    <af:panelBox id="pBox2" text="Gestión Documental"
-                                                rendered="#{!bindings.esTituloMinero.inputValue}">
+                                    <af:panelBox id="pBox2" text="Gesti&#243;n Documental"
+                                                 rendered="#{!bindings.esTituloMinero.inputValue and CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada ne true}"
+                                                 >
                                         <af:panelFormLayout id="tab1Form1">
                                             <af:selectOneChoice id="selectCatProceso"
                                                                 showRequired="#{!bindings.esTituloMinero.inputValue}"
                                                                 disabled="#{bindings.esTituloMinero.inputValue}"
                                                                 shortDesc="#{bindings.idCatProceso.hints.tooltip}"
                                                                 autoSubmit="true" clientComponent="true"
-                                                                label="Categoría"
-                                                                partialTriggers="ot55"
+                                                                label="Categor&#237;a" partialTriggers="ot55"
                                                                 valueChangeListener="#{CrearComunicacionRespuestaJSFBean.cambiarCategoriaProceso}"
                                                                 value="#{bindings.idCatProceso.inputValue}">
                                                 <f:selectItem itemLabel="Seleccione" id="selCPItm1"/>
                                                 <f:selectItems value="#{CrearComunicacionRespuestaJSFBean.categoriasProceso}"
                                                                id="selCPItm2"/>
                                             </af:selectOneChoice>
-                                            <af:selectOneChoice id="selectProceso"                                                                        
+                                            <af:selectOneChoice id="selectProceso"
                                                                 shortDesc="#{bindings.idProceso.hints.tooltip}"
                                                                 autoSubmit="true" clientComponent="true"
                                                                 showRequired="#{!bindings.esTituloMinero.inputValue}"
                                                                 disabled="#{bindings.esTituloMinero.inputValue}"
-                                                                label="Proceso"
-                                                                partialTriggers="ot55 selectCatProceso"
+                                                                label="Proceso" partialTriggers="ot55 selectCatProceso"
                                                                 valueChangeListener="#{CrearComunicacionRespuestaJSFBean.cambiarProceso}"
                                                                 value="#{bindings.idProceso.inputValue}">
                                                 <f:selectItem itemLabel="Seleccione" id="selPRItm1"/>
@@ -326,8 +349,8 @@
                                             </af:selectOneChoice>
                                             <af:selectOneChoice id="selectCuaderno"
                                                                 shortDesc="#{bindings.idCuaderno.hints.tooltip}"
-                                                                label="Expediente"
-                                                                autoSubmit="true" clientComponent="true"
+                                                                label="Expediente" autoSubmit="true"
+                                                                clientComponent="true"
                                                                 disabled="#{bindings.esTituloMinero.inputValue}"
                                                                 partialTriggers="ot55 selectCatProceso selectProceso selectSerie selectSubSerie"
                                                                 valueChangeListener="#{CrearComunicacionRespuestaJSFBean.cambiarCuaderno}"
@@ -338,8 +361,9 @@
                                             </af:selectOneChoice>
                                         </af:panelFormLayout>
                                     </af:panelBox>
-                                    <af:panelBox id="pb3" text="Gestión Documental"
-                                            rendered="#{bindings.esTituloMinero.inputValue}">
+                                    <af:panelBox id="pb3" text="Gesti&#243;n Documental"
+                                                 rendered="#{bindings.esTituloMinero.inputValue and CrearComunicacionRespuestaJSFBean.existeRespuestaRadicada ne true}"
+                                                 >
                                         <af:panelFormLayout id="tab2Form1">
                                             <af:selectOneChoice id="selectTramite"
                                                                 shortDesc="#{bindings.idTramite.hints.tooltip}"
@@ -357,18 +381,16 @@
                                                                 shortDesc="#{bindings.idTpDocumento.hints.tooltip}"
                                                                 showRequired="#{bindings.esTituloMinero.inputValue}"
                                                                 disabled="#{!bindings.esTituloMinero.inputValue}"
-                                                                label="Tipo Documental"
-                                                                autoSubmit="true" clientComponent="true"
-                                                                partialTriggers="selectTramite"
+                                                                label="Tipo Documental" autoSubmit="true"
+                                                                clientComponent="true" partialTriggers="selectTramite"
                                                                 valueChangeListener="#{CrearComunicacionRespuestaJSFBean.cambiarTipoDocumento}"
-                                                                value="#{bindings.idTpDocumento.inputValue}">        
-                                                <f:selectItem itemLabel="Seleccione" id="selTipoDoc"/>                                                                        
+                                                                value="#{bindings.idTpDocumento.inputValue}">
+                                                <f:selectItem itemLabel="Seleccione" id="selTipoDoc"/>
                                                 <f:selectItems value="#{CrearComunicacionRespuestaJSFBean.tiposDocumentales}"
                                                                id="selTpDoc2"/>
                                             </af:selectOneChoice>
                                         </af:panelFormLayout>
                                     </af:panelBox>
-                                    
                                     <af:panelGroupLayout id="pgl1">
                                         <af:showDetailHeader size="2" text="#{resources.COMMENTS}"
                                                              disclosed="#{actionAvailable.discloseComments}"
@@ -615,7 +637,7 @@
                                                                            id="si4"/>
                                                         </af:selectOneRadio>
                                                     </af:panelFormLayout>
-                                                    <af:inputText id="edAttTy" visible="false" />
+                                                    <af:inputText id="edAttTy" visible="false"/>
                                                     <af:panelGroupLayout layout="vertical" partialTriggers="edAttTy"
                                                                          id="pgl8">
                                                         <af:inputText id="attName" label="#{resources.NAME}"

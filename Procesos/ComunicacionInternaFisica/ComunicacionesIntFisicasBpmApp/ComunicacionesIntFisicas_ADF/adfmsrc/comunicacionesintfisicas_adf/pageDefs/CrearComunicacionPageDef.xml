@@ -181,6 +181,15 @@
                   MethodName="SUBMIT" IsViewObjectMethod="false"
                   DataControl="ComunicacionesIntFisicas_ADF_CrearComunicacionHT"
                   InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator"
+              id="ANULAR"
+              RequiresUpdateModel="false"
+              Action="invokeMethod"
+              MethodName="ANULAR"
+              IsViewObjectMethod="false"
+              DataControl="ComunicacionesIntFisicas_ADF_CrearComunicacionHT"
+              InstanceName="bindings.taskIterator.currentRow.dataProvider"
+              IsLocalObjectReference="true"/>        
     <attributeValues IterBinding="taskIterator" id="creator">
       <AttrNames>
         <Item Value="creator"/>

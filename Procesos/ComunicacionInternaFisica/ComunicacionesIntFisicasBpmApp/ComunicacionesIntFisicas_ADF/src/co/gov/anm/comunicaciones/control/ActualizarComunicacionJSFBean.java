@@ -12,6 +12,13 @@ import co.gov.anm.sgd.service.ExpedienteMinero;
 import co.gov.anm.sgd.service.WccResponse;
 import co.gov.anm.sgd.util.SGDWebServiceLocator;
 
+
+import javax.faces.event.AbortProcessingException;
+
+import oracle.adf.model.binding.DCIteratorBinding;
+import oracle.binding.BindingContainer;
+import oracle.binding.OperationBinding;
+
 import java.io.OutputStream;
 
 import java.math.BigDecimal;
@@ -958,5 +965,62 @@ public class ActualizarComunicacionJSFBean extends CommonJSFBean{
 
     public RichInputFile getIfAnexo() {
         return ifAnexo;
+    }
+    
+    //REQ03
+    public void anularComunicacion(ActionEvent evt) {
+        log.info("BEGIN anularComunicacion");
+
+        try {
+            BindingContainer bindings = super.getBindingContainer();
+
+            DCIteratorBinding attachmentIterator =
+                (DCIteratorBinding) bindings.get("attachmentIterator");
+
+            OperationBinding eliminarAdjunto =
+                bindings.getOperationBinding("Delete2");
+
+            if (attachmentIterator != null) {
+                while (attachmentIterator.getEstimatedRowCount() > 0) {
+                    attachmentIterator.setCurrentRowIndexInRange(0);
+                    eliminarAdjunto.execute();
+
+                    if (!eliminarAdjunto.getErrors().isEmpty()) {
+                        throw new IllegalStateException(
+                            "No fue posible eliminar todos los archivos asociados.");
+                    }
+                }
+            }
+
+            OperationBinding actualizarTarea =
+                bindings.getOperationBinding("update");
+
+            actualizarTarea.execute();
+
+            if (!actualizarTarea.getErrors().isEmpty()) {
+                throw new IllegalStateException(
+                    "No fue posible guardar la eliminación de los archivos asociados.");
+            }
+
+            // Configura ANULAR solamente después de limpiar y guardar.
+            super.setOperation(evt);
+
+        } catch (Exception e) {
+            log.error("Error anulando la comunicación", e);
+
+            super.showMessage(
+                FacesMessage.SEVERITY_ERROR,
+                "No fue posible anular la comunicación. " +
+                "Verifique los archivos asociados e intente nuevamente."
+            );
+
+            /*
+             * Impide que action="#{invokeActionBean.invokeOperation}"
+             * se ejecute cuando la limpieza falla.
+             */
+            throw new AbortProcessingException(e);
+        }
+
+        log.info("END anularComunicacion");
     }
 }

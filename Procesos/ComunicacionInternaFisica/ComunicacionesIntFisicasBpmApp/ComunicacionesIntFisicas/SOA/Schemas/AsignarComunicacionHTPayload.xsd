@@ -13,6 +13,7 @@
          <element name="radicado" type="xsd:string"/>
          <element name="vencimiento" type="xsd:dateTime"/>
          <element name="urlDocumRelacionadoBO" type="xsd:string"/>
+         <element name="tipoAsignacion" type="xsd:string"/>
       </sequence>
    </complexType>
 </schema>

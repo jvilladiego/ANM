@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<wsdl:definitions name="dbComunicaciones" targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/dbComunicaciones" xmlns:tns="http://xmlns.oracle.com/pcbpel/adapter/db/ComunicacionesEntEmailBpmApp/ComunicacionesEntBpmPrj/dbComunicaciones" xmlns:jca="http://xmlns.oracle.com/pcbpel/wsdl/jca/" xmlns:plt="http://schemas.xmlsoap.org/ws/2003/05/partner-link/" xmlns:db="http://xmlns.oracle.com/pcbpel/adapter/db/dbComunicaciones" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+   <plt:partnerLinkType name="dbComunicaciones_plt">
+      <plt:role name="dbComunicaciones_role">
+         <plt:portType name="tns:dbComunicaciones_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <plt:partnerLinkType name="dbComunicaciones_plt">
+      <plt:role name="dbComunicaciones_role">
+         <plt:portType name="tns:dbComunicaciones_ptt"/>
+      </plt:role>
+   </plt:partnerLinkType>
+   <wsdl:types>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbComunicaciones" schemaLocation="../../Schemas/dbComunicaciones.xsd"/>
+      </schema>
+      <schema xmlns="http://www.w3.org/2001/XMLSchema">
+         <import namespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbComunicaciones" schemaLocation="../../Schemas/dbComunicaciones.xsd"/>
+      </schema>
+   </wsdl:types>
+   <wsdl:message name="dbComunicacionesInput_msg">
+      <wsdl:part name="dbComunicacionesInput_msg" element="db:dbComunicacionesInput"/>
+   </wsdl:message>
+   <wsdl:message name="dbComunicacionesOutputCollection_msg">
+      <wsdl:part name="dbComunicacionesOutputCollection" element="db:dbComunicacionesOutputCollection"/>
+   </wsdl:message>
+   <wsdl:portType name="dbComunicaciones_ptt">
+      <wsdl:operation name="dbComunicaciones">
+         <wsdl:input message="tns:dbComunicacionesInput_msg"/>
+         <wsdl:output message="tns:dbComunicacionesOutputCollection_msg"/>
+      </wsdl:operation>
+   </wsdl:portType>
+</wsdl:definitions>

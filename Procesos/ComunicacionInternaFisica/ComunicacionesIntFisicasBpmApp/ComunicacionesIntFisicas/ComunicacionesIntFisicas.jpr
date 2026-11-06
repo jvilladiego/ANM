@@ -77,7 +77,11 @@
       <string v="oracle.jdeveloper.model.PathsConfiguration/cepContentSet"/>
       <string v="oracle.bpm.fusion.studio.BPMProjectSettings/bpmProjectsProcessesContentSet"/>
    </list>
+   <value n="DCProject" v="true"/>
    <value n="defaultPackage" v="comunicacionesintfisicas"/>
+   <value n="jbo.CustomContextMenus" v="true"/>
+   <value n="jbo.NoAttrEnumClasses" v="true"/>
+   <value n="JboProject" v="true"/>
    <hash n="oracle.adfdtinternal.model.ide.settings.ADFMSettings">
       <value n="hasDataControls" v="true"/>
    </hash>
@@ -105,6 +109,7 @@
          <string v="XML_SCHEMA"/>
       </list>
    </hash>
+   <value n="oracle.jbo.SavedPreferences" v="true"/>
    <hash n="oracle.jdeveloper.compiler.OjcConfiguration">
       <list n="copyRes">
          <string v=".cpx"/>
@@ -127,6 +132,10 @@
          <string v=".xsl"/>
          <string v=".exm"/>
          <string v=".xml"/>
+         <string v=".jpx"/>
+         <string v=".rpx"/>
+         <string v=".json"/>
+         <string v=".bcs"/>
       </list>
       <list n="excludedUrls">
          <string v="fXSLNonDeployedFiles"/>
@@ -226,9 +235,51 @@
             <value n="profileClass" v="oracle.tip.tools.ide.fabric.deploy.sar.SarProfile"/>
             <value n="profileName" v="ComunicacionesIntFisicas"/>
          </hash>
+         <hash n="ComunicacionesIntFisicasBpmApp_ComunicacionesIntFisicas">
+            <value n="adflib-connectionDetails" v="true"/>
+            <hash n="archiveOptions">
+               <value n="hasManifest" v="true"/>
+            </hash>
+            <hash n="fileGroups">
+               <list n="groups">
+                  <hash>
+                     <list n="contributors">
+                        <hash>
+                           <value n="type" v="2"/>
+                        </hash>
+                        <hash>
+                           <value n="type" v="5"/>
+                        </hash>
+                     </list>
+                     <value n="displayName" v="Project Output"/>
+                     <hash n="filters">
+                        <list n="rules">
+                           <hash>
+                              <value n="pattern" v="WEB-INF/classes/**"/>
+                              <value n="type" v="1"/>
+                           </hash>
+                           <hash>
+                              <value n="pattern" v="**"/>
+                              <value n="type" v="0"/>
+                           </hash>
+                        </list>
+                     </hash>
+                     <value n="internalName" v="project-output"/>
+                     <value n="type" v="1"/>
+                  </hash>
+               </list>
+            </hash>
+            <url n="jarURL" path="deploy/ComunicacionesIntFisicasBpmApp_ComunicacionesIntFisicas.jar"/>
+            <hash n="LibraryDependencies">
+               <list n="modulePathDependencies"/>
+            </hash>
+            <value n="profileClass" v="oracle.adfdt.common.deploy.impl.AdfLibraryProfile"/>
+            <value n="profileName" v="ComunicacionesIntFisicasBpmApp_ComunicacionesIntFisicas"/>
+         </hash>
       </hash>
       <list n="profileList">
          <string v="ComunicacionesIntFisicas"/>
+         <string v="ComunicacionesIntFisicasBpmApp_ComunicacionesIntFisicas"/>
       </list>
    </hash>
    <hash n="oracle.jdeveloper.model.J2eeSettings">
@@ -319,6 +370,18 @@
             <value n="id" v="Oracle Rules"/>
             <value n="isJDK" v="false"/>
          </hash>
+         <hash>
+            <value n="id" v="MDS Runtime Dependencies"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
+            <value n="isJDK" v="false"/>
+         </hash>
       </list>
       <hash n="internalDefinitions">
          <list n="libraryDefinitions">
@@ -392,6 +455,18 @@
          </hash>
          <hash>
             <value n="id" v="Oracle Rules"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="MDS Runtime Dependencies"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Security"/>
+            <value n="isJDK" v="false"/>
+         </hash>
+         <hash>
+            <value n="id" v="BC4J Oracle Domains"/>
             <value n="isJDK" v="false"/>
          </hash>
       </list>

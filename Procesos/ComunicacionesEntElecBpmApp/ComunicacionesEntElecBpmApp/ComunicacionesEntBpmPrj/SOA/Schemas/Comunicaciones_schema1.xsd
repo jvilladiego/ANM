@@ -1,9 +1,10 @@
 <?xml version= '1.0' encoding= 'UTF-8' ?>
 <xsd:schema targetNamespace="http://service.sgd.anm.gov.co" xmlns:ns0="http://service.sgd.anm.gov.co"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+            xmlns:xsd="http://www.w3.org/2001/XMLSchema">
     <xsd:complexType name="anexosRadicadoResponse">
         <xsd:sequence>
-            <xsd:element name="anexosList" type="ns0:anexoRadicado" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+            <xsd:element name="anexosList" type="ns0:anexoRadicado" minOccurs="0" maxOccurs="unbounded"
+                         nillable="true"/>
             <xsd:element name="codigoEstado" type="xsd:string" minOccurs="0"/>
             <xsd:element name="mensajeRsp" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
@@ -41,7 +42,8 @@
         <xsd:complexContent>
             <xsd:extension base="ns0:wccResponse">
                 <xsd:sequence>
-                    <xsd:element name="usuarios" type="ns0:usuario" minOccurs="0" maxOccurs="unbounded" nillable="true"/>
+                    <xsd:element name="usuarios" type="ns0:usuario" minOccurs="0" maxOccurs="unbounded"
+                                 nillable="true"/>
                 </xsd:sequence>
             </xsd:extension>
         </xsd:complexContent>
@@ -109,6 +111,7 @@
             <xsd:element name="referencia" type="xsd:string" minOccurs="0"/>
             <xsd:element name="requiereRespuesta" type="xsd:string" minOccurs="0"/>
             <xsd:element name="tipoComunicacion" type="xsd:string" minOccurs="0"/>
+            <xsd:element name="tipoCierre" type="xsd:string" minOccurs="0"/>
             <xsd:element name="tramite" type="xsd:string" minOccurs="0"/>
             <xsd:element name="trasladoOtraEntidad" type="xsd:string" minOccurs="0"/>
             <xsd:element name="usuarioActualizacion" type="xsd:string" minOccurs="0"/>
@@ -137,20 +140,20 @@
     <xsd:complexType name="procesoComunicacionRequest">
         <xsd:sequence>
             <xsd:element name="anexosList" type="ns0:anexoComunicacionRequest" minOccurs="0" maxOccurs="unbounded"
-                 nillable="true"/>
+                         nillable="true"/>
             <xsd:element name="comunicacion" type="ns0:comunicacionRequest" minOccurs="0"/>
             <xsd:element name="interesadosList" type="ns0:interesadoRequest" minOccurs="0" maxOccurs="unbounded"
-                 nillable="true"/>
+                         nillable="true"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="procesoComunicacionResponse">
         <xsd:sequence>
             <xsd:element name="anexosList" type="ns0:anexoComunicacionRequest" minOccurs="0" maxOccurs="unbounded"
-                 nillable="true"/>
+                         nillable="true"/>
             <xsd:element name="codigoRespuesta" type="xsd:string" minOccurs="0"/>
             <xsd:element name="comunicacion" type="ns0:comunicacionRequest" minOccurs="0"/>
             <xsd:element name="interesadosList" type="ns0:interesadoRequest" minOccurs="0" maxOccurs="unbounded"
-                 nillable="true"/>
+                         nillable="true"/>
             <xsd:element name="mensajeRespuesta" type="xsd:string" minOccurs="0"/>
         </xsd:sequence>
     </xsd:complexType>

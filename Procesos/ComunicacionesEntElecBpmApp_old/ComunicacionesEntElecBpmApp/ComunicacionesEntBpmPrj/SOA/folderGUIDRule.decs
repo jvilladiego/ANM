@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<decisionServices xmlns="http://xmlns.oracle.com/bpel/rules" name="folderGUIDRule">
+    <ruleEngineProvider provider="Oracle_11.0.0.0.0" name="OracleRulesSDK">
+        <repository type="SCA-Archive">
+            <path>ComunicacionesEntBpmPrj/oracle/rules/comunicacionesentbpmprj/folderGUIDRule.rules</path>
+        </repository>
+    </ruleEngineProvider>
+    <decisionService name="folderGUIDRule_DecisionService" ruleEngineProviderReference="OracleRulesSDK" targetNamespace="http://xmlns.oracle.com/folderGUIDRule/folderGUIDRule_DecisionService">
+        <catalog>folderGUIDRule</catalog>
+        <pattern name="CallFunctionStateless">
+            <arguments>
+                <call>comunicacionesentbpmprj.folderGUIDRule.DecisionService</call>
+            </arguments>
+        </pattern>
+        <pattern name="CallFunctionStateful">
+            <arguments>
+                <call>comunicacionesentbpmprj.folderGUIDRule.DecisionService</call>
+            </arguments>
+        </pattern>
+    </decisionService>
+    <schemaInformation>
+        <dictionary fqnPackage="comunicacionesentbpmprj" fqnName="folderGUIDRule" updateNumber="63">
+            <schemaBrowser>
+                <package>com.oracle.xmlns.bpm.bpmobject.sgdcomunicaciones.comunicacionbo</package>
+                <namespace>http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO</namespace>
+            </schemaBrowser>
+            <schemaImport namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" localPart="ComunicacionBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/ComunicacionBO.xsd">
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" localPart="ComunicacionBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/ComunicacionBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TipoSimpleBO" localPart="TipoSimpleBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/TipoSimpleBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/TaxonomiaBO" localPart="TaxonomiaBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/TaxonomiaBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/AnexoBO" localPart="AnexoBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/AnexoBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/DependenciaBO" localPart="DependenciaBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/DependenciaBO.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ContentFolderBO" localPart="ContentFolderBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/ContentFolderBO.xsd"/>
+                <import namespace="http://service.sgd.anm.gov.co" localPart="Comunicaciones_schema1.xsd" schemaLocation="Schemas/Comunicaciones_schema1.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoInterno" localPart="InteresadoInterno.xsd" schemaLocation="businessCatalog/SGDComunicaciones/InteresadoInterno.xsd"/>
+                <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/MetadatosBO" localPart="MetadatosBO.xsd" schemaLocation="businessCatalog/SGDComunicaciones/MetadatosBO.xsd"/>
+            </schemaImport>
+        </dictionary>
+    </schemaInformation>
+</decisionServices>

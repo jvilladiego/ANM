@@ -55,7 +55,7 @@
       </payload>
       <flexfieldMappings>
          <flexfieldMapping>
-            <xpathExpression>/task:task/task:payload/ns1:ExcepcionBO/ns1:asuntoComunicacion</xpathExpression>
+           <xpathExpression>/task:task/task:payload/ns0:ExcepcionBO/ns0:asuntoComunicacion</xpathExpression>
             <attributeLabel>
                <labelName>asunto</labelName>
                <flexfield>ProtectedTextAttribute11</flexfield>
@@ -64,7 +64,7 @@
             <description>Asunto</description>
          </flexfieldMapping>
          <flexfieldMapping>
-            <xpathExpression>/task:task/task:payload/ns1:ExcepcionBO/ns1:nroRadicadoComunicacion</xpathExpression>
+           <xpathExpression>/task:task/task:payload/ns0:ExcepcionBO/ns0:nroRadicadoComunicacion</xpathExpression>
             <attributeLabel>
                <labelName>numeroRadicado</labelName>
                <flexfield>ProtectedTextAttribute12</flexfield>

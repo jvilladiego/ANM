@@ -512,9 +512,13 @@
                                                                   label="Justificaci&#243;n de Cierre Autom&#225;tico"
                                                                   value="#{bindings.justificacionCierreDO.inputValue}"
                                                                   rendered="#{bindings.tipoCierreDO.inputValue eq 'CIERRE_AUTOMATICO'}"
-                                                                  required="true" rows="5" columns="70"
-                                                                  maximumLength="1000">
-                                                        <f:validateLength minimum="100" maximum="1000"/>
+                                                                  required="true"
+                                                                  requiredMessageDetail="Justificaci&#243;n de Cierre Autom&#225;tico debe contener m&#237;nimo 100 caracteres y m&#225;ximo 1000 caracteres"
+                                                                  rows="5" columns="70" maximumLength="1000">
+                                                        <af:validateLength minimum="100" maximum="1000"
+                                                                           messageDetailMinimum="Justificaci&#243;n de Cierre Autom&#225;tico debe contener m&#237;nimo 100 caracteres y m&#225;ximo 1000 caracteres"
+                                                                           messageDetailMaximum="Justificaci&#243;n de Cierre Autom&#225;tico debe contener m&#237;nimo 100 caracteres y m&#225;ximo 1000 caracteres"
+                                                                           messageDetailNotInRange="Justificaci&#243;n de Cierre Autom&#225;tico debe contener m&#237;nimo 100 caracteres y m&#225;ximo 1000 caracteres"/>
                                                     </af:inputText>
                                                 </af:panelGroupLayout>
                                             </af:panelFormLayout>

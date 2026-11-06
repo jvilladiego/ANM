@@ -4,11 +4,11 @@
                   xmlns="http://xmlns.oracle.com/weblogic/weblogic-ejb-jar">
 
   <weblogic-enterprise-bean>
-    <ejb-name>ComunicacionesSessionBean</ejb-name>
+    <ejb-name>ComunicacionesSessionComIntFisR4</ejb-name>
     <stateless-session-descriptor/>
   </weblogic-enterprise-bean>
   <weblogic-enterprise-bean>
-    <ejb-name>WCContent</ejb-name>
+    <ejb-name>WCContentComIntFisR4</ejb-name>
     <stateless-session-descriptor/>
   </weblogic-enterprise-bean>  
                   

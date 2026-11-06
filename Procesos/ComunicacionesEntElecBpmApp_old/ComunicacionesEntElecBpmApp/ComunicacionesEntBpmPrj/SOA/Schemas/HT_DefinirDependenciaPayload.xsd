@@ -1,0 +1,28 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<schema targetNamespace="http://xmlns.oracle.com/bpel/workflow/task" xmlns:tns="http://xmlns.oracle.com/bpel/workflow/task" attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns="http://www.w3.org/2001/XMLSchema" xmlns:ns1="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:ns2="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO">
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" schemaLocation="../businessCatalog/SGDComunicaciones/ComunicacionBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/InteresadoBO" schemaLocation="../businessCatalog/SGDComunicaciones/InteresadoBO.xsd"/>
+   <import namespace="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/UsuarioBO" schemaLocation="../businessCatalog/SGDComunicaciones/UsuarioBO.xsd"/>
+   <complexType name="HT_DefinirDependenciaPayloadType">
+      <sequence>
+         <element ref="ns0:ComunicacionBO"/>
+         <element ref="ns1:InteresadoBO"/>
+         <element ref="ns2:UsuarioBO"/>
+         <element name="tipoPQRSDO" type="xsd:string"/>
+         <element name="tiempoRespuestaDO" type="xsd:int"/>
+         <element name="fechaVencimientoDO" type="xsd:dateTime"/>
+         <element name="isPQRSDO" type="xsd:boolean"/>
+         <element name="idTipoPQRSDO" type="xsd:long"/>
+         <element name="urlDocumentoPrincipalDO" type="xsd:string"/>
+         <element name="idTipoIdentificacionDO" type="xsd:int"/>
+         <element name="urlArchivoAdjuntoDO" type="xsd:string"/>
+         <element name="jefeAsignadoDO" type="xsd:string"/>
+         <element name="tiempoRespuesta" type="xsd:integer"/>
+         <element name="fechaVencimiento" type="xsd:dateTime"/>
+         <element name="idTipoPQRS" type="xsd:long"/>
+         <element name="asunto" type="xsd:string"/>
+         <element name="radicado" type="xsd:string"/>
+         <element name="fechaRadicacion" type="xsd:dateTime"/>
+      </sequence>
+   </complexType>
+</schema>

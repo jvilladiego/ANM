@@ -47,6 +47,7 @@
    <workflowConfiguration features="ucm,RSCUSTOMIZATION" xmlns="http://xmlns.oracle.com/bpel/workflow/configuration" xmlns:ns0="http://xmlns.oracle.com/bpm/bpmobject/SGDComunicaciones/ComunicacionBO" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
       <outcomes default="OK">
          <outcome>OK</outcome>
+         <outcome>RETORNAR</outcome>
       </outcomes>
       <payload externalSchema="false" xmlSchemaDefinition="../Schemas/GestionarComunicacionHTPayload.xsd"
                typedTaskSchemaLocation="../Schemas/GestionarComunicacionHTWorkflowTask.xsd">

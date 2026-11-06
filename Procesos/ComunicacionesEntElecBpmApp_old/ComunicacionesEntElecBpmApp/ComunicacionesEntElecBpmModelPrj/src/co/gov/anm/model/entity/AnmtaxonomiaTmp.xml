@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE Entity SYSTEM "jbo_03_01.dtd">
+<!---->
+<Entity
+  xmlns="http://xmlns.oracle.com/bc4j"
+  Name="AnmTaxonomiaTmp"
+  Version="12.2.1.20.47"
+  InheritPersonalization="merge"
+  DBObjectType="table"
+  DBObjectName="ANMTAXONOMIA_TMP"
+  AliasName="AnmTaxonomiaTmpEntity"
+  BindingStyle="OracleName">
+  <Attribute
+    Name="CatProceso"
+    IsNotNull="true"
+    Precision="255"
+    ColumnName="CAT_PROCESO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ANMTAXONOMIA_TMP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="ProcAdm"
+    IsNotNull="true"
+    Precision="255"
+    ColumnName="PROC_ADM"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ANMTAXONOMIA_TMP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Serie"
+    IsNotNull="true"
+    Precision="255"
+    ColumnName="SERIE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ANMTAXONOMIA_TMP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Subserie"
+    IsNotNull="true"
+    Precision="255"
+    ColumnName="SUBSERIE"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ANMTAXONOMIA_TMP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Attribute
+    Name="Cuaderno"
+    Precision="255"
+    ColumnName="CUADERNO"
+    SQLType="VARCHAR"
+    Type="java.lang.String"
+    ColumnType="VARCHAR2"
+    TableName="ANMTAXONOMIA_TMP"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DisplaySize" Value="255"/>
+    </DesignTime>
+  </Attribute>
+  <Key
+    Name="AnmtaxonomiatmpentityPrimaryKey"
+    PrimaryKey="true">
+    <DesignTime>
+      <Attr Name="_DBObjectName" Value="ANMTAXONOMIATMPENTITY_PRIMARY_"/>
+    </DesignTime>
+    <AttrArray Name="Attributes">
+      <Item Value="model.entity.AnmTaxonomiaTmpEntity.CatProceso"/>
+      <Item Value="model.entity.AnmTaxonomiaTmpEntity.ProcAdm"/>
+      <Item Value="model.entity.AnmTaxonomiaTmpEntity.Serie"/>
+      <Item Value="model.entity.AnmTaxonomiaTmpEntity.Subserie"/>
+      <Item Value="model.entity.AnmTaxonomiaTmpEntity.Cuaderno"/>
+    </AttrArray>
+  </Key>
+</Entity>

@@ -28,7 +28,9 @@
          <element name="fechaRadicacion" type="xsd:dateTime"/>
          <element name="asunto" type="xsd:string"/>
          <element name="categorizado" type="xsd:boolean"/>
-         
+         <element name="nombrePais" type="xsd:string"/>
+         <element name="nombreDepartamento" type="xsd:string"/>
+         <element name="nombreCiudad" type="xsd:string"/>
       </sequence>
    </complexType>
 </schema>

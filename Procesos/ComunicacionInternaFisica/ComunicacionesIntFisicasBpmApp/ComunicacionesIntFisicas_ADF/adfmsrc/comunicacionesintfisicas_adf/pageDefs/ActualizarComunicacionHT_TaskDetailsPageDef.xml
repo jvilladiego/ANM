@@ -182,6 +182,15 @@
     <methodAction IterBinding="taskIterator" id="OK" RequiresUpdateModel="true" Action="invokeMethod" MethodName="OK"
                   IsViewObjectMethod="false" DataControl="ComunicacionesIntFisicas_ADF_ActualizarComunicacionHT"
                   InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+   <methodAction IterBinding="taskIterator"
+              id="ANULAR"
+              RequiresUpdateModel="false"
+              Action="invokeMethod"
+              MethodName="ANULAR"
+              IsViewObjectMethod="false"
+              DataControl="ComunicacionesIntFisicas_ADF_ActualizarComunicacionHT"
+              InstanceName="bindings.taskIterator.currentRow.dataProvider"
+              IsLocalObjectReference="true"/>
     <attributeValues IterBinding="taskIterator" id="creator">
       <AttrNames>
         <Item Value="creator"/>

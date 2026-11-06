@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--########################################################################################-->
+<!--####                                                                                ####-->
+<!--####          THIS IS AN AUTO GENERATED FILE. PLEASE DO NOT MANUALLY MODIFY         ####-->
+<!--#### CHANGES TO THIS FILE MAY PRODUCE UNEXPECTED BEHAVIOR AND WOULD BE OVERWRITTEN  ####-->
+<!--####                                                                                ####-->
+<!--########################################################################################-->
+<wsdl:definitions targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/"  xmlns:xsd="http://www.w3.org/2001/XMLSchema"  xmlns:plnk="http://schemas.xmlsoap.org/ws/2003/05/partner-link/"  xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"  xmlns:wsdlsoap="http://schemas.xmlsoap.org/wsdl/soap/"  xmlns:tns="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail" >
+    <wsdl:types>
+        <xsd:schema targetNamespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionEntradaEmail">
+            <xsd:element name="startWebFormPQRS">
+                <xsd:complexType>
+                    <xsd:sequence>
+                        <xsd:element name="numeroRadicado" type="xsd:string"/>
+                        <xsd:element name="idTipoIdentificacion" type="xsd:int"/>
+                        <xsd:element name="tipoIdentificacion" type="xsd:string"/>
+                        <xsd:element name="primerNombre" type="xsd:string"/>
+                        <xsd:element name="segundoNombre" type="xsd:string"/>
+                        <xsd:element name="primerApellido" type="xsd:string"/>
+                        <xsd:element name="segundoApellido" type="xsd:string"/>
+                        <xsd:element name="idEtnia" type="xsd:int"/>
+                        <xsd:element name="idRangoEdad" type="xsd:int"/>
+                        <xsd:element name="ocupacion" type="xsd:string"/>
+                        <xsd:element name="idPoblacionVulnerable" type="xsd:int"/>
+                        <xsd:element name="email" type="xsd:string"/>
+                        <xsd:element name="telefono" type="xsd:string"/>
+                        <xsd:element name="direccion" type="xsd:string"/>
+                        <xsd:element name="idPais" type="xsd:int"/>
+                        <xsd:element name="idDepartamento" type="xsd:int"/>
+                        <xsd:element name="idMunicipio" type="xsd:int"/>
+                        <xsd:element name="idTipoSolicitud" type="xsd:int"/>
+                        <xsd:element name="medioRespuesta" type="xsd:string"/>
+                        <xsd:element name="asunto" type="xsd:string"/>
+                        <xsd:element name="contenido" type="xsd:string"/>
+                        <xsd:element name="urlArchivoAdjunto" type="xsd:string"/>
+                        <xsd:element name="fechaRadicacion" type="xsd:dateTime"/>
+                        <xsd:element name="numeroIdentificacion" type="xsd:string"/>
+                        <xsd:element name="tipoSolicitud" type="xsd:string"/>
+                        <xsd:element name="celular" type="xsd:string"/>
+                        <xsd:element name="nombrePais" type="xsd:string"/>
+                        <xsd:element name="nombreDepartamento" type="xsd:string"/>
+                        <xsd:element name="nombreCiudad" type="xsd:string"/>
+                        <xsd:element name="AppName" type="xsd:string"/>
+                        <xsd:element name="dependenciaAsignada" type="xsd:int"/>
+                        <xsd:element name="placa" type="xsd:string"/>
+                    </xsd:sequence>
+                </xsd:complexType>
+            </xsd:element>
+        </xsd:schema>
+    </wsdl:types>
+    <wsdl:message name="startWebFormPQRS">
+        <wsdl:part name="parameters" element="tns:startWebFormPQRS"/>
+    </wsdl:message>
+    <wsdl:portType name="ComunicacionEntradaEmailPortType">
+        <wsdl:operation name="startWebFormPQRS">
+            <wsdl:input message="tns:startWebFormPQRS"/>
+        </wsdl:operation>
+    </wsdl:portType>
+    <plnk:partnerLinkType name="ComunicacionEntradaEmailPortTypePartnerLinkType">
+        <plnk:role name="ComunicacionEntradaEmailPortTypeProvider">
+            <plnk:portType name="tns:ComunicacionEntradaEmailPortType"/>
+        </plnk:role>
+    </plnk:partnerLinkType>
+</wsdl:definitions>

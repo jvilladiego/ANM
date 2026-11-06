@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<library name="ADF Library Dependencies" id="oracle..adf-library-dependencies" deployed="true" locked="true" xmlns="http://xmlns.oracle.com/jdeveloper/1013/manifest-libraries">
+  <description/>
+  <classpath>../../../../Oracle/Middleware/Oracle_Home/lib/commonj.jar</classpath>
+  <classpath>../../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/composer/soaComposerTemplates.jar</classpath>
+  <classpath>../../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/oracle.soa.worklist_11.1.1/common-userprefs.jar</classpath>
+  <classpath>../../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/rulesComponents/adflibGenericDCs.jar</classpath>
+  <classpath>../../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/rulesComponents/adflibRulesSharedDC.jar</classpath>
+  <classpath>../../../../Oracle/Middleware/Oracle_Home/soa/soa/modules/rulesComponents/rulesSharedUtils.jar</classpath>
+</library>

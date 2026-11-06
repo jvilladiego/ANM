@@ -735,7 +735,7 @@
          <list n="libraryDefinitions">
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/adf-share-support.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/adf-share-support.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Adf-share-support.jar"/>
@@ -744,7 +744,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/adfm.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/adfm.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Adfm.jar"/>
@@ -753,7 +753,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/barcode4j-2.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/barcode4j-2.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Barcode4j-2.1.jar"/>
@@ -762,7 +762,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/com.ibm.icu_3.4.4.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/com.ibm.icu_3.4.4.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Com.ibm.icu_3.4.4.1.jar"/>
@@ -771,7 +771,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/com.lowagie.text-2.1.7.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/com.lowagie.text-2.1.7.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Com.lowagie.text-2.1.7.jar"/>
@@ -780,7 +780,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/commons-cli-1.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/commons-cli-1.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Commons-cli-1.1.jar"/>
@@ -789,7 +789,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/commons-codec-1.9.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/commons-codec-1.9.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Commons-codec-1.9.jar"/>
@@ -798,7 +798,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/commons-io-1.4.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/commons-io-1.4.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Commons-io-1.4.jar"/>
@@ -807,7 +807,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/commons-logging-1.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/commons-logging-1.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Commons-logging-1.2.jar"/>
@@ -816,7 +816,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/commons-validator-1.4.0.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/commons-validator-1.4.0.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Commons-validator-1.4.0.jar"/>
@@ -825,7 +825,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/comunicaciones_adflib331.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/comunicaciones_adflib331.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Comunicaciones_adflib331.jar"/>
@@ -834,7 +834,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/FirmaDigitalWSClient-1.0-SNAPSHOT.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/FirmaDigitalWSClient-1.0-SNAPSHOT.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="FirmaDigitalWSClient-1.0-SNAPSHOT.jar"/>
@@ -843,7 +843,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/fluent-hc-4.5.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/fluent-hc-4.5.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Fluent-hc-4.5.2.jar"/>
@@ -852,7 +852,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/gson-2.8.5.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/gson-2.8.5.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Gson-2.8.5.jar"/>
@@ -861,7 +861,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/httpclient-4.5.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/httpclient-4.5.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Httpclient-4.5.2.jar"/>
@@ -870,7 +870,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/httpclient-cache-4.5.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/httpclient-cache-4.5.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Httpclient-cache-4.5.2.jar"/>
@@ -879,7 +879,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/httpclient-win-4.5.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/httpclient-win-4.5.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Httpclient-win-4.5.2.jar"/>
@@ -888,7 +888,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/httpcore-4.4.4.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/httpcore-4.4.4.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Httpcore-4.4.4.jar"/>
@@ -897,7 +897,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/httpmime-4.5.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/httpmime-4.5.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Httpmime-4.5.2.jar"/>
@@ -906,7 +906,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/iri-0.8.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/iri-0.8.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Iri-0.8.jar"/>
@@ -915,7 +915,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/java-rdfa-0.4.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/java-rdfa-0.4.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Java-rdfa-0.4.1.jar"/>
@@ -924,7 +924,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/jena.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/jena.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Jena.jar"/>
@@ -933,7 +933,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/jodconverter-core-3.0-beta-4.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/jodconverter-core-3.0-beta-4.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Jodconverter-core-3.0-beta-4.jar"/>
@@ -942,7 +942,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/json-20090211.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/json-20090211.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Json-20090211.jar"/>
@@ -951,7 +951,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/juh-3.2.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/juh-3.2.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Juh-3.2.1.jar"/>
@@ -960,7 +960,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/jurt-3.2.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/jurt-3.2.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Jurt-3.2.1.jar"/>
@@ -969,7 +969,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/log4j-1.2.17.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/log4j-1.2.17.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Log4j-1.2.17.jar"/>
@@ -978,7 +978,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/odfdom-java-0.8.10-incubating.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/odfdom-java-0.8.10-incubating.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Odfdom-java-0.8.10-incubating.jar"/>
@@ -987,7 +987,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/okhttp-3.14.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/okhttp-3.14.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Okhttp-3.14.2.jar"/>
@@ -996,7 +996,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/okio-1.17.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/okio-1.17.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Okio-1.17.2.jar"/>
@@ -1005,7 +1005,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/oracle.ucm.ridc-11.1.1-javadoc.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/oracle.ucm.ridc-11.1.1-javadoc.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Oracle.ucm.ridc-11.1.1-javadoc.jar"/>
@@ -1014,7 +1014,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/oracle.ucm.ridc-11.1.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/oracle.ucm.ridc-11.1.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Oracle.ucm.ridc-11.1.1.jar"/>
@@ -1023,7 +1023,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/oracle.ucm.ridc.was-lib-11.1.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/oracle.ucm.ridc.was-lib-11.1.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Oracle.ucm.ridc.was-lib-11.1.1.jar"/>
@@ -1032,7 +1032,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/org.odftoolkit.odfdom.converter.core-1.0.2.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/org.odftoolkit.odfdom.converter.core-1.0.2.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Org.odftoolkit.odfdom.converter.core-1.0.2.jar"/>
@@ -1041,7 +1041,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/org.odftoolkit.odfdom.converter.pdf-1.0.0.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/org.odftoolkit.odfdom.converter.pdf-1.0.0.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Org.odftoolkit.odfdom.converter.pdf-1.0.0.jar"/>
@@ -1050,7 +1050,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/poi-3.16.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/poi-3.16.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Poi-3.16.jar"/>
@@ -1059,7 +1059,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/poi-excelant-3.16.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/poi-excelant-3.16.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Poi-excelant-3.16.jar"/>
@@ -1068,7 +1068,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/poi-ooxml-3.16.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/poi-ooxml-3.16.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Poi-ooxml-3.16.jar"/>
@@ -1077,7 +1077,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/poi-ooxml-schemas-3.16.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/poi-ooxml-schemas-3.16.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Poi-ooxml-schemas-3.16.jar"/>
@@ -1086,7 +1086,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/poi-scratchpad-3.16.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/poi-scratchpad-3.16.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Poi-scratchpad-3.16.jar"/>
@@ -1095,7 +1095,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/ridl-3.2.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/ridl-3.2.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Ridl-3.2.1.jar"/>
@@ -1104,7 +1104,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/simple-odf-0.8.1-incubating.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/simple-odf-0.8.1-incubating.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Simple-odf-0.8.1-incubating.jar"/>
@@ -1113,7 +1113,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/unoil-3.2.1.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/unoil-3.2.1.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Unoil-3.2.1.jar"/>
@@ -1122,7 +1122,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/xdocreport-1.0.3.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/xdocreport-1.0.3.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Xdocreport-1.0.3.jar"/>
@@ -1131,7 +1131,7 @@
             </hash>
             <hash>
                <list n="classPath">
-                  <url path="../../Jars/Jars/lib/xerces-2.9.1-patched-XERCESJ-1257.jar" jar-entry=""/>
+                  <url path="../../Jars/lib/xerces-2.9.1-patched-XERCESJ-1257.jar" jar-entry=""/>
                </list>
                <value n="deployedByDefault" v="true"/>
                <value n="description" v="Xerces-2.9.1-patched-XERCESJ-1257.jar"/>

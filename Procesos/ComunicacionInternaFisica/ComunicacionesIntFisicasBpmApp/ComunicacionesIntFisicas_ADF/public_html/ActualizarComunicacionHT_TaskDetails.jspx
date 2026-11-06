@@ -21,6 +21,12 @@
                                              facetName="#{actionAvailable.isCustomActionButtons}">
                                     <f:facet name="true">
                                         <af:panelGroupLayout layout="horizontal" id="pgl2">
+                                            <af:button text="Anular" id="btnAnular" immediate="true"
+                                                       disabled="#{!bindings.ANULAR.enabled}"
+                                                       visible="#{wf:isCustomActionAvailable('ANULAR', 'bindings.customActions')}">
+                                                <af:showPopupBehavior popupId="popupConfirmarAnulacion"
+                                                                      triggerType="action"/>
+                                            </af:button>
                                             <af:button actionListener="#{ActualizarComunicacionJSFBean.actualizarComunicacion}"
                                                        text="#{wf:getResourceValue('OK', 'bindings.customActions')}"
                                                        disabled="#{!bindings.OK.enabled}"
@@ -227,15 +233,15 @@
                                 <af:panelBox id="idPanelGestion" text="Comunicaci&#243;n">
                                     <af:panelFormLayout id="pfl6" rows="5" labelWidth="30%" maxColumns="2"
                                                         styleClass="p_AFClickToEdit" fieldWidth="40%">
-                                       <af:inputText value="#{bindings.asunto.inputValue}" simple="false"
+                                        <af:inputText value="#{bindings.asunto.inputValue}" simple="false"
                                                       required="true" label="Asunto" styleClass="AFStretchWidth"
-                                                      maximumLength="500"
-                                                      shortDesc="#{bindings.asunto.hints.tooltip}" id="it2">
+                                                      maximumLength="500" shortDesc="#{bindings.asunto.hints.tooltip}"
+                                                      id="it2">
                                             <f:validateLength maximum="500"/>
                                         </af:inputText>
                                         <af:selectOneChoice value="#{bindings.codDepDestino.inputValue}"
-                                                            label="Dependencia Destino"
-                                                            autoSubmit="true" clientComponent="true" required="true"
+                                                            label="Dependencia Destino" autoSubmit="true"
+                                                            clientComponent="true" required="true"
                                                             valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarDependenciaDestino}"
                                                             shortDesc="#{bindings.codDepDestino.hints.tooltip}"
                                                             id="soc1">
@@ -301,8 +307,8 @@
                                                       disabled="#{!bindings.esTituloMinero.inputValue}"
                                                       autoSubmit="true" partialTriggers="sbc1"
                                                       columns="#{bindings.nroPlaca.hints.displayWidth}"
-                                                      maximumLength="100"
-                                                      shortDesc="#{bindings.nroPlaca.hints.tooltip}" id="it4"
+                                                      maximumLength="100" shortDesc="#{bindings.nroPlaca.hints.tooltip}"
+                                                      id="it4"
                                                       valueChangeListener="#{ActualizarComunicacionJSFBean.validarExpMinero}">
                                             <f:validateLength maximum="100"/>
                                         </af:inputText>
@@ -310,22 +316,20 @@
                                 </af:panelBox>
                                 <af:panelBox id="pbAdjuntos" text="Adjuntos">
                                     <af:panelGroupLayout layout="vertical" id="pnlAdj1">
-                                        <af:panelGroupLayout layout="horizontal" id="pnlAdj2">                                    
+                                        <af:panelGroupLayout layout="horizontal" id="pnlAdj2">
                                             <af:outputLabel value="Documento Principal" id="ppalLab" for="dwnLink"/>
-                                            <af:link id="dwnLink" text="#{bindings.name1.inputValue}" targetFrame="_parent" 
-                                                    partialTriggers="adfUpl"
-                                                    immediate="true">
+                                            <af:link id="dwnLink" text="#{bindings.name1.inputValue}"
+                                                     targetFrame="_parent" partialTriggers="adfUpl" immediate="true">
                                                 <af:fileDownloadActionListener method="#{ActualizarComunicacionJSFBean.descargar}"/>
                                             </af:link>
                                             <af:spacer id="spAdjuntos" width="20" height="20"/>
                                             <af:inputFile label=" " id="adfUpl" autoSubmit="true"
-                                                binding="#{ActualizarComunicacionJSFBean.ifAnexo}"
-                                                valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarDocPpal}"/>
+                                                          binding="#{ActualizarComunicacionJSFBean.ifAnexo}"
+                                                          valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarDocPpal}"/>
                                         </af:panelGroupLayout>
                                         <wlc:manageDocuments docBean="#{pageFlowScope.docMgmtBean}" id="manageDocs"
-                                                         rendered="#{!actionAvailable.inNotificationClient}"/>
+                                                             rendered="#{!actionAvailable.inNotificationClient}"/>
                                     </af:panelGroupLayout>
-                                    
                                 </af:panelBox>
                                 <!--af:inputText value="#{bindings.instanceId.inputValue}"
                                               label="#{bindings.instanceId.hints.label}"
@@ -378,10 +382,9 @@
                                         <f:validator binding="#{bindings.linkDocPrincipal.validator}"/>
                                     </af:inputText>
                                 </af:panelFormLayout-->
-                                <af:panelBox id="idPanelTipificar" text="Gestión Documental"
-                                        rendered="#{!bindings.esTituloMinero.inputValue}">
-                                   
-                                   <af:panelFormLayout id="pfl11">
+                                <af:panelBox id="idPanelTipificar" text="Gesti&#243;n Documental"
+                                             rendered="#{!bindings.esTituloMinero.inputValue}">
+                                    <af:panelFormLayout id="pfl11">
                                         <af:selectOneChoice value="#{bindings.idCatProceso.inputValue}"
                                                             label="Categor&#237;a"
                                                             showRequired="#{!bindings.esTituloMinero.inputValue}"
@@ -394,17 +397,14 @@
                                             <f:selectItems value="#{ActualizarComunicacionJSFBean.categoriasProceso}"
                                                            id="si1"/>
                                         </af:selectOneChoice>
-                                        <af:selectOneChoice value="#{bindings.idProceso.inputValue}"
-                                                            label="Proceso"
+                                        <af:selectOneChoice value="#{bindings.idProceso.inputValue}" label="Proceso"
                                                             showRequired="#{!bindings.esTituloMinero.inputValue}"
                                                             disabled="#{bindings.esTituloMinero.inputValue}"
                                                             shortDesc="#{bindings.idProceso.hints.tooltip}"
                                                             valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarProceso}"
-                                                            autoSubmit="true" partialTriggers="sbc1 soc3"
-                                                            id="soc4">
+                                                            autoSubmit="true" partialTriggers="sbc1 soc3" id="soc4">
                                             <f:selectItem itemLabel="Seleccione" id="siv2"/>
-                                            <f:selectItems value="#{ActualizarComunicacionJSFBean.procesos}"
-                                                           id="si3"/>
+                                            <f:selectItems value="#{ActualizarComunicacionJSFBean.procesos}" id="si3"/>
                                         </af:selectOneChoice>
                                         <af:selectOneChoice value="#{bindings.idSerie.inputValue}" label="Serie"
                                                             showRequired="#{!bindings.esTituloMinero.inputValue}"
@@ -415,38 +415,32 @@
                                                             valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarSerie}"
                                                             id="soc5">
                                             <f:selectItem itemLabel="Seleccione" id="siv3"/>
-                                            <f:selectItems value="#{ActualizarComunicacionJSFBean.series}"
-                                                           id="si5"/>
+                                            <f:selectItems value="#{ActualizarComunicacionJSFBean.series}" id="si5"/>
                                         </af:selectOneChoice>
-                                        <af:selectOneChoice value="#{bindings.idSubSerie.inputValue}"
-                                                            label="SubSerie"
+                                        <af:selectOneChoice value="#{bindings.idSubSerie.inputValue}" label="SubSerie"
                                                             disabled="#{bindings.esTituloMinero.inputValue}"
                                                             shortDesc="#{bindings.idSubSerie.hints.tooltip}"
-                                                            autoSubmit="true"
-                                                            partialTriggers="sbc1 soc5 soc4 soc3"
+                                                            autoSubmit="true" partialTriggers="sbc1 soc5 soc4 soc3"
                                                             valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarSubSerie}"
                                                             id="soc6">
                                             <f:selectItem itemLabel="Seleccione" id="selSSRItm1"/>
                                             <f:selectItems value="#{ActualizarComunicacionJSFBean.subseries}"
                                                            id="selSSRItm2"/>
                                         </af:selectOneChoice>
-                                        <af:selectOneChoice value="#{bindings.idCuaderno.inputValue}"
-                                                            label="Expediente"
+                                        <af:selectOneChoice value="#{bindings.idCuaderno.inputValue}" label="Expediente"
                                                             disabled="#{bindings.esTituloMinero.inputValue}"
                                                             shortDesc="#{bindings.idCuaderno.hints.tooltip}"
                                                             valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarExpediente}"
-                                                            autoSubmit="true"
-                                                            partialTriggers="sbc1 soc6 soc5 soc4 soc3"
+                                                            autoSubmit="true" partialTriggers="sbc1 soc6 soc5 soc4 soc3"
                                                             id="soc7">
                                             <f:selectItem itemLabel="Seleccione" id="selCuaItm1"/>
                                             <f:selectItems value="#{ActualizarComunicacionJSFBean.cuadernos}"
                                                            id="selCuaItm2"/>
                                         </af:selectOneChoice>
                                     </af:panelFormLayout>
-                                            
                                 </af:panelBox>
-                                <af:panelBox id="idPanelTipificar2" text="Gestión Documental"
-                                            rendered="#{bindings.esTituloMinero.inputValue}">
+                                <af:panelBox id="idPanelTipificar2" text="Gesti&#243;n Documental"
+                                             rendered="#{bindings.esTituloMinero.inputValue}">
                                     <af:panelFormLayout id="pfl12">
                                         <af:selectOneChoice id="selectTramite"
                                                             shortDesc="#{bindings.idTramite.hints.tooltip}"
@@ -465,8 +459,7 @@
                                                             showRequired="#{bindings.esTituloMinero.inputValue}"
                                                             disabled="#{!bindings.esTituloMinero.inputValue}"
                                                             label="Tipo Documental" autoSubmit="true"
-                                                            clientComponent="true"
-                                                            partialTriggers="sbc1 selectTramite"
+                                                            clientComponent="true" partialTriggers="sbc1 selectTramite"
                                                             valueChangeListener="#{ActualizarComunicacionJSFBean.cambiarTipoDocumental}"
                                                             value="#{bindings.idTpDocumento.inputValue}">
                                             <f:selectItem itemLabel="Seleccione" id="selTpDoc"/>
@@ -475,7 +468,6 @@
                                         </af:selectOneChoice>
                                     </af:panelFormLayout>
                                 </af:panelBox>
-                                
                             </af:showDetailHeader>
                             <af:showDetailHeader size="2" text="#{resources.COMMENTS}"
                                                  disclosed="#{actionAvailable.discloseComments}"
@@ -696,7 +688,7 @@
                                                 <af:selectItem label="#{resources.BPM}" value="BPM" id="si4"/>
                                             </af:selectOneRadio>
                                         </af:panelFormLayout>
-                                        <af:inputText id="edAttTy" visible="false" />
+                                        <af:inputText id="edAttTy" visible="false"/>
                                         <af:panelGroupLayout layout="vertical" partialTriggers="edAttTy" id="pgl25">
                                             <af:inputText id="attName" label="#{resources.NAME}"
                                                           value="#{bindings.name.inputValue}"
@@ -967,6 +959,22 @@
                     </af:panelHeader>
                     <f:facet name="separator"/>
                 </af:panelGroupLayout>
+                <af:popup id="popupConfirmarAnulacion" contentDelivery="lazyUncached">
+                    <af:dialog id="dlgConfirmarAnulacion" title="Anular comunicaci&#243;n" type="cancel"
+                               cancelTextAndAccessKey="Volver" closeIconVisible="true">
+                        <af:outputText id="txtConfirmarAnulacion"
+                                       value="&#191;Desea anular esta comunicaci&#243;n y cancelar su tr&#225;mite?"/>
+                        <f:facet name="buttonBar">
+                            <af:button id="btnConfirmarAnulacion" text="Confirmar anulaci&#243;n" immediate="true"
+                                       partialSubmit="false" disabled="#{!bindings.ANULAR.enabled}"
+                                       visible="#{wf:isCustomActionAvailable('ANULAR', 'bindings.customActions')}"
+                                       actionListener="#{ActualizarComunicacionJSFBean.anularComunicacion}"
+                                       action="#{invokeActionBean.invokeOperation}">
+                                <f:attribute name="DC_OPERATION_BINDING" value="bindings.ANULAR"/>
+                            </af:button>
+                        </f:facet>
+                    </af:dialog>
+                </af:popup>
             </af:form>
         </af:document>
     </f:view>

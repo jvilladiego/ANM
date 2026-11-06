@@ -1098,5 +1098,15 @@
         <Item Value="urlDocumRelacionadoBO"/>
       </AttrNames>
     </attributeValues>
+    <list IterBinding="payloadIterator" id="tipoAsignacion" DTSupportsMRU="false" SelectItemValueMode="ListObject"
+          StaticList="true">
+      <AttrNames>
+        <Item Value="tipoAsignacion"/>
+      </AttrNames>
+      <ValueList>
+        <Item Value="U"/>
+        <Item Value="D"/>
+      </ValueList>
+    </list>
   </bindings>
 </pageDefinition>

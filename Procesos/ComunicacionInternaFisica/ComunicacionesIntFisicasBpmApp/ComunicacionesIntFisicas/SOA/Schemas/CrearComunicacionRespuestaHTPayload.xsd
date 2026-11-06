@@ -11,6 +11,8 @@
          <element name="usuarioRespuesta" type="xsd:string"/>
          <element name="urlDocumRelacionadoBO" type="xsd:string"/>
          <element ref="ns1:DocPrincipalBO"/>
+         <element name="existeRespuestaRadicada" type="xsd:boolean"/>
+         <element name="nroRadicadoRespuestaExistente" type="xsd:string"/>
       </sequence>
    </complexType>
 </schema>

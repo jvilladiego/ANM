@@ -71,6 +71,8 @@
                            external="false"/>
          <messageAttribute name="urlDocumRelacionadoBO" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
                            external="false"/>
+         <messageAttribute name="tipoAsignacion" attributeType="SIMPLE_TYPE" type="xsd:string" updatable="true"
+                           external="false"/>
       </payload>
       <flexfieldMappings>
          <flexfieldMapping>

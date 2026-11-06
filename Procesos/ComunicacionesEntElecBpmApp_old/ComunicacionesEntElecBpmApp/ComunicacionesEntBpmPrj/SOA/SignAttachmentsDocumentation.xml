@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?oracleBPM version="12.1.3" fileRevision="20120601"?>
+<processDocumentation xmlns="http://xmlns.oracle.com/bpm/taskMetadataService/processDocumentation">
+   <component name="SignAttachments">
+      <topicDocumentations>
+         <topicDocumentation name="SignAttachments">
+            <labels>
+               <label locale="en">Sign Attachments</label>
+            </labels>
+            <descriptions>
+               <description locale="en">Sub Process to sign attachment PDFs</description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT38214213697882">
+            <labels>
+               <label locale="en">Start</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="EVT38214213697860">
+            <labels>
+               <label locale="en">End</label>
+            </labels>
+         </topicDocumentation>
+         <topicDocumentation name="sf38214213697859"/>
+      </topicDocumentations>
+   </component>
+</processDocumentation>

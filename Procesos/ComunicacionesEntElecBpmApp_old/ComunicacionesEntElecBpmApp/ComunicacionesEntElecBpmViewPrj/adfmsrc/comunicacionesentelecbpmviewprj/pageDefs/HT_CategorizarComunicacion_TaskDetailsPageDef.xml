@@ -1,0 +1,1500 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<pageDefinition xmlns="http://xmlns.oracle.com/adfm/uimodel" version="12.2.1.22.48"
+                id="HT_CategorizarComunicacion_TaskDetailsPageDef" Package="comunicacionesentelecbpmviewprj.pageDefs">
+  <parameters/>
+  <executables>
+    <variableIterator id="variables"/>
+    <methodIterator Binds="getTaskDetails.result"
+                    DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion" RangeSize="25"
+                    BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.getTaskDetails"
+                    id="getTaskDetailsIterator"/>
+    <accessorIterator MasterBinding="getTaskDetailsIterator" Binds="task" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.task" id="taskIterator"
+                      StateValidation="false"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="systemAttributes" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.systemAttributesType"
+                      id="systemAttributesIterator"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="systemActions" RangeSize="50"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.actionType"
+                      id="systemActionsIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="customActions" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.actionType"
+                      id="customActionsIterator"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="fromUser" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType"
+                      id="fromUserIterator"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="assignees" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType"
+                      id="assigneesIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="ComunicacionBO" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ComunicacionBOType"
+                      id="ComunicacionBOIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="anexos" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.AnexoBOType"
+                      id="anexosIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="consecutivoContentFolder" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ContentFolderBOType"
+                      id="consecutivoContentFolderIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="tituloContentFolder" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ContentFolderBOType"
+                      id="tituloContentFolderIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="otraSerieContentFolder" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ContentFolderBOType"
+                      id="otraSerieContentFolderIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="dependenciaRemitente" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.DependenciaBOType"
+                      id="dependenciaRemitenteIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="tramite" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.TipoSimpleBOType"
+                      id="tramiteIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="tipoDocTitulo" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.TipoSimpleBOType"
+                      id="tipoDocTituloIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="dependenciaDestino" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.DependenciaBOType"
+                      id="dependenciaDestinoIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="destinatarioInterno" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.InteresadoInternoType"
+                      id="destinatarioInternoIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="taxonomia" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.TaxonomiaBOType"
+                      id="taxonomiaIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="metadatos" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.MetadatosBOType"
+                      id="metadatosIterator"/>
+    <accessorIterator MasterBinding="ComunicacionBOIterator" Binds="anexosServicioList" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.anexoComunicacionRequest"
+                      id="anexosServicioListIterator"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="InteresadoBO" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.InteresadoBOType"
+                      id="InteresadoBOIterator"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="UsuarioBO" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.UsuarioBOType"
+                      id="UsuarioBOIterator"/>
+    <accessorIterator MasterBinding="payloadIterator" Binds="comunicacionRequestDO" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.procesoComunicacionRequest"
+                      id="comunicacionRequestDOIterator"/>
+    <accessorIterator MasterBinding="comunicacionRequestDOIterator" Binds="anexosList" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.anexoComunicacionRequest1"
+                      id="anexosListIterator"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="payload" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.HT_CategorizarComunicacionPayloadType"
+                      id="payloadIterator"/>
+    <accessorIterator MasterBinding="comunicacionRequestDOIterator" Binds="comunicacion" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.comunicacionRequest"
+                      id="comunicacionIterator"/>
+    <accessorIterator MasterBinding="comunicacionRequestDOIterator" Binds="interesadosList" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.interesadoRequest"
+                      id="interesadosListIterator"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="userComment" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.commentType"
+                      id="userCommentIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="userCommentIterator" Binds="updatedBy" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType"
+                      id="updatedByIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="taskIterator" Binds="attachment" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.attachmentType"
+                      id="attachmentIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="attachmentIterator" Binds="ucmMetadataItem" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ucmMetadataItemType"
+                      id="ucmMetadataItemIterator" StateValidation="false"/>
+    <accessorIterator MasterBinding="systemAttributesIterator" Binds="assigneeUsers" RangeSize="25"
+                      DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType"
+                      id="assigneeUsersIterator"/>
+  </executables>
+  <bindings>
+    <methodAction id="getTaskDetails" RequiresUpdateModel="true" Action="invokeMethod" MethodName="getTaskDetails"
+                  IsViewObjectMethod="false" DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.getTaskDetails.dataControl"
+                  ReturnName="data.ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.methodResults.getTaskDetails_getTaskDetails_dataControl_getTaskDetails_result">
+      <NamedData NDName="bpmWorklistContext" NDType="java.lang.String"/>
+      <NamedData NDName="bpmWorklistTaskId" NDType="java.lang.String"/>
+      <NamedData NDName="bpmWorklistTaskVersion" NDType="java.lang.String"/>
+    </methodAction>
+    <attributeValues IterBinding="taskIterator" id="title">
+      <AttrNames>
+        <Item Value="title"/>
+      </AttrNames>
+    </attributeValues>
+    <methodAction IterBinding="taskIterator" id="UpdateAction" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="UpdateAction" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true">
+      <NamedData NDName="action" NDType="java.lang.String"/>
+    </methodAction>
+    <methodAction IterBinding="taskIterator" id="update" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="update" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <navigationlist IterBinding="systemActionsIterator" ListOperMode="navigation" ListIter="systemActionsIterator"
+                    id="systemActions">
+      <AttrNames>
+        <Item Value="action"/>
+        <Item Value="displayName"/>
+      </AttrNames>
+    </navigationlist>
+    <attributeValues IterBinding="systemAttributesIterator" id="digitalSignatureRequired">
+      <AttrNames>
+        <Item Value="digitalSignatureRequired"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="passwordRequiredOnUpdate">
+      <AttrNames>
+        <Item Value="passwordRequiredOnUpdate"/>
+      </AttrNames>
+    </attributeValues>
+    <navigationlist IterBinding="customActionsIterator" ListOperMode="navigation" ListIter="customActionsIterator"
+                    id="customActions">
+      <AttrNames>
+        <Item Value="action"/>
+        <Item Value="displayName"/>
+      </AttrNames>
+    </navigationlist>
+    <methodAction IterBinding="taskIterator" id="Claim" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Claim" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="Acknowledge" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Acknowledge" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="Resume" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Resume" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="Withdraw" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="Withdraw" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="APPROVE" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="APPROVE" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <methodAction IterBinding="taskIterator" id="REJECT" RequiresUpdateModel="true" Action="invokeMethod"
+                  MethodName="REJECT" IsViewObjectMethod="false"
+                  DataControl="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                  InstanceName="bindings.taskIterator.currentRow.dataProvider" IsLocalObjectReference="true"/>
+    <attributeValues IterBinding="taskIterator" id="creator">
+      <AttrNames>
+        <Item Value="creator"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="ownerUser">
+      <AttrNames>
+        <Item Value="ownerUser"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="priority">
+      <AttrNames>
+        <Item Value="priority"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="dueDate">
+      <AttrNames>
+        <Item Value="dueDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="creatorDisplayName">
+      <AttrNames>
+        <Item Value="creatorDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taskIterator" id="ownerUserDisplayName">
+      <AttrNames>
+        <Item Value="ownerUserDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="acquiredBy">
+      <AttrNames>
+        <Item Value="acquiredBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="assignedDate">
+      <AttrNames>
+        <Item Value="assignedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="createdDate">
+      <AttrNames>
+        <Item Value="createdDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="expirationDate">
+      <AttrNames>
+        <Item Value="expirationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="outcome">
+      <AttrNames>
+        <Item Value="outcome"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="state">
+      <AttrNames>
+        <Item Value="state"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="taskNumber">
+      <AttrNames>
+        <Item Value="taskNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="updatedDate">
+      <AttrNames>
+        <Item Value="updatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="actionDisplayName">
+      <AttrNames>
+        <Item Value="actionDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="activityId">
+      <AttrNames>
+        <Item Value="activityId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="acquiredByDisplayName">
+      <AttrNames>
+        <Item Value="acquiredByDisplayName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="fromUserIterator" id="id">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="fromUserIterator" id="displayName">
+      <AttrNames>
+        <Item Value="displayName"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="assigneesIterator" id="assignees">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="payloadIterator" id="requiereRespuestaDO">
+      <AttrNames>
+        <Item Value="requiereRespuestaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="requiereGestionCompartidaDO">
+      <AttrNames>
+        <Item Value="requiereGestionCompartidaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="tipoPQRSDO">
+      <AttrNames>
+        <Item Value="tipoPQRSDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="tiempoRespuestaDO">
+      <AttrNames>
+        <Item Value="tiempoRespuestaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="fechaRespuestaDO">
+      <AttrNames>
+        <Item Value="fechaRespuestaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="estadoComunicacionDO">
+      <AttrNames>
+        <Item Value="estadoComunicacionDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="dependenciaGestionCompDO">
+      <AttrNames>
+        <Item Value="dependenciaGestionCompDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="contenidoComunicacionDO">
+      <AttrNames>
+        <Item Value="contenidoComunicacionDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="medioRespuestaDO">
+      <AttrNames>
+        <Item Value="medioRespuestaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="trasladoOtraInstitucionDO">
+      <AttrNames>
+        <Item Value="trasladoOtraInstitucionDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="accesoNegadoInformacionDO">
+      <AttrNames>
+        <Item Value="accesoNegadoInformacionDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="identificacionReservadaDO">
+      <AttrNames>
+        <Item Value="identificacionReservadaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="nombreOtraInstitucionDO">
+      <AttrNames>
+        <Item Value="nombreOtraInstitucionDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="nombrePaisDO">
+      <AttrNames>
+        <Item Value="nombrePaisDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="nombreCiudadDO">
+      <AttrNames>
+        <Item Value="nombreCiudadDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="nombreDepartamentoDO">
+      <AttrNames>
+        <Item Value="nombreDepartamentoDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="fechaVencimientoDO">
+      <AttrNames>
+        <Item Value="fechaVencimientoDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="jefeAsignadoDO">
+      <AttrNames>
+        <Item Value="jefeAsignadoDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="comunicacionReasignadaDO">
+      <AttrNames>
+        <Item Value="comunicacionReasignadaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="esPQRSDO">
+      <AttrNames>
+        <Item Value="esPQRSDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="isPQRSDO">
+      <AttrNames>
+        <Item Value="isPQRSDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="codDepGestionCompartidaDO">
+      <AttrNames>
+        <Item Value="codDepGestionCompartidaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="idCorrelationDO">
+      <AttrNames>
+        <Item Value="idCorrelationDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="idTipoPQRSDO">
+      <AttrNames>
+        <Item Value="idTipoPQRSDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="okCheckin">
+      <AttrNames>
+        <Item Value="okCheckin"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="folderGUIDDO">
+      <AttrNames>
+        <Item Value="folderGUIDDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="textoWebformPQRSDO">
+      <AttrNames>
+        <Item Value="textoWebformPQRSDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="urlDocumentoPrincipalDO">
+      <AttrNames>
+        <Item Value="urlDocumentoPrincipalDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="idTipoIdentificacionDO">
+      <AttrNames>
+        <Item Value="idTipoIdentificacionDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="contenidoDO">
+      <AttrNames>
+        <Item Value="contenidoDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="urlArchivoAdjuntoDO">
+      <AttrNames>
+        <Item Value="urlArchivoAdjuntoDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="urlArchivoAdjuntoDO0">
+      <AttrNames>
+        <Item Value="urlArchivoAdjuntoDO0"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="fechaNotificacionVencimiento">
+      <AttrNames>
+        <Item Value="fechaNotificacionVencimiento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="urlDocTmp">
+      <AttrNames>
+        <Item Value="urlDocTmp"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="idCorrelVencimiento">
+      <AttrNames>
+        <Item Value="idCorrelVencimiento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="statusCodeValidarExpMineroDO">
+      <AttrNames>
+        <Item Value="statusCodeValidarExpMineroDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="resultadoManejoExc">
+      <AttrNames>
+        <Item Value="resultadoManejoExc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="appNameDO">
+      <AttrNames>
+        <Item Value="appNameDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="dependenciaAsignadaDO">
+      <AttrNames>
+        <Item Value="dependenciaAsignadaDO"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="anexosEmail">
+      <AttrNames>
+        <Item Value="anexosEmail"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroRadicado">
+      <AttrNames>
+        <Item Value="nroRadicado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="asunto">
+      <AttrNames>
+        <Item Value="asunto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroFolios">
+      <AttrNames>
+        <Item Value="nroFolios"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="referencia">
+      <AttrNames>
+        <Item Value="referencia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="esTituloMinero">
+      <AttrNames>
+        <Item Value="esTituloMinero"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroPlaca">
+      <AttrNames>
+        <Item Value="nroPlaca"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroRadicadoRelacionado">
+      <AttrNames>
+        <Item Value="nroRadicadoRelacionado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="requiereRespuesta">
+      <AttrNames>
+        <Item Value="requiereRespuesta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="nroAnexos">
+      <AttrNames>
+        <Item Value="nroAnexos"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="fecRadicacion">
+      <AttrNames>
+        <Item Value="fecRadicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="tipoComunicacion">
+      <AttrNames>
+        <Item Value="tipoComunicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="anexosIterator" id="CreateInsert" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="anexosIterator" id="Delete" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="anexosIterator" id="anexos">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.AnexoBOType" Name="anexos0">
+        <AttrNames>
+          <Item Value="nombre"/>
+          <Item Value="descripcion"/>
+          <Item Value="contenido"/>
+          <Item Value="mimeType"/>
+          <Item Value="tipoAnexo"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="consecutivoContentFolderIterator" id="folderGUID">
+      <AttrNames>
+        <Item Value="folderGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="consecutivoContentFolderIterator" id="parentGUID">
+      <AttrNames>
+        <Item Value="parentGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="consecutivoContentFolderIterator" id="nombre">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tituloContentFolderIterator" id="folderGUID1">
+      <AttrNames>
+        <Item Value="folderGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tituloContentFolderIterator" id="parentGUID1">
+      <AttrNames>
+        <Item Value="parentGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tituloContentFolderIterator" id="nombre1">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="otraSerieContentFolderIterator" id="folderGUID2">
+      <AttrNames>
+        <Item Value="folderGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="otraSerieContentFolderIterator" id="parentGUID2">
+      <AttrNames>
+        <Item Value="parentGUID"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="otraSerieContentFolderIterator" id="nombre2">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaRemitenteIterator" id="id1">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaRemitenteIterator" id="codigo">
+      <AttrNames>
+        <Item Value="codigo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaRemitenteIterator" id="nombre3">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tramiteIterator" id="id2">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tramiteIterator" id="nombre4">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tipoDocTituloIterator" id="id3">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="tipoDocTituloIterator" id="nombre5">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaDestinoIterator" id="id4">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaDestinoIterator" id="codigo1">
+      <AttrNames>
+        <Item Value="codigo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="dependenciaDestinoIterator" id="nombre6">
+      <AttrNames>
+        <Item Value="nombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="id5">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="usuario">
+      <AttrNames>
+        <Item Value="usuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="nombreAD">
+      <AttrNames>
+        <Item Value="nombreAD"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="destinatarioInternoIterator" id="emailAD">
+      <AttrNames>
+        <Item Value="emailAD"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="catProceso">
+      <AttrNames>
+        <Item Value="catProceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idCatProceso">
+      <AttrNames>
+        <Item Value="idCatProceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="proceso">
+      <AttrNames>
+        <Item Value="proceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idProceso">
+      <AttrNames>
+        <Item Value="idProceso"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="serie">
+      <AttrNames>
+        <Item Value="serie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idSerie">
+      <AttrNames>
+        <Item Value="idSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="subserie">
+      <AttrNames>
+        <Item Value="subserie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idSubSerie">
+      <AttrNames>
+        <Item Value="idSubSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="cuaderno">
+      <AttrNames>
+        <Item Value="cuaderno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="idCuaderno">
+      <AttrNames>
+        <Item Value="idCuaderno"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="codigoSerie">
+      <AttrNames>
+        <Item Value="codigoSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="codigoSubSerie">
+      <AttrNames>
+        <Item Value="codigoSubSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="nombreSerie">
+      <AttrNames>
+        <Item Value="nombreSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="taxonomiaIterator" id="nombreSubSerie">
+      <AttrNames>
+        <Item Value="nombreSubSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="descripcion">
+      <AttrNames>
+        <Item Value="descripcion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="nombreTramite">
+      <AttrNames>
+        <Item Value="nombreTramite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="idTpDocumento">
+      <AttrNames>
+        <Item Value="idTpDocumento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="nombreTpDocumento">
+      <AttrNames>
+        <Item Value="nombreTpDocumento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="idCuenta">
+      <AttrNames>
+        <Item Value="idCuenta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="cuenta">
+      <AttrNames>
+        <Item Value="cuenta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="metadatosIterator" id="idTramite">
+      <AttrNames>
+        <Item Value="idTramite"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="anexosServicioListIterator" id="CreateInsert1" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="anexosServicioListIterator" id="Delete1" RequiresUpdateModel="false"
+            Action="removeCurrentRow"/>
+    <tree IterBinding="anexosServicioListIterator" id="anexosServicioList">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.anexoComunicacionRequest"
+                      Name="anexosServicioList0">
+        <AttrNames>
+          <Item Value="cantidad"/>
+          <Item Value="descripcion"/>
+          <Item Value="enlaceContent"/>
+          <Item Value="idAnexo"/>
+          <Item Value="idComunicacion"/>
+          <Item Value="nroRadicado"/>
+          <Item Value="rutaLocalCargue"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="InteresadoBOIterator" id="idInteresado">
+      <AttrNames>
+        <Item Value="idInteresado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="primerNombre">
+      <AttrNames>
+        <Item Value="primerNombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="segundoNombre">
+      <AttrNames>
+        <Item Value="segundoNombre"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="primerApellido">
+      <AttrNames>
+        <Item Value="primerApellido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="segundoApellido">
+      <AttrNames>
+        <Item Value="segundoApellido"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="email">
+      <AttrNames>
+        <Item Value="email"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="idEtnia">
+      <AttrNames>
+        <Item Value="idEtnia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="idDepartamento">
+      <AttrNames>
+        <Item Value="idDepartamento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="ocupacion">
+      <AttrNames>
+        <Item Value="ocupacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="idRangoEdad">
+      <AttrNames>
+        <Item Value="idRangoEdad"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="celular">
+      <AttrNames>
+        <Item Value="celular"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="direccion">
+      <AttrNames>
+        <Item Value="direccion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="ciudad">
+      <AttrNames>
+        <Item Value="ciudad"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="numeroIdentificacion">
+      <AttrNames>
+        <Item Value="numeroIdentificacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="tipoIdentificacion">
+      <AttrNames>
+        <Item Value="tipoIdentificacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="telefono">
+      <AttrNames>
+        <Item Value="telefono"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="idMunicipio">
+      <AttrNames>
+        <Item Value="idMunicipio"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="idPais">
+      <AttrNames>
+        <Item Value="idPais"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="idPoblacionVulnerable">
+      <AttrNames>
+        <Item Value="idPoblacionVulnerable"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="tipoSolicitante">
+      <AttrNames>
+        <Item Value="tipoSolicitante"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="InteresadoBOIterator" id="otraOcupacion">
+      <AttrNames>
+        <Item Value="otraOcupacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsuarioBOIterator" id="idUsuario">
+      <AttrNames>
+        <Item Value="idUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsuarioBOIterator" id="nombreUsuario">
+      <AttrNames>
+        <Item Value="nombreUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsuarioBOIterator" id="emailUsuario">
+      <AttrNames>
+        <Item Value="emailUsuario"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="UsuarioBOIterator" id="codDependencia">
+      <AttrNames>
+        <Item Value="codDependencia"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="anexosListIterator" id="CreateInsert2" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="anexosListIterator" id="Delete2" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="anexosListIterator" id="anexosList">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.anexoComunicacionRequest1"
+                      Name="anexosList0">
+        <AttrNames>
+          <Item Value="cantidad"/>
+          <Item Value="descripcion"/>
+          <Item Value="enlaceContent"/>
+          <Item Value="idAnexo"/>
+          <Item Value="idComunicacion"/>
+          <Item Value="nroRadicado"/>
+          <Item Value="rutaLocalCargue"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="comunicacionIterator" id="accesoNegado">
+      <AttrNames>
+        <Item Value="accesoNegado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="appName">
+      <AttrNames>
+        <Item Value="appName"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="asunto1">
+      <AttrNames>
+        <Item Value="asunto"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="codigoSerie1">
+      <AttrNames>
+        <Item Value="codigoSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="codigoSubSerie1">
+      <AttrNames>
+        <Item Value="codigoSubSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="comentarios">
+      <AttrNames>
+        <Item Value="comentarios"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="contentFLdComunicaciones">
+      <AttrNames>
+        <Item Value="contentFLdComunicaciones"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="contentFldOtro">
+      <AttrNames>
+        <Item Value="contentFldOtro"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="contentFldTitulo">
+      <AttrNames>
+        <Item Value="contentFldTitulo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="diasParaRespuesta">
+      <AttrNames>
+        <Item Value="diasParaRespuesta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="esPQRS">
+      <AttrNames>
+        <Item Value="esPQRS"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="esTitulo">
+      <AttrNames>
+        <Item Value="esTitulo"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="estadoComunicacion">
+      <AttrNames>
+        <Item Value="estadoComunicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="fechaCreacion">
+      <AttrNames>
+        <Item Value="fechaCreacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="fechaVencimiento">
+      <AttrNames>
+        <Item Value="fechaVencimiento"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="grupoSeguridad">
+      <AttrNames>
+        <Item Value="grupoSeguridad"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idComunicacion">
+      <AttrNames>
+        <Item Value="idComunicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idDependenciaDestino">
+      <AttrNames>
+        <Item Value="idDependenciaDestino"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idReservada">
+      <AttrNames>
+        <Item Value="idReservada"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idSubcategoria">
+      <AttrNames>
+        <Item Value="idSubcategoria"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idTipoDocumentalTramite">
+      <AttrNames>
+        <Item Value="idTipoDocumentalTramite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idTipoSolicitud">
+      <AttrNames>
+        <Item Value="idTipoSolicitud"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idTramite1">
+      <AttrNames>
+        <Item Value="idTramite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="idUnidadProductora">
+      <AttrNames>
+        <Item Value="idUnidadProductora"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="medioRespuesta">
+      <AttrNames>
+        <Item Value="medioRespuesta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nombreSerie1">
+      <AttrNames>
+        <Item Value="nombreSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nombreSubSerie1">
+      <AttrNames>
+        <Item Value="nombreSubSerie"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nombreTpDoc">
+      <AttrNames>
+        <Item Value="nombreTpDoc"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nroAnexos1">
+      <AttrNames>
+        <Item Value="nroAnexos"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nroFolios1">
+      <AttrNames>
+        <Item Value="nroFolios"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nroPlaca1">
+      <AttrNames>
+        <Item Value="nroPlaca"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nroRadicado1">
+      <AttrNames>
+        <Item Value="nroRadicado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="nroRadicadoRelacionado1">
+      <AttrNames>
+        <Item Value="nroRadicadoRelacionado"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="referencia1">
+      <AttrNames>
+        <Item Value="referencia"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="requiereRespuesta1">
+      <AttrNames>
+        <Item Value="requiereRespuesta"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="tipoComunicacion1">
+      <AttrNames>
+        <Item Value="tipoComunicacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="tramite">
+      <AttrNames>
+        <Item Value="tramite"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="trasladoOtraEntidad">
+      <AttrNames>
+        <Item Value="trasladoOtraEntidad"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="usuarioActualizacion">
+      <AttrNames>
+        <Item Value="usuarioActualizacion"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="comunicacionIterator" id="usuarioCreacion">
+      <AttrNames>
+        <Item Value="usuarioCreacion"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="interesadosListIterator" id="CreateInsert3" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="interesadosListIterator" id="Delete3" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="interesadosListIterator" id="interesadosList">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.interesadoRequest"
+                      Name="interesadosList0">
+        <AttrNames>
+          <Item Value="celular"/>
+          <Item Value="ciudad"/>
+          <Item Value="direccion"/>
+          <Item Value="email"/>
+          <Item Value="idComunicacion"/>
+          <Item Value="idDepartamento"/>
+          <Item Value="idEtnia"/>
+          <Item Value="idInteresado"/>
+          <Item Value="idMunicipio"/>
+          <Item Value="idPais"/>
+          <Item Value="idPoblacionVulnerable"/>
+          <Item Value="idRangoEdad"/>
+          <Item Value="nroIdentificacion"/>
+          <Item Value="ocupacion"/>
+          <Item Value="primerApellido"/>
+          <Item Value="primerNombre"/>
+          <Item Value="segundoApellido"/>
+          <Item Value="segundoNombre"/>
+          <Item Value="telefono"/>
+          <Item Value="tipoIdentificacion"/>
+          <Item Value="tipoSolicitante"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="userCommentIterator" id="userComment">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.commentType">
+        <AttrNames>
+          <Item Value="comment"/>
+          <Item Value="updatedDate"/>
+          <Item Value="displayNameLanguage"/>
+          <Item Value="action"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="isSystemComment"/>
+          <Item Value="taskId"/>
+          <Item Value="commentScope"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="updatedBy"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="userCommentIterator" id="CreateInsert4" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="userCommentIterator" id="Delete4" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="userCommentIterator" id="comment">
+      <AttrNames>
+        <Item Value="comment"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="userCommentIterator" id="commentScope">
+      <AttrNames>
+        <Item Value="commentScope"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="updatedByIterator" id="updatedBy">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="attachmentIterator" id="attachment">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.attachmentType">
+        <AttrNames>
+          <Item Value="content"/>
+          <Item Value="mimeType"/>
+          <Item Value="name"/>
+          <Item Value="updatedBy"/>
+          <Item Value="URI"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="taskId"/>
+          <Item Value="version"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="updatedDate"/>
+          <Item Value="correlationId"/>
+          <Item Value="size"/>
+          <Item Value="description"/>
+          <Item Value="storageType"/>
+          <Item Value="ucmDocType"/>
+          <Item Value="securityGroup"/>
+          <Item Value="account"/>
+          <Item Value="revision"/>
+          <Item Value="releaseDate"/>
+          <Item Value="expirationDate"/>
+          <Item Value="title"/>
+          <Item Value="attachmentScope"/>
+          <Item Value="isContentEncoded"/>
+          <Item Value="updatedByDisplayName"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <action IterBinding="attachmentIterator" id="CreateInsert5" RequiresUpdateModel="true" Action="createInsertRow"/>
+    <action IterBinding="attachmentIterator" id="Delete5" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <attributeValues IterBinding="attachmentIterator" id="content">
+      <AttrNames>
+        <Item Value="content"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="mimeType">
+      <AttrNames>
+        <Item Value="mimeType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="name">
+      <AttrNames>
+        <Item Value="name"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="updatedBy1">
+      <AttrNames>
+        <Item Value="updatedBy"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="URI">
+      <AttrNames>
+        <Item Value="URI"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="updatedDate1">
+      <AttrNames>
+        <Item Value="updatedDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="description">
+      <AttrNames>
+        <Item Value="description"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="ucmDocType">
+      <AttrNames>
+        <Item Value="ucmDocType"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="securityGroup">
+      <AttrNames>
+        <Item Value="securityGroup"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="account">
+      <AttrNames>
+        <Item Value="account"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="revision">
+      <AttrNames>
+        <Item Value="revision"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="releaseDate">
+      <AttrNames>
+        <Item Value="releaseDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="expirationDate1">
+      <AttrNames>
+        <Item Value="expirationDate"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="attachmentIterator" id="attachmentScope">
+      <AttrNames>
+        <Item Value="attachmentScope"/>
+      </AttrNames>
+    </attributeValues>
+    <action IterBinding="ucmMetadataItemIterator" id="CreateInsert6" RequiresUpdateModel="true"
+            Action="createInsertRow"/>
+    <action IterBinding="ucmMetadataItemIterator" id="Delete6" RequiresUpdateModel="false" Action="removeCurrentRow"/>
+    <tree IterBinding="ucmMetadataItemIterator" id="ucmMetadataItem">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="systemAttributesIterator" id="numberOfTimesModified">
+      <AttrNames>
+        <Item Value="numberOfTimesModified"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="version">
+      <AttrNames>
+        <Item Value="version"/>
+      </AttrNames>
+    </attributeValues>
+    <tree IterBinding="userCommentIterator" id="userComment1">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.commentType">
+        <AttrNames>
+          <Item Value="comment"/>
+          <Item Value="updatedDate"/>
+          <Item Value="displayNameLanguage"/>
+          <Item Value="action"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="isSystemComment"/>
+          <Item Value="taskId"/>
+          <Item Value="commentScope"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+        <Accessors>
+          <Item Value="updatedBy"/>
+        </Accessors>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="updatedByIterator" id="updatedBy2">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.identityType">
+        <AttrNames>
+          <Item Value="id"/>
+          <Item Value="displayName"/>
+          <Item Value="type"/>
+          <Item Value="systemVersionFlag"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="attachmentIterator" id="attachment1">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.attachmentType">
+        <AttrNames>
+          <Item Value="content"/>
+          <Item Value="mimeType"/>
+          <Item Value="name"/>
+          <Item Value="updatedBy"/>
+          <Item Value="URI"/>
+          <Item Value="systemVersionFlag"/>
+          <Item Value="taskId"/>
+          <Item Value="version"/>
+          <Item Value="acl"/>
+          <Item Value="doesBelongToParent"/>
+          <Item Value="updatedDate"/>
+          <Item Value="correlationId"/>
+          <Item Value="size"/>
+          <Item Value="description"/>
+          <Item Value="storageType"/>
+          <Item Value="ucmDocType"/>
+          <Item Value="securityGroup"/>
+          <Item Value="account"/>
+          <Item Value="revision"/>
+          <Item Value="releaseDate"/>
+          <Item Value="expirationDate"/>
+          <Item Value="title"/>
+          <Item Value="attachmentScope"/>
+          <Item Value="isContentEncoded"/>
+          <Item Value="updatedByDisplayName"/>
+          <Item Value="id"/>
+          <Item Value="operation"/>
+        </AttrNames>
+      </nodeDefinition>
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <tree IterBinding="ucmMetadataItemIterator" id="ucmMetadataItem1">
+      <nodeDefinition DefName="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.ucmMetadataItemType">
+        <AttrNames>
+          <Item Value="name"/>
+          <Item Value="value"/>
+          <Item Value="type"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="password">
+      <AttrNames>
+        <Item Value="password"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="systemAttributesIterator" id="taskId">
+      <AttrNames>
+        <Item Value="taskId"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="payloadIterator" id="taskNumber1">
+      <AttrNames>
+        <Item Value="taskNumber"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="assigneesIterator" id="id6">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="assigneeUsersIterator" id="id7">
+      <AttrNames>
+        <Item Value="id"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="userFirma">
+      <AttrNames>
+        <Item Value="userFirma"/>
+      </AttrNames>
+    </attributeValues>
+    <attributeValues IterBinding="ComunicacionBOIterator" id="idFirma">
+      <AttrNames>
+        <Item Value="idFirma"/>
+      </AttrNames>
+    </attributeValues>
+  </bindings>
+</pageDefinition>

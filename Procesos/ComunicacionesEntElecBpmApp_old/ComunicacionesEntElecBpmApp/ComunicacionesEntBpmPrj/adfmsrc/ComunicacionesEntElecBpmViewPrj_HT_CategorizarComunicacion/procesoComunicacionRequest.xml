@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<JavaBean xmlns="http://xmlns.oracle.com/adfm/beanmodel" version="12.2.1.22.48" id="procesoComunicacionRequest"
+          Package="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+          BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.procesoComunicacionRequest"
+          isJavaBased="false">
+  <AccessorAttribute id="anexosList" IsCollection="true"
+                     BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.anexoComunicacionRequest1"
+                     CollectionBeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.anexoComunicacionRequest1_anexosList_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value=""/>
+      <Property Name="nextSibling" Value="comunicacion"/>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="2147483640"/>
+      <Property Name="LABEL" Value="Anexos List"/>
+      <Property Name="nillable" Value="true"/>
+      <Property Name="originalName" Value="anexosList"/>
+      <Property Name="targetNamespace" Value=""/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="comunicacion" IsCollection="true"
+                     BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.comunicacionRequest"
+                     CollectionBeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.comunicacionRequest_comunicacion_Operations">
+    <Properties>
+      <Property Name="nextSiblingNamespace" Value=""/>
+      <Property Name="nextSibling" Value="interesadosList"/>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="1"/>
+      <Property Name="LABEL" Value="Comunicacion"/>
+      <Property Name="nillable" Value="false"/>
+      <Property Name="originalName" Value="comunicacion"/>
+      <Property Name="targetNamespace" Value=""/>
+    </Properties>
+  </AccessorAttribute>
+  <AccessorAttribute id="interesadosList" IsCollection="true"
+                     BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.interesadoRequest"
+                     CollectionBeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion.interesadoRequest_interesadosList_Operations">
+    <Properties>
+      <Property Name="minOccurs" Value="0"/>
+      <Property Name="maxOccurs" Value="2147483640"/>
+      <Property Name="LABEL" Value="Interesados List"/>
+      <Property Name="nillable" Value="true"/>
+      <Property Name="originalName" Value="interesadosList"/>
+      <Property Name="targetNamespace" Value=""/>
+    </Properties>
+  </AccessorAttribute>
+</JavaBean>

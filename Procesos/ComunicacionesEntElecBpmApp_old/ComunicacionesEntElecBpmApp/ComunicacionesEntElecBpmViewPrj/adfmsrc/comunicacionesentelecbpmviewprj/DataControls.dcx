@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<DataControlConfigs xmlns="http://xmlns.oracle.com/adfm/configuration" version="12.2.1.20.47" id="DataControls"
+                    Package="comunicacionesentelecbpmviewprj">
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_CrearComunicacionEntElecHT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_CrearComunicacionEntElecHT"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_CrearComunicacionEntElecHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/home/leonardo/git/ANM/Comunicaciones/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/CrearComunicacionEntElecHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/CrearComunicacionEntElecHT.task"
+                      InitiationTask="true" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioCompetente"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioCompetente"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioCompetente"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/home/leonardo/git/ANM/Comunicaciones/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_AsignarUsuarioCompetenteWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_AsignarUsuarioCompetente.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_GestionarComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_GestionarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_GestionarComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/home/leonardo/git/ANM/Comunicaciones/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_GestionarComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_GestionarComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_GestionarObservacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_GestionarObservacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_GestionarObservacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANMOracle/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_GestionarObservacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_GestionarObservacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_AprobarCierreComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_AprobarCierreComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_AprobarCierreComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/home/leonardo/git/ANM/Comunicaciones/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_AprobarCierreComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_AprobarCierreComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioGestionCompartida"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioGestionCompartida"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_AsignarUsuarioGestionCompartida"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANM/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_AsignarUsuarioGestionCompartidaWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_AsignarUsuarioGestionCompartida.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_DefinirDependencia"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_DefinirDependencia"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_DefinirDependencia"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANMOracle/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_DefinirDependenciaWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_DefinirDependencia.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_ManejarExcepcionHT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_ManejarExcepcionHT"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_ManejarExcepcionHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANMOracle/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/ManejarExcepcionHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/ManejarExcepcionHT.task" InitiationTask="false"
+                      DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_NotificarErrorUsuarioHT"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_NotificarErrorUsuarioHT"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_NotificarErrorUsuarioHT"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/E:/SVN/ANMOracle/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/NotificarErrorUsuarioHTWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/NotificarErrorUsuarioHT.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+  <AdapterDataControl id="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      FactoryClass="oracle.adf.model.adapter.DataControlFactoryImpl"
+                      ImplDef="oracle.bpel.services.datacontrol.XSDDataControlDefinition" SupportsTransactions="true"
+                      SupportsSortCollection="false" SupportsResetState="false" SupportsRangesize="false"
+                      SupportsFindMode="false" SupportsUpdates="false"
+                      Definition="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      BeanClass="ComunicacionesEntElecBpmViewPrj_HT_CategorizarComunicacion"
+                      xmlns="http://xmlns.oracle.com/adfm/datacontrol">
+    <Source>
+      <XSDDataControl xmlns="http://xmlns.oracle.com/bpel/workflow/task"
+                      SchemaLocation="file:/home/leonardo/git/ANM/Comunicaciones/comunicaciones/ComunicacionesEntElecBpmApp/ComunicacionesEntBpmPrj/SOA/Schemas/HT_CategorizarComunicacionWorkflowTask.xsd"
+                      RootElement="task" rootelementnamespace="http://xmlns.oracle.com/bpel/workflow/task"
+                      taskLoc="../ComunicacionesEntBpmPrj/SOA/HumanTasks/HT_CategorizarComunicacion.task"
+                      InitiationTask="false" DocumentStoreConfiguration="false"/>
+    </Source>
+  </AdapterDataControl>
+</DataControlConfigs>

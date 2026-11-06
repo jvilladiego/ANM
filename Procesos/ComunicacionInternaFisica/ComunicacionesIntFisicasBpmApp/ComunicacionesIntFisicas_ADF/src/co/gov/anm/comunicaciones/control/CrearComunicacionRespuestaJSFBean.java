@@ -7,6 +7,11 @@ import co.gov.anm.comunicaciones.entity.AnmTipodtalseguntramite;
 import co.gov.anm.comunicaciones.entity.AnmTramiteTb;
 import co.gov.anm.comunicaciones.entity.Folders;
 
+import co.gov.anm.sgd.service.AnexosRadicadoResponse;
+import co.gov.anm.sgd.service.Comunicaciones;
+import co.gov.anm.sgd.service.ProcesoComunicacionResponse;
+import co.gov.anm.sgd.util.SGDWebServiceLocator;
+
 import java.io.OutputStream;
 
 import java.math.BigDecimal;
@@ -47,9 +52,16 @@ public class CrearComunicacionRespuestaJSFBean extends CommonJSFBean{
     
     @EJB
     private ComunicacionesSessionBeanLocal comunicacionEJB;
-    
+
+    private Comunicaciones port =
+        new SGDWebServiceLocator().getComunicacionesProxy();
+
     private Logger log;
+    
     private String user;
+    
+    private Boolean existeRespuestaRadicada = Boolean.FALSE;
+    private String nroRadicadoRespuestaExistente;
     
     private Collection<SelectItem> categoriasProceso = new ArrayList<>();
     private Collection<Folders> categoriasProcesoSet = new ArrayList<>();
@@ -322,68 +334,244 @@ public class CrearComunicacionRespuestaJSFBean extends CommonJSFBean{
         }
     }    
     
-    public void crearComunicacion ( ActionEvent evt ){
+    public void crearComunicacion(ActionEvent evt) {
         try {
-            log.debug((Integer)super.getElObjectFromBinding("#{bindings.nroFolios.inputValue}"));
-            Boolean esTituloMinero = (Boolean)super.getElObjectFromBinding("#{bindings.esTituloMinero.inputValue}");
-            String idTramite = (String)super.getElObjectFromBinding("#{bindings.idTramite.inputValue}");
-            String idTpDocumento = (String)super.getElObjectFromBinding("#{bindings.idTpDocumento.inputValue}");
-            String idSerie = (String)super.getElObjectFromBinding("#{bindings.idSerie.inputValue}");
-            
-            if (esTituloMinero&&
-                ( (idTramite == null || idTramite.trim().equals("") || idTpDocumento == null || idTpDocumento.trim().equals("") ))) {
-                log.debug(user+" -> Error en validacion en tramite");
-                
-                super.showMessage(FacesMessage.SEVERITY_WARN, "Debe seleccionar el tramite y el tipo documental.");
-                
-                return;
-            }
-            
-            
-            log.debug("esTituloMinero: "+esTituloMinero);
-            log.debug("idTramite: "+idTramite);
-            log.debug("idTpDocumento: "+idTpDocumento);
-            log.debug("idSerie: "+idSerie);
-            
-            if (!esTituloMinero && (idSerie == null || idSerie.trim().equals(""))) {
-                log.debug(user+" -> Error en validaciï¿½n en taxonomï¿½a");
-                
-                super.showMessage(FacesMessage.SEVERITY_WARN, "Debe seleccionar la taxonomÃ­a completa. Por favor verificar");
-                
-                return;
-            }
-            
-            /*DocMgmtBean docMngr = (DocMgmtBean)super.getElObjectFromBinding("#{pageFlowScope.docMgmtBean}");
-            log.debug("Cantidad de attachements:"+docMngr.getAddedAttachmentList().size());
-            int cantidadAttachments = docMngr.getAddedAttachmentList().size();
-                        
-            if (cantidadAttachments == 0) {
-                super.showMessage(FacesMessage.SEVERITY_WARN, "No se ha seleccionado algÃºn documento. Por favor verificar.");
-                
-                return;
-            } else {                
-                for (AttachmentTypeImpl attachment : docMngr.getAddedAttachmentList()) {
-                    log.debug(attachment.getMimeType());
+            Boolean existeRespuestaRadicada =
+                Boolean.TRUE.equals(this.existeRespuestaRadicada);
+
+            String nroRadicadoRespuestaExistente =
+                this.nroRadicadoRespuestaExistente;
+
+            log.debug(
+                user + " -> existeRespuestaRadicada: " +
+                existeRespuestaRadicada
+            );
+
+            /*
+             * Camino nuevo:
+             * la respuesta ya fue radicada previamente.
+             */
+            if (Boolean.TRUE.equals(existeRespuestaRadicada)) {
+
+                if (nroRadicadoRespuestaExistente != null) {
+                    nroRadicadoRespuestaExistente =
+                        nroRadicadoRespuestaExistente.trim();
+                }
+
+                if (nroRadicadoRespuestaExistente == null ||
+                    nroRadicadoRespuestaExistente.isEmpty()) {
+
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "Debe ingresar el número de radicado de la respuesta emitida previamente."
+                    );
+                    return;
+                }
+
+                if (!nroRadicadoRespuestaExistente.matches("\\d+")) {
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "El número de radicado solo debe contener dígitos."
+                    );
+                    return;
                 }
                 
-                if (!docMngr.getAddedAttachmentList().get(0).getMimeType().equals("application/vnd.oasis.opendocument.text")) {
-                    super.showMessage(FacesMessage.SEVERITY_WARN, "La extensiÃ³n del documento debe ser .odt. Por favor verificar.");
-                    
-                    return; 
+                ProcesoComunicacionResponse respuestaComunicacion;
+
+                try {
+                    respuestaComunicacion =
+                        port.consultarComunicacion(nroRadicadoRespuestaExistente);
+
+                } catch (javax.xml.ws.soap.SOAPFaultException e) {
+
+                    String detalle =
+                        e.getFault() != null
+                        ? e.getFault().getFaultString()
+                        : e.getMessage();
+
+                    if (detalle != null &&
+                        detalle.toLowerCase().contains("no existe comunicacion")) {
+
+                        log.debug(
+                            user + " -> radicado inexistente: " +
+                            nroRadicadoRespuestaExistente
+                        );
+
+                        super.showMessage(
+                            FacesMessage.SEVERITY_WARN,
+                            "El número de radicado ingresado no existe."
+                        );
+                        return;
+                    }
+
+                    throw e;
                 }
-            }*/
-            String docName = (String)getElObjectFromBinding("#{bindings.name1.inputValue}");
-            String mimeType = (String)getElObjectFromBinding("#{bindings.mimeType.inputValue}");
-            Integer size = (Integer)getElObjectFromBinding("#{bindings.size.inputValue}");
-            //String content = getElObjectFromBinding("#{bindings.content.inputValue}");
+                
+                if (respuestaComunicacion == null ||
+                    respuestaComunicacion.getComunicacion() == null) {
+
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "El número de radicado ingresado no existe."
+                    );
+                    return;
+                }
+                
+                String tipoComunicacion =
+                    respuestaComunicacion.getComunicacion().getTipoComunicacion();
+
+                log.debug(
+                    user + " -> tipoComunicacion del radicado: " +
+                    tipoComunicacion
+                );
+                
+                String tipoNormalizado =
+                    tipoComunicacion == null ? "" : tipoComunicacion.trim();
+
+                if (!"Interna".equalsIgnoreCase(tipoNormalizado)) {
+
+                    log.debug(
+                        user + " -> radicado rechazado por tipo de comunicación: " +
+                        tipoNormalizado
+                    );
+
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "El radicado ingresado no corresponde a una comunicación interna."
+                    );
+                    return;
+                }
+                
+                AnexosRadicadoResponse respuestaAnexos =
+                    port.consultarAnexosRadicado(nroRadicadoRespuestaExistente);
+                
+                if (respuestaAnexos == null ||
+                    respuestaAnexos.getAnexosList() == null ||
+                    respuestaAnexos.getAnexosList().isEmpty()) {
+
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "El radicado ingresado no tiene un documento digitalizado."
+                    );
+                    return;
+                }
+                
+                setAtributoPayload(
+                    "nroRadicadoRespuestaExistente",
+                    nroRadicadoRespuestaExistente
+                );
             
-            if (ifAnexo.getValue() == null) {
-                super.showMessage(FacesMessage.SEVERITY_WARN, "No se ha seleccionado algÃºn documento principal. Por favor verificar.");                
-                return;
-            } 
+
+                log.debug(
+                    user + " -> nroRadicadoRespuestaExistente: " +
+                    nroRadicadoRespuestaExistente
+                );
+                
+        
+
+            } else {
+
+                /*
+                 * Camino actual:
+                 * se va a crear una nueva comunicación de respuesta.
+                 */
+                log.debug(
+                    (Integer) super.getElObjectFromBinding(
+                        "#{bindings.nroFolios.inputValue}"
+                    )
+                );
+
+                Boolean esTituloMinero =
+                    (Boolean) super.getElObjectFromBinding(
+                        "#{bindings.esTituloMinero.inputValue}"
+                    );
+
+                String idTramite =
+                    (String) super.getElObjectFromBinding(
+                        "#{bindings.idTramite.inputValue}"
+                    );
+
+                String idTpDocumento =
+                    (String) super.getElObjectFromBinding(
+                        "#{bindings.idTpDocumento.inputValue}"
+                    );
+
+                String idSerie =
+                    (String) super.getElObjectFromBinding(
+                        "#{bindings.idSerie.inputValue}"
+                    );
+
+                if (Boolean.TRUE.equals(esTituloMinero) &&
+                    (idTramite == null ||
+                     idTramite.trim().equals("") ||
+                     idTpDocumento == null ||
+                     idTpDocumento.trim().equals(""))) {
+
+                    log.debug(
+                        user + " -> Error en validacion en tramite"
+                    );
+
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "Debe seleccionar el tramite y el tipo documental."
+                    );
+                    return;
+                }
+
+                log.debug("esTituloMinero: " + esTituloMinero);
+                log.debug("idTramite: " + idTramite);
+                log.debug("idTpDocumento: " + idTpDocumento);
+                log.debug("idSerie: " + idSerie);
+
+                if (!Boolean.TRUE.equals(esTituloMinero) &&
+                    (idSerie == null || idSerie.trim().equals(""))) {
+
+                    log.debug(
+                        user + " -> Error en validación en taxonomía"
+                    );
+
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "Debe seleccionar la taxonomía completa. Por favor verificar"
+                    );
+                    return;
+                }
+
+                if (ifAnexo == null || ifAnexo.getValue() == null) {
+                    super.showMessage(
+                        FacesMessage.SEVERITY_WARN,
+                        "No se ha seleccionado algún documento principal. Por favor verificar."
+                    );
+                    return;
+                }
+            }
+            
+            setAtributoPayload(
+                "existeRespuestaRadicada",
+                existeRespuestaRadicada
+            );
+
+            if (!Boolean.TRUE.equals(existeRespuestaRadicada)) {
+                setAtributoPayload(
+                    "nroRadicadoRespuestaExistente",
+                    null
+                );
+            }
+
         } catch (Exception e) {
-            log.error("error creando comunicacion: " + e.getMessage(), e);
-        }        
+            log.error(
+                "Error validando la creación de la comunicación: " +
+                e.getMessage(),
+                e
+            );
+
+            super.showMessage(
+                FacesMessage.SEVERITY_ERROR,
+                "Se presentó un error validando la información."
+            );
+            return;
+        }
+
         super.setOperation(evt);
     }
     
@@ -590,5 +778,71 @@ public class CrearComunicacionRespuestaJSFBean extends CommonJSFBean{
 
     public RichInputFile getIfAnexo() {
         return ifAnexo;
+    }
+    
+    public void setExisteRespuestaRadicada(Boolean existeRespuestaRadicada) {
+        this.existeRespuestaRadicada =
+            existeRespuestaRadicada != null
+            ? existeRespuestaRadicada
+            : Boolean.FALSE;
+    }
+
+    public Boolean getExisteRespuestaRadicada() {
+        return existeRespuestaRadicada;
+    }
+
+    public void setNroRadicadoRespuestaExistente(
+        String nroRadicadoRespuestaExistente) {
+        this.nroRadicadoRespuestaExistente =
+            nroRadicadoRespuestaExistente;
+    }
+
+    public String getNroRadicadoRespuestaExistente() {
+        return nroRadicadoRespuestaExistente;
+    }
+    
+    private void setAtributoPayload(String nombreAtributo,
+                                    Object valor) {
+
+        oracle.adf.model.binding.DCBindingContainer bindings =
+            (oracle.adf.model.binding.DCBindingContainer)
+            getBindingContainer();
+
+        oracle.adf.model.binding.DCIteratorBinding payloadIterator =
+            bindings.findIteratorBinding("payloadIterator");
+
+        if (payloadIterator == null ||
+            payloadIterator.getCurrentRow() == null) {
+
+            throw new IllegalStateException(
+                "No fue posible obtener el payloadIterator."
+            );
+        }
+
+        payloadIterator.getCurrentRow()
+                       .setAttribute(nombreAtributo, valor);
+    }
+    
+    public void cambiarExisteRespuestaRadicada(ValueChangeEvent evt) {
+        this.existeRespuestaRadicada =
+            Boolean.TRUE.equals(evt.getNewValue());
+
+        log.debug(
+            user + " -> existeRespuestaRadicada cambiado a: " +
+            this.existeRespuestaRadicada
+        );
+
+        javax.faces.component.UIComponent componente =
+            evt.getComponent();
+
+        while (componente != null &&
+               !"panelCenter".equals(componente.getId())) {
+            componente = componente.getParent();
+        }
+
+        if (componente != null) {
+            AdfFacesContext.getCurrentInstance()
+                           .addPartialTarget(componente);
+        }
     }
 }

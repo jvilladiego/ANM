@@ -103,12 +103,28 @@
   <Attribute Name="urlDocumRelacionadoBO" Type="java.lang.String">
     <Properties>
       <CustomProperties>
+        <Property Name="nextSiblingNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="nextSibling" Value="tipoAsignacion"/>
         <Property Name="minOccurs" Value="1"/>
         <Property Name="maxOccurs" Value="1"/>
         <Property Name="LABEL" Value="Url Docum Relacionado BO"/>
         <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
         <Property Name="nillable" Value="false"/>
         <Property Name="originalName" Value="urlDocumRelacionadoBO"/>
+        <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
+        <Property Name="type" Value="java.lang.String"/>
+      </CustomProperties>
+    </Properties>
+  </Attribute>
+  <Attribute Name="tipoAsignacion" Type="java.lang.String">
+    <Properties>
+      <CustomProperties>
+        <Property Name="minOccurs" Value="1"/>
+        <Property Name="maxOccurs" Value="1"/>
+        <Property Name="LABEL" Value="Tipo Asignacion"/>
+        <Property Name="LeafElement_hint" Value="LeafElement_no_attribute"/>
+        <Property Name="nillable" Value="false"/>
+        <Property Name="originalName" Value="tipoAsignacion"/>
         <Property Name="targetNamespace" Value="http://xmlns.oracle.com/bpel/workflow/task"/>
         <Property Name="type" Value="java.lang.String"/>
       </CustomProperties>

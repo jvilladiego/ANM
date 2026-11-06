@@ -1,0 +1,20 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<xs:schema targetNamespace="http://xmlns.oracle.com/pcbpel/adapter/db/dbComunicaciones" xmlns="http://xmlns.oracle.com/pcbpel/adapter/db/dbComunicaciones" elementFormDefault="qualified" attributeFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:element name="dbComunicacionesInput" type="dbComunicacionesInput"/>
+   <xs:complexType name="dbComunicacionesInput">
+      <xs:sequence>
+         <xs:element name="ID_TIPO_SOLICITUD" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="dbComunicacionesOutputCollection" type="dbComunicacionesOutputCollection"/>
+   <xs:complexType name="dbComunicacionesOutputCollection">
+      <xs:sequence>
+         <xs:element name="dbComunicacionesOutput" type="dbComunicacionesOutput" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="dbComunicacionesOutput">
+      <xs:sequence>
+         <xs:element name="tiempo_respuesta" type="xs:decimal" nillable="true"/>
+      </xs:sequence>
+   </xs:complexType>
+</xs:schema>
