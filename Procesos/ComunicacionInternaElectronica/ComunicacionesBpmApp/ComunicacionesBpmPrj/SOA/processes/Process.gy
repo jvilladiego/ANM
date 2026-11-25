@@ -32,6 +32,17 @@ public void methodACT42925875679995()
 }
 
 
+public void methodACT49393705048138()
+{
+	if (adjuntoDO != null) {
+	    adjuntoDO.name = ""
+	    adjuntoDO.content = ""
+	    adjuntoDO.mimeType = ""
+	    adjuntoDO.size = 0
+	}
+}
+
+
 
 
 public static class ACT18258397782272{

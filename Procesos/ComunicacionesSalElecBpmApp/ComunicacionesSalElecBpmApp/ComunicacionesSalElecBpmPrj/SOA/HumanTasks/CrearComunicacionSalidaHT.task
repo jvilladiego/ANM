@@ -80,7 +80,7 @@
         <description>Fecha Radicacion</description>
       </flexfieldMapping>
       <flexfieldMapping>
-        <xpathExpression>/task:task/task:payload/ns4:ComunicacionSalidaBO/ns4:fechaVencimiento</xpathExpression>
+        <xpathExpression>/task:task/task:payload/ns0:ComunicacionSalidaBO/ns0:fechaVencimiento</xpathExpression>
         <attributeLabel>
           <labelName>fechaVencimiento</labelName>
           <flexfield>ProtectedDateAttribute1</flexfield>

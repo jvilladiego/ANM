@@ -8,6 +8,10 @@
    <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService" location="oramds:/soa/shared/workflow/NotificationService.wsdl" importType="wsdl"/>
    <import namespace="http://service.sgd.anm.gov.co" location="DocumentProxy.wsdl" importType="wsdl"/>
    <import namespace="http://service.sgd.anm.gov.co" location="ComunicacionesProxy.wsdl" importType="wsdl"/>
+   <service name="Process.service_2" ui:wsdlLocation="WSDLs/Process.wsdl">
+      <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.interface(ProcessPortType)"/>
+      <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.endpoint(Process.service/ProcessPort)"/>
+   </service>
    <service name="Process.service" ui:wsdlLocation="WSDLs/Process.wsdl">
       <interface.wsdl interface="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.interface(ProcessPortType)"/>
       <binding.ws port="http://xmlns.oracle.com/bpmn/bpmnProcess/Process#wsdl.endpoint(Process.service/ProcessPort)"/>

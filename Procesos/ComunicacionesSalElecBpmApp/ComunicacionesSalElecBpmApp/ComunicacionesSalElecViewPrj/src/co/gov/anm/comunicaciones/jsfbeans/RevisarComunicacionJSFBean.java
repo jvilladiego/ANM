@@ -14,6 +14,7 @@ import co.gov.anm.comunicaciones.model.type.TrueFalseType;
 import co.gov.anm.sgd.service.ExpedienteMinero;
 import co.gov.anm.sgd.service.WccResponse;
 import co.gov.anm.sgd.util.SGDWebServiceLocator;
+import co.gov.anm.sgd.service.AnexoComunicacionRequest;
 
 
 import javax.faces.event.AbortProcessingException;
@@ -952,18 +953,34 @@ public class RevisarComunicacionJSFBean extends CommonJSFBean {
                 "El radicado debe corresponder a una comunicación de salida.");
         }
 
-        AnexosRadicadoResponse anexos =
-            port.consultarAnexosRadicado(radicado);
-
         boolean tieneDocumento = false;
 
-        if (anexos != null && anexos.getAnexosList() != null) {
-            for (AnexoRadicado anexo : anexos.getAnexosList()) {
+        // Primero: documentos asociados al radicado en SGD.
+        if (respuesta.getAnexosList() != null) {
+            for (AnexoComunicacionRequest anexo :
+                    respuesta.getAnexosList()) {
                 if (anexo != null &&
-                    anexo.getUrl() != null &&
-                    !anexo.getUrl().trim().isEmpty()) {
+                    anexo.getEnlaceContent() != null &&
+                    !anexo.getEnlaceContent().trim().isEmpty()) {
                     tieneDocumento = true;
                     break;
+                }
+            }
+        }
+
+        // Respaldo: búsqueda de documentos en WCC por radicado.
+        if (!tieneDocumento) {
+            AnexosRadicadoResponse anexos =
+                port.consultarAnexosRadicado(radicado);
+
+            if (anexos != null && anexos.getAnexosList() != null) {
+                for (AnexoRadicado anexo : anexos.getAnexosList()) {
+                    if (anexo != null &&
+                        anexo.getUrl() != null &&
+                        !anexo.getUrl().trim().isEmpty()) {
+                        tieneDocumento = true;
+                        break;
+                    }
                 }
             }
         }

@@ -21,6 +21,12 @@
                                              facetName="#{actionAvailable.isCustomActionButtons}">
                                     <f:facet name="true">
                                         <af:panelGroupLayout layout="horizontal" id="pgl12">
+                                            <af:button id="btnAnular" text="Anular" immediate="true"
+                                                       disabled="#{!bindings.ANULAR.enabled}"
+                                                       visible="#{wf:isCustomActionAvailable('ANULAR', 'bindings.customActions')}">
+                                                <af:showPopupBehavior popupId="popupConfirmarAnulacion"
+                                                                      triggerType="action"/>
+                                            </af:button>
                                             <af:button actionListener="#{CrearComunicacionEntElecHT_jsfbean.validarForm}"
                                                        text="#{wf:getResourceValue('SUBMIT', 'bindings.customActions')}"
                                                        disabled="#{!bindings.SUBMIT.enabled}"
@@ -245,7 +251,8 @@
                         </trh:rowLayout>
                     </trh:tableLayout-->
                             </af:showDetailHeader>
-                            <af:showDetailHeader size="2" id="apCntHd" text="#{resources.CONTENTS}" shortDesc="13Marzo2023"
+                            <af:showDetailHeader size="2" id="apCntHd" text="#{resources.CONTENTS}"
+                                                 shortDesc="13Marzo2023"
                                                  disclosed="#{actionAvailable.discloseContents}">
                                 <!--init work julian-->
                                 <af:panelStretchLayout id="headPanel" styleClass="AFStretchWidth" startWidth="10%"
@@ -489,20 +496,20 @@
                                                 <af:spacer height="10px" width="10px" id="sp10"/>
                                                 <af:panelGroupLayout layout="horizontal" id="pgl13">
                                                     <af:selectOneChoice required="false" id="selectTpSol"
-                                                                        label="Tipo Solicitud" 
+                                                                        label="Tipo Solicitud"
                                                                         value="#{CrearComunicacionEntElecHT_jsfbean.idTpSolicitud}"
-                                                                        autoSubmit="true" clientComponent="true"                                                             
+                                                                        autoSubmit="true" clientComponent="true"
                                                                         valueChangeListener="#{CrearComunicacionEntElecHT_jsfbean.validarSubcategoria}">
-                                                        <f:selectItems itemValue="Item 1" id="tim9" 
+                                                        <f:selectItems itemValue="Item 1" id="tim9"
                                                                        value="#{CrearComunicacionEntElecHT_jsfbean.tiposSolicitud}"/>
                                                     </af:selectOneChoice>
                                                     <af:spacer height="20px" width="20px" id="s35"/>
-                                                     <af:selectOneChoice required="true" id="selectSubCat"
-                                                                        label="Subcategor&#237;a de Solicitud" 
-                                                                         partialTriggers="selectTpSol"
-                                                                        value="#{CrearComunicacionEntElecHT_jsfbean.idSubcategoria}" 
+                                                    <af:selectOneChoice required="true" id="selectSubCat"
+                                                                        label="Subcategor&#237;a de Solicitud"
+                                                                        partialTriggers="selectTpSol"
+                                                                        value="#{CrearComunicacionEntElecHT_jsfbean.idSubcategoria}"
                                                                         valueChangeListener="#{CrearComunicacionEntElecHT_jsfbean.subcategoriaVCL}">
-                                                        <f:selectItems itemValue="Item 1" id="timsub" 
+                                                        <f:selectItems itemValue="Item 1" id="timsub"
                                                                        value="#{CrearComunicacionEntElecHT_jsfbean.subcategorias}"/>
                                                     </af:selectOneChoice>
                                                 </af:panelGroupLayout>
@@ -516,7 +523,6 @@
                                                                    id="si8"/>
                                                 </af:selectOneChoice>
                                             </af:panelBox>
-                                            
                                             <af:panelBox text="Adjuntos" id="pb2">
                                                 <af:inputFile label="Adjunto" id="ifAdjunto"
                                                               value="#{CrearComunicacionEntElecHT_jsfbean.file}"
@@ -1010,6 +1016,21 @@
                     </af:panelHeader>
                     <f:facet name="separator"/>
                 </af:panelGroupLayout>
+                <af:popup id="popupConfirmarAnulacion" contentDelivery="lazyUncached">
+                    <af:dialog id="dlgConfirmarAnulacion" title="Anular comunicaci&#243;n" type="cancel"
+                               cancelTextAndAccessKey="Volver" closeIconVisible="true">
+                        <af:outputText id="txtConfirmarAnulacion"
+                                       value="&#191;Desea anular esta comunicaci&#243;n y cancelar su tr&#225;mite?"/>
+                        <f:facet name="buttonBar">
+                            <af:button id="btnConfirmarAnulacion" text="Confirmar anulaci&#243;n" immediate="true"
+                                       partialSubmit="false" disabled="#{!bindings.ANULAR.enabled}"
+                                       actionListener="#{CrearComunicacionEntElecHT_jsfbean.anularComunicacion}"
+                                       action="#{invokeActionBean.invokeOperation}">
+                                <f:attribute name="DC_OPERATION_BINDING" value="bindings.ANULAR"/>
+                            </af:button>
+                        </f:facet>
+                    </af:dialog>
+                </af:popup>
             </af:form>
         </af:document>
     </f:view>

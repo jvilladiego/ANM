@@ -26,7 +26,7 @@
       <participants isAdhocRoutingSupported="false">
          <stage name="Stage1" disabled="false">
             <participant disabled="false" name="default.DefaultPerformer">
-               <resource type="XPATH" identityType="user">/task:task/task:payload/ns7:UsuarioBO/ns7:idUsuario</resource>
+              <resource type="XPATH" identityType="user">/task:task/task:payload/ns1:UsuarioBO/ns1:idUsuario</resource>
                <dynamicAssignment identityTypeToSelect="user">
                   <assignmentPattern patternName="LEAST_BUSY" isGlobalPattern="false"/>
                </dynamicAssignment>
@@ -104,7 +104,7 @@
             <description>Fecha Radicacion</description>
          </flexfieldMapping>
          <flexfieldMapping>
-            <xpathExpression>/task:task/task:payload/ns4:ComunicacionSalidaBO/ns4:fechaVencimiento</xpathExpression>
+            <xpathExpression>/task:task/task:payload/ns0:ComunicacionSalidaBO/ns0:fechaVencimiento</xpathExpression>
             <attributeLabel>
                <labelName>fechaVencimiento</labelName>
                <flexfield>ProtectedDateAttribute1</flexfield>

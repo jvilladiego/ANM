@@ -719,6 +719,22 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="GTW49371225972545">
+            <labels>
+               <label locale="en">¿Documento firmado de expediente minero?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49371233764450">
+            <labels>
+               <label locale="en">Cargar documento firmado a expediente minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="sf17643686060090"/>
          <topicDocumentation name="sf17644084981920"/>
          <topicDocumentation name="sf17644554720879"/>
@@ -879,6 +895,23 @@
             </descriptions>
          </topicDocumentation>
          <topicDocumentation name="sf49017292004892"/>
+         <topicDocumentation name="sf49371227807325">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49371236761321">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49371246570137"/>
       </topicDocumentations>
    </component>
 </processDocumentation>

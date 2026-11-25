@@ -851,6 +851,14 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="ACT49240826143949">
+            <labels>
+               <label locale="en">Publicar cierre en expediente minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="EVT17642311332483">
             <labels>
                <label locale="en">Start Email</label>
@@ -902,6 +910,14 @@
          <topicDocumentation name="EVT40082914674176">
             <labels>
                <label locale="en">24 horas</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT49292818766959">
+            <labels>
+               <label locale="en">Fin de Anulacion</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -1083,9 +1099,9 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="ACT49240826143949">
+         <topicDocumentation name="GTW49292775934674">
             <labels>
-               <label locale="en">Publicar cierre en expediente minero</label>
+               <label locale="en"> ¿Anular borrador?</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -1125,7 +1141,14 @@
          <topicDocumentation name="sf18419968756765"/>
          <topicDocumentation name="sf18437838351814"/>
          <topicDocumentation name="sf18730894732019"/>
-         <topicDocumentation name="sf18730902794931"/>
+         <topicDocumentation name="sf18730902794931">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="sf18730904399491"/>
          <topicDocumentation name="sf18852150191735"/>
          <topicDocumentation name="sf18852244195536"/>
@@ -1290,6 +1313,22 @@
          </topicDocumentation>
          <topicDocumentation name="sf4924077345331"/>
          <topicDocumentation name="sf49240832695313"/>
+         <topicDocumentation name="sf4929278388464">
+            <labels>
+               <label locale="en">No</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49292824797954">
+            <labels>
+               <label locale="en">SI</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
       </topicDocumentations>
    </component>
 </processDocumentation>

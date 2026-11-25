@@ -633,6 +633,14 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="EVT48601952404645">
+            <labels>
+               <label locale="en">End1</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="GTW17273174252926">
             <labels>
                <label locale="en">Comunicación Aprobada?</label>
@@ -753,9 +761,33 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
-         <topicDocumentation name="EVT48601952404645">
+         <topicDocumentation name="GTW49393697306845">
             <labels>
-               <label locale="en">End1</label>
+               <label locale="en">¿Anular desde creacion?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="GTW49393699789888">
+            <labels>
+               <label locale="en">¿Anular desde actualizacion?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49393705048138">
+            <labels>
+               <label locale="en">Limpiar datos documentales por anulacion</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="EVT49393719297892">
+            <labels>
+               <label locale="en">Fin comunicacion anulada</label>
             </labels>
             <descriptions>
                <description locale="en"></description>
@@ -892,6 +924,25 @@
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="sf49393697663444"/>
+         <topicDocumentation name="sf49393700794111"/>
+         <topicDocumentation name="sf49393706507191">
+            <labels>
+               <label locale="en">Anular</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49393707739260">
+            <labels>
+               <label locale="en">Anular</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49393720112050"/>
       </topicDocumentations>
    </component>
 </processDocumentation>

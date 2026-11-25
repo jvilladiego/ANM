@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<composite name="ComunicacionesSalFisicaBPM" revision="2.6" label="2016-11-02_21-47-23_768" mode="active" state="on" xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/" xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
+<composite name="ComunicacionesSalFisicaBPM" revision="3" label="2016-11-02_21-47-23_768" mode="active" state="on" xmlns="http://xmlns.oracle.com/sca/1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:orawsp="http://schemas.oracle.com/ws/2006/01/policy" xmlns:ui="http://xmlns.oracle.com/soa/designer/" xmlns:sca-ext="http://xmlns.oracle.com/sca/1.0-ext">
    <import namespace="http://xmlns.oracle.com/bpel/workflow/taskService" location="oramds:/soa/shared/workflow/TaskServiceInterface.wsdl" importType="wsdl"/>
    <import namespace="http://xmlns.oracle.com/ias/pcbpel/NotificationService" location="oramds:/soa/shared/workflow/NotificationService.wsdl" importType="wsdl"/>
    <import namespace="http://xmlns.oracle.com/bpmn/bpmnProcess/ComunicacionesSalida" location="WSDLs/ComunicacionesSalida.wsdl" importType="wsdl"/>

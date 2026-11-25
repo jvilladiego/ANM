@@ -43,6 +43,10 @@ import org.apache.commons.io.IOUtils;
 import org.apache.log4j.Logger;
 import org.apache.myfaces.trinidad.model.UploadedFile;
 
+import javax.xml.ws.BindingProvider;
+
+
+
 @ManagedBean(name="CrearComunicacionRespuestaJSFBean")
 @ViewScoped
 public class CrearComunicacionRespuestaJSFBean extends CommonJSFBean{
@@ -53,8 +57,10 @@ public class CrearComunicacionRespuestaJSFBean extends CommonJSFBean{
     @EJB
     private ComunicacionesSessionBeanLocal comunicacionEJB;
 
-    private Comunicaciones port =
-        new SGDWebServiceLocator().getComunicacionesProxy();
+  /*  private Comunicaciones port =
+        new SGDWebServiceLocator().getComunicacionesProxy();*/
+    
+  private Comunicaciones port;
 
     private Logger log;
     
@@ -89,6 +95,18 @@ public class CrearComunicacionRespuestaJSFBean extends CommonJSFBean{
             //Logger for App
             log = Logger.getLogger(this.getClass().getSimpleName());
             log.info("BEGIN CrearComunicacionRespuestaJSFBean");
+            
+            port = new SGDWebServiceLocator().getComunicacionesProxy();
+
+            ((BindingProvider) port).getRequestContext().put(
+                BindingProvider.ENDPOINT_ADDRESS_PROPERTY,
+                "http://osbifx.anm.local:80/SGD2.3/ProxyServices/ComunicacionesProxy"
+            );
+
+            log.info(
+                "ComunicacionesProxy configurado temporalmente con SGD2.3"
+            );
+            
             ADFContext adfCtx = ADFContext.getCurrent();
             SecurityContext secCntx = adfCtx.getSecurityContext();
             user = secCntx.getUserPrincipal().getName();

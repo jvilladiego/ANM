@@ -1233,27 +1233,28 @@ public class CrearComunicacionEntElecHT_jsfbean {
 
 
     public void validarForm(ActionEvent action) {
-        
- 
         log.info("Inicio validarForm()");
         try {
             uploadAdjunto();
+
             if (!validarAttachment()) {
-                mostrarMensaje(FacesMessage.SEVERITY_WARN, "Debe adjuntar al menos un archivo (Documento principal)");
+                mostrarMensaje(FacesMessage.SEVERITY_WARN,
+                               "Debe adjuntar al menos un archivo (Documento principal)");
                 return;
-            }else if (!validarTipoPQRS()) {
-                mostrarMensaje(FacesMessage.SEVERITY_WARN, "Debe seleccionar el Tipo de PQRS");
+            } else if (!validarTipoPQRS()) {
+                mostrarMensaje(FacesMessage.SEVERITY_WARN,
+                               "Debe seleccionar el Tipo de PQRS");
                 return;
             } else if (!validarExpMinero()) {
                 mostrarMensaje(FacesMessage.SEVERITY_WARN,
                                "Debe ingresar un Expediente Minero, de lo contrario desmarque la casilla");
                 return;
             }
-            
-            
-            log.debug(user+" -> End success validarForm()");
-            //Si las validaciones son exitosas continuar flujo
+
+            log.debug(user + " -> End success validarForm()");
             setOperation(action);
+        } catch (javax.faces.event.AbortProcessingException e) {
+            throw e;
         } catch (Exception e) {
             log.error("Error validarForm() ", e);
         }
@@ -1454,6 +1455,150 @@ public class CrearComunicacionEntElecHT_jsfbean {
         InvokeActionBean invokeActionBean =
             (InvokeActionBean) app.getELResolver().getValue(elContext, null, "invokeActionBean");
         invokeActionBean.setOperation(action);
+    }
+    
+    public void anularComunicacion(ActionEvent event) {
+        try {
+            Object radicado = getElObjectFromBinding("#{bindings.nroRadicado.inputValue}");
+            if (radicado != null && !radicado.toString().trim().isEmpty()) {
+                throw new IllegalStateException("La comunicación ya está radicada.");
+            }
+
+            oracle.binding.BindingContainer bindings =
+                oracle.adf.model.BindingContext.getCurrent().getCurrentBindingsEntry();
+            oracle.binding.OperationBinding anular = bindings.getOperationBinding("ANULAR");
+            oracle.binding.OperationBinding guardar = bindings.getOperationBinding("update");
+            oracle.binding.OperationBinding eliminarAdjunto = bindings.getOperationBinding("Delete2");
+
+            DCIteratorBinding anexos = ADFUtils.findIterator("anexosIterator");
+            DCIteratorBinding adjuntos = ADFUtils.findIterator("attachmentIterator");
+            if (anular == null || !anular.isOperationEnabled()
+                    || guardar == null || !guardar.isOperationEnabled()
+                    || eliminarAdjunto == null || anexos == null || adjuntos == null) {
+                throw new IllegalStateException("La anulación no está disponible para esta tarea.");
+            }
+
+            Object numeroTarea = getElObjectFromBinding("#{bindings.taskNumber.inputValue}");
+            String idTarea = numeroTarea == null ? "" : numeroTarea.toString().trim();
+            if (!idTarea.matches("[0-9]+")) {
+                throw new IllegalStateException("No se pudo identificar la tarea.");
+            }
+
+            java.util.List<Row> filas = new java.util.ArrayList<Row>();
+            java.util.Set<java.nio.file.Path> temporales =
+                new java.util.LinkedHashSet<java.nio.file.Path>();
+
+            RowSetIterator lector = anexos.getRowSetIterator().getRowSet()
+                .createRowSetIterator(null);
+            try {
+                lector.reset();
+                while (lector.hasNext()) {
+                    Row anexo = lector.next();
+                    temporales.add(resolverTemporalAnexo(anexo, idTarea));
+                    filas.add(anexo);
+                }
+            } finally {
+                lector.closeRowSetIterator();
+            }
+
+            // Validar todos los anexos antes de borrar el primer archivo.
+            for (java.nio.file.Path temporal : temporales) {
+                java.nio.file.Files.deleteIfExists(temporal);
+            }
+
+            while (adjuntos.getEstimatedRowCount() > 0) {
+                long cantidadAnterior = adjuntos.getEstimatedRowCount();
+                adjuntos.setCurrentRowIndexInRange(0);
+                ejecutarOperacionAnulacion(eliminarAdjunto,
+                    "No fue posible retirar un adjunto de Workflow.");
+                if (adjuntos.getEstimatedRowCount() >= cantidadAnterior) {
+                    throw new IllegalStateException("El adjunto de Workflow sigue en el borrador.");
+                }
+            }
+
+            for (Row anexo : filas) {
+                anexo.remove();
+            }
+
+            // El BPM copia estas salidas numéricas antes de evaluar ANULAR.
+            String[] campos = {"idTipoSolicitud", "idSubCategoria"};
+            for (String campo : campos) {
+                String binding = "#{bindings." + campo + ".inputValue}";
+                Object valor = getElObjectFromBinding(binding);
+                if (valor == null || valor.toString().trim().isEmpty()) {
+                    setElObjectIntoBinding(binding, Integer.valueOf(0));
+                }
+            }
+ 
+            String bindingTiempo = "#{bindings.tiempoRespuesta.inputValue}";
+            Object tiempo = getElObjectFromBinding(bindingTiempo);
+            if (tiempo == null || tiempo.toString().trim().isEmpty()) {
+                setElObjectIntoBinding(bindingTiempo, java.math.BigInteger.ZERO);
+            }
+
+            String bindingTipoPQRS = "#{bindings.idTipoPQRS.inputValue}";
+            Object tipoPQRS = getElObjectFromBinding(bindingTipoPQRS);
+            if (tipoPQRS == null || tipoPQRS.toString().trim().isEmpty()) {
+                setElObjectIntoBinding(bindingTipoPQRS, Long.valueOf(0));
+            }
+            ejecutarOperacionAnulacion(guardar, "No fue posible guardar la limpieza del borrador.");
+            this.filePath = null;
+            this.fileUrl = null;
+            resetValue();
+
+            // El botón ejecuta ANULAR después de este listener.
+            setOperation(event);
+        } catch (Exception e) {
+            log.error("Error al anular la comunicación de entrada", e);
+            FacesContext.getCurrentInstance().addMessage(
+                null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+                    "No fue posible anular la comunicación.", e.getMessage()));
+            throw new javax.faces.event.AbortProcessingException(e);
+        }
+    }
+
+    private void ejecutarOperacionAnulacion(oracle.binding.OperationBinding operacion,
+                                            String mensaje) {
+        if (!operacion.isOperationEnabled()) {
+            throw new IllegalStateException(mensaje);
+        }
+        operacion.execute();
+        if (operacion.getErrors() != null && !operacion.getErrors().isEmpty()) {
+            throw new IllegalStateException(mensaje);
+        }
+    }
+
+    private java.nio.file.Path resolverTemporalAnexo(Row anexo, String idTarea)
+            throws java.io.IOException {
+        PropertiesLoader propiedades = PropertiesLoader.getInstance();
+        String carpeta = propiedades.getProperty(PropertiesKeys.LOCAL_TMP_PATH);
+        String baseUrl = propiedades.getProperty(PropertiesKeys.VIRTUAL_DIRECTORY_PATH);
+        if (carpeta == null || carpeta.trim().isEmpty()
+                || baseUrl == null || baseUrl.trim().isEmpty()) {
+            throw new java.io.IOException("Falta configurar la ruta de archivos temporales.");
+        }
+
+        String prefijoUrl = baseUrl.endsWith("/") ? baseUrl : baseUrl + "/";
+        Object contenido = anexo.getAttribute("contenido");
+        if (!(contenido instanceof String) || !((String) contenido).startsWith(prefijoUrl)) {
+            throw new java.io.IOException("El anexo no tiene una URL temporal reconocida.");
+        }
+
+        String nombre = ((String) contenido).substring(prefijoUrl.length());
+        if (!nombre.startsWith("tarea_" + idTarea + "_")
+                || nombre.indexOf('/') >= 0 || nombre.indexOf('\\') >= 0) {
+            throw new java.io.IOException("No se pudo verificar que el anexo pertenezca a esta tarea.");
+        }
+
+        java.nio.file.Path raiz = java.nio.file.Paths.get(carpeta).toRealPath();
+        java.nio.file.Path archivo = raiz.resolve(nombre).normalize();
+        if (!raiz.equals(archivo.getParent())
+                || java.nio.file.Files.isSymbolicLink(archivo)
+                || (java.nio.file.Files.exists(archivo)
+                    && !java.nio.file.Files.isRegularFile(archivo))) {
+            throw new java.io.IOException("La ruta del anexo no corresponde a un archivo temporal.");
+        }
+        return archivo;
     }
 
 
@@ -1939,26 +2084,93 @@ public class CrearComunicacionEntElecHT_jsfbean {
     
     
     private void uploadAdjunto() {
-        log.debug("---uploadAdjunto---");
-        if (this.fileContent != null && this.fileName != null && !this.fileName.isEmpty()) {
-            String dateTime = LocalDateTime.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy_HH-mm-ss"));
-            this.filePath = PropertiesLoader.getInstance().getProperty(PropertiesKeys.LOCAL_TMP_PATH) + dateTime+"_"+this.fileName;
-            log.debug("filePath :" + this.filePath);
-            try {
-                this.copyStreamToFile(fileInputStream, new File(this.filePath));
-                this.fileUrl = PropertiesLoader.getInstance().getProperty(PropertiesKeys.VIRTUAL_DIRECTORY_PATH) + dateTime+"_"+ this.fileName;
-                log.debug("fileUrl :"+fileUrl);
-                DCIteratorBinding iterBind = ADFUtils.findIterator("anexosIterator");
-                ADFUtils.executeOperationBinding("CreateAnexo");
-                Row row = iterBind.getCurrentRow();
-                row.setAttribute("descripcion","Anexo de comunicacion ");
-                row.setAttribute("contenido",this.fileUrl);
-                row.setAttribute("mimeType",this.fileFormat);
-                row.setAttribute("nombre",this.fileName);
-                
-            } catch (Exception e){
-                log.error("Error de lectura o escritura del archivo", e);
+        if (this.fileContent == null || this.fileName == null || this.fileName.isEmpty()) {
+            return;
+        }
+
+        java.nio.file.Path temporal = null;
+        Row anexo = null;
+
+        try {
+            Object numeroTarea = getElObjectFromBinding("#{bindings.taskNumber.inputValue}");
+            String idTarea = numeroTarea == null ? "" : numeroTarea.toString().trim();
+            if (!idTarea.matches("[0-9]+")) {
+                throw new IllegalStateException("No se pudo identificar la tarea.");
             }
+
+            PropertiesLoader propiedades = PropertiesLoader.getInstance();
+            String carpeta = propiedades.getProperty(PropertiesKeys.LOCAL_TMP_PATH);
+            String baseUrl = propiedades.getProperty(PropertiesKeys.VIRTUAL_DIRECTORY_PATH);
+            if (carpeta == null || carpeta.trim().isEmpty()
+                    || baseUrl == null || baseUrl.trim().isEmpty()) {
+                throw new IllegalStateException("Falta configurar la ruta de archivos temporales.");
+            }
+
+            String nombreSeguro = this.fileName.replace('/', '_').replace('\\', '_');
+            String nombreTemporal = "tarea_" + idTarea + "_"
+                + java.util.UUID.randomUUID() + "_" + nombreSeguro;
+
+            java.nio.file.Path raiz = java.nio.file.Paths.get(carpeta).toRealPath();
+            String urlTemporal = (baseUrl.endsWith("/") ? baseUrl : baseUrl + "/")
+                + nombreTemporal;
+
+            temporal = java.nio.file.Files.createFile(raiz.resolve(nombreTemporal));
+            java.nio.file.Files.write(temporal, this.fileContent);
+
+            DCIteratorBinding iterador = ADFUtils.findIterator("anexosIterator");
+            if (iterador == null) {
+                throw new IllegalStateException("No se encontró el listado de anexos.");
+            }
+
+            oracle.binding.OperationBinding crearAnexo =
+                oracle.adf.model.BindingContext.getCurrent()
+                    .getCurrentBindingsEntry().getOperationBinding("CreateAnexo");
+            if (crearAnexo == null || !crearAnexo.isOperationEnabled()) {
+                throw new IllegalStateException("No está disponible la acción de crear anexo.");
+            }
+
+            crearAnexo.execute();
+            if (!crearAnexo.getErrors().isEmpty()) {
+                throw new IllegalStateException("No fue posible crear la fila del anexo.");
+            }
+
+            anexo = iterador.getCurrentRow();
+            if (anexo == null) {
+                throw new IllegalStateException("No se encontró la fila del anexo.");
+            }
+
+            anexo.setAttribute("descripcion", "Anexo de comunicacion ");
+            anexo.setAttribute("contenido", urlTemporal);
+            anexo.setAttribute("mimeType", this.fileFormat);
+            anexo.setAttribute("nombre", this.fileName);
+
+            this.filePath = temporal.toString();
+            this.fileUrl = urlTemporal;
+            resetValue();
+        } catch (Exception e) {
+            if (anexo != null) {
+                try {
+                    anexo.remove();
+                } catch (RuntimeException errorFila) {
+                    e.addSuppressed(errorFila);
+                }
+            }
+
+            if (temporal != null) {
+                try {
+                    java.nio.file.Files.deleteIfExists(temporal);
+                } catch (java.io.IOException | SecurityException errorArchivo) {
+                    e.addSuppressed(errorArchivo);
+                }
+            }
+
+            log.error("Error al cargar el archivo temporal de la comunicación", e);
+            FacesContext.getCurrentInstance().addMessage(
+                null, new FacesMessage(
+                    FacesMessage.SEVERITY_ERROR,
+                    "No fue posible cargar el archivo adjunto.",
+                    "Vuelve a seleccionar el archivo e intenta nuevamente."));
+            throw new javax.faces.event.AbortProcessingException(e);
         }
     }
     private void copyStreamToFile ( InputStream is, java.io.File dest ) throws Exception{

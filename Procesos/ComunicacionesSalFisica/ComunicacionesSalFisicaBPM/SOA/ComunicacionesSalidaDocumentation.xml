@@ -600,6 +600,22 @@ url con enlace a content del documento principal</description>
                <description locale="en"></description>
             </descriptions>
          </topicDocumentation>
+         <topicDocumentation name="GTW49405163708938">
+            <labels>
+               <label locale="en">¿Es expediente minero?</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="ACT49405171217242">
+            <labels>
+               <label locale="en">Cargar PDF firmado a expediente minero</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
          <topicDocumentation name="sf17654902949378"/>
          <topicDocumentation name="sf17654902949417"/>
          <topicDocumentation name="sf17659918518952"/>
@@ -670,6 +686,16 @@ url con enlace a content del documento principal</description>
          <topicDocumentation name="sf1953627021882"/>
          <topicDocumentation name="sf40705850171229"/>
          <topicDocumentation name="sf40870410611272"/>
+         <topicDocumentation name="sf49405166335546"/>
+         <topicDocumentation name="sf49405179176240">
+            <labels>
+               <label locale="en">Si</label>
+            </labels>
+            <descriptions>
+               <description locale="en"></description>
+            </descriptions>
+         </topicDocumentation>
+         <topicDocumentation name="sf49405187448418"/>
       </topicDocumentations>
    </component>
 </processDocumentation>

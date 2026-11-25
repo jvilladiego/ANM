@@ -105,7 +105,7 @@ public void methodACT19344902589269()
 
 public void methodACT3051466288093()
 {
-	String anexosMail;
+	String anexosMail = "";
 	if(comunicacionRequestDO.anexosList.size() > 0){
 	  for(int i = 0 ; i<comunicacionRequestDO.anexosList.size(); i++){
 	  anexosMail = anexosMail.concat(" " + comunicacionRequestDO.anexosList.get(i).getAt("idAnexo"));
@@ -113,7 +113,9 @@ public void methodACT3051466288093()
 	}else{
 	  anexosMail = "0";
 	}
-	if (urlArchivoAdjuntoDO != null && !"".equals(urlArchivoAdjuntoDO)){
+	if (urlArchivoAdjuntoDO != null
+	    && !urlArchivoAdjuntoDO.toString().trim().isEmpty()
+	    && !"null".equals(urlArchivoAdjuntoDO.toString().trim())) {
 	  		anexosMail = "1";
 	}
 	anexosEmail = anexosMail;
@@ -122,7 +124,9 @@ public void methodACT3051466288093()
 
 public void methodACT35026802869849()
 {
-	        if (urlArchivoAdjuntoDO != null && !"".equals(urlArchivoAdjuntoDO)){
+	        if (urlArchivoAdjuntoDO != null
+	            && !urlArchivoAdjuntoDO.toString().trim().isEmpty()
+	            && !"null".equals(urlArchivoAdjuntoDO.toString().trim())) {
 	            AnexoComunicacionRequest docAnexo = new AnexoComunicacionRequest();
 	            docAnexo.cantidad = BigDecimal.ONE;
 	            docAnexo.descripcion = "Documento Anexo";
@@ -229,7 +233,6 @@ public void methodACT49145051396174()
 	    throw new IllegalStateException(
 	        "El generador no devolvió la ruta del documento de cierre");
 	}
-	
 }
 
 
